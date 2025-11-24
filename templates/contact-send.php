@@ -61,8 +61,8 @@ function emailTemplate($logoUrl, $title, $intro, $fieldsHtml, $footerNote, $site
   <div class="wrapper"><div class="container">
     <div class="header">
       <a href="{$siteUrl}" target="_blank" style="text-decoration:none">
-        <img class="logo" src="{$logoUrl}" alt="Zakelijkopjemobiel logo">
-        <div class="brand">Zakelijkopjemobiel.nl</div>
+        <img class="logo" src="{$logoUrl}" alt="Easysolutions logo">
+        <div class="brand">Easysolutions.nl</div>
       </a>
     </div>
     <div class="content">
@@ -71,7 +71,7 @@ function emailTemplate($logoUrl, $title, $intro, $fieldsHtml, $footerNote, $site
       <div class="card" style="margin:16px 0;">{$fieldsHtml}</div>
       <p style="font-size:12px;color:#6b7280;">{$footerNote}</p>
     </div>
-    <div class="footer">© {$year} Zakelijk op je Mobiel · <a href="{$siteUrl}">{$siteUrl}</a></div>
+    <div class="footer">© {$year} Easysolutions · <a href="{$siteUrl}">{$siteUrl}</a></div>
   </div></div>
 </body>
 </html>
