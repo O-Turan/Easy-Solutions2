@@ -29,8 +29,8 @@
         <div class="collapse navbar-collapse" id="navMenu">
             <ul class="navbar-nav ms-auto gap-3">
                 <li class="nav-item"><a class="nav-link" href="{{ path('app_home') }}">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Diensten</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Over ons</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ path('app_diensten') }}">Diensten</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ path('app_over_ons') }}">Over ons</a></li>
                 <li class="nav-item"><a class="nav-link" href="{{ path('app_contact') }}">Contact</a></li>
             </ul>
         </div>
@@ -62,7 +62,7 @@
                     <div class="col-md-4 mb-4">
                         <h5 class="fw-bold">Easy Solutions</h5>
                         <p class="small text-white-50">
-                            Wij leveren innovatieve en betrouwbare IT-oplossingen om uw bedrijf te laten groeien.
+                            Wij leveren innovatieve en betrouwbare VoIP-oplossingen om uw bedrijf te laten groeien.
                         </p>
                     </div>
 
@@ -71,8 +71,8 @@
                         <h5 class="fw-bold">Navigatie</h5>
                         <ul class="list-unstyled">
                             <li><a href="{{ path('app_home') }}" class="text-white-50 text-decoration-none">Home</a></li>
-                            <li><a href="#" class="text-white-50 text-decoration-none">Diensten</a></li>
-                            <li><a href="#" class="text-white-50 text-decoration-none">Over ons</a></li>
+                            <li><a href="{{ path('app_diensten') }}" class="text-white-50 text-decoration-none">Diensten</a></li>
+                            <li><a href="{{ path('app_over_ons') }}" class="text-white-50 text-decoration-none">Over ons</a></li>
                             <li><a href="{{ path('app_contact') }}" class="text-white-50 text-decoration-none">Contact</a></li>
                         </ul>
                     </div>
