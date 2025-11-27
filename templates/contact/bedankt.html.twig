@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Bedankt{% endblock %}
+
+{% block body %}
+    <div class="container mt-5">
+        <h1>Bedankt!</h1>
+        <p>We hebben je bericht ontvangen en nemen zo snel mogelijk contact met je op.</p>
+        <a href="{{ path('app_home') }}" class="btn btn-secondary mt-3">Terug naar homepage</a>
+    </div>
+{% endblock %}

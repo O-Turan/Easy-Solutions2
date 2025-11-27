@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Offerte aanvragen - Easy Solutions{% endblock %}
+
+{% block body %}
+    <div class="container mt-5">
+        <h1>Vraag vrijblijvend een offerte aan</h1>
+
+        {% if errors is defined %}
+            <div class="alert alert-danger">
+                <ul>
+                    {% for error in errors %}
+                        <li>{{ error }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
+
+        <form action="{{ path('offerte_send') }}" method="POST" class="mt-4">
+            <input type="text" name="_honey" style="display:none">
+
+            <div class="mb-3">
+                <label class="form-label">Naam</label>
+                <input type="text" name="Naam" class="form-control" value="{{ formData.Naam ?? '' }}" required>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Bedrijf</label>
+                <input type="text" name="Bedrijf" class="form-control" value="{{ formData.Bedrijf ?? '' }}" required>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">E-mail</label>
+                <input type="email" name="email" class="form-control" value="{{ formData.email ?? '' }}" required>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Telefoon</label>
+                <input type="text" name="Telefoonnummer" class="form-control" value="{{ formData.Telefoonnummer ?? '' }}" required>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Aantal accounts</label>
+                <input type="number" name="Aantal_accounts" class="form-control" min="1" max="50" value="{{ formData.Aantal_accounts ?? 1 }}" required>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Bericht</label>
+                <textarea name="Bericht" class="form-control">{{ formData.Bericht ?? '' }}</textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Verstuur aanvraag</button>
+        </form>
+    </div>
+{% endblock %}
