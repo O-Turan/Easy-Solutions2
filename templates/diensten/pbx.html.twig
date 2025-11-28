@@ -1,1 +1,95 @@
-\
+{% extends 'base.html.twig' %}
+
+{% block title %}PBX - Easy Solutions{% endblock %}
+
+{% block body %}
+
+    <!-- HERO SECTION -->
+    <section class="d-flex align-items-center text-white" style="height: 40vh; background: linear-gradient(135deg, #001f4d, #b30000); position: relative;">
+        <div style="position: absolute; inset: 0; background: rgba(0,0,0,0.5);"></div>
+        <div class="container position-relative text-center">
+            <h1 class="display-3 fw-bold">PBX</h1>
+            <p class="lead mb-0">Professionele telefooncentrales voor volledige controle over uw bedrijfscommunicatie.</p>
+        </div>
+    </section>
+
+    <!-- UITLEG PBX -->
+    <section class="py-5 bg-white">
+        <div class="container">
+            <h2 class="fw-bold mb-4">Wat is een PBX?</h2>
+            <p>
+                Een PBX (Private Branch Exchange) is een interne telefooncentrale voor uw organisatie die inkomende en uitgaande gesprekken regelt.
+                Met een PBX kunt u efficiënter communiceren binnen uw bedrijf, interne extensies beheren en professionele functies zoals wachtrijen, doorschakelingen en voicemail implementeren.
+                Moderne PBX-systemen zijn flexibel en kunnen zowel on-premise als in de cloud worden ingezet, zodat u altijd en overal bereikbaar blijft.
+            </p>
+        </div>
+    </section>
+
+    <!-- INFORMATIE SECTION -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="fw-bold text-center mb-4">Waarom kiezen voor onze PBX-oplossing?</h2>
+            <p class="text-center mb-5">
+                Onze PBX-oplossingen bieden maximale controle, betrouwbaarheid en flexibiliteit voor uw bedrijfscommunicatie.
+            </p>
+
+            <div class="row g-4">
+
+                <div class="col-md-6">
+                    <div class="card h-100 shadow-sm border-dark">
+                        <div class="card-body">
+                            <h5 class="card-title">Volledige Controle</h5>
+                            <p class="card-text">
+                                Beheer uw interne en externe gesprekken efficiënt met uitgebreide functies.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="card h-100 shadow-sm border-dark">
+                        <div class="card-body">
+                            <h5 class="card-title">Flexibel Inrichten</h5>
+                            <p class="card-text">
+                                Pas uw PBX aan naar de behoeften van uw organisatie, van kleine teams tot grote bedrijven.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="card h-100 shadow-sm border-dark">
+                        <div class="card-body">
+                            <h5 class="card-title">Betrouwbaar</h5>
+                            <p class="card-text">
+                                Hoogwaardige infrastructuur zorgt voor stabiele verbindingen en minimale uitvaltijd.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="card h-100 shadow-sm border-dark">
+                        <div class="card-body">
+                            <h5 class="card-title">Integratie met Systemen</h5>
+                            <p class="card-text">
+                                Koppel uw PBX eenvoudig aan CRM, softwaretools en mobiele apps voor een efficiënt werkproces.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA SECTION -->
+    <section class="py-5 text-center text-white" style="background: #001f4d;">
+        <div class="container">
+            <h2 class="fw-bold mb-3">Klaar voor professionele PBX?</h2>
+            <p class="lead mb-4">Neem contact op en ontdek hoe wij uw bedrijfscommunicatie optimaliseren.</p>
+            <a href="/contact" class="btn btn-light btn-lg text-dark">Contact opnemen</a>
+        </div>
+    </section>
+
+{% endblock %}
