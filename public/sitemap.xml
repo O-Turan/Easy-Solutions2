@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="">
+
+    <!-- Homepage -->
+    <url>
+        <loc>https://www.easysolutions.nl/</loc>
+        <lastmod>{{ "now"|date("Y-m-d") }}</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+
+    <!-- Diensten overzicht -->
+    <url>
+        <loc>https://www.easysolutions.nl/diensten</loc>
+        <lastmod>{{ "now"|date("Y-m-d") }}</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <!-- Diensten pagina's -->
+    <url>
+        <loc>https://www.easysolutions.nl/diensten/hosted-telefonie</loc>
+        <lastmod>{{ "now"|date("Y-m-d") }}</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://www.easysolutions.nl/diensten/white-label</loc>
+        <lastmod>{{ "now"|date("Y-m-d") }}</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://www.easysolutions.nl/diensten/sip-trunk</loc>
+        <lastmod>{{ "now"|date("Y-m-d") }}</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://www.easysolutions.nl/diensten/nummerportering</loc>
+        <lastmod>{{ "now"|date("Y-m-d") }}</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://www.easysolutions.nl/diensten/pbx</loc>
+        <lastmod>{{ "now"|date("Y-m-d") }}</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://www.easysolutions.nl/diensten/hosted-pbx</loc>
+        <lastmod>{{ "now"|date("Y-m-d") }}</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://www.easysolutions.nl/diensten/kpn-business-partner</loc>
+        <lastmod>{{ "now"|date("Y-m-d") }}</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://www.easysolutions.nl/diensten/mobiele-app</loc>
+        <lastmod>{{ "now"|date("Y-m-d") }}</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <!-- Over ons -->
+    <url>
+        <loc>https://www.easysolutions.nl/over-ons</loc>
+        <lastmod>{{ "now"|date("Y-m-d") }}</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Contact -->
+    <url>
+        <loc>https://www.easysolutions.nl/contact</loc>
+        <lastmod>{{ "now"|date("Y-m-d") }}</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Offerte -->
+    <url>
+        <loc>https://www.easysolutions.nl/offerte</loc>
+        <lastmod>{{ "now"|date("Y-m-d") }}</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Privacybeleid -->
+    <url>
+        <loc>https://www.easysolutions.nl/privacybeleid</loc>
+        <lastmod>{{ "now"|date("Y-m-d") }}</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.5</priority>
+    </url>
+
+    <!-- Algemene Voorwaarden -->
+    <url>
+        <loc>https://www.easysolutions.nl/algemene-voorwaarden</loc>
+        <lastmod>{{ "now"|date("Y-m-d") }}</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.5</priority>
+    </url>
+
+</urlset>

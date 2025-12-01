@@ -2,6 +2,14 @@
 
 {% block title %}Offerte aanvragen - Easy Solutions{% endblock %}
 
+{% block meta_description %}
+    Vraag vrijblijvend een offerte aan voor VoIP, hosted telefonie, SIP-trunks of zakelijke telecomoplossingen bij Easy Solutions. Binnen 24 uur reactie.
+{% endblock %}
+
+{% block meta_robots %}
+    <meta name="robots" content="index, follow">
+{% endblock %}
+
 {% block body %}
     <div class="container mt-5">
         <h1>Vraag vrijblijvend een offerte aan</h1>
@@ -52,4 +60,38 @@
             <button type="submit" class="btn btn-primary">Verstuur aanvraag</button>
         </form>
     </div>
+{% endblock %}
+
+{% block og_title %}Offerte aanvragen - Easy Solutions{% endblock %}
+{% block og_description %}
+    Vraag vrijblijvend een offerte aan voor zakelijke telecomdiensten zoals VoIP, hosted PBX, SIP-trunks en meer.
+{% endblock %}
+
+{% block json_ld %}
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "ContactPage",
+          "name": "Offerte aanvragen - Easy Solutions",
+          "description": "Vraag vrijblijvend een offerte aan voor VoIP, hosted telefonie en zakelijke telecomoplossingen.",
+          "url": "{{ app.request.uri }}",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Easy Solutions",
+    "url": "https://www.easysolutions.nl",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "{{ asset('assets/easy-solutions-high-resolution-logo-transparent.png') }}"
+    }
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "Sales",
+    "email": "info@easysolutions.nl",
+    "telephone": "+31 880666100",
+    "areaServed": "NL",
+    "availableLanguage": ["Dutch", "English"]
+  }
+}
+    </script>
 {% endblock %}

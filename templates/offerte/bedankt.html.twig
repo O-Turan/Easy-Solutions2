@@ -1,11 +1,44 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Bedankt{% endblock %}
+{% block title %}Bedankt voor uw aanvraag - Easy Solutions{% endblock %}
+
+{% block meta_description %}
+    Bedankt voor uw aanvraag bij Easy Solutions. Wij nemen zo spoedig mogelijk contact met u op voor een passende telecom- of VoIP-oplossing.
+{% endblock %}
+
+{% block meta_robots %}
+    <meta name="robots" content="noindex, follow">
+{% endblock %}
 
 {% block body %}
-    <div class="container mt-5">
-        <h1>Bedankt voor je aanvraag!</h1>
-        <p>We nemen zo snel mogelijk contact met je op.</p>
-        <a href="{{ path('app_home') }}" class="btn btn-secondary mt-3">Terug naar homepagina</a>
+    <div class="container mt-5 text-center">
+        <h1 class="fw-bold mb-3">Bedankt voor uw aanvraag!</h1>
+        <p class="lead">Wij nemen zo snel mogelijk contact met u op.</p>
+
+        <a href="{{ path('app_home') }}" class="btn btn-secondary mt-4">
+            Terug naar homepagina
+        </a>
     </div>
+{% endblock %}
+
+{% block og_title %}Bedankt voor uw aanvraag - Easy Solutions{% endblock %}
+{% block og_description %}
+    Uw aanvraag is succesvol ontvangen. Wij nemen spoedig contact op.
+{% endblock %}
+
+{% block json_ld %}
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "name": "Bedankt voor uw aanvraag",
+          "description": "Bevestigingspagina na versturen van een offerteaanvraag bij Easy Solutions.",
+          "url": "{{ app.request.uri }}",
+  "isPartOf": {
+      "@type": "WebSite",
+      "name": "Easy Solutions",
+      "url": "https://www.easysolutions.nl"
+  }
+}
+    </script>
 {% endblock %}

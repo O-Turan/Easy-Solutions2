@@ -2,6 +2,40 @@
 
 {% block title %}Algemene Voorwaarden - Easy Solutions{% endblock %}
 
+{% block meta_description %}
+    Lees de Algemene Voorwaarden van Easy Solutions. Hier vindt u alle bepalingen over onze VoIP-diensten, hosting, prijzen, betalingen, aansprakelijkheid en overeenkomsten.
+{% endblock %}
+
+{% block meta_robots %}
+    <meta name="robots" content="index, follow">
+{% endblock %}
+
+{% block og_title %}Algemene Voorwaarden - Easy Solutions{% endblock %}
+{% block og_description %}
+    Bekijk de volledige Algemene Voorwaarden van Easy Solutions, inclusief bepalingen over telecomdiensten, prijzen, overeenkomsten en aansprakelijkheid.
+{% endblock %}
+
+{% block json_ld %}
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "name": "Algemene Voorwaarden",
+          "description": "Complete algemene voorwaarden van Easy Solutions met betrekking tot VoIP, hosting, betalingen, overeenkomsten en aansprakelijkheid.",
+          "url": "{{ app.request.uri }}",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Easy Solutions",
+    "url": "{{ app.request.schemeAndHttpHost }}",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "{{ asset('assets/easy-solutions-high-resolution-logo-transparent.png') }}"
+    }
+  }
+}
+    </script>
+{% endblock %}
+
 {% block body %}
 
     <section class="py-5" style="background-color: #f8f9fa;">

@@ -2,6 +2,14 @@
 
 {% block title %}Over Ons - Easy Solutions{% endblock %}
 
+{% block meta_description %}
+    Maak kennis met Easy Solutions, dé specialist in VoIP, hosted telefonie en zakelijke communicatie sinds 2008. Lees over onze missie, specialisatie en kernwaarden.
+{% endblock %}
+
+{% block meta_robots %}
+    <meta name="robots" content="index, follow">
+{% endblock %}
+
 {% block body %}
 
     <!-- HERO SECTION -->
@@ -18,10 +26,7 @@
         <div class="container">
             <h2 class="fw-bold mb-4 text-center">Wie Wij Zijn</h2>
             <p class="lead text-center mb-5" style="max-width: 800px; margin: 0 auto;">
-                Easy Solutions is sinds 2008 gespecialiseerd in VoIP en telecomdiensten.
-                Wij hebben meer dan tien jaar ervaring in het leveren van hosted telefonie, SIP-trunks, nummerportering
-                en PBX-oplossingen voor bedrijven in de telecommunicatie-industrie. Ons doel is om betrouwbare, schaalbare
-                en professionele communicatieoplossingen te bieden, zodat u zich kunt richten op uw kernactiviteiten.
+                Easy Solutions is sinds 2008 gespecialiseerd in VoIP en telecom diensten. Wij hebben meer dan 17 jaar ervaring in het leveren van hosted telefonie, SIP-trunks, nummerportering en PBX-oplossingen voor bedrijven. Ons doel is om betrouwbare en professionele telefonie oplossingen te bieden, zodat jij je kunt richten op succes.
             </p>
         </div>
     </section>
@@ -91,4 +96,27 @@
         </div>
     </section>
 
+{% endblock %}
+
+{% block og_title %}Over Ons - Easy Solutions{% endblock %}
+{% block og_description %}Leer meer over Easy Solutions, dé specialist in VoIP, hosted telefonie en zakelijke communicatie sinds 2008. Ontdek onze missie, specialisatie en kernwaarden.{% endblock %}
+
+{% block json_ld %}
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "AboutPage",
+          "name": "Over Ons - Easy Solutions",
+          "description": "Leer meer over Easy Solutions, dé specialist in VoIP, hosted telefonie en zakelijke communicatie sinds 2008. Ontdek onze missie, specialisatie en kernwaarden.",
+          "url": "{{ app.request.uri }}",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Easy Solutions",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "{{ asset('assets/easy-solutions-high-resolution-logo-transparent.png') }}"
+    }
+  }
+}
+    </script>
 {% endblock %}

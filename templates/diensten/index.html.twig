@@ -1,37 +1,77 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Diensten - Easy Solutions{% endblock %}
+{% block title %}Professionele Telecom & VoIP Diensten | Easy Solutions{% endblock %}
+
+{% block meta %}
+    <meta name="description" content="Easy Solutions levert professionele VoIP-, hosted telefonie-, SIP-trunk- en PBX-oplossingen voor bedrijven, resellers en consumenten. Betrouwbare telecom met persoonlijke service.">
+    <meta name="keywords" content="VoIP, hosted telefonie, telecom oplossingen, SIP trunk, PBX, hosted PBX, nummerportering, KPN partner, telecom reseller, zakelijke telefonie, cloud telefonie">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="{{ app.request.uri }}">
+{% endblock %}
+
+{% block structured_data %}
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "name": "Telecom & VoIP Diensten",
+            "provider": {
+                "@type": "Organization",
+                "name": "Easy Solutions"
+            },
+            "serviceType": [
+                "Hosted Telefonie",
+                "VoIP",
+                "SIP Trunk",
+                "PBX",
+                "Hosted PBX",
+                "Nummerportering",
+                "Telecom Reseller",
+                "KPN Partner"
+            ]
+        }
+    </script>
+{% endblock %}
 
 {% block body %}
 
     <!-- HERO SECTION -->
-    <section class="d-flex align-items-center text-white" style="height: 60vh; background: linear-gradient(135deg, #001f4d, #b30000); position: relative;">
+    <section class="d-flex align-items-center text-white"
+             style="height: 60vh; background: linear-gradient(135deg, #001f4d, #b30000); position: relative;"
+             aria-label="Overzicht van telecom diensten">
         <div style="position: absolute; inset: 0; background: rgba(0,0,0,0.5);"></div>
+
         <div class="container position-relative text-center">
-            <h1 class="display-3 fw-bold mb-3">Onze Professionele Diensten</h1>
-            <p class="lead mb-4">Complete VoIP- en telefonieoplossingen voor bedrijven, ZZP’ers en consumenten</p>
-            <a href="{{ path('offerte') }}" class="btn btn-light btn-lg text-dark">Nieuwe klant?</a>
-            <a href="{{ path('app_dienst_white_label') }}" class="btn btn-outline-light btn-lg">Reseller worden?</a>
+            <h1 class="display-3 fw-bold mb-3">
+                VoIP, Telefonie & Telecom Diensten Voor Bedrijven
+            </h1>
+            <p class="lead mb-4">
+                Complete oplossingen voor hosted telefonie, SIP-trunks, PBX-systemen en white-label telecom.
+            </p>
+            <a href="{{ path('offerte') }}" class="btn btn-light btn-lg text-dark" aria-label="Vraag een offerte aan">Nieuwe klant?</a>
+            <a href="{{ path('app_dienst_white_label') }}" class="btn btn-outline-light btn-lg" aria-label="Word telecom reseller">Reseller worden?</a>
         </div>
     </section>
 
     <!-- DIENSTEN OVERZICHT -->
     <section id="diensten" class="py-5 bg-light">
         <div class="container">
-            <h2 class="fw-bold text-center mb-5">Wat Wij Voor U Kunnen Betekenen</h2>
+            <h2 class="fw-bold text-center mb-5">
+                Onze Telecom Diensten & VoIP-Oplossingen
+            </h2>
 
             <div class="row g-4">
 
                 <!-- Hosted Telefonie -->
                 <div class="col-md-4">
                     <div class="card h-100 shadow-sm border-primary position-relative">
-                        <a href="{{ path('app_dienst_hosted_telefonie') }}" class="stretched-link"></a>
+                        <a href="{{ path('app_dienst_hosted_telefonie') }}" class="stretched-link" aria-label="Bekijk Hosted Telefonie dienst"></a>
                         <div class="card-body text-center">
-                            <div style="font-size:3rem;">📠</div>
-                            <h5 class="card-title mt-3">Hosted Telefonie</h5>
+                            <div style="font-size:3rem;" aria-hidden="true">📠</div>
+                            <h3 class="card-title mt-3 h5">Hosted Telefonie</h3>
                             <p class="card-text">
-                                Professionele, betrouwbare en schaalbare hosted telefoniediensten.
-                                Altijd bereikbaar, eenvoudig uit te breiden en volledig beheer in de cloud.
+                                Moderne cloudtelefonie met hoge betrouwbaarheid, schaalbaarheid en eenvoudig beheer.
+                                Ideaal voor bedrijven die altijd bereikbaar willen zijn.
                             </p>
                         </div>
                     </div>
@@ -40,13 +80,13 @@
                 <!-- White Label -->
                 <div class="col-md-4">
                     <div class="card h-100 shadow-sm border-success position-relative">
-                        <a href="{{ path('app_dienst_white_label') }}" class="stretched-link"></a>
+                        <a href="{{ path('app_dienst_white_label') }}" class="stretched-link" aria-label="Bekijk White Label VoIP oplossingen"></a>
                         <div class="card-body text-center">
-                            <div style="font-size:3rem;">♞</div>
-                            <h5 class="card-title mt-3">White‑Label Oplossingen</h5>
+                            <div style="font-size:3rem;" aria-hidden="true">♞</div>
+                            <h3 class="card-title mt-3 h5">White-Label Telecom</h3>
                             <p class="card-text">
-                                Lever professionele VoIP- en telecomdiensten onder uw eigen merknaam.
-                                Ideaal voor resellers en partners die hun klanten volledig willen bedienen.
+                                Bied professionele telecomdiensten via uw eigen merk.
+                                Perfect voor telecom resellers, IT-bedrijven en MSP’s.
                             </p>
                         </div>
                     </div>
@@ -55,13 +95,13 @@
                 <!-- SIP Trunk -->
                 <div class="col-md-4">
                     <div class="card h-100 shadow-sm border-warning position-relative">
-                        <a href="{{ path('app_dienst_sip_trunk') }}" class="stretched-link"></a>
+                        <a href="{{ path('app_dienst_sip_trunk') }}" class="stretched-link" aria-label="Bekijk SIP Trunk diensten"></a>
                         <div class="card-body text-center">
-                            <div style="font-size:3rem;">🔌</div>
-                            <h5 class="card-title mt-3">SIP Trunk</h5>
+                            <div style="font-size:3rem;" aria-hidden="true">🔌</div>
+                            <h3 class="card-title mt-3 h5">SIP Trunk</h3>
                             <p class="card-text">
-                                Stabiele en betrouwbare SIP-trunks met uitstekende gesprekskwaliteit.
-                                Eenvoudig schaalbaar en geschikt voor elk formaat organisatie.
+                                Stabiele SIP-trunks met uitstekende gesprekskwaliteit en eenvoudige schaalbaarheid
+                                voor iedere organisatie.
                             </p>
                         </div>
                     </div>
@@ -70,13 +110,12 @@
                 <!-- Nummerportering -->
                 <div class="col-md-4">
                     <div class="card h-100 shadow-sm border-info position-relative">
-                        <a href="{{ path('app_dienst_nummerportering') }}" class="stretched-link"></a>
+                        <a href="{{ path('app_dienst_nummerportering') }}" class="stretched-link" aria-label="Nummerportering service"></a>
                         <div class="card-body text-center">
-                            <div style="font-size:3rem;">↔</div>
-                            <h5 class="card-title mt-3">Nummerportering</h5>
+                            <div style="font-size:3rem;" aria-hidden="true">↔</div>
+                            <h3 class="card-title mt-3 h5">Nummerportering</h3>
                             <p class="card-text">
-                                Soepele en snelle overdracht van uw telefoonnummers.
-                                Geen onderbrekingen, zodat uw bereikbaarheid altijd gegarandeerd blijft.
+                                Snelle, foutloze overdracht van uw telefoonnummers zonder onderbreking van uw bereikbaarheid.
                             </p>
                         </div>
                     </div>
@@ -85,13 +124,12 @@
                 <!-- PBX -->
                 <div class="col-md-4">
                     <div class="card h-100 shadow-sm border-dark position-relative">
-                        <a href="{{ path('app_dienst_pbx') }}" class="stretched-link"></a>
+                        <a href="{{ path('app_dienst_pbx') }}" class="stretched-link" aria-label="Bekijk PBX oplossingen"></a>
                         <div class="card-body text-center">
-                            <div style="font-size:3rem;">📟</div>
-                            <h5 class="card-title mt-3">PBX</h5>
+                            <div style="font-size:3rem;" aria-hidden="true">📟</div>
+                            <h3 class="card-title mt-3 h5">PBX Systemen</h3>
                             <p class="card-text">
-                                Professionele PBX-oplossingen waarmee u volledige controle heeft over uw bedrijfscommunicatie.
-                                Flexibel, betrouwbaar en eenvoudig te beheren.
+                                Volledige controle over uw bedrijfscommunicatie met professionele PBX-installaties.
                             </p>
                         </div>
                     </div>
@@ -100,13 +138,12 @@
                 <!-- Hosted PBX -->
                 <div class="col-md-4">
                     <div class="card h-100 shadow-sm border-secondary position-relative">
-                        <a href="{{ path('app_dienst_hosted_pbx') }}" class="stretched-link"></a>
+                        <a href="{{ path('app_dienst_hosted_pbx') }}" class="stretched-link" aria-label="Bekijk Hosted PBX dienst"></a>
                         <div class="card-body text-center">
-                            <div style="font-size:3rem;">☁️</div>
-                            <h5 class="card-title mt-3">Hosted PBX</h5>
+                            <div style="font-size:3rem;" aria-hidden="true">☁️</div>
+                            <h3 class="card-title mt-3 h5">Hosted PBX</h3>
                             <p class="card-text">
-                                Een volledig beheerde cloudcentrale met maximale flexibiliteit en gebruiksgemak.
-                                Kosten-efficiënt en altijd bereikbaar, waar u ook bent.
+                                Cloudgebaseerde PBX-oplossingen met maximale flexibiliteit, betrouwbaarheid en lage kosten.
                             </p>
                         </div>
                     </div>
@@ -115,13 +152,12 @@
                 <!-- KPN Business Partner -->
                 <div class="col-md-4">
                     <div class="card h-100 shadow-sm border-success position-relative">
-                        <a href="{{ path('app_dienst_kpn') }}" class="stretched-link"></a>
+                        <a href="{{ path('app_dienst_kpn') }}" class="stretched-link" aria-label="Bekijk KPN Business Partner diensten"></a>
                         <div class="card-body text-center">
-                            <div style="font-size:3rem;">📑</div>
-                            <h5 class="card-title mt-3">KPN Business Partner</h5>
+                            <div style="font-size:3rem;" aria-hidden="true">📑</div>
+                            <h3 class="card-title mt-3 h5">KPN Business Partner</h3>
                             <p class="card-text">
-                                Als officieel KPN Business Partner leveren wij hoogwaardige telecomoplossingen
-                                via het betrouwbare en stabiele KPN-netwerk, gegarandeerd kwaliteit en continuïteit.
+                                Premium telecomdiensten via het betrouwbare KPN-netwerk voor maximale kwaliteit en stabiliteit.
                             </p>
                         </div>
                     </div>
@@ -130,19 +166,16 @@
                 <!-- Mobiele App -->
                 <div class="col-md-4">
                     <div class="card h-100 shadow-sm border-danger position-relative">
-                        <a href="{{ path('app_dienst_mobiele_app') }}" class="stretched-link"></a>
+                        <a href="{{ path('app_dienst_mobiele_app') }}" class="stretched-link" aria-label="Mobiele App informatie"></a>
                         <div class="card-body text-center">
-                            <div style="font-size:3rem;">📱</div>
-                            <h5 class="card-title mt-3">Mobiele App</h5>
+                            <div style="font-size:3rem;" aria-hidden="true">📱</div>
+                            <h3 class="card-title mt-3 h5">Mobiele App</h3>
                             <p class="card-text">
-                                Beheer uw telefonie, instellingen en bereikbaarheid eenvoudig vanuit onze gebruiksvriendelijke mobiele app.
-                                Altijd verbonden, waar u ook bent.
+                                Beheer uw telefonie-instellingen eenvoudig via onze gebruiksvriendelijke mobiele app.
                             </p>
                         </div>
                     </div>
                 </div>
-
-
 
             </div>
         </div>
@@ -151,9 +184,9 @@
     <!-- CTA -->
     <section class="py-5 text-center text-white" style="background: #001f4d;">
         <div class="container">
-            <h2 class="fw-bold mb-3">Klaar om uw telecom & telefonie te verbeteren?</h2>
-            <p class="lead mb-4">Wij helpen u graag met persoonlijke service, professionele oplossingen en betrouwbare ondersteuning.</p>
-            <a href="/contact" class="btn btn-light btn-lg text-dark">Neem Contact Op</a>
+            <h2 class="fw-bold mb-3">Uw Telecom Verbeteren? Wij Helpen U Graag!</h2>
+            <p class="lead mb-4">Persoonlijke service, professionele VoIP-oplossingen en betrouwbare ondersteuning.</p>
+            <a href="/contact" class="btn btn-light btn-lg text-dark" aria-label="Neem contact op met Easy Solutions">Neem Contact Op</a>
         </div>
     </section>
 

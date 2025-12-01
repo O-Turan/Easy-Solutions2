@@ -2,6 +2,10 @@
 
 {% block title %}Privacybeleid - Easy Solutions{% endblock %}
 
+{% block meta_description %}
+    Bij Easy Solutions leest u hoe wij uw persoonsgegevens beschermen, welke gegevens wij verzamelen en hoe u uw rechten kunt uitoefenen.
+{% endblock %}
+
 {% block body %}
 
     <section class="py-5" style="background-color: #f8f9fa;">
@@ -78,4 +82,31 @@
         </div>
     </section>
 
+{% endblock %}
+
+{% block meta_robots %}
+    <meta name="robots" content="index, follow">
+{% endblock %}
+
+{% block og_title %}Privacybeleid - Easy Solutions{% endblock %}
+{% block og_description %}Lees hoe Easy Solutions uw persoonsgegevens beschermt en verwerkt. Transparant privacybeleid voor klanten en websitebezoekers.{% endblock %}
+
+{% block json_ld %}
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "name": "Privacybeleid - Easy Solutions",
+          "description": "Lees hoe Easy Solutions uw persoonsgegevens beschermt en verwerkt. Transparant privacybeleid voor klanten en websitebezoekers.",
+          "url": "{{ app.request.uri }}",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Easy Solutions",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "{{ asset('assets/easy-solutions-high-resolution-logo-transparent.png') }}"
+    }
+  }
+}
+    </script>
 {% endblock %}
