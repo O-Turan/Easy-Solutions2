@@ -1,14 +1,22 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}White‑Label Oplossingen - Easy Solutions{% endblock %}
+{# SEO TITEL #}
+{% block title %}
+    White-Label Oplossingen | Easy Solutions
+{% endblock %}
+
+{# META DESCRIPTION (NIET INHOUD VERANDEREN, WEL SAMENVATTEN) #}
+{% block meta_description %}
+    White-Label Oplossingen van Easy Solutions: lever telecom- en VoIP-diensten onder uw eigen merknaam, volledig beheerd en schaalbaar.
+{% endblock %}
 
 {% block body %}
 
     <!-- HERO SECTION -->
     <section class="d-flex align-items-center text-white" style="height: 40vh; background: linear-gradient(135deg, #001f4d, #b30000); position: relative;">
-        <div style="position: absolute; inset: 0; background: rgba(0,0,0,0.5);"></div>
+        <div style="position: absolute; inset: 0; background: rgba(0,0,0,0.5);" aria-hidden="true"></div>
         <div class="container position-relative text-center">
-            <h1 class="display-3 fw-bold">White‑Label Oplossingen</h1>
+            <h1 class="display-3 fw-bold">White-Label Oplossingen</h1>
             <p class="lead mb-0">Lever professionele telecomdiensten onder uw eigen merknaam, zonder technische zorgen.</p>
         </div>
     </section>
@@ -16,9 +24,9 @@
     <!-- UITLEG WHITE-LABEL -->
     <section class="py-5 bg-white">
         <div class="container">
-            <h2 class="fw-bold mb-4">Wat zijn White‑Label Oplossingen?</h2>
+            <h2 class="fw-bold mb-4">Wat zijn White-Label Oplossingen?</h2>
             <p>
-                Met onze White‑Label Oplossingen zijn bedrijven en resellers in staat om complete VoIP en telecomdiensten aan te bieden onder hun eigen naam. Het systeem wordt volledig beheerd door ons, maar uw klanten zien alleen uw merk. Dit betekent dat jij diensten met hoge kwaliteit kunt leveren zonder teveel investeringen te doen om een hele nieuwe systeem te bouwen, terwijl jouw merk centraal staat. Zo kun je concentreren op klantenservice en groei van je bedrijf zonder problemen.
+                Met onze White-Label Oplossingen zijn bedrijven en resellers in staat om complete VoIP en telecomdiensten aan te bieden onder hun eigen naam. Het systeem wordt volledig beheerd door ons, maar uw klanten zien alleen uw merk. Dit betekent dat jij diensten met hoge kwaliteit kunt leveren zonder teveel investeringen te doen om een hele nieuwe systeem te bouwen, terwijl jouw merk centraal staat. Zo kun je concentreren op klantenservice en groei van je bedrijf zonder problemen.
             </p>
         </div>
     </section>
@@ -26,56 +34,56 @@
     <!-- INFORMATIE SECTION -->
     <section class="py-5 bg-light">
         <div class="container">
-            <h2 class="fw-bold text-center mb-4">Waarom kiezen voor White‑Label?</h2>
+            <h2 class="fw-bold text-center mb-4">Waarom kiezen voor White-Label?</h2>
             <p class="text-center mb-5">
-                Met White‑Label Oplossingen levert u professionele telecomdiensten onder uw eigen merknaam, volledig beheerd door ons.
+                Met White-Label Oplossingen levert u professionele telecomdiensten onder uw eigen merknaam, volledig beheerd door ons.
                 Flexibel, schaalbaar en zonder technische zorgen.
             </p>
 
             <div class="row g-4">
 
                 <div class="col-md-6">
-                    <div class="card h-100 shadow-sm border-success">
+                    <article class="card h-100 shadow-sm border-success">
                         <div class="card-body">
-                            <h5 class="card-title">Eigen Branding</h5>
+                            <h3 class="card-title h5">Eigen Branding</h3>
                             <p class="card-text">
                                 Uw klanten zien alleen uw merk, logo en communicatie, terwijl wij de technische kant beheren.
                             </p>
                         </div>
-                    </div>
+                    </article>
                 </div>
 
                 <div class="col-md-6">
-                    <div class="card h-100 shadow-sm border-success">
+                    <article class="card h-100 shadow-sm border-success">
                         <div class="card-body">
-                            <h5 class="card-title">Volledig Beheerd</h5>
+                            <h3 class="card-title h5">Volledig Beheerd</h3>
                             <p class="card-text">
                                 Geen zorgen over infrastructuur of updates; wij zorgen dat alles betrouwbaar en up-to-date blijft.
                             </p>
                         </div>
-                    </div>
+                    </article>
                 </div>
 
                 <div class="col-md-6">
-                    <div class="card h-100 shadow-sm border-success">
+                    <article class="card h-100 shadow-sm border-success">
                         <div class="card-body">
-                            <h5 class="card-title">Schaalbaar</h5>
+                            <h3 class="card-title h5">Schaalbaar</h3>
                             <p class="card-text">
                                 Breid uw diensten eenvoudig uit naarmate uw klantenbestand groeit, zonder extra technische complexiteit.
                             </p>
                         </div>
-                    </div>
+                    </article>
                 </div>
 
                 <div class="col-md-6">
-                    <div class="card h-100 shadow-sm border-success">
+                    <article class="card h-100 shadow-sm border-success">
                         <div class="card-body">
-                            <h5 class="card-title">Focus op Klanten</h5>
+                            <h3 class="card-title h5">Focus op Klanten</h3>
                             <p class="card-text">
                                 Richt u volledig op klantenservice en marketing, terwijl wij zorgen voor de technische uitvoering.
                             </p>
                         </div>
-                    </div>
+                    </article>
                 </div>
 
             </div>
@@ -85,7 +93,7 @@
     <!-- CTA SECTION -->
     <section class="py-5 text-center text-white" style="background: #001f4d;">
         <div class="container">
-            <h2 class="fw-bold mb-3">Wilt u White‑Label diensten aanbieden?</h2>
+            <h2 class="fw-bold mb-3">Wilt u White-Label diensten aanbieden?</h2>
             <p class="lead mb-4">Neem contact met ons op en ontdek hoe u professioneel telecomdiensten onder uw eigen merk kunt leveren.</p>
             <a href="/contact" class="btn btn-light btn-lg text-dark">Contact opnemen</a>
         </div>
