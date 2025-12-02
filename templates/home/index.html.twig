@@ -55,16 +55,19 @@
             </p>
 
             <nav aria-label="Belangrijke acties">
-                <a href="{{ path('app_diensten') }}"
-                   class="btn btn-outline-light btn-lg me-3">
-                    Bekijk Onze Diensten
-                </a>
+                <div class="d-flex flex-column flex-sm-row justify-content-center gap-3">
+                    <a href="{{ path('app_diensten') }}"
+                       class="btn btn-outline-light btn-lg">
+                        Bekijk Onze Diensten
+                    </a>
 
-                <a href="{{ path('app_contact') }}"
-                   class="btn btn-light btn-lg text-dark">
-                    Neem Contact Op
-                </a>
+                    <a href="{{ path('app_contact') }}"
+                       class="btn btn-light btn-lg text-dark">
+                        Neem Contact Op
+                    </a>
+                </div>
             </nav>
+
         </div>
 
         <a href="#section1" class="scroll-down d-flex flex-column align-items-center mt-5">
@@ -122,30 +125,42 @@
             <div class="row g-4">
 
                 <div class="col-md-6">
-                    <div class="card h-100 flex-row shadow-sm">
-                        <img src="{{ asset('assets/ictopmaat.jpg') }}"
-                             class="card-img-left w-50"
-                             alt="ICT oplossingen op maat">
-
-                        <div class="card-body">
-                            <h3 class="card-title h5">White-label Telecom</h3>
-                            <p>Bied zelf telecomdiensten aan zonder dure ontwikkeling en investering.</p>
+                    <div class="card h-100 shadow-sm">
+                        <div class="row g-0">
+                            <div class="col-12 col-md-5">
+                                <img src="{{ asset('assets/ictopmaat.jpg') }}"
+                                     class="img-fluid rounded-start"
+                                     alt="ICT oplossingen op maat">
+                            </div>
+                            <div class="col-12 col-md-7">
+                                <div class="card-body">
+                                    <h3 class="card-title h5">White-label Telecom</h3>
+                                    <p>Bied zelf telecomdiensten aan zonder dure ontwikkeling en investering.</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-md-6">
-                    <div class="card h-100 flex-row shadow-sm">
-                        <img src="{{ asset('assets/hostingandhousing.jpg') }}"
-                             class="card-img-left w-50"
-                             alt="Hosting en Housing diensten">
-
-                        <div class="card-body">
-                            <h3 class="card-title h5">Hosting & Housing</h3>
-                            <p>Snelle en veilige hosting, fysiek of virtueel, in professionele datacenters.</p>
+                    <div class="card h-100 shadow-sm">
+                        <div class="row g-0">
+                            <div class="col-12 col-md-5">
+                                <img src="{{ asset('assets/hostingandhousing.jpg') }}"
+                                     class="img-fluid rounded-start"
+                                     alt="Hosting en Housing diensten">
+                            </div>
+                            <div class="col-12 col-md-7">
+                                <div class="card-body">
+                                    <h3 class="card-title h5">Hosting & Housing</h3>
+                                    <p>Snelle en veilige hosting, fysiek of virtueel, in professionele datacenters.</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
+
+
 
             </div>
         </div>
