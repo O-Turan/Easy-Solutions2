@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -6,6 +7,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Mime\Email;
+use Symfony\Component\Mime\Address;
 use Symfony\Component\Mailer\MailerInterface;
 
 class OfferteController extends AbstractController
@@ -19,65 +21,70 @@ class OfferteController extends AbstractController
     #[Route('/offerte/send', name: 'offerte_send', methods: ['POST'])]
     public function send(Request $request, MailerInterface $mailer): Response
     {
-        // Honeypot anti-spam
+        // Honeypot
         if ($request->request->get('_honey')) {
-            return $this->redirectToRoute('offerte'); // bot detected
+            return $this->redirectToRoute('offerte');
         }
 
-        $naam = trim($request->request->get('Naam', ''));
-        $bedrijf = trim($request->request->get('Bedrijf', ''));
+        // Velden
+        $naam = htmlspecialchars(trim($request->request->get('Naam', '')), ENT_QUOTES, 'UTF-8');
+        $bedrijf = htmlspecialchars(trim($request->request->get('Bedrijf', '')), ENT_QUOTES, 'UTF-8');
         $email = trim($request->request->get('email', ''));
-        $telefoon = trim($request->request->get('Telefoonnummer', ''));
-        $accounts = trim($request->request->get('Aantal_accounts', ''));
-        $bericht = trim($request->request->get('Bericht', ''));
+        $telefoon = htmlspecialchars(trim($request->request->get('Telefoonnummer', '')), ENT_QUOTES, 'UTF-8');
+        $accounts = htmlspecialchars(trim($request->request->get('Aantal_accounts', '')), ENT_QUOTES, 'UTF-8');
+        $berichtRaw = trim($request->request->get('Bericht', ''));
 
-        // Basic validation
+        $bericht = nl2br(htmlspecialchars($berichtRaw, ENT_QUOTES, 'UTF-8'));
+
+        // Validatie
         $errors = [];
-        if (!$naam) $errors[] = 'Naam ontbreekt';
-        if (!$bedrijf) $errors[] = 'Bedrijf ontbreekt';
-        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) $errors[] = 'E-mail ongeldig';
-        if (!$telefoon) $errors[] = 'Telefoon ontbreekt';
-        if (!$accounts) $errors[] = 'Aantal accounts ontbreekt';
 
-        if ($errors) {
+        if ($naam === '') $errors[] = 'Naam ontbreekt';
+        if ($bedrijf === '') $errors[] = 'Bedrijf ontbreekt';
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) $errors[] = 'E-mailadres is ongeldig';
+        if ($telefoon === '') $errors[] = 'Telefoon ontbreekt';
+        if ($accounts === '') $errors[] = 'Aantal accounts ontbreekt';
+
+        if (!empty($errors)) {
             return $this->render('offerte/index.html.twig', [
                 'errors' => $errors,
                 'formData' => $request->request->all(),
             ]);
         }
 
-        // Gebruik dezelfde e-mails als contactformulier
-        $toAdmin = "yaser@easysolutions.nl";  // PAS AAN
-        $fromEmail = "info@easysolutions.nl"; // PAS AAN
-        $fromName = "Easy solutions"; // PAS AAN
-
-        $html = "
-            <h2>Nieuwe offerteaanvraag</h2>
-            <p><strong>Naam:</strong> $naam</p>
-            <p><strong>Bedrijf:</strong> $bedrijf</p>
-            <p><strong>E-mail:</strong> $email</p>
-            <p><strong>Telefoon:</strong> $telefoon</p>
-            <p><strong>Aantal accounts:</strong> $accounts</p>
-            <p><strong>Bericht:</strong><br>".nl2br(htmlspecialchars($bericht))."</p>
-        ";
-
+        // Mail naar INFO@
         $emailAdmin = (new Email())
-            ->from("$fromName <$fromEmail>")
-            ->to($toAdmin)
-            ->subject("Nieuwe offerteaanvraag – $bedrijf ($naam)")
-            ->html($html);
+            ->from(new Address('info@easysolutions.nl', 'Easy Solutions Offerte'))
+            ->to('info@easysolutions.nl')
+            ->replyTo($email)
+            ->subject('Nieuwe offerteaanvraag – ' . $bedrijf)
+            ->html(
+                '<h2>Nieuwe offerteaanvraag</h2>' .
+                '<p><strong>Naam:</strong> ' . $naam . '</p>' .
+                '<p><strong>Bedrijf:</strong> ' . $bedrijf . '</p>' .
+                '<p><strong>Email:</strong> ' . $email . '</p>' .
+                '<p><strong>Telefoon:</strong> ' . $telefoon . '</p>' .
+                '<p><strong>Aantal accounts:</strong> ' . $accounts . '</p>' .
+                '<p><strong>Bericht:</strong><br>' . $bericht . '</p>'
+            );
 
+        // Bevestiging naar klant
         $emailUser = (new Email())
-            ->from("$fromName <$fromEmail>")
+            ->from(new Address('info@easysolutions.nl', 'Easy Solutions'))
             ->to($email)
-            ->subject("Bevestiging: we hebben je aanvraag ontvangen")
-            ->html("<p>Bedankt voor je aanvraag!</p>" . $html);
+            ->subject('Bevestiging: we hebben je offerteaanvraag ontvangen')
+            ->html(
+                '<p>Beste ' . $naam . ',</p>' .
+                '<p>Bedankt voor je offerteaanvraag. We nemen zo snel mogelijk contact met je op.</p>' .
+                '<hr>' .
+                '<p><strong>Je aanvraag:</strong><br>' . $bericht . '</p>'
+            );
 
         try {
             $mailer->send($emailAdmin);
             $mailer->send($emailUser);
-        } catch (\Exception $e) {
-            return new Response('Verzenden mislukt: ' . $e->getMessage(), 500);
+        } catch (\Throwable $e) {
+            return new Response('Mail verzenden mislukt: ' . $e->getMessage(), 500);
         }
 
         return $this->redirectToRoute('offerte_success');
