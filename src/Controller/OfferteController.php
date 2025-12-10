@@ -54,7 +54,7 @@ class OfferteController extends AbstractController
 
         // Mail naar INFO@
         $emailAdmin = (new Email())
-            ->from(new Address('info@easysolutions.nl', 'Easy Solutions Offerte'))
+            ->from(new Address('info@easysolutions.nl', 'Easysolutions.nl Offerte'))
             ->to('info@easysolutions.nl')
             ->replyTo($email)
             ->subject('Nieuwe offerteaanvraag – ' . $bedrijf)
