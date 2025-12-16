@@ -11,8 +11,8 @@
 {% endblock %}
 
 {% block body %}
-    <div class="container mt-5">
-        <h1>Vraag vrijblijvend een offerte aan</h1>
+    <div class="container mt-5" style="max-width:600px;">
+        <h1 class="mb-4">Vraag vrijblijvend een offerte aan</h1>
 
         {% if errors is defined %}
             <div class="alert alert-danger">
@@ -24,7 +24,7 @@
             </div>
         {% endif %}
 
-        <form action="{{ path('offerte_send') }}" method="POST" class="mt-4">
+        <form action="{{ path('offerte_send') }}" method="POST">
             <input type="text" name="_honey" style="display:none">
 
             <div class="mb-3">
@@ -54,15 +54,18 @@
 
             <div class="mb-3">
                 <label class="form-label">Bericht</label>
-                <textarea name="Bericht" class="form-control">{{ formData.Bericht ?? '' }}</textarea>
+                <textarea name="Bericht" class="form-control" rows="4">{{ formData.Bericht ?? '' }}</textarea>
             </div>
 
-            <button type="submit" class="btn btn-primary">Verstuur aanvraag</button>
+            <button type="submit" class="btn btn-primary w-100">Verstuur aanvraag</button>
         </form>
     </div>
+
+
 {% endblock %}
 
 {% block og_title %}Offerte aanvragen - Easy Solutions{% endblock %}
+
 {% block og_description %}
     Vraag vrijblijvend een offerte aan voor zakelijke telecomdiensten zoals VoIP, hosted PBX, SIP-trunks en meer.
 {% endblock %}

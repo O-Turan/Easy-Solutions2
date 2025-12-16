@@ -19,7 +19,6 @@
                             <h2 class="h4 mb-3 fw-bold">Stuur ons een bericht</h2>
                             <p class="text-dark small mb-4">We reageren doorgaans binnen één werkdag.</p>
 
-                            {# ✅ Succesmelding op basis van ?success=1 (of controller-variabele) #}
                             {% if success is defined and success == '1' %}
                                 <div class="alert alert-success" id="contactSuccess" role="alert">
                                     Bedankt! We nemen spoedig contact met je op.
@@ -30,7 +29,6 @@
                                 </div>
                             {% endif %}
 
-                            {# ✅ Fouten tonen (vanuit controller) #}
                             {% if errors is defined and errors %}
                                 <div class="alert alert-danger" role="alert">
                                     <ul class="mb-0">
@@ -42,83 +40,38 @@
                             {% endif %}
 
                             <form action="{{ path('contact_send') }}" method="POST" class="p-4 shadow-sm rounded-4 bg-white" id="contactForm">
-
                                 <input type="text" name="_honey" style="display:none">
-
                                 <div class="row g-3">
-
                                     <div class="col-md-6">
                                         <div class="form-floating">
-                                            <input
-                                                    type="text"
-                                                    class="form-control"
-                                                    id="contactName"
-                                                    name="Naam"
-                                                    placeholder="Naam"
-                                                    required
-                                                    value="{{ formData.Naam|default('') }}"
-                                            >
+                                            <input type="text" class="form-control" id="contactName" name="Naam" placeholder="Naam" required value="{{ formData.Naam|default('') }}">
                                             <label for="contactName">Naam</label>
                                         </div>
                                     </div>
-
                                     <div class="col-md-6">
                                         <div class="form-floating">
-                                            <input
-                                                    type="text"
-                                                    class="form-control"
-                                                    id="contactCompany"
-                                                    name="Bedrijf"
-                                                    placeholder="Bedrijf"
-                                                    value="{{ formData.Bedrijf|default('') }}"
-                                            >
+                                            <input type="text" class="form-control" id="contactCompany" name="Bedrijf" placeholder="Bedrijf" value="{{ formData.Bedrijf|default('') }}">
                                             <label for="contactCompany">Bedrijf (optioneel)</label>
                                         </div>
                                     </div>
-
                                     <div class="col-md-6">
                                         <div class="form-floating">
-                                            <input
-                                                    type="email"
-                                                    class="form-control"
-                                                    id="contactEmail"
-                                                    name="email"
-                                                    placeholder="E-mail"
-                                                    required
-                                                    value="{{ formData.email|default('') }}"
-                                            >
+                                            <input type="email" class="form-control" id="contactEmail" name="email" placeholder="E-mail" required value="{{ formData.email|default('') }}">
                                             <label for="contactEmail">E-mailadres</label>
                                         </div>
                                     </div>
-
                                     <div class="col-md-6">
                                         <div class="form-floating">
-                                            <input
-                                                    type="tel"
-                                                    class="form-control"
-                                                    id="contactPhone"
-                                                    name="Telefoonnummer"
-                                                    placeholder="0612345678"
-                                                    value="{{ formData.Telefoonnummer|default('') }}"
-                                            >
+                                            <input type="tel" class="form-control" id="contactPhone" name="Telefoonnummer" placeholder="0612345678" value="{{ formData.Telefoonnummer|default('') }}">
                                             <label for="contactPhone">Telefoonnummer</label>
                                         </div>
                                     </div>
-
                                     <div class="col-12">
                                         <div class="form-floating">
-                                            <textarea
-                                                    class="form-control"
-                                                    id="contactMessage"
-                                                    name="Bericht"
-                                                    placeholder="Bericht"
-                                                    style="height:140px"
-                                                    required
-                                            >{{ formData.Bericht|default('') }}</textarea>
+                                            <textarea class="form-control" id="contactMessage" name="Bericht" placeholder="Bericht" style="height:140px" required>{{ formData.Bericht|default('') }}</textarea>
                                             <label for="contactMessage">Bericht</label>
                                         </div>
                                     </div>
-
                                     <div class="col-12 text-center mt-3">
                                         <button type="submit" class="btn btn-lg border-dark px-5 py-3 shadow-sm rounded-pill">
                                             Verstuur bericht 💬
@@ -128,7 +81,6 @@
                                             <a href="{{ path('app_privacy_beleid') }}" class="text-decoration-none">privacy voorwaarden</a>.
                                         </p>
                                     </div>
-
                                 </div>
                             </form>
 
@@ -136,15 +88,29 @@
                     </div>
                 </div>
 
-                {# RECHTERKOLOM blijft exact zoals jij 'm had #}
+                <!-- RECHTERKOLOM - KAART -->
                 <div class="col-lg-5">
-                    {# ... ongewijzigd ... #}
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body p-0">
+                            <h4 class="fw-bold mb-3 px-4 pt-4">Onze locatie</h4>
+                            <div class="ratio ratio-16x9 rounded-bottom overflow-hidden">
+                                <iframe
+                                        src="https://www.google.com/maps?q=Regulusweg+5,+Netherlands&output=embed"
+                                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
+                                </iframe>
+                            </div>
+                            <div class="p-4">
+                                <p class="mb-1"><strong>Adres:</strong> Regulusweg 5, 1234 AB, Nederland</p>
+                                <p class="mb-0"><strong>Telefoon:</strong> +31 880666100</p>
+                                <p><strong>E-mail:</strong> info@easysolutions.nl</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
             </div>
         </div>
 
-        {# Je JS voor success mag blijven, maar is nu eigenlijk niet meer nodig #}
         <script>
             (function () {
                 const url = new URL(window.location.href);
