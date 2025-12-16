@@ -11,90 +11,87 @@
 {% endblock %}
 
 {% block body %}
-    <div class="container mt-5" style="max-width:600px;">
-        <h1 class="mb-4">Vraag vrijblijvend een offerte aan</h1>
 
-        {% if errors is defined %}
-            <div class="alert alert-danger">
-                <ul>
-                    {% for error in errors %}
-                        <li>{{ error }}</li>
-                    {% endfor %}
-                </ul>
+    <header class="py-5 position-relative text-white" style="background: linear-gradient(135deg, #001f4d, #b30000);">
+        <div class="container py-5 text-center">
+            <h1 class="display-5 fw-bold mb-3">Vraag een offerte aan</h1>
+            <p class="lead opacity-75 mb-0">Ontvang binnen 24 uur een vrijblijvende offerte voor jouw zakelijke telecomoplossing.</p>
+        </div>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 120" class="position-absolute start-0 w-100" style="bottom:-1px" preserveAspectRatio="none" height="60">
+            <path fill="#ffffff" d="M0,64L48,74.7C96,85,192,107,288,112C384,117,480,107,576,96C672,85,768,75,864,80C960,85,1056,107,1152,112C1248,117,1344,107,1392,101.3L1440,96L1440,120L1392,120C1344,120,1248,120,1152,120C1056,120,960,120,864,120C768,120,672,120,576,120C480,120,384,120,288,120C192,120,96,120,48,120L0,120Z"/>
+        </svg>
+    </header>
+
+    <main class="py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-7">
+                    <div class="card shadow-sm rounded-4 p-4 p-lg-5">
+                        <h2 class="h4 mb-4 fw-bold text-center">Offerte aanvragen</h2>
+
+                        {% if errors is defined and errors %}
+                            <div class="alert alert-danger">
+                                <ul class="mb-0">
+                                    {% for error in errors %}
+                                        <li>{{ error }}</li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        {% endif %}
+
+                        <form action="{{ path('offerte_send') }}" method="POST">
+                            <input type="text" name="_honey" style="display:none">
+
+                            <div class="mb-3">
+                                <label class="form-label">Naam</label>
+                                <input type="text" name="Naam" class="form-control" value="{{ formData.Naam ?? '' }}" required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label">Bedrijf</label>
+                                <input type="text" name="Bedrijf" class="form-control" value="{{ formData.Bedrijf ?? '' }}" required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label">E-mail</label>
+                                <input type="email" name="email" class="form-control" value="{{ formData.email ?? '' }}" required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label">Telefoon</label>
+                                <input type="text" name="Telefoonnummer" class="form-control" value="{{ formData.Telefoonnummer ?? '' }}" required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label">Aantal accounts</label>
+                                <input type="number" name="Aantal_accounts" class="form-control" min="1" max="50" value="{{ formData.Aantal_accounts ?? 1 }}" required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label">Bericht</label>
+                                <textarea name="Bericht" class="form-control" rows="4">{{ formData.Bericht ?? '' }}</textarea>
+                            </div>
+
+                            <!-- Gecentreerde verzendknop zoals bij contact -->
+                            <div class="text-center mt-3">
+                                <button type="submit" class="btn btn-lg border-dark px-5 py-3 shadow-sm rounded-pill">
+                                    Verstuur aanvraag 💬
+                                </button>
+                                <p class="form-text mt-3 text-dark small">
+                                    Door te verzenden ga je akkoord met onze
+                                    <a href="{{ path('app_privacy_beleid') }}" class="text-decoration-none">privacy voorwaarden</a>.
+                                </p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
-        {% endif %}
-
-        <form action="{{ path('offerte_send') }}" method="POST">
-            <input type="text" name="_honey" style="display:none">
-
-            <div class="mb-3">
-                <label class="form-label">Naam</label>
-                <input type="text" name="Naam" class="form-control" value="{{ formData.Naam ?? '' }}" required>
-            </div>
-
-            <div class="mb-3">
-                <label class="form-label">Bedrijf</label>
-                <input type="text" name="Bedrijf" class="form-control" value="{{ formData.Bedrijf ?? '' }}" required>
-            </div>
-
-            <div class="mb-3">
-                <label class="form-label">E-mail</label>
-                <input type="email" name="email" class="form-control" value="{{ formData.email ?? '' }}" required>
-            </div>
-
-            <div class="mb-3">
-                <label class="form-label">Telefoon</label>
-                <input type="text" name="Telefoonnummer" class="form-control" value="{{ formData.Telefoonnummer ?? '' }}" required>
-            </div>
-
-            <div class="mb-3">
-                <label class="form-label">Aantal accounts</label>
-                <input type="number" name="Aantal_accounts" class="form-control" min="1" max="50" value="{{ formData.Aantal_accounts ?? 1 }}" required>
-            </div>
-
-            <div class="mb-3">
-                <label class="form-label">Bericht</label>
-                <textarea name="Bericht" class="form-control" rows="4">{{ formData.Bericht ?? '' }}</textarea>
-            </div>
-
-            <button type="submit" class="btn btn-primary w-100">Verstuur aanvraag</button>
-        </form>
-    </div>
-
+        </div>
+    </main>
 
 {% endblock %}
 
 {% block og_title %}Offerte aanvragen - Easy Solutions{% endblock %}
-
 {% block og_description %}
     Vraag vrijblijvend een offerte aan voor zakelijke telecomdiensten zoals VoIP, hosted PBX, SIP-trunks en meer.
-{% endblock %}
-
-{% block json_ld %}
-    <script type="application/ld+json">
-        {
-          "@context": "https://schema.org",
-          "@type": "ContactPage",
-          "name": "Offerte aanvragen - Easy Solutions",
-          "description": "Vraag vrijblijvend een offerte aan voor VoIP, hosted telefonie en zakelijke telecomoplossingen.",
-          "url": "{{ app.request.uri }}",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Easy Solutions",
-    "url": "https://www.easysolutions.nl",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "{{ asset('assets/easy-solutions-high-resolution-logo-transparent.png') }}"
-    }
-  },
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "contactType": "Sales",
-    "email": "info@easysolutions.nl",
-    "telephone": "+31 880666100",
-    "areaServed": "NL",
-    "availableLanguage": ["Dutch", "English"]
-  }
-}
-    </script>
 {% endblock %}
