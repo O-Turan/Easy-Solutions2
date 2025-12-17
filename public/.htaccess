@@ -1,6 +1,7 @@
-# =============================
-# Easy Solutions - Performance
-# =============================
+# ============================================
+# .htaccess - optimale caching voor assets
+# Plaats dit bestand in: /public/.htaccess
+# ============================================
 
 <IfModule mod_expires.c>
     ExpiresActive On
@@ -8,52 +9,52 @@
     # CSS & JS
     ExpiresByType text/css "access plus 1 year"
     ExpiresByType application/javascript "access plus 1 year"
-
-    # Afbeeldingen
-    ExpiresByType image/webp "access plus 1 year"
-    ExpiresByType image/png "access plus 1 year"
-    ExpiresByType image/jpeg "access plus 1 year"
-    ExpiresByType image/svg+xml "access plus 1 year"
+    ExpiresByType application/x-javascript "access plus 1 year"
 
     # Fonts
-    ExpiresByType font/woff "access plus 1 year"
-    ExpiresByType font/woff2 "access plus 1 year"
+    ExpiresByType application/font-woff "access plus 1 year"
+    ExpiresByType application/font-woff2 "access plus 1 year"
+    ExpiresByType application/vnd.ms-fontobject "access plus 1 year"
+    ExpiresByType font/ttf "access plus 1 year"
+    ExpiresByType font/otf "access plus 1 year"
+
+    # Images
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/gif "access plus 1 year"
+    ExpiresByType image/webp "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 year"
+    ExpiresByType image/x-icon "access plus 1 year"
 </IfModule>
 
 <IfModule mod_headers.c>
-    # Cache-Control fallback
-    <FilesMatch "\.(css|js|jpg|jpeg|png|gif|webp|svg|woff|woff2)$">
+    <FilesMatch "\.(css|js|jpg|jpeg|png|gif|webp|svg|ico|woff|woff2|ttf|otf)$">
         Header set Cache-Control "max-age=31536000, public"
     </FilesMatch>
 </IfModule>
 
-# =============================
-# Gzip / Brotli Compressie
-# =============================
-<IfModule mod_deflate.c>
-    AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css application/javascript application/json application/xml application/xhtml+xml application/rss+xml application/atom+xml image/svg+xml
-</IfModule>
-
-<IfModule mod_brotli.c>
-    AddOutputFilterByType BROTLI_COMPRESS text/html text/plain text/xml text/css application/javascript application/json application/xml application/xhtml+xml application/rss+xml application/atom+xml image/svg+xml
-</IfModule>
-
-# =============================
-# Preload hero / critical images
-# =============================
-<IfModule mod_headers.c>
-    <FilesMatch "\.(webp|png|jpg|jpeg)$">
-        Header set Link "<{{REQUEST_URI}}>; rel=preload; as=image"
-    </FilesMatch>
-</IfModule>
-
-# =============================
-# Basis Symfony / XAMPP instellingen
-# =============================
+# ============================================
+# Symfony standaard rewrite (blijft zoals normaal)
+# ============================================
 <IfModule mod_rewrite.c>
     RewriteEngine On
 
-    # Redirect alles naar index.php (Symfony)
+    # Redirect Trailing Slashes If Not A Folder...
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)/$ /$1 [L,R=301]
+
+    # Handle Front Controller...
     RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteRule ^(.*)$ index.php [QSA,L]
+    RewriteRule ^ index.php [QSA,L]
+</IfModule>
+
+# ============================================
+# Security & performance tweaks
+# ============================================
+<IfModule mod_headers.c>
+    # Prevent MIME type sniffing
+    Header set X-Content-Type-Options "nosniff"
+
+    # XSS protection
+    Header set X-XSS-Protection "1; mode=block"
 </IfModule>
