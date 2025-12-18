@@ -5,89 +5,204 @@
 {% block body %}
 
     <!-- HERO SECTION -->
-    <section class="d-flex align-items-center text-white" style="height: 40vh; background: linear-gradient(135deg, #001f4d, #b30000); position: relative;">
-        <div style="position: absolute; inset: 0; background: rgba(0,0,0,0.5);"></div>
-        <div class="container position-relative text-center">
-            <h1 class="display-3 fw-bold">Mobiele App</h1>
-            <p class="lead mb-0">Beheer uw telefonie en bereikbaarheid eenvoudig vanaf uw smartphone of tablet.</p>
+    <section class="hero-section d-flex align-items-center justify-content-center text-center text-white">
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
+        <div class="container position-relative hero-content">
+            <h1 class="display-3 fw-bold animate__animated animate__fadeInDown">Mobiele App</h1>
+            <p class="lead mb-4 animate__animated animate__fadeInUp animate__delay-1s">
+                Beheer uw telefonie en bereikbaarheid eenvoudig vanaf uw smartphone of tablet.
+            </p>
+            <a href="#info-section" class="scroll-down">↓</a>
         </div>
     </section>
 
     <!-- UITLEG MOBIELE APP -->
-    <section class="py-5 bg-white">
+    <section class="py-5 bg-white" id="info-section">
         <div class="container">
-            <h2 class="fw-bold mb-4">Wat is onze Mobiele App?</h2>
-            <p>
+            <h2 class="fw-bold mb-4 text-center">Wat is onze Mobiele App?</h2>
+            <p class="text-center mx-auto" style="max-width: 800px;">
                 Onze mobiele app (Werktel) stelt jou in staat om jouw telefonie, instellingen en gebruikersbeheer rechtstreeks vanaf je telefoon of tablet te beheren. Of je nu op kantoor bent, onderweg of thuis werkt, je hebt altijd toegang tot allerlei belangrijke functies onder anderen bellen, voicemail, doorverbinden en aanwezigheid. De app heeft een gebruikersvriendelijke interface en we zorgen ervoor dat jouw bedrijf altijd verbonden blijft, zonder dat je fysieke apparaten nodig hebt.
             </p>
         </div>
     </section>
 
-    <!-- INFORMATIE SECTION -->
+    <!-- INFO CARDS -->
     <section class="py-5 bg-light">
         <div class="container">
             <h2 class="fw-bold text-center mb-4">Waarom kiezen voor onze Mobiele App?</h2>
-            <p class="text-center mb-5">
+            <p class="text-center mb-5 mx-auto" style="max-width: 800px;">
                 Flexibel, gebruiksvriendelijk en altijd beschikbaar. Onze app geeft u volledige controle over uw telefonie, waar u ook bent.
             </p>
 
             <div class="row g-4">
-
-                <div class="col-md-6">
-                    <div class="card h-100 shadow-sm border-danger">
-                        <div class="card-body">
-                            <h5 class="card-title">Altijd Verbonden</h5>
-                            <p class="card-text">
-                                Blijf bereikbaar en beheer je oproepen, voicemail en instellingen vanaf elke locatie.
-                            </p>
+                {% set cards = [
+                    {'icon':'📱','title':'Altijd Verbonden','text':'Blijf bereikbaar en beheer je oproepen, voicemail en instellingen vanaf elke locatie.'},
+                    {'icon':'🖥️','title':'Gebruiksvriendelijke Interface','text':'Gemaakt door gebruikers voor gebruikers zodat u snel en eenvoudig kunt navigeren door alle functies.'},
+                    {'icon':'⚡','title':'Volledige Functionaliteit','text':'Beheer telefoongesprekken en doorschakelingen net zoals op kantoor.'},
+                    {'icon':'🔒','title':'Veilig en Betrouwbaar','text':'Geavanceerde beveiliging en een stabiele verbinding, zodat uw communicatie altijd veilig en vlot blijft.'}
+                ] %}
+                {% for card in cards %}
+                    <div class="col-md-6 col-lg-3 d-flex">
+                        <div class="info-card-upgraded p-4 text-center">
+                            <div class="icon-circle-upgraded">{{ card.icon }}</div>
+                            <h5 class="mt-3 fw-bold">{{ card.title }}</h5>
+                            <p>{{ card.text }}</p>
                         </div>
                     </div>
-                </div>
-
-                <div class="col-md-6">
-                    <div class="card h-100 shadow-sm border-danger">
-                        <div class="card-body">
-                            <h5 class="card-title">Gebruiksvriendelijke Interface</h5>
-                            <p class="card-text">
-                                Gemaakt door gebruikers voor gebruikers zodat u snel en eenvoudig kunt navigeren door alle functies.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6">
-                    <div class="card h-100 shadow-sm border-danger">
-                        <div class="card-body">
-                            <h5 class="card-title">Volledige Functionaliteit</h5>
-                            <p class="card-text">
-                                Beheer telefoongesprekken en doorschakelingen net zoals op kantoor.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6">
-                    <div class="card h-100 shadow-sm border-danger">
-                        <div class="card-body">
-                            <h5 class="card-title">Veilig en Betrouwbaar</h5>
-                            <p class="card-text">
-                                Geavanceerde beveiliging en een stabiele verbinding, zodat uw communicatie altijd veilig en vlot blijft.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
+                {% endfor %}
             </div>
         </div>
     </section>
 
     <!-- CTA SECTION -->
-    <section class="py-5 text-center text-white" style="background: #001f4d;">
+    <section class="py-5 text-center text-white cta-section">
         <div class="container">
             <h2 class="fw-bold mb-3">Klaar om uw telefonie mobiel te maken?</h2>
             <p class="lead mb-4">Download onze app of neem contact met ons op voor meer informatie.</p>
-            <a href="/contact" class="btn btn-light btn-lg text-dark">Contact opnemen</a>
+            <a href="/contact" class="btn btn-cta btn-lg animate__animated animate__pulse animate__infinite">Contact opnemen</a>
         </div>
     </section>
+
+    <!-- STYLES -->
+    <style>
+        /* HERO */
+        .hero-section{
+            height: 60vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+        }
+        .hero-bg{
+            position: absolute;
+            inset: 0;
+            background: url('{{ asset("assets/mobiele-app-hero.webp") }}') center/cover no-repeat;
+            background-size: cover;
+            filter: brightness(0.6);
+            transform: scale(1.1);
+            z-index: 1;
+            transition: transform 1.5s ease;
+        }
+        .hero-section:hover .hero-bg{
+            transform: scale(1.15);
+        }
+        .hero-overlay{
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(0,31,77,0.7), rgba(179,0,0,0.6));
+            z-index: 2;
+        }
+        .hero-content{
+            position: relative;
+            z-index: 3;
+        }
+
+        /* SCROLL DOWN */
+        .scroll-down{
+            display: inline-block;
+            margin-top: 1rem;
+            font-size: 2rem;
+            animation: bounce 2s infinite;
+            color: #fff;
+        }
+        @keyframes bounce{
+            0%,20%,50%,80%,100%{transform:translateY(0)}
+            40%{transform:translateY(-10px)}
+            60%{transform:translateY(-5px)}
+        }
+
+        /* UPGRADED INFO CARDS */
+        .info-card-upgraded{
+            flex: 1 1 100%;
+            border-radius: 18px;
+            background: linear-gradient(145deg, #001f4d, #b30000);
+            color: #fff;
+            box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+            transition: transform 0.35s ease, box-shadow 0.35s ease;
+            opacity: 0;
+            transform: translateY(20px);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 320px;
+            padding: 2rem 1.5rem;
+        }
+        .info-card-upgraded.visible{
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .info-card-upgraded:hover{
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.25);
+        }
+        .icon-circle-upgraded{
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            background: linear-gradient(135deg, #ff5f5f, #ff1c1c);
+            box-shadow: 0 0 12px rgba(255,28,28,0.7);
+            transition: transform 0.35s ease, box-shadow 0.35s ease;
+        }
+        .info-card-upgraded:hover .icon-circle-upgraded{
+            transform: scale(1.3) rotate(5deg);
+            box-shadow: 0 0 22px rgba(255,28,28,0.9);
+        }
+
+        /* CTA */
+        .cta-section{
+            background: linear-gradient(135deg,#001f4d,#b30000);
+        }
+        .btn-cta{
+            background: linear-gradient(135deg,#e53935,#b71c1c);
+            color: #fff;
+            border: none;
+            padding: 0.75rem 1.8rem;
+            font-weight: 600;
+            border-radius: 10px;
+            transition: all 0.35s;
+        }
+        .btn-cta:hover{
+            background: linear-gradient(135deg,#b71c1c,#e53935);
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 15px 30px rgba(183,28,28,.6);
+        }
+
+        /* PARALLAX EFFECT */
+        @media (prefers-reduced-motion: no-preference) {
+            .hero-bg{will-change: transform;}
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px){
+            .hero-section h1{font-size:2.5rem;}
+            .hero-section p{font-size:1.1rem;}
+            .info-card-upgraded{padding:1.5rem 1rem; min-height:auto;}
+        }
+    </style>
+
+    <!-- JS: Parallax + Fade-in Cards -->
+    <script>
+        document.addEventListener('scroll', function(){
+            const scrolled = window.scrollY;
+            const bg = document.querySelector('.hero-bg');
+            if(bg) bg.style.transform = 'translateY(' + scrolled * 0.2 + 'px) scale(1.05)';
+
+            const cards = document.querySelectorAll('.info-card-upgraded');
+            cards.forEach(card=>{
+                const rect = card.getBoundingClientRect();
+                if(rect.top < window.innerHeight - 50){
+                    card.classList.add('visible');
+                }
+            });
+        });
+    </script>
 
 {% endblock %}
