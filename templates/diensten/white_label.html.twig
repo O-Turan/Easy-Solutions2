@@ -5,7 +5,7 @@
     White-Label Oplossingen | Easy Solutions
 {% endblock %}
 
-{# META DESCRIPTION (NIET INHOUD VERANDEREN, WEL SAMENVATTEN) #}
+{# META DESCRIPTION #}
 {% block meta_description %}
     White-Label Oplossingen van Easy Solutions: lever telecom- en VoIP-diensten onder uw eigen merknaam, volledig beheerd en schaalbaar.
 {% endblock %}
@@ -13,9 +13,9 @@
 {% block body %}
 
     <!-- HERO SECTION -->
-    <section class="d-flex align-items-center text-white" style="height: 40vh; background: linear-gradient(135deg, #001f4d, #b30000); position: relative;">
-        <div style="position: absolute; inset: 0; background: rgba(0,0,0,0.5);" aria-hidden="true"></div>
-        <div class="container position-relative text-center">
+    <section class="hero-section d-flex align-items-center text-white">
+        <div class="overlay"></div>
+        <div class="container text-center position-relative">
             <h1 class="display-3 fw-bold">White-Label Oplossingen</h1>
             <p class="lead mb-0">Lever professionele telecomdiensten onder uw eigen merknaam, zonder technische zorgen.</p>
         </div>
@@ -24,8 +24,8 @@
     <!-- UITLEG WHITE-LABEL -->
     <section class="py-5 bg-white">
         <div class="container">
-            <h2 class="fw-bold mb-4">Wat zijn White-Label Oplossingen?</h2>
-            <p>
+            <h2 class="fw-bold mb-4 text-center">Wat zijn White-Label Oplossingen?</h2>
+            <p class="text-center mx-auto description-text">
                 Met onze White-Label Oplossingen zijn bedrijven en resellers in staat om complete VoIP en telecomdiensten aan te bieden onder hun eigen naam. Het systeem wordt volledig beheerd door ons, maar uw klanten zien alleen uw merk. Dit betekent dat jij diensten met hoge kwaliteit kunt leveren zonder teveel investeringen te doen om een hele nieuwe systeem te bouwen, terwijl jouw merk centraal staat. Zo kun je concentreren op klantenservice en groei van je bedrijf zonder problemen.
             </p>
         </div>
@@ -35,53 +35,49 @@
     <section class="py-5 bg-light">
         <div class="container">
             <h2 class="fw-bold text-center mb-4">Waarom kiezen voor White-Label?</h2>
-            <p class="text-center mb-5">
-                Met White-Label Oplossingen levert u professionele telecomdiensten onder uw eigen merknaam, volledig beheerd door ons.
-                Flexibel, schaalbaar en zonder technische zorgen.
+            <p class="text-center mx-auto mb-5 description-text">
+                Met White-Label Oplossingen levert u professionele telecomdiensten onder uw eigen merknaam, volledig beheerd door ons. Flexibel, schaalbaar en zonder technische zorgen.
             </p>
+
 
             <div class="row g-4">
 
-                <div class="col-md-6">
-                    <article class="card h-100 shadow-sm border-success">
+                <div class="col-md-6 col-lg-3">
+                    <article class="card info-card h-100 shadow-sm">
                         <div class="card-body">
-                            <h3 class="card-title h5">Eigen Branding</h3>
-                            <p class="card-text">
-                                Uw klanten zien alleen uw merk, logo en communicatie, terwijl wij de technische kant beheren.
-                            </p>
+                            <div class="card-icon">🏷️</div>
+                            <h3 class="card-title h5 mt-3">Eigen Branding</h3>
+                            <p class="card-text">Uw klanten zien alleen uw merk, logo en communicatie, terwijl wij de technische kant beheren.</p>
                         </div>
                     </article>
                 </div>
 
-                <div class="col-md-6">
-                    <article class="card h-100 shadow-sm border-success">
+                <div class="col-md-6 col-lg-3">
+                    <article class="card info-card h-100 shadow-sm">
                         <div class="card-body">
-                            <h3 class="card-title h5">Volledig Beheerd</h3>
-                            <p class="card-text">
-                                Geen zorgen over updates, wij zorgen ervoor dat alles up-to-date blijft.
-                            </p>
+                            <div class="card-icon">⚙️</div>
+                            <h3 class="card-title h5 mt-3">Volledig Beheerd</h3>
+                            <p class="card-text">Geen zorgen over updates, wij zorgen ervoor dat alles up-to-date blijft.</p>
                         </div>
                     </article>
                 </div>
 
-                <div class="col-md-6">
-                    <article class="card h-100 shadow-sm border-success">
+                <div class="col-md-6 col-lg-3">
+                    <article class="card info-card h-100 shadow-sm">
                         <div class="card-body">
-                            <h3 class="card-title h5">Schaalbaar</h3>
-                            <p class="card-text">
-                                Breid uw diensten eenvoudig uit naarmate uw klanten groeien, zonder extra moeite.
-                            </p>
+                            <div class="card-icon">📈</div>
+                            <h3 class="card-title h5 mt-3">Schaalbaar</h3>
+                            <p class="card-text">Breid uw diensten eenvoudig uit naarmate uw klanten groeien, zonder extra moeite.</p>
                         </div>
                     </article>
                 </div>
 
-                <div class="col-md-6">
-                    <article class="card h-100 shadow-sm border-success">
+                <div class="col-md-6 col-lg-3">
+                    <article class="card info-card h-100 shadow-sm">
                         <div class="card-body">
-                            <h3 class="card-title h5">Focus op Klanten</h3>
-                            <p class="card-text">
-                                richt je volledig op klantenservice en marketing, terwijl wij bezig zijn met de backend development.
-                            </p>
+                            <div class="card-icon">🎯</div>
+                            <h3 class="card-title h5 mt-3">Focus op Klanten</h3>
+                            <p class="card-text">Richt je volledig op klantenservice en marketing, terwijl wij bezig zijn met de backend development.</p>
                         </div>
                     </article>
                 </div>
@@ -91,12 +87,119 @@
     </section>
 
     <!-- CTA SECTION -->
-    <section class="py-5 text-center text-white" style="background: #001f4d;">
+    <section class="cta-banner py-5 text-center text-white">
         <div class="container">
             <h2 class="fw-bold mb-3">Wilt u White-Label diensten aanbieden?</h2>
             <p class="lead mb-4">Neem contact met ons op en ontdek hoe u professioneel telecomdiensten onder uw eigen merk kunt leveren.</p>
-            <a href="{{ path('app_contact') }}" class="btn btn-light btn-lg text-dark">Contact opnemen</a>
+            <a href="{{ path('app_contact') }}" class="btn btn-cta btn-lg">Contact opnemen</a>
         </div>
     </section>
+
+    <!-- STYLES -->
+    <style>
+        /* HERO SECTION */
+        .hero-section {
+            height: 40vh;
+            background: linear-gradient(135deg, #001f4d, #b30000);
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-section .overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0,0,0,0.35);
+        }
+
+        .hero-section h1 {
+            font-size: clamp(2rem, 5vw, 4rem);
+            font-weight: 900;
+            letter-spacing: 1px;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+        }
+
+        .hero-section p {
+            font-size: 1.25rem;
+            text-shadow: 1px 1px 8px rgba(0,0,0,0.4);
+        }
+
+        .description-text {
+            max-width: 750px;
+        }
+
+        /* INFO CARDS */
+        .info-card {
+            border-radius: 12px;
+            transition: transform 0.35s ease, box-shadow 0.35s ease, background 0.35s ease;
+            padding: 1.5rem;
+            background: #fff;
+        }
+
+        .info-card:hover {
+            transform: translateY(-10px) scale(1.03);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            background: linear-gradient(135deg, #f9f9f9, #eaeaea);
+        }
+
+        .card-icon {
+            font-size: 2rem;
+            margin-bottom: 0.75rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #001f4d, #b30000);
+            color: #fff;
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+
+        .info-card:hover .card-icon {
+            transform: scale(1.2) rotate(5deg);
+        }
+
+        .card-title {
+            font-weight: 600;
+            color: #001f4d;
+        }
+
+        .card-text {
+            color: #333;
+            font-size: 0.95rem;
+        }
+
+        /* CTA BANNER */
+        .cta-banner {
+            background: linear-gradient(135deg, #001f4d, #b30000);
+        }
+
+        .btn-cta {
+            background: #fff;
+            color: #001f4d;
+            font-weight: 700;
+            border-radius: 50px;
+            padding: 0.75rem 2.5rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .btn-cta:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.25);
+            background: #f8f8f8;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .hero-section h1 {
+                font-size: 2.5rem;
+            }
+            .hero-section p {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
 
 {% endblock %}
