@@ -3,136 +3,69 @@
 {% block title %}Easy Solutions – VoIP, Cloud Telefonie & ICT Oplossingen{% endblock %}
 
 {% block meta_description %}
-    Easy Solutions levert professionele VoIP-oplossingen, cloud telefonie, SIP-trunks, PBX, hosting, ICT en support. Betrouwbare zakelijke telecom voor bedrijven, ZZP’ers en consumenten.
+    Easy Solutions levert professionele VoIP-oplossingen, cloud telefonie, SIP-trunks, PBX, hosting, ICT en support.
 {% endblock %}
 
 {% block og_title %}Easy Solutions – Professionele VoIP & Cloud Telefonie{% endblock %}
 {% block og_description %}
-    Dé specialist in VoIP, hosted telefonie, SIP-trunks, cloud PBX, hosting en ICT-oplossingen. Sinds 2008 betrouwbare telecompartner voor bedrijven.
-{% endblock %}
-
-{% block json_ld %}
-    <script type="application/ld+json">
-        {
-          "@context": "https://schema.org",
-          "@type": "WebSite",
-          "name": "Easy Solutions",
-          "url": "{{ app.request.schemeAndHttpHost }}",
-  "description": "VoIP, cloud telefonie, hosting, ICT en zakelijke telecomoplossingen.",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Easy Solutions",
-    "logo": "{{ asset('assets/easy-solutions-high-resolution-logo-transparent.png') }}"
-  }
-}
-    </script>
+    Dé specialist in VoIP, hosted telefonie, SIP-trunks, cloud PBX, hosting en ICT-oplossingen.
 {% endblock %}
 
 {% block body %}
 
-    <!-- HERO SECTION -->
-    <main class="hero d-flex flex-column justify-content-center text-center text-white"
-          style="height: 100vh; position: relative; overflow: hidden;">
-
-        <div class="hero-bg"
-             style="background-image: url('{{ asset('assets/hero-background.webp') }}');">
-        </div>
+    <!-- HERO -->
+    <main class="hero text-white text-center d-flex align-items-center">
+        <div class="hero-bg" style="background-image:url('{{ asset('assets/hero-background.webp') }}');"></div>
         <div class="hero-overlay"></div>
 
-        <div class="container position-relative animate__animated animate__fadeInDown">
-           
+        <div class="container position-relative">
+            <h1 class="display-3 fw-bold">Innovatieve & Betrouwbare Telecomoplossingen</h1>
+            <p class="lead mb-4">VoIP, Cloud Telefonie en ICT-oplossingen voor bedrijven</p>
 
-            <h1 class="display-3 fw-bold"
-                style="text-shadow: 2px 2px 8px rgba(0,0,0,0.7);">
-                Innovatieve & Betrouwbare Telecomoplossingen
-            </h1>
-
-            <p class="lead mb-4" style="text-shadow: 1px 1px 6px rgba(0,0,0,0.5);">
-                VoIP, Cloud Telefonie en ICT-oplossingen voor bedrijven, ZZP’ers en consumenten
-            </p>
-
-            <nav aria-label="Belangrijke acties">
-                <div class="d-flex flex-column flex-sm-row justify-content-center gap-3">
-                    <a href="{{ path('app_diensten') }}"
-                       class="btn btn-outline-light btn-lg">
-                        Bekijk Onze Diensten
-                    </a>
-
-                    <a href="{{ path('app_contact') }}"
-                       class="btn btn-light btn-lg text-dark">
-                        Neem Contact Op
-                    </a>
-                </div>
-            </nav>
-
+            <div class="d-flex justify-content-center gap-3 flex-wrap">
+                <a href="{{ path('app_diensten') }}" class="btn btn-outline-light btn-lg">Bekijk Diensten</a>
+                <a href="{{ path('app_contact') }}" class="btn btn-light btn-lg text-dark">Contact</a>
+            </div>
         </div>
 
-        <a href="#section1" class="scroll-down d-flex flex-column align-items-center mt-5">
-            <span style="font-size: 2rem;">↓</span>
-            <small>Scroll verder</small>
-        </a>
+        <a href="#section1" class="scroll-down">↓</a>
     </main>
 
-    <!-- SECTIE 1: VoIP & Cloud -->
+    <!-- VOIP -->
     <section id="section1" class="py-5 bg-light">
         <div class="container">
-            <h2 class="fw-bold mb-5 text-center">VoIP & Cloud Telefonie</h2>
+            <h2 class="fw-bold text-center mb-5">VoIP & Cloud Telefonie</h2>
 
-            <div class="row g-4">
-
-                <div class="col-md-4">
-                    <div class="card h-100 border-primary shadow-sm">
-                        <div class="card-body text-center">
-                            <div style="font-size: 3rem;">☎️</div>
-                            <h3 class="card-title mt-3 h5">VoIP Trunks</h3>
-                            <p>Schaalbare en veilige SIP-trunks voor bedrijven van elk formaat.</p>
+            <div class="row g-4 text-center">
+                {% for item in ['☎️ VoIP Trunks','☁️ Cloud PBX','💡 Consultancy'] %}
+                    <div class="col-md-4">
+                        <div class="card info-card p-4 h-100">
+                            <div class="icon-circle">{{ item|slice(0,2) }}</div>
+                            <h3 class="h5 mt-3">{{ item|slice(3) }}</h3>
+                            <p>Professionele en schaalbare oplossingen.</p>
                         </div>
                     </div>
-                </div>
-
-                <div class="col-md-4">
-                    <div class="card h-100 border-success shadow-sm">
-                        <div class="card-body text-center">
-                            <div style="font-size: 3rem;">☁️</div>
-                            <h3 class="card-title mt-3 h5">Cloud PBX</h3>
-                            <p>Altijd en overal bereikbaar via onze flexibele cloudcentrale.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4">
-                    <div class="card h-100 border-warning shadow-sm">
-                        <div class="card-body text-center">
-                            <div style="font-size: 3rem;">💡</div>
-                            <h3 class="card-title mt-3 h5">Consultancy</h3>
-                            <p>Advies voor telecom, IT-integraties en zakelijke communicatie.</p>
-                        </div>
-                    </div>
-                </div>
-
+                {% endfor %}
             </div>
         </div>
     </section>
 
-    <!-- SECTIE 2: ICT & Hosting (horizontale kaarten) -->
-    <section id="section2" class="py-5">
+    <!-- ICT -->
+    <section class="py-5">
         <div class="container">
-            <h2 class="fw-bold mb-5 text-center">ICT & Hosting</h2>
+            <h2 class="fw-bold text-center mb-5">ICT & Hosting</h2>
 
             <div class="row g-4">
-
                 <div class="col-md-6">
-                    <div class="card h-100 shadow-sm">
+                    <div class="card info-card h-100">
                         <div class="row g-0">
-                            <div class="col-12 col-md-5">
-                                <img src="{{ asset('assets/ictopmaat.webp') }}"
-                                     class="img-fluid rounded-start"
-                                     alt="ICT oplossingen op maat">
+                            <div class="col-md-5">
+                                <img src="{{ asset('assets/ictopmaat.webp') }}" class="img-fluid rounded-start">
                             </div>
-                            <div class="col-12 col-md-7">
+                            <div class="col-md-7 d-flex align-items-center">
                                 <div class="card-body">
-                                    <h3 class="card-title h5">White-label Telecom</h3>
-                                    <p>Bied zelf telecomdiensten aan zonder dure ontwikkeling en investering.</p>
+                                    <h3 class="h5">White-label Telecom</h3>
+                                    <p>Start je eigen telecomdienst.</p>
                                 </div>
                             </div>
                         </div>
@@ -140,100 +73,96 @@
                 </div>
 
                 <div class="col-md-6">
-                    <div class="card h-100 shadow-sm">
+                    <div class="card info-card h-100">
                         <div class="row g-0">
-                            <div class="col-12 col-md-5">
-                                <img src="{{ asset('assets/hostingandhousing.webp') }}"
-                                     class="img-fluid rounded-start"
-                                     alt="Hosting en Housing diensten">
+                            <div class="col-md-5">
+                                <img src="{{ asset('assets/hostingandhousing.webp') }}" class="img-fluid rounded-start">
                             </div>
-                            <div class="col-12 col-md-7">
+                            <div class="col-md-7 d-flex align-items-center">
                                 <div class="card-body">
-                                    <h3 class="card-title h5">Hosting & Housing</h3>
-                                    <p>Snelle en veilige hosting, fysiek of virtueel, in professionele datacenters.</p>
+                                    <h3 class="h5">Hosting & Housing</h3>
+                                    <p>Veilig en snel in NL datacenters.</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
-
-
             </div>
         </div>
     </section>
 
-    <!-- SECTIE 3: Support -->
-    <section id="section3" class="py-5 bg-light">
+    <!-- CTA -->
+    <section class="cta-banner text-center text-white py-5">
         <div class="container">
-            <h2 class="fw-bold mb-5 text-center">Ondersteuning & Support</h2>
+            <h2 class="fw-bold mb-3">Direct contact met onze experts?</h2>
+            <p class="mb-4">Wij helpen je vandaag nog verder.</p>
+            <a href="{{ path('app_contact') }}" class="btn btn-cta btn-lg">Neem Contact Op</a>
+        </div>
+    </section>
 
-            <div class="row g-3">
+    <!-- SUPPORT -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="fw-bold text-center mb-5">Ondersteuning & Support</h2>
 
-                <div class="col-md-3 col-sm-6">
-                    <div class="card h-100 shadow-sm text-center p-3">
-                        <div style="font-size:2rem;">📡</div>
-                        <p>Soepele en snelle nummerporteringen.</p>
+            <div class="row g-4 text-center">
+                {% for icon in ['📡','🛠️','🔗','👨‍💼'] %}
+                    <div class="col-md-3 col-sm-6">
+                        <div class="card info-card p-4 h-100">
+                            <div class="icon-circle">{{ icon }}</div>
+                            <p class="mt-3">Professionele ondersteuning.</p>
+                        </div>
                     </div>
-                </div>
-
-                <div class="col-md-3 col-sm-6">
-                    <div class="card h-100 shadow-sm text-center p-3">
-                        <div style="font-size:2rem;">🛠️</div>
-                        <p>Snelle support via telefoon, e-mail of ticket.</p>
-                    </div>
-                </div>
-
-                <div class="col-md-3 col-sm-6">
-                    <div class="card h-100 shadow-sm text-center p-3">
-                        <div style="font-size:2rem;">🔗</div>
-                        <p>Communicatie via het betrouwbare KPN-netwerk.</p>
-                    </div>
-                </div>
-
-                <div class="col-md-3 col-sm-6">
-                    <div class="card h-100 shadow-sm text-center p-3">
-                        <div style="font-size:2rem;">👨‍💼</div>
-                        <p>Ervaren telecomspecialisten sinds 2008.</p>
-                    </div>
-                </div>
-
+                {% endfor %}
             </div>
         </div>
     </section>
 
-    <!-- EXTRA STYLING -->
+    <!-- STYLES -->
     <style>
-        .hero-bg {
-            position: absolute;
-            inset: 0;
-            background-size: cover;
-            background-position: center;
-            z-index: 1;
-        }
-        .hero-overlay {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(135deg, rgba(0,31,77,0.6), rgba(255,0,0,0.3));
-            z-index: 2;
-        }
-        .hero .container { position: relative; z-index: 3; }
+        .hero{height:100vh;position:relative;overflow:hidden}
+        .hero-bg{position:absolute;inset:0;background-size:cover;background-position:center}
+        .hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,31,77,.65),rgba(200,0,0,.35))}
+        .scroll-down{position:absolute;bottom:20px;left:50%;transform:translateX(-50%);color:#fff;font-size:2rem}
 
-        .scroll-down {
-            position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            color: white;
-            text-decoration: none;
-            animation: bounce 2s infinite;
-            z-index: 3;
+        .icon-circle{
+            width:60px;height:60px;border-radius:50%;
+            display:flex;align-items:center;justify-content:center;
+            background:#00316d;color:#fff;font-size:1.8rem;margin:auto;
+            transition:.4s cubic-bezier(.22,1,.36,1);
         }
-        @keyframes bounce {
-            0%,20%,50%,80%,100% { transform: translateX(-50%) translateY(0); }
-            40% { transform: translateX(-50%) translateY(-10px); }
-            60% { transform: translateX(-50%) translateY(-5px); }
+
+        /* INFO CARD PHYSICS */
+        .info-card{
+            border:0;
+            transition:transform .4s cubic-bezier(.22,1,.36,1),box-shadow .4s;
         }
+        .info-card:hover{
+            transform:translateY(-12px) scale(1.03);
+            box-shadow:0 25px 45px rgba(0,0,0,.18);
+        }
+        .info-card:hover .icon-circle{
+            transform:scale(1.2) rotate(5deg);
+            background:linear-gradient(135deg,#00316d,#c62828);
+        }
+        .info-card:active{transform:translateY(-5px) scale(.99)}
+
+        /* BUTTONS */
+        .btn{border-radius:10px;font-weight:600;transition:.35s}
+        .btn:hover{transform:translateY(-3px)}
+        .btn-cta{
+            background:linear-gradient(135deg,#b71c1c,#e53935);
+            color:#fff;border:none;
+            box-shadow:0 10px 25px rgba(183,28,28,.45);
+        }
+        .btn-cta:hover{
+            background:linear-gradient(135deg,#e53935,#b71c1c);
+            transform:translateY(-4px) scale(1.05);
+            box-shadow:0 18px 40px rgba(183,28,28,.6);
+        }
+
+        /* CTA */
+        .cta-banner{background:#00316d}
     </style>
 
 {% endblock %}
