@@ -5,90 +5,198 @@
 {% block body %}
 
     <!-- HERO SECTION -->
-    <section class="d-flex align-items-center text-white" style="height: 40vh; background: linear-gradient(135deg, #001f4d, #b30000); position: relative;">
-        <div style="position: absolute; inset: 0; background: rgba(0,0,0,0.5);"></div>
-        <div class="container position-relative text-center">
-            <h1 class="display-3 fw-bold">Hosted PBX</h1>
-            <p class="lead mb-0">Een volledig beheerde cloudcentrale voor optimale flexibiliteit en gebruiksgemak.</p>
+    <section class="hero-section d-flex align-items-center justify-content-center text-center text-white">
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
+        <div class="container position-relative hero-content">
+            <h1 class="display-3 fw-bold animate__animated animate__fadeInDown">Hosted PBX</h1>
+            <p class="lead mb-4 animate__animated animate__fadeInUp animate__delay-1s">
+                Volledig beheerde cloudtelefonie voor maximale flexibiliteit en gebruiksgemak.
+            </p>
+            <a href="#features" class="btn btn-hero btn-lg animate__animated animate__fadeInUp animate__delay-2s">Bekijk voordelen</a>
         </div>
     </section>
 
     <!-- UITLEG HOSTED PBX -->
     <section class="py-5 bg-white">
         <div class="container">
-            <h2 class="fw-bold mb-4">Wat is Hosted PBX?</h2>
-            <p>
-                Hosted PBX is een moderne oplossing voor jouw telefooncentrale, volledig beheerd vanuit de cloud. Je hebt geen fysieke PBX nodig, alle functionaliteiten onder anderen doorschakelen, voicemail, belgroepen en rapportages worden online beheerd. Dit biedt maximale flexibiliteit voor jouw organisatie en stelt medewerkers in staat om altijd en overal bereikbaar te zijn, op kantoor als onderweg. Kosten en beheer wordt hierdoor sterk verminderd, terwijl de bereikbaarheid en professionaliteit van jouw bedrijf  blijven stijgen.
+            <h2 class="fw-bold mb-4 text-center">Wat is Hosted PBX?</h2>
+            <p class="text-center mx-auto" style="max-width:800px;">
+                Hosted PBX is een moderne cloudcentrale waarbij alle telefoonfunctionaliteit online wordt beheerd.
+                Medewerkers zijn altijd en overal bereikbaar via telefoon, app of desktop, en je kunt eenvoudig gebruikers en functies uitbreiden.
+                Kosten en beheer worden sterk verminderd, terwijl de bereikbaarheid en professionaliteit van jouw bedrijf stijgen.
             </p>
         </div>
     </section>
 
-    <!-- INFORMATIE SECTION -->
-    <section class="py-5 bg-light">
+    <!-- INFO CARDS -->
+    <section id="features" class="py-5 bg-light position-relative overflow-hidden">
         <div class="container">
             <h2 class="fw-bold text-center mb-4">Waarom kiezen voor Hosted PBX?</h2>
-            <p class="text-center mb-5">
-                Met Hosted PBX krijg je een flexibel en volledig online beheerde telefoonsysteem.
-                Makkelijk uitbreiden, volledig afgestemd op de behoeften van uw bedrijf.
+            <p class="text-center mb-5 mx-auto" style="max-width:800px;">
+                Met Hosted PBX ben je altijd bereikbaar en profiteer je van flexibiliteit.
+                Makkelijk uit te breiden, volledig cloud-gebaseerd en afgestemd op jouw bedrijfsbehoeften.
             </p>
 
             <div class="row g-4">
-
-                <div class="col-md-6">
-                    <div class="card h-100 shadow-sm border-secondary">
-                        <div class="card-body">
-                            <h5 class="card-title">Volledig Beheerd</h5>
-                            <p class="card-text">
-                                Uw telefooncentrale wordt volledig beheerd door ons, zonder dat u met hardware gedoe heeft.
-                            </p>
+                {% set cards = [
+                    {'icon':'📞','title':'Altijd Bereikbaar','text':'Jouw telefoonsysteem is online beschikbaar, waar je ook bent.'},
+                    {'icon':'➕','title':'Eenvoudig Uitbreiden','text':'Voeg nieuwe gebruikers toe of pas functionaliteiten aan zonder gedoe.'},
+                    {'icon':'☁️','title':'Volledig Cloudbeheer','text':'Beheer alles online via een overzichtelijk dashboard.'},
+                    {'icon':'💰','title':'Kosten-Efficiënt','text':'Geen dure fysieke PBX meer, je betaalt alleen voor wat je gebruikt.'}
+                ] %}
+                {% for card in cards %}
+                    <div class="col-md-6 col-lg-3 d-flex">
+                        <div class="new-card flex-fill d-flex align-items-center animate__animated animate__fadeInUp" style="animation-delay: {{ loop.index * 0.2 }}s;">
+                            <div class="card-icon">
+                                {{ card.icon }}
+                            </div>
+                            <div class="card-content">
+                                <h5 class="fw-bold">{{ card.title }}</h5>
+                                <p>{{ card.text }}</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-
-                <div class="col-md-6">
-                    <div class="card h-100 shadow-sm border-secondary">
-                        <div class="card-body">
-                            <h5 class="card-title">Flexibel Schalen</h5>
-                            <p class="card-text">
-                                Voeg eenvoudig extra lijnen toe naarmate uw bedrijf groeit.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6">
-                    <div class="card h-100 shadow-sm border-secondary">
-                        <div class="card-body">
-                            <h5 class="card-title">Altijd Bereikbaar</h5>
-                            <p class="card-text">
-                                Medewerkers zijn bereikbaar via deskphones, softphones of mobiele apps, waar ze ook zijn.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6">
-                    <div class="card h-100 shadow-sm border-secondary">
-                        <div class="card-body">
-                            <h5 class="card-title">Kostenbesparend</h5>
-                            <p class="card-text">
-                                Betaal alleen voor wat u gebruikt, zonder te investeren in fysieke PBX-hardware.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
+                {% endfor %}
             </div>
         </div>
     </section>
 
     <!-- CTA SECTION -->
-    <section class="py-5 text-center text-white" style="background: #001f4d;">
+    <section class="py-5 text-center cta-section">
         <div class="container">
-            <h2 class="fw-bold mb-3">Klaar om over te stappen naar Hosted PBX?</h2>
-            <p class="lead mb-4">Neem contact met ons op en ervaar de flexibiliteit en het gemak van een cloudcentrale.</p>
-            <a href="/contact" class="btn btn-light btn-lg text-dark">Contact opnemen</a>
+            <h2 class="fw-bold mb-3 text-white">Klaar om over te stappen naar Hosted PBX?</h2>
+            <p class="lead mb-4 text-white">Neem contact met ons op en ervaar de flexibiliteit en het gemak van een cloudcentrale.</p>
+            <a href="/contact" class="btn btn-cta btn-lg">Contact opnemen</a>
         </div>
     </section>
+
+    <!-- STYLES -->
+    <style>
+        /* HERO */
+        .hero-section{
+            height: 50vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+        }
+        .hero-bg{
+            position: absolute;
+            inset: 0;
+            background: url('{{ asset("assets/hosted-pbx.webp") }}') center/cover no-repeat;
+            background-size: cover;
+            filter: brightness(0.6);
+            z-index: 1;
+        }
+        .hero-overlay{
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(0,31,77,0.6), rgba(179,0,0,0.5));
+            z-index: 2;
+        }
+        .hero-content{
+            position: relative;
+            z-index: 3;
+        }
+        .btn-hero{
+            background: #b30000;
+            color: #fff;
+            border-radius: 6px;
+            padding: 0.7rem 1.8rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        .btn-hero:hover{
+            background: #e53935;
+            transform: translateY(-2px) scale(1.03);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        }
+
+        /* NIEUWE CARDS */
+        .new-card{
+            background: #fff;
+            border-radius: 20px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            padding: 1rem;
+            position: relative;
+        }
+        .new-card::before{
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 6px;
+            height: 100%;
+            background: linear-gradient(180deg, #001f4d, #b30000);
+            border-radius: 6px 0 0 6px;
+        }
+        .new-card:hover{
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+        .card-icon{
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #001f4d, #b30000);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            color: #fff;
+            margin-right: 1rem;
+            flex-shrink: 0;
+            transition: transform 0.3s ease;
+        }
+        .new-card:hover .card-icon{
+            transform: scale(1.2) rotate(10deg);
+        }
+        .card-content h5{
+            margin: 0 0 0.5rem 0;
+        }
+        .card-content p{
+            margin: 0;
+            font-size: 0.95rem;
+            color: #333;
+        }
+
+        /* CTA */
+        .cta-section{
+            background: linear-gradient(135deg, #001f4d, #b30000);
+        }
+        .btn-cta{
+            background: #fff;
+            color: #b30000;
+            border-radius: 8px;
+            padding: 0.9rem 2rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        .btn-cta:hover{
+            background: #ffdcdc;
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px){
+            .hero-section h1{font-size:2rem;}
+            .hero-section p{font-size:1rem;}
+            .new-card{
+                flex-direction: column;
+                text-align: center;
+            }
+            .card-icon{
+                margin: 0 0 1rem 0;
+            }
+        }
+    </style>
 
 {% endblock %}
