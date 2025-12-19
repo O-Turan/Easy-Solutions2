@@ -5,90 +5,148 @@
 {% block body %}
 
     <!-- HERO SECTION -->
-    <section class="d-flex align-items-center text-white" style="height: 40vh; background: linear-gradient(135deg, #001f4d, #b30000); position: relative;">
-        <div style="position: absolute; inset: 0; background: rgba(0,0,0,0.5);"></div>
-        <div class="container position-relative text-center">
-            <h1 class="display-3 fw-bold">Hosted Telefonie</h1>
-            <p class="lead mb-0">Professionele telefonie-oplossingen volledig vanuit de cloud, geschikt voor bedrijven van elke omvang.</p>
+    <section class="hero-section d-flex align-items-center justify-content-center text-center text-white">
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
+        <div class="container position-relative hero-content">
+            <h1 class="display-3 fw-bold animate__animated animate__fadeInDown">Hosted Telefonie</h1>
+            <p class="lead mb-4 animate__animated animate__fadeInUp animate__delay-1s">
+                Professionele telefonie-oplossingen volledig vanuit de cloud, geschikt voor bedrijven van elke omvang.
+            </p>
         </div>
     </section>
 
     <!-- UITLEG HOSTED TELEFONIE -->
     <section class="py-5 bg-white">
         <div class="container">
-            <h2 class="fw-bold mb-4">Wat is Hosted Telefonie?</h2>
-            <p>
+            <h2 class="fw-bold mb-4 text-center">Wat is Hosted Telefonie?</h2>
+            <p class="text-center mx-auto" style="max-width:800px;">
                 Hosted Telefonie is de moderne telefonieoplossing waarbij je bedrijfscommunicatie via de cloud gaat. Dit betekent dat je niet een fysieke PBX hoeft te gebruiken en medewerkers/klanten overal kunt bellen maar ook gebeld worden, op kantoor als onderweg. Met Hosted Telefonie profiteer je van volledige flexibiliteit, makkelijke uitbreidingen van het aantal gebruikers en een overzichtelijk beheer via Werktel dat is onze eigen app. Zo blijft je bedrijf altijd bereikbaar, zonder dat je zorgen hoeft te maken over onderhoud.
             </p>
         </div>
     </section>
 
-    <!-- INFORMATIE SECTION -->
-    <section class="py-5 bg-light">
+    <!-- INFO CARDS -->
+    <section class="py-5 bg-white">
         <div class="container">
             <h2 class="fw-bold text-center mb-4">Waarom kiezen voor Hosted Telefonie?</h2>
-            <p class="text-center mb-5">
+            <p class="text-center mb-5 mx-auto" style="max-width:800px;">
                 Met onze hosted telefonieoplossing ben je altijd bereikbaar en profiteer je van flexibiliteit.
                 Makkelijk uit te breiden, volledig beheerbaar vanuit de cloud en volledig afgestemd op jouw bedrijfsbehoeften.
             </p>
 
             <div class="row g-4">
-
-                <div class="col-md-6">
-                    <div class="card h-100 shadow-sm border-primary">
-                        <div class="card-body">
-                            <h5 class="card-title">Altijd Bereikbaar</h5>
-                            <p class="card-text">
-                                Jouw telefoonsysteem is volledig online en beschikbaar, waar je ook bent.
-                            </p>
+                {% set cards = [
+                    {'icon':'📞','title':'Altijd Bereikbaar','text':'Jouw telefoonsysteem is volledig online en beschikbaar, waar je ook bent.'},
+                    {'icon':'➕','title':'Eenvoudig Uitbreiden','text':'Voeg eenvoudig nieuwe gebruikers toe of pas functionaliteiten aan zonder gedoe.'},
+                    {'icon':'☁️','title':'Volledig Cloudbeheer','text':'Beheer alles online via een overzichtelijk dashboard.'},
+                    {'icon':'💰','title':'Kosten-Efficiënt','text':'Geen dure fysieke telefooncentrales meer, je betaalt alleen voor wat je gebruikt.'}
+                ] %}
+                {% for card in cards %}
+                    <div class="col-md-6 col-lg-3 d-flex">
+                        <div class="info-card flex-fill text-center">
+                            <div class="icon-circle">{{ card.icon }}</div>
+                            <h5 class="mt-3 fw-bold">{{ card.title }}</h5>
+                            <p class="mb-0">{{ card.text }}</p>
                         </div>
                     </div>
-                </div>
-
-                <div class="col-md-6">
-                    <div class="card h-100 shadow-sm border-primary">
-                        <div class="card-body">
-                            <h5 class="card-title">Eenvoudig Uitbreiden</h5>
-                            <p class="card-text">
-                                Voeg eenvoudig nieuwe gebruikers toe of pas functionaliteiten aan zonder gedoe.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6">
-                    <div class="card h-100 shadow-sm border-primary">
-                        <div class="card-body">
-                            <h5 class="card-title">Volledig Cloudbeheer</h5>
-                            <p class="card-text">
-                                Beheer alles online via een overzichtelijk dashboard.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6">
-                    <div class="card h-100 shadow-sm border-primary">
-                        <div class="card-body">
-                            <h5 class="card-title">Kosten-Efficiënt</h5>
-                            <p class="card-text">
-                                Geen dure fysieke telefooncentrales meer, je betaalt alleen voor wat je gebruikt.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
+                {% endfor %}
             </div>
         </div>
     </section>
 
     <!-- CTA SECTION -->
-    <section class="py-5 text-center text-white" style="background: #001f4d;">
+    <section class="py-5 text-center cta-section">
         <div class="container">
-            <h2 class="fw-bold mb-3">Klaar om over te stappen naar Hosted Telefonie?</h2>
-            <p class="lead mb-4">Neem contact met ons op en ontdek hoe wij uw bedrijf bereikbaar en flexibel maken.</p>
-            <a href="/contact" class="btn btn-light btn-lg text-dark">Contact opnemen</a>
+            <h2 class="fw-bold mb-3 text-white">Klaar om over te stappen naar Hosted Telefonie?</h2>
+            <p class="lead mb-4 text-white">Neem contact met ons op en ontdek hoe wij uw bedrijf bereikbaar en flexibel maken.</p>
+            <a href="/contact" class="btn btn-cta btn-lg">Contact opnemen</a>
         </div>
     </section>
+
+    <!-- STYLES -->
+    <style>
+        /* HERO */
+        .hero-section{
+            height: 50vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+        }
+        .hero-bg{
+            position: absolute;
+            inset: 0;
+            background: url('{{ asset("assets/hosted-telefonie.webp") }}') center/cover no-repeat;
+            background-size: cover;
+            filter: brightness(0.6);
+            z-index: 1;
+        }
+        .hero-overlay{
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(0,31,77,0.6), rgba(179,0,0,0.5));
+            z-index: 2;
+        }
+        .hero-content{
+            position: relative;
+            z-index: 3;
+        }
+
+        /* INFO CARDS */
+        .info-card{
+            background: #fff;
+            border-radius: 16px;
+            padding: 2rem 1.5rem;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+        .info-card:hover{
+            transform: translateY(-6px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+        }
+        .icon-circle{
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            margin: 0 auto 1rem auto;
+            background: #001f4d;
+            color: #fff;
+        }
+
+        /* CTA */
+        .cta-section{
+            background: #001f4d;
+        }
+        .btn-cta{
+            background: #b30000;
+            color: #fff;
+            border-radius: 6px;
+            padding: 0.7rem 1.8rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        .btn-cta:hover{
+            background: #e53935;
+            transform: translateY(-2px) scale(1.03);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px){
+            .hero-section h1{font-size:2rem;}
+            .hero-section p{font-size:1rem;}
+            .info-card{padding:1.5rem 1rem;}
+        }
+    </style>
 
 {% endblock %}
