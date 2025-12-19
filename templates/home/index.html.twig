@@ -80,12 +80,12 @@
         </div>
     </section>
 
-    <!-- SUPPORT -->
+    <!-- SUPPORT – NEXT-LEVEL CARDS -->
     <section class="py-5 bg-light">
         <div class="container">
             <h2 class="fw-bold text-center mb-5">Ondersteuning & Support</h2>
 
-            <div class="row g-4 text-center">
+            <div class="row g-4">
                 {% set support = [
                     {'icon':'📡','title':'Nummerportering','text':'Soepele en snelle nummerporteringen.'},
                     {'icon':'🛠️','title':'Support','text':'Snelle support via telefoon, e-mail of ticket.'},
@@ -93,10 +93,10 @@
                     {'icon':'👨‍💼','title':'Specialisten','text':'Ervaren telecomspecialisten sinds 2008.'}
                 ] %}
                 {% for s in support %}
-                    <div class="col-md-3 col-sm-6">
-                        <div class="card info-card p-4 h-100">
-                            <div class="icon-circle">{{ s.icon }}</div>
-                            <h3 class="h6 mt-3">{{ s.title }}</h3>
+                    <div class="col-md-3 col-sm-6 d-flex">
+                        <div class="info-card-upgraded p-4 text-center">
+                            <div class="icon-circle-upgraded">{{ s.icon }}</div>
+                            <h5 class="mt-3 fw-bold">{{ s.title }}</h5>
                             <p>{{ s.text }}</p>
                         </div>
                     </div>
@@ -105,66 +105,97 @@
         </div>
     </section>
 
-    <!-- STYLES -->
+    <!-- STIJLEN -->
     <style>
         /* HERO */
-        .hero{height:100vh;position:relative;overflow:hidden}
-        .hero-bg{position:absolute;inset:0;background-size:cover;background-position:center}
+        .hero{height:100vh;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;text-align:center}
+        .hero-bg{position:absolute;inset:0;background-size:cover;background-position:center;filter:brightness(0.65)}
         .hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,31,77,.65),rgba(200,0,0,.35))}
-        .scroll-down{position:absolute;bottom:20px;left:50%;transform:translateX(-50%);color:#fff;font-size:2rem}
+        .scroll-down{position:absolute;bottom:20px;left:50%;transform:translateX(-50%);color:#fff;font-size:2rem;animation:bounce 2s infinite}
+        @keyframes bounce{0%,20%,50%,80%,100%{transform:translateY(0)}40%{transform:translateY(-10px)}60%{transform:translateY(-5px)}}
 
-        /* ICON */
-        .icon-circle{
-            width:60px;height:60px;border-radius:50%;
-            display:flex;align-items:center;justify-content:center;
-            background:#00316d;color:#fff;font-size:1.8rem;margin:auto;
-            transition:.4s cubic-bezier(.22,1,.36,1);
-        }
+        /* ICONS */
+        .icon-circle{width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:#00316d;color:#fff;font-size:1.8rem;margin:auto;transition:.4s cubic-bezier(.22,1,.36,1)}
+        .info-card{border:0;transition:transform .45s cubic-bezier(.22,1,.36,1), box-shadow .45s}
+        .info-card:hover{transform:translateY(-14px) scale(1.04);box-shadow:0 30px 55px rgba(0,0,0,.2)}
+        .info-card:hover .icon-circle{transform:scale(1.25) rotate(6deg);background:linear-gradient(135deg,#00316d,#c62828)}
 
-        /* INFO CARD PHYSICS */
-        .info-card{
-            border:0;
-            transition:transform .45s cubic-bezier(.22,1,.36,1), box-shadow .45s;
-        }
-        .info-card:hover{
-            transform:translateY(-14px) scale(1.04);
-            box-shadow:0 30px 55px rgba(0,0,0,.2);
-        }
-        .info-card:hover .icon-circle{
-            transform:scale(1.25) rotate(6deg);
-            background:linear-gradient(135deg,#00316d,#c62828);
-        }
-
-        /* TRUSTED BY – PERFECT LOOP */
+        /* TRUSTED BY */
         .trusted-section{background:#fff;overflow:hidden}
-        .logo-marquee{position:relative;overflow:hidden;width:100%;}
-        .logo-marquee::before,
-        .logo-marquee::after{
-            content:'';position:absolute;top:0;width:120px;height:100%;z-index:2;pointer-events:none;
-        }
-        .logo-marquee::before{left:0;background:linear-gradient(to right,#fff,transparent);}
-        .logo-marquee::after{right:0;background:linear-gradient(to left,#fff,transparent);}
-        .logo-track{display:flex;width:max-content;animation:scroll-logos 26s linear infinite;}
-        .logo-marquee:hover .logo-track{animation-play-state:paused;}
-        .logo-item{flex:0 0 220px;height:100px;display:flex;align-items:center;justify-content:center;}
-        .logo-item img{max-width:160px;max-height:60px;object-fit:contain;filter:grayscale(100%) opacity(.55);transition:.4s cubic-bezier(.22,1,.36,1);}
-        .logo-item:hover img{filter:none;transform:scale(1.15);}
+        .logo-marquee{position:relative;overflow:hidden;width:100%}
+        .logo-marquee::before,.logo-marquee::after{content:'';position:absolute;top:0;width:120px;height:100%;z-index:2;pointer-events:none}
+        .logo-marquee::before{left:0;background:linear-gradient(to right,#fff,transparent)}
+        .logo-marquee::after{right:0;background:linear-gradient(to left,#fff,transparent)}
+        .logo-track{display:flex;width:max-content;animation:scroll-logos 26s linear infinite}
+        .logo-marquee:hover .logo-track{animation-play-state:paused}
+        .logo-item{flex:0 0 220px;height:100px;display:flex;align-items:center;justify-content:center}
+        .logo-item img{max-width:160px;max-height:60px;object-fit:contain;filter:grayscale(100%) opacity(.55);transition:.4s cubic-bezier(.22,1,.36,1)}
+        .logo-item:hover img{filter:none;transform:scale(1.15)}
         @keyframes scroll-logos{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
-        /* BUTTONS */
+        /* CTA BUTTONS */
         .btn{border-radius:10px;font-weight:600;transition:.35s}
         .btn:hover{transform:translateY(-3px)}
-        .btn-cta{
-            background:linear-gradient(135deg,#b71c1c,#e53935);
-            color:#fff;border:none;
-            box-shadow:0 10px 25px rgba(183,28,28,.45);
-        }
-        .btn-cta:hover{
-            background:linear-gradient(135deg,#e53935,#b71c1c);
-            transform:translateY(-4px) scale(1.05);
-            box-shadow:0 18px 40px rgba(183,28,28,.6);
-        }
+        .btn-cta{background:linear-gradient(135deg,#b71c1c,#e53935);color:#fff;border:none;box-shadow:0 10px 25px rgba(183,28,28,.45)}
+        .btn-cta:hover{background:linear-gradient(135deg,#e53935,#b71c1c);transform:translateY(-4px) scale(1.05);box-shadow:0 18px 40px rgba(183,28,28,.6)}
         .cta-banner{background:#00316d}
+
+        /* NEXT-LEVEL SUPPORT CARDS */
+        .info-card-upgraded{
+            flex:1 1 100%;
+            border-radius:18px;
+            background:linear-gradient(145deg,#001f4d,#b30000);
+            color:#fff;
+            box-shadow:0 12px 25px rgba(0,0,0,0.15);
+            transition:transform 0.35s ease, box-shadow 0.35s ease, opacity 0.5s;
+            opacity:0;
+            transform:translateY(20px);
+            display:flex;
+            flex-direction:column;
+            justify-content:space-between;
+            min-height:320px;
+            padding:2rem 1.5rem;
+        }
+        .info-card-upgraded.visible{opacity:1;transform:translateY(0)}
+        .info-card-upgraded:hover{transform:translateY(-10px) scale(1.05);box-shadow:0 25px 50px rgba(0,0,0,0.25)}
+        .icon-circle-upgraded{
+            width:70px;
+            height:70px;
+            border-radius:50%;
+            margin:auto;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            font-size:2rem;
+            background:linear-gradient(135deg,#ff5f5f,#ff1c1c);
+            box-shadow:0 0 12px rgba(255,28,28,0.7);
+            transition:transform 0.35s ease, box-shadow 0.35s ease;
+        }
+        .info-card-upgraded:hover .icon-circle-upgraded{transform:scale(1.4) rotate(5deg);box-shadow:0 0 25px rgba(255,28,28,0.9)}
+
+        /* RESPONSIVE */
+        @media (max-width:768px){
+            .hero h1{font-size:2.5rem}
+            .hero p{font-size:1.1rem}
+            .info-card-upgraded{padding:1.5rem 1rem;min-height:auto}
+        }
     </style>
+
+    <!-- JS: Parallax & Fade-in Support Cards -->
+    <script>
+        document.addEventListener('scroll', function(){
+            const scrolled = window.scrollY;
+            const hero = document.querySelector('.hero-bg');
+            if(hero) hero.style.transform = 'translateY(' + scrolled*0.3 + 'px) scale(1.05)';
+
+            const cards = document.querySelectorAll('.info-card-upgraded');
+            cards.forEach(card=>{
+                const rect = card.getBoundingClientRect();
+                if(rect.top < window.innerHeight - 50){
+                    card.classList.add('visible');
+                }
+            });
+        });
+    </script>
 
 {% endblock %}
