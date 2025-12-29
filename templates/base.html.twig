@@ -61,11 +61,10 @@
 <body>
 
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom sticky-top">
+<nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
     <div class="container">
         <a class="navbar-brand" href="{{ path('app_home') }}">
-            <img src="{{ asset('assets/easy-solutions-high-resolution-logo-transparent.webp') }}"
-                 alt="Easy Solutions logo" width="180">
+            <img src="{{ asset('assets/easy-solutions-high-resolution-logo-transparent.webp') }}" alt="Easy Solutions logo" width="180">
         </a>
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
@@ -76,94 +75,106 @@
             <ul class="navbar-nav ms-auto gap-3">
 
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ path('app_home') }}">Home</a>
+                    <a class="nav-link {% if app.request.attributes.get('_route') == 'app_home' %}active{% endif %}" href="{{ path('app_home') }}">Home</a>
                 </li>
 
-                <!-- DROPDOWN -->
+                <!-- Diensten Dropdown -->
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="dienstenDropdown"
+                    <a class="nav-link dropdown-toggle {% if app.request.attributes.get('_route') starts with 'app_dienst' %}active{% endif %}" href="#" id="dienstenDropdown"
                        role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Diensten
                     </a>
 
                     <ul class="dropdown-menu" aria-labelledby="dienstenDropdown">
-
-                        <li>
-                            <a class="dropdown-item" href="{{ path('app_diensten') }}">
-                                Alle Diensten
-                            </a>
-                        </li>
-
+                        <li><a class="dropdown-item" href="{{ path('app_diensten') }}">Alle Diensten</a></li>
                         <li><hr class="dropdown-divider"></li>
-
-                        <li>
-                            <a class="dropdown-item" href="{{ path('app_dienst_hosted_telefonie') }}">
-                                Hosted telefonie
-                            </a>
-                        </li>
-
-                        <li>
-                            <a class="dropdown-item" href="{{ path('app_dienst_hosted_pbx') }}">
-                                Hosted PBX
-                            </a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="{{ path('app_dienst_pbx') }}">
-                                Pbx
-                            </a>
-                        </li>
-
-                        <li>
-                            <a class="dropdown-item" href="{{ path('app_dienst_white_label') }}">
-                                White-label Telecom
-                            </a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="{{ path('app_dienst_sip_trunk') }}">
-                                SIP Trunk
-                            </a>
-                        </li>
-
-                        <li>
-                            <a class="dropdown-item" href="{{ path('app_dienst_kpn') }}">
-                                Kpn-business partner
-                            </a>
-                        </li>
-
-                        <li>
-                            <a class="dropdown-item" href="{{ path('app_dienst_nummerportering') }}">
-                                Nummerportering
-                            </a>
-                        </li>
-
-
-                        <li>
-                            <a class="dropdown-item" href="{{ path('app_dienst_mobiele_app') }}">
-                                Mobiele app
-                            </a>
-                        </li>
-
-
+                        <li><a class="dropdown-item" href="{{ path('app_dienst_hosted_telefonie') }}">Hosted telefonie</a></li>
+                        <li><a class="dropdown-item" href="{{ path('app_dienst_hosted_pbx') }}">Hosted PBX</a></li>
+                        <li><a class="dropdown-item" href="{{ path('app_dienst_pbx') }}">PBX</a></li>
+                        <li><a class="dropdown-item" href="{{ path('app_dienst_white_label') }}">White-label Telecom</a></li>
+                        <li><a class="dropdown-item" href="{{ path('app_dienst_sip_trunk') }}">SIP Trunk</a></li>
+                        <li><a class="dropdown-item" href="{{ path('app_dienst_kpn') }}">KPN Business Partner</a></li>
+                        <li><a class="dropdown-item" href="{{ path('app_dienst_nummerportering') }}">Nummerportering</a></li>
+                        <li><a class="dropdown-item" href="{{ path('app_dienst_mobiele_app') }}">Mobiele app</a></li>
                     </ul>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ path('app_over_ons') }}">Over ons</a>
+                    <a class="nav-link {% if app.request.attributes.get('_route') == 'app_over_ons' %}active{% endif %}" href="{{ path('app_over_ons') }}">Over ons</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ path('app_contact') }}">Contact</a>
+                    <a class="nav-link {% if app.request.attributes.get('_route') == 'app_contact' %}active{% endif %}" href="{{ path('app_contact') }}">Contact</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ path('offerte') }}">Offerte</a>
+                    <a class="nav-link {% if app.request.attributes.get('_route') == 'offerte' %}active{% endif %}" href="{{ path('offerte') }}">Offerte</a>
                 </li>
 
             </ul>
         </div>
-
     </div>
 </nav>
+
+<style>
+    /* Lichte moderne navbar */
+    .navbar-light {
+        background-color: #ffffff;
+    }
+
+    .navbar-light .navbar-nav .nav-link {
+        color: #001f4d;
+        font-weight: 500;
+        position: relative;
+        transition: color 0.3s, transform 0.3s;
+    }
+
+    .navbar-light .navbar-nav .nav-link:hover {
+        color: #b30000;
+        transform: translateY(-2px);
+    }
+
+    .navbar-light .navbar-nav .nav-link.active::after {
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: #b30000;
+        border-radius: 2px;
+    }
+
+    .dropdown-menu {
+        background-color: #ffffff;
+        border: 1px solid rgba(0,0,0,0.1);
+    }
+
+    .dropdown-menu .dropdown-item {
+        color: #001f4d;
+        transition: color 0.3s, background 0.3s;
+    }
+
+    .dropdown-menu .dropdown-item:hover {
+        color: #b30000;
+        background-color: rgba(179,0,0,0.05);
+    }
+
+    .navbar-toggler {
+        border-color: rgba(0,31,77,0.2);
+    }
+
+    .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%280, 31, 77, 0.7%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    }
+
+    @media (max-width: 991px) {
+        .navbar-nav {
+            text-align: center;
+        }
+    }
+</style>
+
 
 
 <!-- Page content -->
