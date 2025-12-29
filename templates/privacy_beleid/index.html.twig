@@ -2,85 +2,65 @@
 
 {% block title %}Privacybeleid - Easy Solutions{% endblock %}
 
-{% block meta_description %}
-    Bij Easy Solutions leest u hoe wij uw persoonsgegevens beschermen, welke gegevens wij verzamelen en hoe u uw rechten kunt uitoefenen.
-{% endblock %}
-
 {% block body %}
 
     <section class="py-5" style="background-color: #f8f9fa;">
         <div class="container">
-            <h1 class="fw-bold mb-4">Privacybeleid</h1>
+            <h1 class="fw-bold mb-5 text-center">Privacybeleid</h1>
 
-            <p>Bij <strong>Easy Solutions</strong> hechten we veel waarde aan de bescherming van uw persoonsgegevens. In dit privacybeleid leest u welke gegevens we verzamelen, hoe we deze gebruiken en hoe we uw privacy beschermen.</p>
+            <p class="mb-4">Bij <strong>Easy Solutions</strong> hechten we veel waarde aan de bescherming van uw persoonsgegevens. In dit privacybeleid leest u welke gegevens we verzamelen, hoe we deze gebruiken en hoe we uw privacy beschermen.</p>
 
-            <h2 class="fw-bold mt-5">1. Verzamelde persoonsgegevens</h2>
-            <p>Wij verzamelen gegevens wanneer u onze diensten gebruikt of contact met ons opneemt. Dit kan omvatten:</p>
-            <ul>
-                <li>Naam, e-mailadres, telefoonnummer</li>
-                <li>Bedrijfsgegevens (indien van toepassing)</li>
-                <li>IP-adres en browserinformatie</li>
-                <li>Interactie met onze website</li>
-            </ul>
+            <!-- Belangrijke secties in kaarten -->
+            {% set sections = [
+                {'title':'1. Verzamelde persoonsgegevens','text':'Wij verzamelen gegevens wanneer u onze diensten gebruikt of contact met ons opneemt. Dit kan omvatten: Naam, e-mailadres, telefoonnummer; Bedrijfsgegevens (indien van toepassing); IP-adres en browserinformatie; Interactie met onze website.'},
+                {'title':'2. Doeleinden van verwerking','text':'Uw gegevens worden gebruikt voor: Het beantwoorden van vragen en aanvragen; Verzenden van offertes en facturen; Verbeteren van onze diensten en website; Marketing, indien u hiervoor toestemming heeft gegeven.'},
+                {'title':'3. Rechtsgrond voor verwerking','text':'Wij verwerken uw gegevens op basis van: Uw toestemming; Noodzaak voor uitvoering van een overeenkomst; Wettelijke verplichtingen.'},
+                {'title':'4. Delen van gegevens','text':'Wij delen uw gegevens alleen met derden indien: Dit nodig is voor de uitvoering van een dienst (bijv. hostingpartners); Wettelijk verplicht; Met uw expliciete toestemming.'},
+                {'title':'5. Cookies en tracking','text':'Onze website gebruikt cookies voor: Functionele doeleinden (bijv. formulieren); Analyse van bezoekersgedrag; Marketing, indien toestemming gegeven.'},
+                {'title':'6. Beveiliging van gegevens','text':'Wij nemen passende technische en organisatorische maatregelen om uw gegevens te beschermen tegen verlies, diefstal of misbruik.'},
+                {'title':'7. Uw rechten','text':'U heeft het recht om: Inzage te vragen in uw gegevens; Correcties aan te brengen; Verwijdering van uw gegevens te verzoeken; Bezwaar te maken tegen verwerking; Gegevens over te dragen (dataportabiliteit).'},
+                {'title':'8. Contact','text':'Voor vragen over uw privacy kunt u contact opnemen via: Email: info@easysolutions.nl; Telefoon: +31 880666100.'},
+                {'title':'9. Wijzigingen','text':'Wij behouden ons het recht voor dit privacybeleid aan te passen. Updates worden op deze pagina gepubliceerd.'}
+            ] %}
 
-            <h2 class="fw-bold mt-4">2. Doeleinden van verwerking</h2>
-            <p>Uw gegevens worden gebruikt voor:</p>
-            <ul>
-                <li>Het beantwoorden van vragen en aanvragen</li>
-                <li>Verzenden van offertes en facturen</li>
-                <li>Verbeteren van onze diensten en website</li>
-                <li>Marketing, indien u hiervoor toestemming heeft gegeven</li>
-            </ul>
-
-            <h2 class="fw-bold mt-4">3. Rechtsgrond voor verwerking</h2>
-            <p>Wij verwerken uw gegevens op basis van:</p>
-            <ul>
-                <li>Uw toestemming</li>
-                <li>Noodzaak voor uitvoering van een overeenkomst</li>
-                <li>Wettelijke verplichtingen</li>
-            </ul>
-
-            <h2 class="fw-bold mt-4">4. Delen van gegevens</h2>
-            <p>Wij delen uw gegevens alleen met derden indien:</p>
-            <ul>
-                <li>Dit nodig is voor de uitvoering van een dienst (bijv. hostingpartners)</li>
-                <li>Wettelijk verplicht</li>
-                <li>Met uw expliciete toestemming</li>
-            </ul>
-
-            <h2 class="fw-bold mt-4">5. Cookies en tracking</h2>
-            <p>Onze website gebruikt cookies voor:</p>
-            <ul>
-                <li>Functionele doeleinden (bijv. formulieren)</li>
-                <li>Analyse van bezoekersgedrag</li>
-                <li>Marketing, indien toestemming gegeven</li>
-            </ul>
-
-            <h2 class="fw-bold mt-4">6. Beveiliging van gegevens</h2>
-            <p>Wij nemen passende technische en organisatorische maatregelen om uw gegevens te beschermen tegen verlies, diefstal of misbruik.</p>
-
-            <h2 class="fw-bold mt-4">7. Uw rechten</h2>
-            <p>U heeft het recht om:</p>
-            <ul>
-                <li>Inzage te vragen in uw gegevens</li>
-                <li>Correcties aan te brengen</li>
-                <li>Verwijdering van uw gegevens te verzoeken</li>
-                <li>Bezwaar te maken tegen verwerking</li>
-                <li>Gegevens over te dragen (dataportabiliteit)</li>
-            </ul>
-
-            <h2 class="fw-bold mt-4">8. Contact</h2>
-            <p>Voor vragen over uw privacy kunt u contact opnemen via:</p>
-            <ul>
-                <li>Email: <a href="mailto:info@easysolutions.nl">info@easysolutions.nl</a></li>
-                <li>Telefoon: +31 880666100</li>
-            </ul>
-
-            <h2 class="fw-bold mt-4">9. Wijzigingen</h2>
-            <p>Wij behouden ons het recht voor dit privacybeleid aan te passen. Updates worden op deze pagina gepubliceerd.</p>
-
+            <div class="row g-4">
+                {% for section in sections %}
+                    <div class="col-md-6">
+                        <div class="policy-card p-4 h-100">
+                            <h4 class="fw-bold mb-3">{{ section.title }}</h4>
+                            <p>{{ section.text }}</p>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
         </div>
     </section>
+
+    <style>
+        .policy-card {
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            transition: transform 0.35s ease, box-shadow 0.35s ease;
+            padding: 2rem;
+        }
+        .policy-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        .policy-card h4 {
+            color: #001f4d;
+        }
+        .policy-card p {
+            color: #333;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        @media (max-width:768px){
+            .policy-card h4 { font-size: 1.25rem; }
+            .policy-card p { font-size: 0.9rem; }
+        }
+    </style>
 
 {% endblock %}
 
