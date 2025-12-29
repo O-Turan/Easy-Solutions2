@@ -2,98 +2,57 @@
 
 {% block title %}Algemene Voorwaarden - Easy Solutions{% endblock %}
 
-{% block meta_description %}
-    Lees de Algemene Voorwaarden van Easy Solutions. Hier vindt u alle bepalingen over onze VoIP-diensten, hosting, prijzen, betalingen, aansprakelijkheid en overeenkomsten.
-{% endblock %}
-
-{% block meta_robots %}
-    <meta name="robots" content="index, follow">
-{% endblock %}
-
-{% block og_title %}Algemene Voorwaarden - Easy Solutions{% endblock %}
-{% block og_description %}
-    Bekijk de volledige Algemene Voorwaarden van Easy Solutions, inclusief bepalingen over telecomdiensten, prijzen, overeenkomsten en aansprakelijkheid.
-{% endblock %}
-
-{% block json_ld %}
-    <script type="application/ld+json">
-        {
-          "@context": "https://schema.org",
-          "@type": "WebPage",
-          "name": "Algemene Voorwaarden",
-          "description": "Complete algemene voorwaarden van Easy Solutions met betrekking tot VoIP, hosting, betalingen, overeenkomsten en aansprakelijkheid.",
-          "url": "{{ app.request.uri }}",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Easy Solutions",
-    "url": "{{ app.request.schemeAndHttpHost }}",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "{{ asset('assets/easy-solutions-high-resolution-logo-transparent.png') }}"
-    }
-  }
-}
-    </script>
-{% endblock %}
-
 {% block body %}
 
-    <section class="py-5" style="background-color: #f8f9fa;">
+    <section class="py-5" style="background-color: #f4f6f8;">
         <div class="container">
-            <h1 class="fw-bold mb-4">Algemene Voorwaarden</h1>
 
-            <p>Deze voorwaarden zijn van toepassing op alle diensten en producten van <strong>Easy Solutions</strong>. Door gebruik te maken van onze diensten accepteert u deze voorwaarden.</p>
+            <h1 class="text-center fw-bold mb-5" style="color:#001f4d;">Algemene Voorwaarden</h1>
 
-            <h2 class="fw-bold mt-5">1. Definities</h2>
-            <ul>
-                <li><strong>Easy Solutions:</strong> aanbieder van VoIP- en telecomdiensten</li>
-                <li><strong>Klant:</strong> de natuurlijke of rechtspersoon die een overeenkomst aangaat</li>
-            </ul>
+            {% set voorwaarden = [
+                {'title':'Introductie','content':'Deze voorwaarden zijn van toepassing op alle diensten en producten van Easy Solutions. Door gebruik te maken van onze diensten accepteert u deze voorwaarden.'},
+                {'title':'1. Definities','content':'Easy Solutions: aanbieder van VoIP- en telecomdiensten. Klant: de natuurlijke of rechtspersoon die een overeenkomst aangaat.'},
+                {'title':'2. Toepasselijkheid','content':'Deze voorwaarden zijn van toepassing op alle offertes, overeenkomsten en diensten van Easy Solutions.'},
+                {'title':'3. Offertes en aanbiedingen','content':'Offertes zijn vrijblijvend tenzij anders vermeld. Geldigheidsduur staat vermeld in de offerte.'},
+                {'title':'4. Overeenkomst','content':'De overeenkomst komt tot stand na schriftelijke bevestiging door Easy Solutions of ondertekening door de klant.'},
+                {'title':'5. Prijzen en betaling','content':'Alle prijzen zijn exclusief btw tenzij anders vermeld. Facturen dienen binnen de aangegeven termijn te worden betaald. Bij te late betaling kunnen rente en incassokosten in rekening worden gebracht.'},
+                {'title':'6. Levering en uitvoering','content':'Easy Solutions streeft naar correcte levering, maar is niet aansprakelijk voor tijdelijke storingen of onbeschikbaarheid. Termijnen zijn indicatief.'},
+                {'title':'7. Aansprakelijkheid','content':'Easy Solutions is niet aansprakelijk voor indirecte schade, verlies van winst of gegevens. De aansprakelijkheid is beperkt tot het bedrag van de overeenkomst.'},
+                {'title':'8. Annulering en beëindiging','content':'Opzegging van diensten dient schriftelijk te geschieden. Bij vroegtijdige beëindiging kunnen kosten in rekening worden gebracht.'},
+                {'title':'9. Overmacht','content':'Easy Solutions is niet aansprakelijk bij omstandigheden buiten haar macht, zoals natuurrampen, netwerkstoringen of overheidsmaatregelen.'},
+                {'title':'10. Intellectueel eigendom','content':'Alle software, documentatie en materialen blijven eigendom van Easy Solutions. Zonder toestemming is kopiëren of verspreiden niet toegestaan.'},
+                {'title':'11. Toepasselijk recht','content':'Nederlands recht is van toepassing. Geschillen worden bij voorkeur in overleg opgelost, anders bij de bevoegde rechter in Den Haag.'},
+                {'title':'12. Contact','content':'Email: <a href="mailto:info@easysolutions.nl" class="text-primary">info@easysolutions.nl</a><br>Telefoon: +31 880666100<br>Adres: Regulusweg 5, 2516AC, Den Haag'}
+            ] %}
 
-            <h2 class="fw-bold mt-4">2. Toepasselijkheid</h2>
-            <p>Deze voorwaarden zijn van toepassing op alle offertes, overeenkomsten en diensten van Easy Solutions.</p>
+            <div class="row g-4">
+                {% for item in voorwaarden %}
+                    <div class="col-12">
+                        <div class="card shadow-sm border-0 p-4 hover-card">
+                            <h3 class="fw-bold mb-3" style="color:#001f4d;">{{ item.title }}</h3>
+                            <p class="mb-0" style="color:#333;">{{ item.content|raw }}</p>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
 
-            <h2 class="fw-bold mt-4">3. Offertes en aanbiedingen</h2>
-            <ul>
-                <li>Offertes zijn vrijblijvend tenzij anders vermeld</li>
-                <li>Geldigheidsduur staat vermeld in de offerte</li>
-            </ul>
-
-            <h2 class="fw-bold mt-4">4. Overeenkomst</h2>
-            <p>De overeenkomst komt tot stand na schriftelijke bevestiging door Easy Solutions of ondertekening door de klant.</p>
-
-            <h2 class="fw-bold mt-4">5. Prijzen en betaling</h2>
-            <ul>
-                <li>Alle prijzen zijn exclusief btw tenzij anders vermeld</li>
-                <li>Facturen dienen binnen de aangegeven termijn te worden betaald</li>
-                <li>Bij te late betaling kunnen rente en incassokosten in rekening worden gebracht</li>
-            </ul>
-
-            <h2 class="fw-bold mt-4">6. Levering en uitvoering</h2>
-            <p>Easy Solutions streeft naar correcte levering, maar is niet aansprakelijk voor tijdelijke storingen of onbeschikbaarheid. Termijnen zijn indicatief.</p>
-
-            <h2 class="fw-bold mt-4">7. Aansprakelijkheid</h2>
-            <p>Easy Solutions is niet aansprakelijk voor indirecte schade, verlies van winst of gegevens. De aansprakelijkheid is beperkt tot het bedrag van de overeenkomst.</p>
-
-            <h2 class="fw-bold mt-4">8. Annulering en beëindiging</h2>
-            <p>Opzegging van diensten dient schriftelijk te geschieden. Bij vroegtijdige beëindiging kunnen kosten in rekening worden gebracht.</p>
-
-            <h2 class="fw-bold mt-4">9. Overmacht</h2>
-            <p>Easy Solutions is niet aansprakelijk bij omstandigheden buiten haar macht, zoals natuurrampen, netwerkstoringen of overheidsmaatregelen.</p>
-
-            <h2 class="fw-bold mt-4">10. Intellectueel eigendom</h2>
-            <p>Alle software, documentatie en materialen blijven eigendom van Easy Solutions. Zonder toestemming is kopiëren of verspreiden niet toegestaan.</p>
-
-            <h2 class="fw-bold mt-4">11. Toepasselijk recht</h2>
-            <p>Nederlands recht is van toepassing. Geschillen worden bij voorkeur in overleg opgelost, anders bij de bevoegde rechter in Den Haag.</p>
-
-            <h2 class="fw-bold mt-4">12. Contact</h2>
-            <ul>
-                <li>Email: <a href="mailto:info@easysolutions.nl">info@easysolutions.nl</a></li>
-                <li>Telefoon: +31 880666100</li>
-                <li>Adres: Regulusweg 5, 2516AC, Den Haag</li>
-            </ul>
         </div>
     </section>
+
+    <style>
+        .hover-card {
+            border-radius: 15px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            background-color: #ffffff;
+        }
+        .hover-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+        }
+        a.text-primary:hover {
+            color: #b30000 !important;
+            text-decoration: underline;
+        }
+    </style>
 
 {% endblock %}
