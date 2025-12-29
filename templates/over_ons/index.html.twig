@@ -2,22 +2,17 @@
 
 {% block title %}Over Ons - Easy Solutions{% endblock %}
 
-{% block meta_description %}
-    Maak kennis met Easy Solutions, dé specialist in VoIP, hosted telefonie en zakelijke communicatie sinds 2008. Lees over onze missie, specialisatie en kernwaarden.
-{% endblock %}
-
-{% block meta_robots %}
-    <meta name="robots" content="index, follow">
-{% endblock %}
-
 {% block body %}
 
     <!-- HERO SECTION -->
-    <section class="d-flex align-items-center text-white" style="height: 55vh; background: linear-gradient(135deg, #001f4d, #b30000); position: relative;">
-        <div style="position: absolute; inset: 0; background: rgba(0,0,0,0.5);"></div>
-        <div class="container position-relative text-center">
-            <h1 class="display-3 fw-bold mb-3">Over Easy Solutions</h1>
-            <p class="lead mb-4">Sinds 2008 uw partner in VoIP, hosted telefonie en zakelijke communicatie</p>
+    <section class="hero-section d-flex align-items-center justify-content-center text-center text-white">
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
+        <div class="container position-relative hero-content">
+            <h1 class="display-3 fw-bold animate__animated animate__fadeInDown">Over Easy Solutions</h1>
+            <p class="lead mb-4 animate__animated animate__fadeInUp animate__delay-1s">
+                Sinds 2008 uw partner in VoIP, hosted telefonie en zakelijke communicatie
+            </p>
         </div>
     </section>
 
@@ -25,18 +20,21 @@
     <section class="py-5 bg-light">
         <div class="container">
             <h2 class="fw-bold mb-4 text-center">Wie Wij Zijn</h2>
-            <p class="lead text-center mb-5" style="max-width: 800px; margin: 0 auto;">
-                Easy Solutions is sinds 2008 gespecialiseerd in VoIP en telecom diensten. Wij hebben meer dan 17 jaar ervaring in het leveren van hosted telefonie, SIP-trunks, nummerportering en PBX-oplossingen voor bedrijven. Ons doel is om betrouwbare en professionele telefonie oplossingen te bieden, zodat jij je kunt richten op succes.
+            <p class="lead text-center mx-auto" style="max-width: 800px;">
+                Easy Solutions is sinds 2008 gespecialiseerd in VoIP en telecomdiensten. Wij hebben meer dan 17 jaar ervaring in het leveren van hosted telefonie, SIP-trunks, nummerportering en PBX-oplossingen voor bedrijven. Ons doel is om betrouwbare en professionele telefonieoplossingen te bieden, zodat jij je kunt richten op succes.
             </p>
         </div>
     </section>
 
     <!-- MISSIE & SPECIALISATIE -->
-    <section class="py-5">
+    <section class="py-5 bg-light">
         <div class="container">
             <div class="row g-4">
+
+                <!-- Onze Missie -->
                 <div class="col-md-6">
-                    <div class="card shadow-sm h-100 p-4">
+                    <div class="mission-card p-4 h-100 text-center animate__animated animate__fadeInLeft">
+                        <div class="mission-icon">🎯</div>
                         <h4 class="fw-bold mb-3">Onze Missie</h4>
                         <p>
                             Wij geloven dat succes voortkomt uit focus. Easy Solutions zorgt dat uw telecomsystemen top presteren
@@ -45,8 +43,11 @@
                         </p>
                     </div>
                 </div>
+
+                <!-- Onze Specialisatie -->
                 <div class="col-md-6">
-                    <div class="card shadow-sm h-100 p-4">
+                    <div class="mission-card p-4 h-100 text-center animate__animated animate__fadeInRight">
+                        <div class="mission-icon">💡</div>
                         <h4 class="fw-bold mb-3">Onze Specialisatie</h4>
                         <p>
                             Wij richten ons volledig op telecom: hosted telefonie, SIP-trunks, nummerportering, PBX en hosted PBX.
@@ -55,68 +56,222 @@
                         </p>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
 
     <!-- KERNWAARDEN & VOORDELEN -->
+    <!-- KERNWAARDEN & VOORDELEN -->
     <section class="py-5 bg-light">
         <div class="container">
             <h2 class="fw-bold mb-5 text-center">Waarom Kiezen Voor Easy Solutions</h2>
             <div class="row g-4">
-                <div class="col-md-3 col-sm-6">
-                    <div class="card text-center shadow-sm p-4 h-100">
-                        <div style="font-size:2.5rem;">☁️</div>
-                        <h5 class="fw-bold mt-3">Zorgeloos in de Cloud</h5>
-                        <p>Locatie-onafhankelijk veilig werken en communiceren via onze hosted telefonie oplossingen.</p>
+                {% set cards = [
+                    {'icon':'☁️','title':'Zorgeloos in de Cloud','text':'Locatie-onafhankelijk veilig werken en communiceren via onze hosted telefonie oplossingen.'},
+                    {'icon':'🛠️','title':'Betrouwbaar Support','text':'Directe ondersteuning bij vragen of storingen via telefoon of e-mail.'},
+                    {'icon':'🔗','title':'KPN Netwerk','text':'Uw communicatie verloopt via het betrouwbare KPN-netwerk voor maximale kwaliteit.'},
+                    {'icon':'👨‍💼','title':'Ervaren Specialisten','text':'Onze medewerkers hebben minimaal 5 jaar ervaring in professionele telecom- en VoIP-diensten.'}
+                ] %}
+                {% for card in cards %}
+                    <div class="col-lg-3 col-md-6">
+                        <div class="badge-card h-100 text-center p-0">
+                            <div class="badge-icon">{{ card.icon }}</div>
+                            <div class="card-body p-4">
+                                <h5 class="fw-bold">{{ card.title }}</h5>
+                                <p>{{ card.text }}</p>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <div class="card text-center shadow-sm p-4 h-100">
-                        <div style="font-size:2.5rem;">🛠️</div>
-                        <h5 class="fw-bold mt-3">Betrouwbaar Support</h5>
-                        <p>Directe ondersteuning bij vragen of storingen via telefoon of e-mail.</p>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <div class="card text-center shadow-sm p-4 h-100">
-                        <div style="font-size:2.5rem;">🔗</div>
-                        <h5 class="fw-bold mt-3">KPN Netwerk</h5>
-                        <p>Uw communicatie verloopt via het betrouwbare KPN-netwerk voor maximale kwaliteit.</p>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <div class="card text-center shadow-sm p-4 h-100">
-                        <div style="font-size:2.5rem;">👨‍💼</div>
-                        <h5 class="fw-bold mt-3">Ervaren Specialisten</h5>
-                        <p>Onze medewerkers hebben minimaal 5 jaar ervaring in professionele telecom- en VoIP-diensten.</p>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
         </div>
     </section>
 
-{% endblock %}
+    <style>
+        .badge-card {
+            background: #fff;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            cursor: default;
+        }
+        .badge-card:hover {
+            transform: translateY(-10px) rotateX(2deg);
+            box-shadow: 0 18px 40px rgba(0,0,0,0.15);
+        }
+        .badge-icon {
+            width: 100%;
+            height: 120px;
+            background: linear-gradient(135deg,#001f4d,#b30000);
+            color: #fff;
+            font-size: 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-bottom-left-radius: 50% 20px;
+            border-bottom-right-radius: 50% 20px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .badge-card:hover .badge-icon {
+            transform: scale(1.2);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+        }
+        .badge-card h5 {
+            font-weight: 600;
+            color: #001f4d;
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+        .badge-card p {
+            color: #333;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
 
-{% block og_title %}Over Ons - Easy Solutions{% endblock %}
-{% block og_description %}Leer meer over Easy Solutions, dé specialist in VoIP, hosted telefonie en zakelijke communicatie sinds 2008. Ontdek onze missie, specialisatie en kernwaarden.{% endblock %}
+        /* Responsive */
+        @media (max-width:768px){
+            .badge-icon { height: 100px; font-size: 2.5rem; }
+            .badge-card h5 { font-size: 0.95rem; }
+            .badge-card p { font-size: 0.85rem; }
+        }
+    </style>
 
-{% block json_ld %}
-    <script type="application/ld+json">
-        {
-          "@context": "https://schema.org",
-          "@type": "AboutPage",
-          "name": "Over Ons - Easy Solutions",
-          "description": "Leer meer over Easy Solutions, dé specialist in VoIP, hosted telefonie en zakelijke communicatie sinds 2008. Ontdek onze missie, specialisatie en kernwaarden.",
-          "url": "{{ app.request.uri }}",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Easy Solutions",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "{{ asset('assets/easy-solutions-high-resolution-logo-transparent.png') }}"
-    }
-  }
-}
+
+    <!-- STYLES -->
+    <style>
+        /* HERO */
+        .hero-section{
+            height: 65vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+        }
+        .hero-bg{
+            position: absolute;
+            inset: 0;
+            background: url('{{ asset("assets/over-ons-hero.webp") }}') center/cover no-repeat;
+            filter: brightness(0.55);
+            transform: scale(1.1);
+            z-index: 1;
+            transition: transform 2s ease;
+        }
+        .hero-section:hover .hero-bg{
+            transform: scale(1.15);
+        }
+        .hero-overlay{
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(0,31,77,0.6), rgba(179,0,0,0.5));
+            z-index: 2;
+            animation: overlayPulse 8s infinite alternate;
+        }
+        @keyframes overlayPulse{
+            0%{background: linear-gradient(135deg, rgba(0,31,77,0.6), rgba(179,0,0,0.5));}
+            100%{background: linear-gradient(135deg, rgba(0,31,77,0.7), rgba(179,0,0,0.6));}
+        }
+        .hero-content{position: relative; z-index:3;}
+
+        /* MISSIE & SPECIALISATIE CARDS */
+        .mission-card {
+            background: #fff;
+            border-radius: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+            transition: transform 0.35s ease, box-shadow 0.35s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 2rem;
+        }
+        .mission-card:hover {
+            transform: translateY(-12px) scale(1.03);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+        }
+        .mission-icon {
+            font-size: 3.2rem;
+            margin-bottom: 1rem;
+            color: #b30000;
+        }
+        .mission-card h4 {
+            font-weight: 700;
+            color: #001f4d;
+            margin-bottom: 0.75rem;
+        }
+        .mission-card p {
+            color: #333;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            text-align: center;
+        }
+
+        /* MODERNE KAARTEN */
+        .modern-card-hover{
+            background: linear-gradient(145deg, rgba(255,255,255,0.95), rgba(245,245,245,0.98));
+            border-radius: 20px;
+            padding: 2rem 1.5rem;
+            transition: transform 0.4s ease, box-shadow 0.4s ease, border 0.4s ease;
+            position: relative;
+        }
+        .modern-card-hover:hover{
+            transform: translateY(-10px) rotateX(2deg);
+            box-shadow: 0 18px 35px rgba(0,0,0,0.15);
+            border: 2px solid #001f4d;
+        }
+        .icon-circle{
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.2rem;
+            border-radius: 50%;
+            background: linear-gradient(135deg,#001f4d,#b30000);
+            color: #fff;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .modern-card-hover:hover .icon-circle{
+            transform: translateY(-6px) scale(1.2);
+            box-shadow: 0 8px 18px rgba(0,0,0,0.25);
+        }
+        .modern-card-hover h5{
+            font-weight: 600;
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            color: #001f4d;
+        }
+        .modern-card-hover p{
+            font-weight: 400;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            color: #333;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width:768px){
+            .hero-section h1{font-size:2.5rem;}
+            .hero-section p{font-size:1.1rem;}
+            .modern-card-hover h5{font-size:0.95rem;}
+            .modern-card-hover p{font-size:0.85rem;}
+            .mission-card h4{font-size:1.25rem;}
+            .mission-card p{font-size:0.9rem;}
+            .mission-icon{font-size:2.5rem;}
+        }
+    </style>
+
+    <!-- PARALLAX HERO -->
+    <script>
+        document.addEventListener('scroll', function(){
+            const scrolled = window.scrollY;
+            const bg = document.querySelector('.hero-bg');
+            if(bg) bg.style.transform = 'translateY(' + scrolled * 0.25 + 'px) scale(1.1)';
+        });
     </script>
+
 {% endblock %}
