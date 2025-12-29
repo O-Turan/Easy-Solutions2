@@ -5,89 +5,198 @@
 {% block body %}
 
     <!-- HERO SECTION -->
-    <section class="d-flex align-items-center text-white" style="height: 40vh; background: linear-gradient(135deg, #001f4d, #b30000); position: relative;">
-        <div style="position: absolute; inset: 0; background: rgba(0,0,0,0.5);"></div>
-        <div class="container position-relative text-center">
-            <h1 class="display-3 fw-bold">KPN Business Partner</h1>
-            <p class="lead mb-0">Hoogwaardige telecomoplossingen via het betrouwbare en stabiele KPN-netwerk.</p>
+    <section class="hero-section d-flex align-items-center justify-content-center text-center text-white">
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
+        <div class="container position-relative hero-content">
+            <h1 class="display-3 fw-bold animate__animated animate__fadeInDown">KPN Business Partner</h1>
+            <p class="lead mb-4 animate__animated animate__fadeInUp animate__delay-1s">
+                Hoogwaardige telecomoplossingen via het betrouwbare en stabiele KPN-netwerk.
+            </p>
+            <a href="#info-section" class="scroll-down">↓</a>
         </div>
     </section>
 
     <!-- UITLEG KPN BUSINESS PARTNER -->
-    <section class="py-5 bg-white">
+    <section class="py-5 bg-white" id="info-section">
         <div class="container">
-            <h2 class="fw-bold mb-4">Wat betekent het om KPN Business Partner te zijn?</h2>
-            <p>
-                Als KPN Business Partner leveren wij professionele telecomdiensten via het vertrouwde KPN-netwerk. hiermee  garanderen wij hoge kwaliteit van gesprekken en telefonie, stabiele verbindingen en continue beschikbaarheid voor jouw bedrijf. Door deze samenwerking kunnen wij oplossingen bieden die volledig aansluiten bij de behoeften van jouw bedrijf.
+            <h2 class="fw-bold mb-4 text-center">Wat betekent het om KPN Business Partner te zijn?</h2>
+            <p class="text-center mx-auto" style="max-width:750px;">
+                Als KPN Business Partner leveren wij professionele telecomdiensten via het vertrouwde KPN-netwerk. Hiermee garanderen wij hoge kwaliteit van gesprekken en telefonie, stabiele verbindingen en continue beschikbaarheid voor jouw bedrijf. Door deze samenwerking kunnen wij oplossingen bieden die volledig aansluiten bij de behoeften van jouw bedrijf.
             </p>
         </div>
     </section>
 
-    <!-- INFORMATIE SECTION -->
+    <!-- INFO CARDS -->
     <section class="py-5 bg-light">
         <div class="container">
             <h2 class="fw-bold text-center mb-4">Waarom kiezen voor KPN via Easy Solutions?</h2>
-            <p class="text-center mb-5">
+            <p class="text-center mb-5 mx-auto" style="max-width:750px;">
                 Profiteer van betrouwbaarheid, kwaliteit en continuïteit. Met KPN als partner kunnen wij uw telecom volledig uitbreiden.
             </p>
 
             <div class="row g-4">
-
-                <div class="col-md-6">
-                    <div class="card h-100 shadow-sm border-success">
-                        <div class="card-body">
-                            <h5 class="card-title">Betrouwbare Netwerkverbinding</h5>
-                            <p class="card-text">
-                                Dankzij KPN heeft uw organisatie altijd een stabiele en kwalitatieve telefoonverbinding.
-                            </p>
+                {% set cards = [
+                    {'icon':'🔗','title':'Betrouwbare Netwerkverbinding','text':'Dankzij KPN heeft uw organisatie altijd een stabiele en kwalitatieve telefoonverbinding.'},
+                    {'icon':'🔊','title':'Hoge Kwaliteit','text':'Gesprekken verlopen duidelijk en zonder storingen dankzij het hoogwaardige KPN-netwerk.'},
+                    {'icon':'⏱️','title':'Continuïteit','text':'Uw telecomdiensten blijven altijd operationeel, ook bij onverwachte situaties.'},
+                    {'icon':'🛠️','title':'Maatwerk Oplossingen','text':'Telefonie en extra diensten die volledig zijn afgestemd op de wensen van jouw bedrijf.'}
+                ] %}
+                {% for card in cards %}
+                    <div class="col-md-6 col-lg-3">
+                        <div class="neumorphic-card animate__animated animate__fadeInUp" style="animation-delay: {{ loop.index * 0.2 }}s;">
+                            <div class="icon-wrapper">{{ card.icon }}</div>
+                            <h5>{{ card.title }}</h5>
+                            <p>{{ card.text }}</p>
                         </div>
                     </div>
-                </div>
-
-                <div class="col-md-6">
-                    <div class="card h-100 shadow-sm border-success">
-                        <div class="card-body">
-                            <h5 class="card-title">Hoge Kwaliteit</h5>
-                            <p class="card-text">
-                                Gesprekken verlopen duidelijk en zonder storingen dankzij het hoogwaardige KPN-netwerk.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6">
-                    <div class="card h-100 shadow-sm border-success">
-                        <div class="card-body">
-                            <h5 class="card-title">Continuïteit</h5>
-                            <p class="card-text">
-                                Uw telecomdiensten blijven altijd operationeel, ook bij onverwachte situaties.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6">
-                    <div class="card h-100 shadow-sm border-success">
-                        <div class="card-body">
-                            <h5 class="card-title">Maatwerk Oplossingen</h5>
-                            <p class="card-text">
-                                Telefonie en extra diensten die volledig zijn afgestemd op de wensen van jouw bedrijf.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
+                {% endfor %}
             </div>
         </div>
     </section>
 
     <!-- CTA SECTION -->
-    <section class="py-5 text-center text-white" style="background: #001f4d;">
+    <section class="py-5 text-center text-white cta-section">
         <div class="container">
             <h2 class="fw-bold mb-3">Klaar om te profiteren van KPN Business Partner-diensten?</h2>
             <p class="lead mb-4">Neem contact met ons op en ontdek hoe wij uw telecom volledig kunnen ontzorgen.</p>
-            <a href="/contact" class="btn btn-light btn-lg text-dark">Contact opnemen</a>
+            <a href="/contact" class="btn btn-cta btn-lg">Contact opnemen</a>
         </div>
     </section>
+
+    <!-- STYLES -->
+    <style>
+        /* HERO */
+        .hero-section{
+            height: 70vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+        }
+        .hero-bg{
+            position: absolute;
+            inset: 0;
+            background: url('{{ asset("assets/kpn-hero.webp") }}') center/cover no-repeat;
+            filter: brightness(0.55);
+            transform: scale(1.1);
+            z-index: 1;
+            transition: transform 2s ease;
+        }
+        .hero-section:hover .hero-bg{
+            transform: scale(1.15);
+        }
+        .hero-overlay{
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(0,31,77,0.6), rgba(179,0,0,0.5));
+            z-index: 2;
+            animation: overlayPulse 8s infinite alternate;
+        }
+        @keyframes overlayPulse{
+            0%{background: linear-gradient(135deg, rgba(0,31,77,0.6), rgba(179,0,0,0.5));}
+            100%{background: linear-gradient(135deg, rgba(0,31,77,0.7), rgba(179,0,0,0.6));}
+        }
+        .hero-content{position: relative; z-index:3;}
+        .scroll-down{
+            display: inline-block;
+            margin-top: 1rem;
+            font-size: 2rem;
+            animation: bounce 2s infinite;
+            color: #fff;
+        }
+        @keyframes bounce{
+            0%,20%,50%,80%,100%{transform:translateY(0);}
+            40%{transform:translateY(-10px);}
+            60%{transform:translateY(-5px);}
+        }
+
+        /* NEUMORPHIC CARDS */
+        .neumorphic-card{
+            background: #e0e0e0;
+            border-radius: 20px;
+            padding: 2rem 1.5rem;
+            text-align: center;
+            box-shadow: 8px 8px 20px #bebebe, -8px -8px 20px #ffffff;
+            transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.4s ease;
+            position: relative;
+        }
+        .neumorphic-card:hover{
+            transform: translateY(-10px) scale(1.03);
+            box-shadow: 12px 12px 25px #bebebe, -12px -12px 25px #ffffff;
+            background: #f0f0f0;
+        }
+        .icon-wrapper{
+            width: 70px;
+            height: 70px;
+            margin: -50px auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.4rem;
+            border-radius: 50%;
+            background: linear-gradient(135deg,#001f4d,#b30000);
+            color: #fff;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .neumorphic-card:hover .icon-wrapper{
+            transform: translateY(-5px) scale(1.25);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.25);
+        }
+        .neumorphic-card h5{
+            font-weight: 600;
+            font-size: 1.05rem;
+            margin-bottom: 0.5rem;
+        }
+        .neumorphic-card p{
+            font-weight: 400;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* CTA */
+        .cta-section{
+            background: linear-gradient(135deg,#001f4d,#b30000);
+        }
+        .btn-cta{
+            background: linear-gradient(135deg,#e53935,#b71c1c);
+            color: #fff;
+            border: none;
+            padding: 0.85rem 2.2rem;
+            font-weight: 600;
+            border-radius: 12px;
+            transition: all 0.35s;
+        }
+        .btn-cta:hover{
+            background: linear-gradient(135deg,#b71c1c,#e53935);
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 18px 35px rgba(183,28,28,.6);
+        }
+
+        /* PARALLAX HERO */
+        @media (prefers-reduced-motion: no-preference) {
+            .hero-bg{will-change: transform;}
+        }
+
+        /* RESPONSIVE */
+        @media (max-width:768px){
+            .hero-section h1{font-size:2.5rem;}
+            .hero-section p{font-size:1.1rem;}
+            .neumorphic-card h5{font-size:1rem;}
+            .neumorphic-card p{font-size:0.85rem;}
+        }
+    </style>
+
+    <script>
+        document.addEventListener('scroll', function(){
+            const scrolled = window.scrollY;
+            const bg = document.querySelector('.hero-bg');
+            if(bg) bg.style.transform = 'translateY(' + scrolled * 0.25 + 'px) scale(1.1)';
+        });
+    </script>
 
 {% endblock %}
