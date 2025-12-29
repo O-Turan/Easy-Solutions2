@@ -33,12 +33,70 @@
 {% endblock %}
 
 {% block body %}
-    <div class="container mt-5 text-center">
-        <h1 class="fw-bold mb-3">Bedankt!</h1>
-        <p class="lead">We hebben uw bericht ontvangen en nemen zo snel mogelijk contact met u op.</p>
+    <section class="thank-you-page d-flex align-items-center justify-content-center"
+             style="min-height: 70vh; position: relative; text-align: center; background-color: #f1f5f9; color: #001f4d;">
 
-        <a href="{{ path('app_home') }}" class="btn btn-secondary mt-4">
-            Terug naar homepage
-        </a>
-    </div>
+        <div class="container position-relative" style="z-index:2;">
+            <h1 class="display-4 fw-bold mb-3 animate__animated animate__fadeInDown">Bedankt!</h1>
+            <p class="lead mb-4 animate__animated animate__fadeInUp">We hebben uw bericht ontvangen en nemen zo snel mogelijk contact met u op.</p>
+
+            <a href="{{ path('app_home') }}" class="btn btn-super btn-lg px-5 py-3 animate__animated animate__fadeInUp" style="position: relative; overflow: hidden;">
+                <span class="btn-text">Terug naar homepage</span>
+                <span class="btn-glow"></span>
+            </a>
+        </div>
+    </section>
+
+    <style>
+        /* Knopstijl */
+        .btn-super {
+            background: linear-gradient(135deg, #001f4d, #b30000);
+            color: #fff;
+            font-weight: 700;
+            font-size: 1.1rem;
+            border-radius: 50px;
+            border: none;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .btn-super .btn-text {
+            position: relative;
+            z-index: 2;
+            color: #fff;
+        }
+        .btn-super .btn-glow {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at center, rgba(255,255,255,0.25) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.3s, transform 0.5s;
+            z-index: 1;
+        }
+        .btn-super:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.3);
+        }
+        .btn-super:hover .btn-glow {
+            opacity: 1;
+            transform: rotate(45deg);
+        }
+        .btn-super:active {
+            transform: translateY(0) scale(0.98);
+            box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+        }
+
+        /* Animaties met Animate.css (via CDN) */
+        @import url('https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css');
+
+        .thank-you-page h1, .thank-you-page p, .btn-super {
+            animation-duration: 0.8s;
+            animation-delay: 0.2s;
+            animation-fill-mode: both;
+        }
+    </style>
 {% endblock %}

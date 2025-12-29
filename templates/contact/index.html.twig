@@ -24,7 +24,6 @@
             <div class="row g-5 justify-content-center">
 
                 <div class="col-lg-7">
-                    <!-- Card rondom form met schaduw en afgeronde hoeken -->
                     <div class="card shadow-sm rounded-4 p-4 p-lg-5">
                         <h2 class="h4 mb-3 fw-bold text-center">Stuur ons een bericht</h2>
                         <p class="text-dark small mb-4 text-center">We reageren doorgaans binnen één werkdag.</p>
@@ -85,8 +84,10 @@
                                 </div>
 
                                 <div class="col-12 text-center mt-3">
-                                    <button type="submit" class="btn btn-lg border-dark px-5 py-3 shadow-sm rounded-pill">
-                                        Verstuur bericht 💬
+                                    <!-- Superieure knop -->
+                                    <button type="submit" class="btn btn-super px-5 py-3 rounded-pill shadow-lg position-relative overflow-hidden">
+                                        <span class="btn-text">Verstuur bericht 💬</span>
+                                        <span class="btn-glow"></span>
                                     </button>
                                     <p class="form-text mt-3 text-dark small">
                                         Door te verzenden ga je akkoord met onze
@@ -110,7 +111,64 @@
                 }
             })();
         </script>
+
     </main>
+
+    <!-- Knop CSS: next-level style -->
+    <style>
+        .btn-super {
+            background: linear-gradient(135deg, #001f4d, #b30000);
+            color: #fff;
+            font-weight: 700;
+            font-size: 1.05rem;
+            letter-spacing: 0.5px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .btn-super .btn-text {
+            position: relative;
+            z-index: 2;
+        }
+        .btn-super {
+            background: linear-gradient(135deg, #001f4d, #b30000);
+            color: #fff; /* Altijd wit */
+            font-weight: 700;
+            font-size: 1.05rem;
+            letter-spacing: 0.5px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+        }
+        .btn-super .btn-text {
+            position: relative;
+            z-index: 2;
+            color: #fff; /* Altijd wit, zelfs bij hover */
+        }
+        .btn-super .btn-glow {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at center, rgba(255,255,255,0.25) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.3s, transform 0.5s;
+            z-index: 1;
+        }
+        .btn-super:hover {
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.3);
+        }
+        .btn-super:hover .btn-glow {
+            opacity: 1;
+            transform: rotate(45deg);
+        }
+        .btn-super:active {
+            transform: translateY(0) scale(0.98);
+            box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+        }
+
+    </style>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
 
