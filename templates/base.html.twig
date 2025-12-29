@@ -180,37 +180,37 @@
 {% endblock %}
 
 <!-- Footer -->
-<footer class="bg-dark text-white mt-5 pt-4 pb-3">
+<footer class="footer bg-gradient-dark text-white pt-5 pb-4">
     <div class="container">
         <div class="row">
 
-            <!-- Info -->
+            <!-- Over ons -->
             <div class="col-md-4 mb-4">
-                <h5 class="fw-bold">Easy Solutions</h5>
-                <p class="small text-white-50">
+                <h5 class="fw-bold mb-3">Easy Solutions</h5>
+                <p class="text-white-50 small">
                     Wij leveren innovatieve en betrouwbare VoIP-oplossingen om uw bedrijf te laten groeien.
                 </p>
             </div>
 
             <!-- Navigatie -->
             <div class="col-md-4 mb-4">
-                <h5 class="fw-bold">Navigatie</h5>
+                <h5 class="fw-bold mb-3">Navigatie</h5>
                 <ul class="list-unstyled">
-                    <li><a href="{{ path('app_home') }}" class="text-white-50">Home</a></li>
-                    <li><a href="{{ path('app_diensten') }}" class="text-white-50">Diensten</a></li>
-                    <li><a href="{{ path('app_over_ons') }}" class="text-white-50">Over ons</a></li>
-                    <li><a href="{{ path('app_contact') }}" class="text-white-50">Contact</a></li>
-                    <li><a href="{{ path('offerte') }}" class="text-white-50">Offerte</a></li>
+                    <li><a href="{{ path('app_home') }}" class="footer-link">Home</a></li>
+                    <li><a href="{{ path('app_diensten') }}" class="footer-link">Diensten</a></li>
+                    <li><a href="{{ path('app_over_ons') }}" class="footer-link">Over ons</a></li>
+                    <li><a href="{{ path('app_contact') }}" class="footer-link">Contact</a></li>
+                    <li><a href="{{ path('offerte') }}" class="footer-link">Offerte</a></li>
                 </ul>
             </div>
 
             <!-- Contact -->
             <div class="col-md-4 mb-4">
-                <h5 class="fw-bold">Contact</h5>
+                <h5 class="fw-bold mb-3">Contact</h5>
                 <ul class="list-unstyled text-white-50 small">
-                    <li>Email: info@easysolutions.nl</li>
-                    <li>Telefoon: +31 880666100</li>
-                    <li>Adres: Regulusweg 5, 2516AC, Den Haag</li>
+                    <li><i class="bi bi-envelope-fill me-1"></i> info@easysolutions.nl</li>
+                    <li><i class="bi bi-telephone-fill me-1"></i> +31 880666100</li>
+                    <li><i class="bi bi-geo-alt-fill me-1"></i> Regulusweg 5, 2516AC, Den Haag</li>
                 </ul>
             </div>
 
@@ -218,14 +218,48 @@
 
         <hr class="border-secondary">
 
-        <div class="text-center small text-white-50 d-flex justify-content-center gap-3 flex-wrap">
+        <div class="d-flex flex-column flex-md-row justify-content-between align-items-center small text-white-50">
             <span>© {{ "now"|date("Y") }} Easy Solutions — Alle rechten voorbehouden</span>
-            <a href="{{ path('app_privacy_beleid') }}" class="text-white-50">Privacybeleid</a>
-            <a href="{{ path('app_algemene_voorwaarden') }}" class="text-white-50">Algemene Voorwaarden</a>
+            <div class="d-flex gap-3 mt-2 mt-md-0">
+                <a href="{{ path('app_privacy_beleid') }}" class="footer-link">Privacybeleid</a>
+                <a href="{{ path('app_algemene_voorwaarden') }}" class="footer-link">Algemene Voorwaarden</a>
+            </div>
         </div>
-
     </div>
 </footer>
+
+<style>
+    .footer {
+        background: linear-gradient(135deg, #001f4d, #0d0d0d); /* donkerblauw naar zwart gradient */
+        color: #fff;
+    }
+
+    .footer a.footer-link {
+        color: #fff; /* links standaard wit */
+        text-decoration: none;
+        transition: color 0.3s;
+    }
+
+    .footer a.footer-link:hover {
+        color: #b30000; /* rode hover */
+    }
+
+    .footer hr {
+        border-color: rgba(255,255,255,0.1);
+    }
+
+    .footer i {
+        color: #b30000;
+    }
+
+    @media (max-width: 768px) {
+        .footer .d-flex {
+            flex-direction: column !important;
+            gap: 0.5rem;
+        }
+    }
+</style>
+
 
 </body>
 </html>
