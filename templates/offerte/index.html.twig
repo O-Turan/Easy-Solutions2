@@ -3,184 +3,193 @@
 {% block title %}Offerte aanvragen - Easy Solutions{% endblock %}
 
 {% block meta_description %}
-    Vraag vrijblijvend een offerte aan voor VoIP, hosted telefonie, SIP-trunks of zakelijke telecomoplossingen bij Easy Solutions. Binnen 24 uur reactie.
-{% endblock %}
-
-{% block meta_robots %}
-    <meta name="robots" content="index, follow">
+    Vraag vrijblijvend een offerte aan voor VoIP, hosted telefonie en zakelijke telecomoplossingen. Persoonlijk advies binnen 24 uur.
 {% endblock %}
 
 {% block body %}
 
-    <!-- HEADER -->
-    <header class="py-5 position-relative text-white" style="background: linear-gradient(135deg, #001f4d, #b30000);">
+    <header class="hero-offerte position-relative text-white">
         <div class="container py-5 text-center">
-            <h1 class="display-5 fw-bold mb-3">Vraag een offerte aan</h1>
-            <p class="lead opacity-75 mb-0">
-                Ontvang binnen 24 uur een vrijblijvende offerte voor jouw zakelijke telecomoplossing.
-            </p>
+            <span class="hero-badge mb-3">Zakelijke telecom • op maat</span>
+            <h1 class="display-4 fw-bold mb-3">Vraag een persoonlijke offerte aan</h1>
+            <p class="lead opacity-75">Geen standaardpakketten. Wel een oplossing die past bij jouw bedrijf.</p>
         </div>
 
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 120"
-             class="position-absolute start-0 w-100"
-             style="bottom:-1px"
-             preserveAspectRatio="none"
-             height="60">
-            <path fill="#ffffff"
+        <svg viewBox="0 0 1440 120" class="hero-wave" preserveAspectRatio="none">
+            <path fill="#fff"
                   d="M0,64L48,74.7C96,85,192,107,288,112C384,117,480,107,576,96C672,85,768,75,864,80C960,85,1056,107,1152,112C1248,117,1344,107,1392,101.3L1440,96L1440,120L0,120Z"/>
         </svg>
     </header>
 
-    <!-- CONTENT -->
     <main class="py-5">
         <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
+            <div class="row g-5 justify-content-center align-items-start">
 
-                    <div class="card shadow-sm rounded-4 p-4 p-lg-5">
+                <!-- FORM -->
+                <div class="col-lg-7">
+                    <div class="glass-card p-4 p-lg-5">
 
-                        <h2 class="h4 fw-bold text-center mb-2">Offerte aanvragen</h2>
-                        <p class="text-center text-muted small mb-4">
-                            Offerte voor VoIP, hosted telefonie en zakelijke telecomoplossingen op maat.
-                        </p>
-
-                        <!-- INFO BLOKKEN -->
-                        <div class="row g-3 mb-4 text-center">
-                            <div class="col-md-4">
-                                <div class="p-3 bg-light rounded-4 h-100">
-                                    <strong>📞 Zakelijke telefonie</strong>
-                                    <div class="small text-muted">VoIP, Hosted PBX & SIP-trunks</div>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="p-3 bg-light rounded-4 h-100">
-                                    <strong>⚡ Snel geregeld</strong>
-                                    <div class="small text-muted">Binnen 24 uur reactie</div>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="p-3 bg-light rounded-4 h-100">
-                                    <strong>🤝 Persoonlijk advies</strong>
-                                    <div class="small text-muted">Geen standaard offertes</div>
-                                </div>
-                            </div>
+                        <div class="text-center mb-4">
+                            <h2 class="h4 fw-bold">Offerte aanvragen</h2>
+                            <p class="text-muted small">Binnen 24 uur persoonlijk contact</p>
                         </div>
 
-                        {% if errors is defined and errors %}
-                            <div class="alert alert-danger">
-                                <ul class="mb-0">
-                                    {% for error in errors %}
-                                        <li>{{ error }}</li>
-                                    {% endfor %}
-                                </ul>
-                            </div>
-                        {% endif %}
-
-                        <!-- FORMULIER -->
                         <form action="{{ path('offerte_send') }}" method="POST">
                             <input type="text" name="_honey" style="display:none">
 
-                            <div class="mb-3">
-                                <label class="form-label">Naam</label>
-                                <input type="text" name="Naam" class="form-control" required value="{{ formData.Naam ?? '' }}">
-                            </div>
+                            <div class="row g-3">
 
-                            <div class="mb-3">
-                                <label class="form-label">Bedrijf</label>
-                                <input type="text" name="Bedrijf" class="form-control" required value="{{ formData.Bedrijf ?? '' }}">
-                            </div>
-
-                            <div class="mb-3">
-                                <label class="form-label">E-mail</label>
-                                <input type="email" name="email" class="form-control" required value="{{ formData.email ?? '' }}">
-                            </div>
-
-                            <div class="mb-3">
-                                <label class="form-label">Telefoon</label>
-                                <input type="text" name="Telefoonnummer" class="form-control" required value="{{ formData.Telefoonnummer ?? '' }}">
-                            </div>
-
-                            <div class="mb-3">
-                                <label class="form-label">Aantal accounts</label>
-                                <input type="number" name="Aantal_accounts" min="1" max="50" class="form-control"
-                                       value="{{ formData.Aantal_accounts ?? 1 }}" required>
-                            </div>
-
-                            <div class="mb-4">
-                                <label class="form-label">Bericht</label>
-                                <textarea name="Bericht" rows="4" class="form-control">{{ formData.Bericht ?? '' }}</textarea>
-                            </div>
-
-                            <!-- BUTTON -->
-                            <div class="text-center">
-                                <button type="submit"
-                                        class="btn btn-super px-5 py-3 rounded-pill shadow-lg position-relative overflow-hidden">
-                                    <span class="btn-text">Verstuur aanvraag 💬</span>
-                                    <span class="btn-glow"></span>
-                                </button>
-
-                                <div class="mt-4 d-flex justify-content-center gap-4 flex-wrap text-muted small">
-                                    <div>✅ Binnen 24 uur reactie</div>
-                                    <div>🔒 Gegevens veilig verwerkt</div>
-                                    <div>📞 Persoonlijk contact</div>
+                                <div class="col-md-6">
+                                    <label class="form-label">Naam *</label>
+                                    <input type="text" name="Naam"
+                                           class="form-control form-modern"
+                                           placeholder="Uw naam"
+                                           required value="{{ formData.Naam|default('') }}">
                                 </div>
 
-                                <p class="form-text mt-3 text-dark small">
-                                    Door te verzenden ga je akkoord met onze
-                                    <a href="{{ path('app_privacy_beleid') }}" class="text-decoration-none">
-                                        privacy voorwaarden
-                                    </a>.
-                                </p>
+                                <div class="col-md-6">
+                                    <label class="form-label">Bedrijfsnaam *</label>
+                                    <input type="text" name="Bedrijf"
+                                           class="form-control form-modern"
+                                           placeholder="Naam van uw bedrijf"
+                                           required value="{{ formData.Bedrijf|default('') }}">
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label class="form-label">E-mailadres *</label>
+                                    <input type="email" name="email"
+                                           class="form-control form-modern"
+                                           placeholder="naam@bedrijf.nl"
+                                           required value="{{ formData.email|default('') }}">
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label class="form-label">Telefoonnummer</label>
+                                    <input type="tel" name="Telefoonnummer"
+                                           class="form-control form-modern"
+                                           placeholder="06 12345678"
+                                           value="{{ formData.Telefoonnummer|default('') }}">
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label class="form-label">Aantal gebruikers</label>
+                                    <input type="number" name="Aantal_accounts"
+                                           class="form-control form-modern"
+                                           min="1" max="100"
+                                           placeholder="Bijv. 5"
+                                           value="{{ formData.Aantal_accounts|default(1) }}">
+                                </div>
+
+                                <div class="col-12">
+                                    <label class="form-label">Toelichting (optioneel)</label>
+                                    <textarea name="Bericht" rows="4"
+                                              class="form-control form-modern"
+                                              placeholder="Uw bericht...">{{ formData.Bericht|default('') }}</textarea>
+                                </div>
+
+                                <div class="col-12 text-center mt-4">
+                                    <button type="submit" class="btn btn-hero px-5 py-3 rounded-pill position-relative overflow-hidden">
+                                        Offerte aanvragen →
+                                        <span class="btn-glow"></span>
+                                    </button>
+                                    <p class="small text-muted mt-3 mb-0">
+                                        Door te verzenden ga je akkoord met onze
+                                        <a href="{{ path('app_privacy_beleid') }}" class="text-decoration-none">privacyvoorwaarden</a>.
+                                    </p>
+                                </div>
+
                             </div>
                         </form>
 
                     </div>
-
                 </div>
+
+                <!-- INFO CARDS -->
+                <div class="col-lg-4">
+                    <div class="info-stack">
+                        <div class="info-card">
+                            <strong>Waarom Easy Solutions?</strong>
+                            <p>Geen pakketten, maar oplossingen op maat.</p>
+                        </div>
+                        <div class="info-card highlight">
+                            <strong>⚡ Snel</strong>
+                            <p>Meestal dezelfde werkdag reactie.</p>
+                        </div>
+                        <div class="info-card">
+                            <strong>🔒 Transparant</strong>
+                            <p>Heldere prijzen, geen verrassingen.</p>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </main>
 
-    <!-- BUTTON CSS -->
     <style>
-        .btn-super {
-            background: linear-gradient(135deg, #001f4d, #b30000);
-            color: #fff;
-            font-weight: 700;
-            font-size: 1.05rem;
-            letter-spacing: .5px;
+        /* HERO */
+        .hero-offerte{background:radial-gradient(circle at top left,#002b6f,#00152f)}
+        .hero-badge{background:rgba(255,255,255,.15);padding:.4rem 1rem;border-radius:999px;font-size:.85rem}
+        .hero-wave{position:absolute;bottom:-1px;width:100%;height:60px}
+
+        /* FORM CARD */
+        .glass-card{
+            background:rgba(255,255,255,.95);
+            border-radius:24px;
+            box-shadow:0 30px 80px rgba(0,0,0,.12);
+        }
+        .form-label{font-size:.8rem;font-weight:600;color:#374151;margin-bottom:.25rem}
+        .form-modern{border-radius:14px;padding:14px 16px;border:1px solid #e5e7eb}
+        .form-modern:focus{border-color:#002b6f;box-shadow:none}
+
+        /* BUTTON */
+        .btn-hero{
+            background: linear-gradient(135deg,#002b6f,#00152f);
+            color:#fff !important; /* altijd wit */
+            font-weight:700;
+            font-size:1rem;
+            position:relative;
+            overflow:hidden;
+            transition: transform .3s ease, box-shadow .3s ease, background .3s ease;
+        }
+        .btn-hero .btn-glow{
+            content:"";
+            position:absolute;
+            top:-50%;
+            left:-50%;
+            width:200%;
+            height:200%;
+            background:radial-gradient(circle at center,rgba(255,255,255,.25) 0%,transparent 70%);
+            opacity:0;
+            transition:opacity .3s, transform .5s;
+            z-index:1;
+        }
+        .btn-hero:hover,
+        .btn-hero:focus,
+        .btn-hero:active{
+            color:#fff !important;
+            transform:translateY(-4px) scale(1.02);
+            box-shadow:0 12px 35px rgba(0,0,0,.25);
+        }
+        .btn-hero:hover .btn-glow{
+            opacity:1;
+            transform:rotate(45deg);
+        }
+
+        /* INFO CARDS */
+        .info-stack{display:flex;flex-direction:column;gap:1rem}
+        .info-card{
+            background:#fff;
+            border-radius:18px;
+            padding:1.25rem;
+            box-shadow:0 12px 30px rgba(0,0,0,.08);
             transition: transform .3s ease, box-shadow .3s ease;
-            position: relative;
         }
-        .btn-super .btn-text {
-            position: relative;
-            z-index: 2;
-            color: #fff;
-        }
-        .btn-super .btn-glow {
-            position: absolute;
-            inset: -50%;
-            background: radial-gradient(circle, rgba(255,255,255,.25) 0%, transparent 70%);
-            opacity: 0;
-            transition: opacity .3s ease, transform .5s ease;
-            z-index: 1;
-        }
-        .btn-super:hover {
-            transform: translateY(-4px) scale(1.02);
-            box-shadow: 0 12px 35px rgba(0,0,0,.3);
-        }
-        .btn-super:hover .btn-glow {
-            opacity: 1;
-            transform: rotate(45deg);
-        }
-        .btn-super:active {
-            transform: scale(.98);
+        .info-card:hover{transform:translateY(-4px);box-shadow:0 20px 40px rgba(0,0,0,.12);}
+        .info-card.highlight{
+            background:linear-gradient(135deg,#002b6f,#00152f);
+            color:#fff;
         }
     </style>
 
-{% endblock %}
-
-{% block og_title %}Offerte aanvragen - Easy Solutions{% endblock %}
-{% block og_description %}
-    Vraag vrijblijvend een offerte aan voor zakelijke telecomdiensten zoals VoIP, hosted PBX en SIP-trunks.
 {% endblock %}

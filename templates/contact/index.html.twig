@@ -5,20 +5,16 @@
 {% block body %}
 
     <header class="py-5 position-relative text-white" style="background: linear-gradient(135deg, #001f4d, #b30000);">
-        <div class="container py-5">
-            <div class="row justify-content-center text-center g-4">
-                <div class="col-lg-8">
-                    <span class="badge bg-light text-dark mb-2">We helpen graag</span>
-                    <h1 class="display-5 fw-bold mb-2">Neem contact op</h1>
-                    <p class="lead opacity-75 mb-0">Vragen of klaar om te starten? We helpen graag.</p>
-                </div>
-            </div>
+        <div class="container py-5 text-center">
+            <span class="badge bg-light text-dark mb-3">We helpen graag</span>
+            <h1 class="display-5 fw-bold mb-2">Neem contact op</h1>
+            <p class="lead opacity-75 mb-0">
+                Vragen of klaar om te starten? We denken graag met je mee.
+            </p>
         </div>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 120"
-             class="position-absolute start-0 w-100"
-             style="bottom:-1px"
-             preserveAspectRatio="none"
-             height="60">
+
+        <svg viewBox="0 0 1440 120" class="position-absolute start-0 w-100"
+             style="bottom:-1px" preserveAspectRatio="none" height="60">
             <path fill="#ffffff"
                   d="M0,64L48,74.7C96,85,192,107,288,112C384,117,480,107,576,96C672,85,768,75,864,80C960,85,1056,107,1152,112C1248,117,1344,107,1392,101.3L1440,96L1440,120L0,120Z"/>
         </svg>
@@ -31,13 +27,16 @@
                 <!-- FORM -->
                 <div class="col-lg-7">
                     <div class="card shadow-sm rounded-4 p-4 p-lg-5">
-                        <h2 class="h4 mb-3 fw-bold text-center">Stuur ons een bericht</h2>
-                        <p class="text-dark small mb-4 text-center">
-                            We reageren doorgaans binnen één werkdag.
-                        </p>
+
+                        <div class="text-center mb-4">
+                            <h2 class="h4 fw-bold mb-1">Stuur ons een bericht</h2>
+                            <p class="text-muted small mb-0">
+                                We reageren doorgaans binnen één werkdag.
+                            </p>
+                        </div>
 
                         {% if success is defined and success == '1' %}
-                            <div class="alert alert-success" id="contactSuccess">
+                            <div class="alert alert-success">
                                 Bedankt! We nemen spoedig contact met je op.
                             </div>
                         {% endif %}
@@ -56,78 +55,81 @@
                             <input type="text" name="_honey" style="display:none">
 
                             <div class="row g-3">
+
                                 <div class="col-md-6">
-                                    <div class="form-floating">
-                                        <input type="text" class="form-control" name="Naam" placeholder="Naam" required value="{{ formData.Naam|default('') }}">
-                                        <label>Naam</label>
-                                    </div>
+                                    <label class="form-label fw-semibold">Naam</label>
+                                    <input type="text" class="form-control"
+                                           name="Naam" placeholder="Uw naam"
+                                           required value="{{ formData.Naam|default('') }}">
                                 </div>
 
                                 <div class="col-md-6">
-                                    <div class="form-floating">
-                                        <input type="text" class="form-control" name="Bedrijf" placeholder="Bedrijf" value="{{ formData.Bedrijf|default('') }}">
-                                        <label>Bedrijf (optioneel)</label>
-                                    </div>
+                                    <label class="form-label fw-semibold">Bedrijf</label>
+                                    <input type="text" class="form-control"
+                                           name="Bedrijf" placeholder="Bedrijfsnaam"
+                                           value="{{ formData.Bedrijf|default('') }}">
                                 </div>
 
                                 <div class="col-md-6">
-                                    <div class="form-floating">
-                                        <input type="email" class="form-control" name="email" placeholder="E-mail" required value="{{ formData.email|default('') }}">
-                                        <label>E-mailadres</label>
-                                    </div>
+                                    <label class="form-label fw-semibold">E-mailadres</label>
+                                    <input type="email" class="form-control"
+                                           name="email" placeholder="naam@bedrijf.nl"
+                                           required value="{{ formData.email|default('') }}">
                                 </div>
 
                                 <div class="col-md-6">
-                                    <div class="form-floating">
-                                        <input type="tel" class="form-control" name="Telefoonnummer" placeholder="Telefoonnummer" value="{{ formData.Telefoonnummer|default('') }}">
-                                        <label>Telefoonnummer</label>
-                                    </div>
+                                    <label class="form-label fw-semibold">Telefoonnummer</label>
+                                    <input type="tel" class="form-control"
+                                           name="Telefoonnummer" placeholder="06 12345678"
+                                           value="{{ formData.Telefoonnummer|default('') }}">
                                 </div>
 
                                 <div class="col-12">
-                                    <div class="form-floating">
-                                        <textarea class="form-control" name="Bericht" placeholder="Bericht" style="height:140px" required>{{ formData.Bericht|default('') }}</textarea>
-                                        <label>Bericht</label>
-                                    </div>
+                                    <label class="form-label fw-semibold">Bericht</label>
+                                    <textarea class="form-control"
+                                              name="Bericht" rows="4"
+                                              placeholder="Waarmee kunnen we je helpen?"
+                                              required>{{ formData.Bericht|default('') }}</textarea>
                                 </div>
 
-                                <div class="col-12 text-center mt-3">
+                                <div class="col-12 text-center mt-4">
+                                    <!-- DE OUDE KNOP -->
                                     <button type="submit"
                                             class="btn btn-super px-5 py-3 rounded-pill shadow-lg position-relative overflow-hidden">
                                         <span class="btn-text">Verstuur bericht 💬</span>
                                         <span class="btn-glow"></span>
                                     </button>
 
-                                    <p class="form-text mt-3 text-dark small">
+                                    <p class="small text-muted mt-3 mb-0">
                                         Door te verzenden ga je akkoord met onze
                                         <a href="{{ path('app_privacy_beleid') }}" class="text-decoration-none">
-                                            privacy voorwaarden
+                                            privacyvoorwaarden
                                         </a>.
                                     </p>
                                 </div>
+
                             </div>
                         </form>
+
                     </div>
                 </div>
 
-                <!-- KLEINERE INFO CARD -->
+                <!-- INFO CARD -->
                 <div class="col-lg-4">
-                    <div class="card shadow-sm rounded-4 p-3 p-lg-4 h-100 small">
-                        <h3 class="h6 fw-bold mb-2">Waarom contact opnemen?</h3>
+                    <div class="card shadow-sm rounded-4 p-4 h-100">
 
-                        <p class="text-muted mb-3">
-                            Persoonlijk advies over VoIP en zakelijke telecomoplossingen.
-                        </p>
+                        <h3 class="h6 fw-bold mb-3">Waarom contact opnemen?</h3>
 
-                        <ul class="list-unstyled mb-3">
-                            <li class="mb-1">✅ Reactie binnen 1 werkdag</li>
-                            <li class="mb-1">✅ Vrijblijvend advies</li>
-                            <li class="mb-1">✅ Geen verplichtingen</li>
+                        <ul class="list-unstyled small mb-4">
+                            <li class="mb-2">✔ Persoonlijk advies</li>
+                            <li class="mb-2">✔ Reactie binnen 1 werkdag</li>
+                            <li class="mb-2">✔ Vrijblijvend & transparant</li>
                         </ul>
 
-                        <div class="bg-light rounded-3 p-2 text-center">
-                            <strong class="small">📞 Snel geholpen</strong>
+                        <div class="bg-light rounded-3 p-3 text-center small">
+                            📞 Snel geholpen door een specialist
                         </div>
+
                     </div>
                 </div>
 
@@ -135,28 +137,48 @@
         </div>
     </main>
 
+    <!-- KNOP CSS: behoud glow effect, tekst altijd wit -->
     <style>
-        .btn-super{
+        .btn-super {
             background: linear-gradient(135deg, #001f4d, #b30000);
-            color:#fff;
-            font-weight:700;
-            font-size:1.05rem;
-            letter-spacing:.5px;
-            transition:.3s ease;
+            color: #fff !important; /* Altijd wit */
+            font-weight: 700;
+            font-size: 1.05rem;
+            letter-spacing: 0.5px;
+            overflow: hidden;
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
         }
-        .btn-super .btn-text{ color:#fff; position:relative; z-index:2; }
-        .btn-glow{
-            position:absolute;
-            inset:-50%;
-            background:radial-gradient(circle,rgba(255,255,255,.25),transparent 70%);
-            opacity:0;
-            transition:.3s;
+        .btn-super .btn-text {
+            position: relative;
+            z-index: 2;
+            color: #fff !important; /* Tekst blijft wit, ook bij hover */
         }
-        .btn-super:hover{
-            transform:translateY(-4px);
-            box-shadow:0 12px 35px rgba(0,0,0,.3);
+        .btn-super .btn-glow {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at center, rgba(255,255,255,0.25) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.3s, transform 0.5s;
+            z-index: 1;
         }
-        .btn-super:hover .btn-glow{ opacity:1; }
+        .btn-super:hover, .btn-super:focus, .btn-super:active {
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.3);
+            color: #fff !important; /* Tekst blijft wit */
+        }
+        .btn-super:hover .btn-glow{
+            opacity:1;
+            transform: rotate(45deg);
+        }
+        .btn-super:active {
+            transform: translateY(0) scale(0.98);
+            box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+        }
     </style>
 
 {% endblock %}
