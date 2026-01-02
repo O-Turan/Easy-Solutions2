@@ -72,10 +72,11 @@
                                 <textarea name="Bericht" class="form-control" rows="4">{{ formData.Bericht ?? '' }}</textarea>
                             </div>
 
-                            <!-- Gecentreerde verzendknop zoals bij contact -->
+                            <!-- Button aangepast zoals contactpagina -->
                             <div class="text-center mt-3">
-                                <button type="submit" class="btn btn-lg border-dark px-5 py-3 shadow-sm rounded-pill">
-                                    Verstuur aanvraag 💬
+                                <button type="submit" class="btn btn-super px-5 py-3 rounded-pill shadow-lg position-relative overflow-hidden">
+                                    <span class="btn-text">Verstuur aanvraag 💬</span>
+                                    <span class="btn-glow"></span>
                                 </button>
                                 <p class="form-text mt-3 text-dark small">
                                     Door te verzenden ga je akkoord met onze
@@ -88,6 +89,49 @@
             </div>
         </div>
     </main>
+
+    <style>
+        /* ================= BUTTON ================ */
+        .btn-super {
+            background: linear-gradient(135deg, #001f4d, #b30000);
+            color: #fff;
+            font-weight: 700;
+            font-size: 1.05rem;
+            letter-spacing: 0.5px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+            position: relative;
+        }
+        .btn-super .btn-text {
+            position: relative;
+            z-index: 2;
+            color: #fff;
+        }
+        .btn-super .btn-glow {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at center, rgba(255,255,255,0.25) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.3s, transform 0.5s;
+            z-index: 1;
+        }
+        .btn-super:hover {
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.3);
+        }
+        .btn-super:hover .btn-glow {
+            opacity: 1;
+            transform: rotate(45deg);
+        }
+        .btn-super:active {
+            transform: translateY(0) scale(0.98);
+            box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+        }
+    </style>
 
 {% endblock %}
 
