@@ -14,28 +14,36 @@
                 </div>
             </div>
         </div>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 120" class="position-absolute start-0 w-100" style="bottom:-1px" preserveAspectRatio="none" height="60">
-            <path fill="#ffffff" d="M0,64L48,74.7C96,85,192,107,288,112C384,117,480,107,576,96C672,85,768,75,864,80C960,85,1056,107,1152,112C1248,117,1344,107,1392,101.3L1440,96L1440,120L1392,120C1344,120,1248,120,1152,120C1056,120,960,120,864,120C768,120,672,120,576,120C480,120,384,120,288,120C192,120,96,120,48,120L0,120Z"/>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 120"
+             class="position-absolute start-0 w-100"
+             style="bottom:-1px"
+             preserveAspectRatio="none"
+             height="60">
+            <path fill="#ffffff"
+                  d="M0,64L48,74.7C96,85,192,107,288,112C384,117,480,107,576,96C672,85,768,75,864,80C960,85,1056,107,1152,112C1248,117,1344,107,1392,101.3L1440,96L1440,120L0,120Z"/>
         </svg>
     </header>
 
     <main class="py-5">
         <div class="container">
-            <div class="row g-5 justify-content-center">
+            <div class="row g-5 justify-content-center align-items-start">
 
+                <!-- FORM -->
                 <div class="col-lg-7">
                     <div class="card shadow-sm rounded-4 p-4 p-lg-5">
                         <h2 class="h4 mb-3 fw-bold text-center">Stuur ons een bericht</h2>
-                        <p class="text-dark small mb-4 text-center">We reageren doorgaans binnen één werkdag.</p>
+                        <p class="text-dark small mb-4 text-center">
+                            We reageren doorgaans binnen één werkdag.
+                        </p>
 
                         {% if success is defined and success == '1' %}
-                            <div class="alert alert-success" id="contactSuccess" role="alert">
+                            <div class="alert alert-success" id="contactSuccess">
                                 Bedankt! We nemen spoedig contact met je op.
                             </div>
                         {% endif %}
 
                         {% if errors is defined and errors %}
-                            <div class="alert alert-danger" role="alert">
+                            <div class="alert alert-danger">
                                 <ul class="mb-0">
                                     {% for error in errors %}
                                         <li>{{ error }}</li>
@@ -50,126 +58,105 @@
                             <div class="row g-3">
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                        <input type="text" class="form-control" id="contactName" name="Naam" placeholder="Naam" required value="{{ formData.Naam|default('') }}">
-                                        <label for="contactName">Naam</label>
+                                        <input type="text" class="form-control" name="Naam" placeholder="Naam" required value="{{ formData.Naam|default('') }}">
+                                        <label>Naam</label>
                                     </div>
                                 </div>
 
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                        <input type="text" class="form-control" id="contactCompany" name="Bedrijf" placeholder="Bedrijf" value="{{ formData.Bedrijf|default('') }}">
-                                        <label for="contactCompany">Bedrijf (optioneel)</label>
+                                        <input type="text" class="form-control" name="Bedrijf" placeholder="Bedrijf" value="{{ formData.Bedrijf|default('') }}">
+                                        <label>Bedrijf (optioneel)</label>
                                     </div>
                                 </div>
 
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                        <input type="email" class="form-control" id="contactEmail" name="email" placeholder="E-mail" required value="{{ formData.email|default('') }}">
-                                        <label for="contactEmail">E-mailadres</label>
+                                        <input type="email" class="form-control" name="email" placeholder="E-mail" required value="{{ formData.email|default('') }}">
+                                        <label>E-mailadres</label>
                                     </div>
                                 </div>
 
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                        <input type="tel" class="form-control" id="contactPhone" name="Telefoonnummer" placeholder="0612345678" value="{{ formData.Telefoonnummer|default('') }}">
-                                        <label for="contactPhone">Telefoonnummer</label>
+                                        <input type="tel" class="form-control" name="Telefoonnummer" placeholder="Telefoonnummer" value="{{ formData.Telefoonnummer|default('') }}">
+                                        <label>Telefoonnummer</label>
                                     </div>
                                 </div>
 
                                 <div class="col-12">
                                     <div class="form-floating">
-                                        <textarea class="form-control" id="contactMessage" name="Bericht" placeholder="Bericht" style="height:140px" required>{{ formData.Bericht|default('') }}</textarea>
-                                        <label for="contactMessage">Bericht</label>
+                                        <textarea class="form-control" name="Bericht" placeholder="Bericht" style="height:140px" required>{{ formData.Bericht|default('') }}</textarea>
+                                        <label>Bericht</label>
                                     </div>
                                 </div>
 
                                 <div class="col-12 text-center mt-3">
-                                    <!-- Superieure knop -->
-                                    <button type="submit" class="btn btn-super px-5 py-3 rounded-pill shadow-lg position-relative overflow-hidden">
+                                    <button type="submit"
+                                            class="btn btn-super px-5 py-3 rounded-pill shadow-lg position-relative overflow-hidden">
                                         <span class="btn-text">Verstuur bericht 💬</span>
                                         <span class="btn-glow"></span>
                                     </button>
+
                                     <p class="form-text mt-3 text-dark small">
                                         Door te verzenden ga je akkoord met onze
-                                        <a href="{{ path('app_privacy_beleid') }}" class="text-decoration-none">privacy voorwaarden</a>.
+                                        <a href="{{ path('app_privacy_beleid') }}" class="text-decoration-none">
+                                            privacy voorwaarden
+                                        </a>.
                                     </p>
                                 </div>
                             </div>
                         </form>
+                    </div>
+                </div>
 
+                <!-- KLEINERE INFO CARD -->
+                <div class="col-lg-4">
+                    <div class="card shadow-sm rounded-4 p-3 p-lg-4 h-100 small">
+                        <h3 class="h6 fw-bold mb-2">Waarom contact opnemen?</h3>
+
+                        <p class="text-muted mb-3">
+                            Persoonlijk advies over VoIP en zakelijke telecomoplossingen.
+                        </p>
+
+                        <ul class="list-unstyled mb-3">
+                            <li class="mb-1">✅ Reactie binnen 1 werkdag</li>
+                            <li class="mb-1">✅ Vrijblijvend advies</li>
+                            <li class="mb-1">✅ Geen verplichtingen</li>
+                        </ul>
+
+                        <div class="bg-light rounded-3 p-2 text-center">
+                            <strong class="small">📞 Snel geholpen</strong>
+                        </div>
                     </div>
                 </div>
 
             </div>
         </div>
-
-        <script>
-            (function () {
-                const url = new URL(window.location.href);
-                if (url.searchParams.get('success') === '1') {
-                    document.getElementById('contactSuccess')?.classList.remove('d-none');
-                }
-            })();
-        </script>
-
     </main>
 
-    <!-- Knop CSS: next-level style -->
     <style>
-        .btn-super {
+        .btn-super{
             background: linear-gradient(135deg, #001f4d, #b30000);
-            color: #fff;
-            font-weight: 700;
-            font-size: 1.05rem;
-            letter-spacing: 0.5px;
-            overflow: hidden;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            color:#fff;
+            font-weight:700;
+            font-size:1.05rem;
+            letter-spacing:.5px;
+            transition:.3s ease;
         }
-        .btn-super .btn-text {
-            position: relative;
-            z-index: 2;
+        .btn-super .btn-text{ color:#fff; position:relative; z-index:2; }
+        .btn-glow{
+            position:absolute;
+            inset:-50%;
+            background:radial-gradient(circle,rgba(255,255,255,.25),transparent 70%);
+            opacity:0;
+            transition:.3s;
         }
-        .btn-super {
-            background: linear-gradient(135deg, #001f4d, #b30000);
-            color: #fff; /* Altijd wit */
-            font-weight: 700;
-            font-size: 1.05rem;
-            letter-spacing: 0.5px;
-            overflow: hidden;
-            transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+        .btn-super:hover{
+            transform:translateY(-4px);
+            box-shadow:0 12px 35px rgba(0,0,0,.3);
         }
-        .btn-super .btn-text {
-            position: relative;
-            z-index: 2;
-            color: #fff; /* Altijd wit, zelfs bij hover */
-        }
-        .btn-super .btn-glow {
-            content: "";
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle at center, rgba(255,255,255,0.25) 0%, transparent 70%);
-            opacity: 0;
-            transition: opacity 0.3s, transform 0.5s;
-            z-index: 1;
-        }
-        .btn-super:hover {
-            transform: translateY(-4px) scale(1.02);
-            box-shadow: 0 12px 35px rgba(0,0,0,0.3);
-        }
-        .btn-super:hover .btn-glow {
-            opacity: 1;
-            transform: rotate(45deg);
-        }
-        .btn-super:active {
-            transform: translateY(0) scale(0.98);
-            box-shadow: 0 6px 18px rgba(0,0,0,0.25);
-        }
-
+        .btn-super:hover .btn-glow{ opacity:1; }
     </style>
-
-
 
 {% endblock %}
