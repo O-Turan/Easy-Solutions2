@@ -10,7 +10,7 @@
 
 {% block body %}
 
-    <!-- HERO SECTION (Mobiele App stijl) -->
+    <!-- HERO SECTION -->
     <section class="hero-section d-flex align-items-center justify-content-center text-center text-white">
         <div class="hero-bg"></div>
         <div class="hero-overlay"></div>
@@ -33,8 +33,8 @@
         </div>
     </section>
 
-    <!-- INFORMATIE SECTION -->
-    <section class="py-5 bg-light" id="features">
+    <!-- FEATURE CARDS -->
+    <section class="py-5 bg-white" id="features">
         <div class="container">
             <h2 class="fw-bold text-center mb-4">Waarom kiezen voor White-Label?</h2>
             <p class="text-center mx-auto mb-5 description-text">
@@ -42,59 +42,41 @@
             </p>
 
             <div class="row g-4">
-
-                <div class="col-md-6 col-lg-3">
-                    <article class="feature-card h-100">
-                        <div class="feature-icon">🏷️</div>
-                        <h3>Eigen Branding</h3>
-                        <p>Uw klanten zien alleen uw merk, logo en communicatie, terwijl wij de technische kant beheren.</p>
-                    </article>
-                </div>
-
-                <div class="col-md-6 col-lg-3">
-                    <article class="feature-card h-100">
-                        <div class="feature-icon">⚙️</div>
-                        <h3>Volledig Beheerd</h3>
-                        <p>Geen zorgen over updates, wij zorgen ervoor dat alles up-to-date blijft.</p>
-                    </article>
-                </div>
-
-                <div class="col-md-6 col-lg-3">
-                    <article class="feature-card h-100">
-                        <div class="feature-icon">📈</div>
-                        <h3>Schaalbaar</h3>
-                        <p>Breid uw diensten eenvoudig uit naarmate uw klanten groeien, zonder extra moeite.</p>
-                    </article>
-                </div>
-
-                <div class="col-md-6 col-lg-3">
-                    <article class="feature-card h-100">
-                        <div class="feature-icon">🎯</div>
-                        <h3>Focus op Klanten</h3>
-                        <p>Richt je volledig op klantenservice en marketing, terwijl wij bezig zijn met de backend development.</p>
-                    </article>
-                </div>
-
+                {% set cards = [
+                    {'icon':'🏷️','title':'Eigen Branding','text':'Uw klanten zien alleen uw merk, logo en communicatie, terwijl wij de technische kant beheren.'},
+                    {'icon':'⚙️','title':'Volledig Beheerd','text':'Geen zorgen over updates, wij zorgen ervoor dat alles up-to-date blijft.'},
+                    {'icon':'📈','title':'Schaalbaar','text':'Breid uw diensten eenvoudig uit naarmate uw klanten groeien, zonder extra moeite.'},
+                    {'icon':'🎯','title':'Focus op Klanten','text':'Richt je volledig op klantenservice en marketing, terwijl wij bezig zijn met de backend development.'}
+                ] %}
+                {% for card in cards %}
+                    <div class="col-lg-3 col-md-6">
+                        <div class="badge-card h-100 text-center p-0">
+                            <div class="badge-icon">{{ card.icon }}</div>
+                            <div class="card-body p-4">
+                                <h5 class="fw-bold">{{ card.title }}</h5>
+                                <p>{{ card.text }}</p>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
             </div>
         </div>
     </section>
 
     <!-- CTA SECTION -->
-    <section class="cta-section py-5 text-center text-white">
+    <section class="py-5 text-center cta-section">
         <div class="container">
-            <h2 class="fw-bold mb-3">Wilt u White-Label diensten aanbieden?</h2>
-            <p class="lead mb-4">
+            <h2 class="fw-bold mb-3 text-white">Wilt u White-Label diensten aanbieden?</h2>
+            <p class="lead mb-4 text-white">
                 Neem contact met ons op en ontdek hoe u professioneel telecomdiensten onder uw eigen merk kunt leveren.
             </p>
-            <a href="{{ path('app_contact') }}" class="btn btn-cta btn-lg">
-                Contact opnemen
-            </a>
+            <a href="{{ path('app_contact') }}" class="btn btn-cta btn-lg">Contact opnemen</a>
         </div>
     </section>
 
+    <!-- STYLES -->
     <style>
-
-        /* ================= HERO ================= */
+        /* HERO */
         .hero-section{
             height: 60vh;
             position: relative;
@@ -104,7 +86,6 @@
             text-align: center;
             overflow: hidden;
         }
-
         .hero-bg{
             position: absolute;
             inset: 0;
@@ -118,14 +99,12 @@
         .hero-section:hover .hero-bg{
             transform: scale(1.15);
         }
-
         .hero-overlay{
             position: absolute;
             inset: 0;
             background: linear-gradient(135deg, rgba(0,31,77,0.7), rgba(179,0,0,0.6));
             z-index: 2;
         }
-
         .hero-content{
             position: relative;
             z-index: 3;
@@ -140,82 +119,64 @@
             animation: bounce 2s infinite;
             color: #fff;
         }
-
         @keyframes bounce{
             0%,20%,50%,80%,100%{transform:translateY(0);}
             40%{transform:translateY(-10px);}
             60%{transform:translateY(-5px);}
         }
 
-        /* ================= CONTENT ================= */
+        /* DESCRIPTION TEXT */
         .description-text{
             max-width: 780px;
         }
 
-        /* ================= FEATURE CARDS ================= */
-        .feature-card{
-            background: linear-gradient(145deg, #fff, #f5f5f5);
+        /* BADGE CARDS */
+        .badge-card {
+            background: #fff;
             border-radius: 20px;
-            padding: 2rem 1.5rem;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-            transition: transform .4s ease, box-shadow .4s ease, background .3s ease;
-            position: relative;
-            text-align: center;
+            overflow: hidden;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            cursor: default;
         }
-
-        .feature-card::before{
-            content:'';
-            position:absolute;
-            left:0;
-            top:0;
-            width:6px;
-            height:100%;
-            background: linear-gradient(180deg,#001f4d,#b30000);
-            border-radius:6px 0 0 6px;
+        .badge-card:hover {
+            transform: translateY(-10px) rotateX(2deg);
+            box-shadow: 0 18px 40px rgba(0,0,0,0.15);
         }
-
-        .feature-card:hover{
-            transform: translateY(-12px);
-            box-shadow: 0 25px 50px rgba(0,0,0,0.2);
-            background: linear-gradient(145deg, #fff, #eaeaea);
-        }
-
-        .feature-icon{
-            width: 70px;
-            height: 70px;
-            border-radius: 50%;
+        .badge-icon {
+            width: 100%;
+            height: 120px;
             background: linear-gradient(135deg,#001f4d,#b30000);
-            color:#fff;
-            font-size:2rem;
-            display:flex;
-            align-items:center;
-            justify-content:center;
-            margin:0 auto 1rem auto;
-            transition: transform .3s ease;
+            color: #fff;
+            font-size: 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-bottom-left-radius: 50% 20px;
+            border-bottom-right-radius: 50% 20px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
         }
-
-        .feature-card:hover .feature-icon{
-            transform: scale(1.3) rotate(10deg);
+        .badge-card:hover .badge-icon {
+            transform: scale(1.2);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.25);
         }
-
-        .feature-card h3{
-            font-weight: 700;
+        .badge-card h5 {
+            font-weight: 600;
+            color: #001f4d;
+            margin-bottom: 0.5rem;
             font-size: 1rem;
-            margin-top: 0.75rem;
         }
-
-        .feature-card p{
-            font-weight: 400;
-            font-size: 0.875rem;
+        .badge-card p {
             color: #333;
+            font-size: 0.9rem;
             line-height: 1.5;
         }
 
-        /* ================= CTA ================= */
+        /* CTA */
         .cta-section{
             background: linear-gradient(135deg,#001f4d,#b30000);
         }
-
         .btn-cta{
             background:#fff;
             color:#001f4d;
@@ -224,40 +185,26 @@
             padding:.9rem 2.6rem;
             transition:all .3s ease;
         }
-
         .btn-cta:hover{
             transform: translateY(-3px) scale(1.05);
             box-shadow:0 15px 30px rgba(0,0,0,.25);
         }
 
-        /* ================= ANIMATIONS ================= */
-        @keyframes fadeUp{
-            to{
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes heroZoom{
-            from{ transform: scale(1); }
-            to{ transform: scale(1.1); }
-        }
-
-        /* ================= RESPONSIVE ================= */
+        /* RESPONSIVE */
         @media (max-width:768px){
             .hero-section{
                 height: 60vh;
             }
-            .feature-card h3{
+            .badge-card h5{
                 font-size: 0.95rem;
             }
-            .feature-card p{
-                font-size: 0.825rem;
+            .badge-card p{
+                font-size: 0.85rem;
             }
         }
-
     </style>
 
+    <!-- PARALLAX HERO -->
     <script>
         document.addEventListener('scroll', function(){
             const scrolled = window.scrollY;
