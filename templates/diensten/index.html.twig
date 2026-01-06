@@ -2,80 +2,59 @@
 
 {% block title %}Professionele Telecom & VoIP Diensten | Easy Solutions{% endblock %}
 
-{% block meta %}
-    <meta name="description" content="Easy Solutions levert professionele VoIP-, hosted telefonie-, SIP-trunk- en PBX-oplossingen voor bedrijven, resellers en consumenten. Betrouwbare telecom met persoonlijke service.">
-    <meta name="keywords" content="VoIP, hosted telefonie, telecom oplossingen, SIP trunk, PBX, hosted PBX, nummerportering, KPN partner, telecom reseller, zakelijke telefonie, cloud telefonie">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="{{ app.request.uri }}">
-{% endblock %}
-
-{% block structured_data %}
-    <script type="application/ld+json">
-        {
-            "@context": "https://schema.org",
-            "@type": "Service",
-            "name": "Telecom & VoIP Diensten",
-            "provider": {"@type": "Organization", "name": "Easy Solutions"},
-            "serviceType": [
-                "Hosted Telefonie","VoIP","SIP Trunk","PBX",
-                "Hosted PBX","Nummerportering","Telecom Reseller","KPN Partner"
-            ]
-        }
-    </script>
-{% endblock %}
-
 {% block body %}
+
     <!-- HERO -->
     <section class="hero-section d-flex align-items-center justify-content-center text-center">
         <div class="overlay"></div>
         <div class="container position-relative">
-            <h1 class="display-3 fw-bold mb-3 animate-fade">VoIP, Telefonie & Telecom Diensten Voor Bedrijven</h1>
-            <p class="lead mb-4 animate-fade delay-1">Complete oplossingen voor hosted telefonie, SIP-trunks, PBX-systemen en white-label telecom.</p>
-            <div class="d-grid d-sm-flex justify-content-sm-center gap-3 animate-fade delay-2">
-                <a href="{{ path('offerte') }}" class="btn btn-light btn-lg text-dark btn-glow">Nieuwe klant?</a>
+            <h1 class="display-3 fw-bold mb-3 animate-fade">
+                VoIP, Telefonie & Telecom Diensten Voor Bedrijven
+            </h1>
+            <p class="lead mb-4 animate-fade delay-1">
+                Complete oplossingen voor hosted telefonie, SIP-trunks en PBX-systemen.
+            </p>
+            <div class="d-flex justify-content-center gap-3 animate-fade delay-2">
+                <a href="{{ path('offerte') }}" class="btn btn-primary btn-lg btn-glow">Nieuwe klant?</a>
                 <a href="{{ path('app_dienst_white_label') }}" class="btn btn-outline-light btn-lg btn-glow">Reseller worden?</a>
             </div>
         </div>
     </section>
 
     <!-- DIENSTEN -->
-    <section id="diensten" class="py-5 bg-light">
+    <section class="py-5 bg-light">
         <div class="container">
-            <h2 class="fw-bold text-center mb-5 animate-fade">Onze Telecom Diensten & VoIP-Oplossingen</h2>
-            <div class="row g-4">
-                {% set diensten = [
-                    {'title':'Hosted Telefonie','icon':'📠','desc':'Moderne cloudtelefonie met hoge betrouwbaarheid, schaalbaarheid en eenvoudig beheer. Ideaal voor bedrijven die altijd bereikbaar willen zijn.','route':'app_dienst_hosted_telefonie','border':'border-primary'},
-                    {'title':'White-Label Telecom','icon':'♞','desc':'Bied professionele telecomdiensten via uw eigen merk. Perfect voor telecom resellers, IT-bedrijven en MSP’s.','route':'app_dienst_white_label','border':'border-success'},
-                    {'title':'SIP Trunk','icon':'🔌','desc':'Stabiele SIP-trunks met uitstekende gesprekskwaliteit en eenvoudige schaalbaarheid voor iedere organisatie.','route':'app_dienst_sip_trunk','border':'border-warning'},
-                    {'title':'Nummerportering','icon':'↔','desc':'Snelle, foutloze overdracht van uw telefoonnummers zonder onderbreking van uw bereikbaarheid.','route':'app_dienst_nummerportering','border':'border-info'},
-                    {'title':'PBX Systemen','icon':'📟','desc':'Volledige controle over uw bedrijfscommunicatie met professionele PBX-installaties.','route':'app_dienst_pbx','border':'border-dark'},
-                    {'title':'Hosted PBX','icon':'☁️','desc':'Cloudgebaseerde PBX-oplossingen met maximale flexibiliteit, betrouwbaarheid en lage kosten.','route':'app_dienst_hosted_pbx','border':'border-secondary'},
-                    {'title':'KPN Business Partner','icon':'📑','desc':'Premium telecomdiensten via het betrouwbare KPN-netwerk voor maximale kwaliteit en stabiliteit.','route':'app_dienst_kpn','border':'border-success'},
-                    {'title':'Mobiele App','icon':'📱','desc':'Beheer uw telefonie-instellingen eenvoudig via onze gebruiksvriendelijke mobiele app.','route':'app_dienst_mobiele_app','border':'border-danger'}
-                ] %}
+            <h2 class="fw-bold text-center mb-5 animate-fade">Onze Telecom Diensten</h2>
 
+            {% set diensten = [
+                {'title':'Hosted Telefonie','desc':'Betrouwbare cloudtelefonie voor bedrijven.','route':'app_dienst_hosted_telefonie','img':'/assets/hosted-telefonie.webp'},
+                {'title':'White-Label Telecom','desc':'Telecom aanbieden onder uw eigen merk.','route':'app_dienst_white_label','img':'/assets/white_label_telecom.webp'},
+                {'title':'SIP Trunk','desc':'Stabiele SIP-trunks met hoge kwaliteit.','route':'app_dienst_sip_trunk','img':'/assets/sip_trunk.webp'},
+                {'title':'Nummerportering','desc':'Uw nummers veilig en snel overgezet.','route':'app_dienst_nummerportering','img':'/assets/nummerportering.webp'},
+                {'title':'PBX Systemen','desc':'Professionele telefooncentrales.','route':'app_dienst_pbx','img':'/assets/pbx_systemen.webp'},
+                {'title':'Hosted PBX','desc':'Volledig cloudgebaseerde PBX.','route':'app_dienst_hosted_pbx','img':'/assets/hosted-pbx.webp'},
+                {'title':'KPN Partner','desc':'Telecom via het betrouwbare KPN-netwerk.','route':'app_dienst_kpn','img':'/assets/kpn_business_partner.webp'},
+                {'title':'Mobiele App','desc':'Telefonie beheren via één app.','route':'app_dienst_mobiele_app','img':'/assets/mobiel-app.webp'}
+            ] %}
+
+            <div class="row g-4">
                 {% for dienst in diensten %}
-                    <div class="col-md-4 animate-fade delay-{{ loop.index }}">
-                        <div class="card h-100 shadow-sm {{ dienst.border }} dienst-card position-relative">
-                            <a href="{{ path(dienst.route) }}" class="stretched-link" aria-label="Bekijk {{ dienst.title }}"></a>
-                            <div class="card-body text-center">
-                                <div class="icon mb-3">{{ dienst.icon }}</div>
-                                <h3 class="card-title mt-3 h5">{{ dienst.title }}</h3>
-                                <p class="card-text">{{ dienst.desc }}</p>
+                    <div class="col-lg-3 col-md-4 col-sm-6 animate-fade delay-{{ loop.index }}">
+                        <div class="dienst-card h-100">
+                            <a href="{{ path(dienst.route) }}" class="stretched-link"></a>
+
+                            <div class="dienst-image" style="background-image:url('{{ dienst.img }}')">
+                                <div class="image-overlay"></div>
+                            </div>
+
+                            <div class="dienst-body text-center">
+                                <h3 class="h5 fw-bold mb-2">{{ dienst.title }}</h3>
+                                <p class="text-muted mb-0">{{ dienst.desc }}</p>
                             </div>
                         </div>
                     </div>
                 {% endfor %}
             </div>
-        </div>
-    </section>
-
-    <!-- CTA -->
-    <section class="cta-section text-center py-5">
-        <div class="container animate-fade">
-            <h2 class="fw-bold mb-3">Uw Telecom Verbeteren? Wij Helpen U Graag!</h2>
-            <p class="lead mb-4">Persoonlijke service, professionele VoIP-oplossingen en betrouwbare ondersteuning.</p>
-            <a href="/contact" class="btn btn-light btn-lg text-dark btn-glow">Neem Contact Op</a>
         </div>
     </section>
 
@@ -85,14 +64,10 @@
     <style>
         /* HERO */
         .hero-section {
-            background: linear-gradient(135deg, #001f4d, #b30000);
-            position: relative;
             height: 70vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            background: linear-gradient(135deg, #001f4d, #b30000);
             color: #fff;
-            text-align: center;
+            position: relative;
         }
         .hero-section .overlay {
             position: absolute;
@@ -100,55 +75,89 @@
             background: rgba(0,0,0,0.5);
         }
 
-        /* DIENSTEN CARDS */
-        .dienst-card {
-            transition: all 0.4s ease;
-            border-radius: 12px;
-            cursor: pointer;
-            transform: translateY(0);
+        /* BUTTONS */
+        .btn-primary {
+            background: #b30000;
+            border: none;
         }
-        .dienst-card:hover {
-            transform: translateY(-10px) scale(1.03);
-            box-shadow: 0 15px 25px rgba(0,0,0,0.2);
-        }
-
-        /* ICONS */
-        .dienst-card .icon {
-            font-size: 3rem;
-            transition: transform 0.3s;
-        }
-        .dienst-card:hover .icon {
-            transform: scale(1.2) rotate(10deg);
-        }
-
-        /* CTA */
-        .cta-section {
-            background: linear-gradient(135deg, #001f4d, #b30000);
-            color: #fff;
-            padding: 6rem 1rem;
-        }
+        .btn-primary:hover { background:#990000; }
         .btn-glow {
-            box-shadow: 0 0 15px rgba(255,0,0,0.5);
-            transition: all 0.3s;
+            box-shadow: 0 0 18px rgba(179,0,0,.55);
+            transition: .3s ease;
         }
         .btn-glow:hover {
-            box-shadow: 0 0 30px rgba(255,0,0,0.8);
-            transform: scale(1.05);
+            transform: translateY(-2px);
+            box-shadow: 0 0 30px rgba(179,0,0,.8);
+        }
+
+        /* DIENST CARDS – PREMIUM */
+        .dienst-card {
+            background: #fff;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0,0,0,.08);
+            transition: transform .45s ease, box-shadow .45s ease;
+            position: relative;
+        }
+        .dienst-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 60px rgba(0,0,0,.15);
+        }
+
+        /* IMAGE */
+        .dienst-image {
+            aspect-ratio: 16 / 9;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            overflow: hidden;
+            transition: transform .6s ease;
+        }
+        .dienst-card:hover .dienst-image {
+            transform: scale(1.08);
+        }
+
+        /* OVERLAY */
+        .image-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                    to bottom,
+                    rgba(0,0,0,.05),
+                    rgba(0,0,0,.35)
+            );
+        }
+
+        /* BODY */
+        .dienst-body {
+            padding: 1.6rem 1.4rem;
+        }
+        .dienst-body h3 {
+            color: #0f172a;
+        }
+
+        /* MOBILE */
+        @media (max-width:768px){
+            .dienst-image { aspect-ratio: 4 / 3; }
         }
 
         /* ANIMATIONS */
-        .animate-fade { opacity:0; transform: translateY(20px); animation: fadeInUp 1s forwards; }
-        .animate-fade.delay-1 { animation-delay: 0.2s; }
-        .animate-fade.delay-2 { animation-delay: 0.4s; }
-        .animate-fade.delay-3 { animation-delay: 0.6s; }
-        .animate-fade.delay-4 { animation-delay: 0.8s; }
-        .animate-fade.delay-5 { animation-delay: 1s; }
-        .animate-fade.delay-6 { animation-delay: 1.2s; }
-        .animate-fade.delay-7 { animation-delay: 1.4s; }
-        .animate-fade.delay-8 { animation-delay: 1.6s; }
+        .animate-fade {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp .9s forwards;
+        }
+        .animate-fade.delay-1{animation-delay:.1s}
+        .animate-fade.delay-2{animation-delay:.2s}
+        .animate-fade.delay-3{animation-delay:.3s}
+        .animate-fade.delay-4{animation-delay:.4s}
+        .animate-fade.delay-5{animation-delay:.5s}
+        .animate-fade.delay-6{animation-delay:.6s}
+        .animate-fade.delay-7{animation-delay:.7s}
+        .animate-fade.delay-8{animation-delay:.8s}
 
         @keyframes fadeInUp {
-            to { opacity:1; transform: translateY(0); }
+            to { opacity:1; transform:none; }
         }
     </style>
 {% endblock %}
