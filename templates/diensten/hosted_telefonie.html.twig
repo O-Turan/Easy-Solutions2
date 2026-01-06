@@ -44,11 +44,13 @@
                     {'icon':'💰','title':'Kosten-Efficiënt','text':'Geen dure fysieke telefooncentrales meer, je betaalt alleen voor wat je gebruikt.'}
                 ] %}
                 {% for card in cards %}
-                    <div class="col-md-6 col-lg-3 d-flex">
-                        <div class="info-card flex-fill text-center">
-                            <div class="icon-circle">{{ card.icon }}</div>
-                            <h5 class="mt-3 fw-bold">{{ card.title }}</h5>
-                            <p class="mb-0">{{ card.text }}</p>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="badge-card h-100 text-center p-0">
+                            <div class="badge-icon">{{ card.icon }}</div>
+                            <div class="card-body p-4">
+                                <h5 class="fw-bold">{{ card.title }}</h5>
+                                <p>{{ card.text }}</p>
+                            </div>
                         </div>
                     </div>
                 {% endfor %}
@@ -113,32 +115,47 @@
             60%{transform:translateY(-5px)}
         }
 
-        /* INFO CARDS */
-        .info-card{
+        /* BADGE CARDS (OVER ONS STYLE) */
+        .badge-card {
             background: #fff;
-            border-radius: 16px;
-            padding: 2rem 1.5rem;
+            border-radius: 20px;
+            overflow: hidden;
             box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            cursor: default;
         }
-        .info-card:hover{
-            transform: translateY(-6px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+        .badge-card:hover {
+            transform: translateY(-10px) rotateX(2deg);
+            box-shadow: 0 18px 40px rgba(0,0,0,0.15);
         }
-        .icon-circle{
-            width: 55px;
-            height: 55px;
-            border-radius: 50%;
+        .badge-icon {
+            width: 100%;
+            height: 120px;
+            background: linear-gradient(135deg,#001f4d,#b30000);
+            color: #fff;
+            font-size: 3rem;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.6rem;
-            margin: 0 auto 1rem auto;
-            background: #001f4d;
-            color: #fff;
+            border-bottom-left-radius: 50% 20px;
+            border-bottom-right-radius: 50% 20px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .badge-card:hover .badge-icon {
+            transform: scale(1.2);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+        }
+        .badge-card h5 {
+            font-weight: 600;
+            color: #001f4d;
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+        .badge-card p {
+            color: #333;
+            font-size: 0.9rem;
+            line-height: 1.5;
         }
 
         /* CTA */
@@ -163,10 +180,10 @@
         @media (max-width: 768px){
             .hero-section h1{font-size:2.5rem;}
             .hero-section p{font-size:1.1rem;}
-            .info-card{padding:1.5rem 1rem;}
         }
     </style>
 
+    <!-- PARALLAX HERO -->
     <script>
         document.addEventListener('scroll', function(){
             const scrolled = window.scrollY;

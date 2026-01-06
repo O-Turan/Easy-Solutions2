@@ -30,7 +30,7 @@
     </section>
 
     <!-- INFO CARDS -->
-    <section class="py-5 bg-light">
+    <section class="py-5 bg-white">
         <div class="container">
             <h2 class="fw-bold text-center mb-4">Waarom kiezen voor onze PBX-oplossing?</h2>
             <p class="text-center mb-5">
@@ -38,52 +38,39 @@
             </p>
 
             <div class="row g-4">
-                <div class="col-md-6 col-lg-3">
-                    <div class="card info-card h-100 shadow-sm text-center p-4">
-                        <div class="icon-circle">📞</div>
-                        <h5 class="mt-3 fw-bold">Volledige Controle</h5>
-                        <p>Beheer interne en externe gesprekken efficiënt met uitgebreide functies.</p>
+                {% set cards = [
+                    {'icon':'📞','title':'Volledige Controle','text':'Beheer interne en externe gesprekken efficiënt met uitgebreide functies.'},
+                    {'icon':'⚙️','title':'Flexibel Inrichten','text':'Pas de PBX aan naar de behoeften van uw bedrijf, van kleine teams tot grote organisaties.'},
+                    {'icon':'✅','title':'Betrouwbaar','text':'Goede infrastructuur voor stabiele verbindingen en minimale uitvaltijd.'},
+                    {'icon':'🔗','title':'Integratie met Systemen','text':'Koppel uw PBX eenvoudig aan CRM, softwaretools en mobiele apps.'}
+                ] %}
+                {% for card in cards %}
+                    <div class="col-lg-3 col-md-6">
+                        <div class="badge-card h-100 text-center p-0">
+                            <div class="badge-icon">{{ card.icon }}</div>
+                            <div class="card-body p-4">
+                                <h5 class="fw-bold">{{ card.title }}</h5>
+                                <p>{{ card.text }}</p>
+                            </div>
+                        </div>
                     </div>
-                </div>
-
-                <div class="col-md-6 col-lg-3">
-                    <div class="card info-card h-100 shadow-sm text-center p-4">
-                        <div class="icon-circle">⚙️</div>
-                        <h5 class="mt-3 fw-bold">Flexibel Inrichten</h5>
-                        <p>Pas de PBX aan naar de behoeften van uw bedrijf, van kleine teams tot grote organisaties.</p>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-3">
-                    <div class="card info-card h-100 shadow-sm text-center p-4">
-                        <div class="icon-circle">✅</div>
-                        <h5 class="mt-3 fw-bold">Betrouwbaar</h5>
-                        <p>Goede infrastructuur voor stabiele verbindingen en minimale uitvaltijd.</p>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-3">
-                    <div class="card info-card h-100 shadow-sm text-center p-4">
-                        <div class="icon-circle">🔗</div>
-                        <h5 class="mt-3 fw-bold">Integratie met Systemen</h5>
-                        <p>Koppel uw PBX eenvoudig aan CRM, softwaretools en mobiele apps.</p>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
         </div>
     </section>
 
     <!-- CTA SECTION -->
-    <section class="py-5 text-center text-white cta-section">
+    <section class="py-5 text-center cta-section">
         <div class="container">
-            <h2 class="fw-bold mb-3">Klaar voor professionele PBX?</h2>
-            <p class="lead mb-4">Neem contact op en ontdek hoe wij uw bedrijfscommunicatie optimaliseren.</p>
+            <h2 class="fw-bold mb-3 text-white">Klaar voor professionele PBX?</h2>
+            <p class="lead mb-4 text-white">Neem contact op en ontdek hoe wij uw bedrijfscommunicatie optimaliseren.</p>
             <a href="/contact" class="btn btn-cta btn-lg">Contact opnemen</a>
         </div>
     </section>
 
     <!-- STYLES -->
     <style>
+        /* HERO */
         .hero-section{
             height: 60vh;
             position: relative;
@@ -135,31 +122,47 @@
             60%{transform:translateY(-5px)}
         }
 
-        /* INFO CARDS */
-        .info-card{
-            border-radius: 12px;
-            transition: transform 0.45s cubic-bezier(.22,1,.36,1), box-shadow 0.45s;
+        /* BADGE CARDS */
+        .badge-card {
             background: #fff;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            cursor: default;
         }
-        .info-card:hover{
-            transform: translateY(-15px) scale(1.05);
-            box-shadow: 0 25px 50px rgba(0,0,0,.2);
+        .badge-card:hover {
+            transform: translateY(-10px) rotateX(2deg);
+            box-shadow: 0 18px 40px rgba(0,0,0,0.15);
         }
-        .icon-circle{
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
+        .badge-icon {
+            width: 100%;
+            height: 120px;
+            background: linear-gradient(135deg,#001f4d,#b30000);
+            color: #fff;
+            font-size: 3rem;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: auto;
-            font-size: 1.8rem;
-            background: linear-gradient(135deg, #001f4d, #b30000);
-            color: #fff;
-            transition: transform 0.35s;
+            border-bottom-left-radius: 50% 20px;
+            border-bottom-right-radius: 50% 20px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
         }
-        .info-card:hover .icon-circle{
-            transform: scale(1.3) rotate(5deg);
+        .badge-card:hover .badge-icon {
+            transform: scale(1.2);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+        }
+        .badge-card h5 {
+            font-weight: 600;
+            color: #001f4d;
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+        .badge-card p {
+            color: #333;
+            font-size: 0.9rem;
+            line-height: 1.5;
         }
 
         /* CTA */
@@ -167,32 +170,31 @@
             background: linear-gradient(135deg,#001f4d,#b30000);
         }
         .btn-cta{
-            background: linear-gradient(135deg,#e53935,#b71c1c);
-            color: #fff;
-            border: none;
-            padding: 0.75rem 1.8rem;
+            background: #fff;
+            color: #b30000;
             font-weight: 600;
-            border-radius: 10px;
-            transition: all 0.35s;
+            border-radius: 8px;
+            padding: .9rem 2rem;
+            transition: .3s ease;
         }
         .btn-cta:hover{
-            background: linear-gradient(135deg,#b71c1c,#e53935);
-            transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 15px 30px rgba(183,28,28,.6);
+            background: #ffdcdc;
+            transform: translateY(-3px);
         }
 
-        /* PARALLAX EFFECT */
-        @media (prefers-reduced-motion: no-preference) {
-            .hero-bg{will-change: transform;}
+        /* RESPONSIVE */
+        @media (max-width: 768px){
+            .hero-section h1{font-size:2.5rem;}
+            .hero-section p{font-size:1.1rem;}
         }
     </style>
 
-    <!-- Parallax JS -->
+    <!-- PARALLAX HERO -->
     <script>
         document.addEventListener('scroll', function(){
             const scrolled = window.scrollY;
             const bg = document.querySelector('.hero-bg');
-            if(bg) bg.style.transform = 'translateY(' + scrolled * 0.3 + 'px) scale(1.1)';
+            if(bg) bg.style.transform = 'translateY(' + scrolled * 0.2 + 'px) scale(1.05)';
         });
     </script>
 
