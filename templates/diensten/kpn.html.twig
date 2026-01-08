@@ -17,22 +17,22 @@
         </div>
     </section>
 
-    <!-- UITLEG KPN BUSINESS PARTNER -->
+    <!-- INFO -->
     <section class="py-5 bg-white" id="info-section">
         <div class="container">
             <h2 class="fw-bold mb-4 text-center">Wat betekent het om KPN Business Partner te zijn?</h2>
             <p class="text-center mx-auto" style="max-width:750px;">
-                Als KPN Business Partner leveren wij professionele telecomdiensten via het vertrouwde KPN-netwerk. Hiermee garanderen wij hoge kwaliteit van gesprekken en telefonie, stabiele verbindingen en continue beschikbaarheid voor jouw bedrijf. Door deze samenwerking kunnen wij oplossingen bieden die volledig aansluiten bij de behoeften van jouw bedrijf.
+                Als KPN Business Partner leveren wij professionele telecomdiensten via het vertrouwde KPN-netwerk.
             </p>
         </div>
     </section>
 
-    <!-- INFO CARDS -->
+    <!-- INFO CARDS (BADGE STYLE) -->
     <section class="py-5 bg-light">
         <div class="container">
             <h2 class="fw-bold text-center mb-4">Waarom kiezen voor KPN via Easy Solutions?</h2>
             <p class="text-center mb-5 mx-auto" style="max-width:750px;">
-                Profiteer van betrouwbaarheid, kwaliteit en continuïteit. Met KPN als partner kunnen wij uw telecom volledig uitbreiden.
+                Profiteer van betrouwbaarheid, kwaliteit en continuïteit.
             </p>
 
             <div class="row g-4">
@@ -42,12 +42,15 @@
                     {'icon':'⏱️','title':'Continuïteit','text':'Uw telecomdiensten blijven altijd operationeel, ook bij onverwachte situaties.'},
                     {'icon':'🛠️','title':'Maatwerk Oplossingen','text':'Telefonie en extra diensten die volledig zijn afgestemd op de wensen van jouw bedrijf.'}
                 ] %}
+
                 {% for card in cards %}
-                    <div class="col-md-6 col-lg-3">
-                        <div class="neumorphic-card animate__animated animate__fadeInUp" style="animation-delay: {{ loop.index * 0.2 }}s;">
-                            <div class="icon-wrapper">{{ card.icon }}</div>
-                            <h5>{{ card.title }}</h5>
-                            <p>{{ card.text }}</p>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="badge-card h-100 text-center">
+                            <div class="badge-icon">{{ card.icon }}</div>
+                            <div class="card-body p-4">
+                                <h5 class="fw-bold">{{ card.title }}</h5>
+                                <p>{{ card.text }}</p>
+                            </div>
                         </div>
                     </div>
                 {% endfor %}
@@ -55,7 +58,7 @@
         </div>
     </section>
 
-    <!-- CTA SECTION -->
+    <!-- CTA -->
     <section class="py-5 text-center text-white cta-section">
         <div class="container">
             <h2 class="fw-bold mb-3">Klaar om te profiteren van KPN Business Partner-diensten?</h2>
@@ -68,135 +71,78 @@
     <style>
         /* HERO */
         .hero-section{
-            height: 70vh;
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            overflow: hidden;
+            height:70vh;
+            position:relative;
+            overflow:hidden;
         }
         .hero-bg{
-            position: absolute;
-            inset: 0;
-            background: url('{{ asset("assets/kpn-hero.webp") }}') center/cover no-repeat;
-            filter: brightness(0.55);
-            transform: scale(1.1);
-            z-index: 1;
-            transition: transform 2s ease;
-        }
-        .hero-section:hover .hero-bg{
-            transform: scale(1.15);
+            position:absolute;
+            inset:0;
+            background:url('{{ asset("assets/kpn-hero.webp") }}') center/cover no-repeat;
+            filter:brightness(.55);
+            z-index:1;
         }
         .hero-overlay{
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(135deg, rgba(0,31,77,0.6), rgba(179,0,0,0.5));
-            z-index: 2;
-            animation: overlayPulse 8s infinite alternate;
+            position:absolute;
+            inset:0;
+            background:linear-gradient(135deg,rgba(0,31,77,.6),rgba(179,0,0,.5));
+            z-index:2;
         }
-        @keyframes overlayPulse{
-            0%{background: linear-gradient(135deg, rgba(0,31,77,0.6), rgba(179,0,0,0.5));}
-            100%{background: linear-gradient(135deg, rgba(0,31,77,0.7), rgba(179,0,0,0.6));}
-        }
-        .hero-content{position: relative; z-index:3;}
-        .scroll-down{
-            display: inline-block;
-            margin-top: 1rem;
-            font-size: 2rem;
-            animation: bounce 2s infinite;
-            color: #fff;
-        }
-        @keyframes bounce{
-            0%,20%,50%,80%,100%{transform:translateY(0);}
-            40%{transform:translateY(-10px);}
-            60%{transform:translateY(-5px);}
-        }
+        .hero-content{position:relative;z-index:3;}
 
-        /* NEUMORPHIC CARDS */
-        .neumorphic-card{
-            background: #e0e0e0;
+        /* BADGE CARDS */
+        .badge-card {
+            background: #fff;
             border-radius: 20px;
-            padding: 2rem 1.5rem;
-            text-align: center;
-            box-shadow: 8px 8px 20px #bebebe, -8px -8px 20px #ffffff;
-            transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.4s ease;
-            position: relative;
+            overflow: hidden;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            cursor: default;
         }
-        .neumorphic-card:hover{
-            transform: translateY(-10px) scale(1.03);
-            box-shadow: 12px 12px 25px #bebebe, -12px -12px 25px #ffffff;
-            background: #f0f0f0;
+        .badge-card:hover {
+            transform: translateY(-10px) rotateX(2deg);
+            box-shadow: 0 18px 40px rgba(0,0,0,0.15);
         }
-        .icon-wrapper{
-            width: 70px;
-            height: 70px;
-            margin: -50px auto 1rem;
+        .badge-icon {
+            width: 100%;
+            height: 120px;
+            background: linear-gradient(135deg,#001f4d,#b30000);
+            color: #fff;
+            font-size: 3rem;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2.4rem;
-            border-radius: 50%;
-            background: linear-gradient(135deg,#001f4d,#b30000);
-            color: #fff;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+            border-bottom-left-radius: 50% 20px;
+            border-bottom-right-radius: 50% 20px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
             transition: transform 0.3s, box-shadow 0.3s;
         }
-        .neumorphic-card:hover .icon-wrapper{
-            transform: translateY(-5px) scale(1.25);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.25);
+        .badge-card:hover .badge-icon {
+            transform: scale(1.2);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.25);
         }
-        .neumorphic-card h5{
+        .badge-card h5 {
             font-weight: 600;
-            font-size: 1.05rem;
+            color: #001f4d;
             margin-bottom: 0.5rem;
+            font-size: 1rem;
         }
-        .neumorphic-card p{
-            font-weight: 400;
-            font-size: 0.9rem;
-            line-height: 1.6;
+        .badge-card p {
             color: #333;
+            font-size: 0.9rem;
+            line-height: 1.5;
         }
-
         /* CTA */
         .cta-section{
-            background: linear-gradient(135deg,#001f4d,#b30000);
+            background:linear-gradient(135deg,#001f4d,#b30000);
         }
         .btn-cta{
-            background: linear-gradient(135deg,#e53935,#b71c1c);
-            color: #fff;
-            border: none;
-            padding: 0.85rem 2.2rem;
-            font-weight: 600;
-            border-radius: 12px;
-            transition: all 0.35s;
-        }
-        .btn-cta:hover{
-            background: linear-gradient(135deg,#b71c1c,#e53935);
-            transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 18px 35px rgba(183,28,28,.6);
-        }
-
-        /* PARALLAX HERO */
-        @media (prefers-reduced-motion: no-preference) {
-            .hero-bg{will-change: transform;}
-        }
-
-        /* RESPONSIVE */
-        @media (max-width:768px){
-            .hero-section h1{font-size:2.5rem;}
-            .hero-section p{font-size:1.1rem;}
-            .neumorphic-card h5{font-size:1rem;}
-            .neumorphic-card p{font-size:0.85rem;}
+            background:linear-gradient(135deg,#e53935,#b71c1c);
+            color:#fff;
+            padding:.85rem 2.2rem;
+            border-radius:12px;
+            font-weight:600;
         }
     </style>
-
-    <script>
-        document.addEventListener('scroll', function(){
-            const scrolled = window.scrollY;
-            const bg = document.querySelector('.hero-bg');
-            if(bg) bg.style.transform = 'translateY(' + scrolled * 0.25 + 'px) scale(1.1)';
-        });
-    </script>
 
 {% endblock %}
