@@ -30,7 +30,7 @@
         </div>
     </section>
 
-    <!-- INFO CARDS (BADGE STYLE) -->
+    <!-- INFO CARDS -->
     <section class="py-5 bg-light">
         <div class="container">
             <h2 class="fw-bold text-center mb-4">Waarom kiezen voor onze nummerportering?</h2>
@@ -93,6 +93,23 @@
             z-index:2;
         }
         .hero-content{position:relative;z-index:3;}
+
+        /* SCROLL PIJL (zelfde als Hosted PBX, lager gezet) */
+        .scroll-down{
+            position:absolute;
+            bottom:-40px;
+            left:50%;
+            transform:translateX(-50%);
+            font-size:2rem;
+            color:#fff;
+            animation:bounce 2s infinite;
+            z-index:5;
+        }
+        @keyframes bounce{
+            0%,20%,50%,80%,100%{transform:translate(-50%,0)}
+            40%{transform:translate(-50%,-10px)}
+            60%{transform:translate(-50%,-5px)}
+        }
 
         /* BADGE CARDS */
         .badge-card {

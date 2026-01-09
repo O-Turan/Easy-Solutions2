@@ -31,14 +31,19 @@
         <div class="container">
             <h2 class="fw-bold text-center mb-5">VoIP & Cloud Telefonie</h2>
 
+            {% set voip_items = [
+                {'icon':'🖥️','title':'White Label','text':'Aanpasbare telecomoplossingen voor uw merk.'},
+                {'icon':'☁️','title':'Hosted Telefonie','text':'Betrouwbare cloud PBX voor elk bedrijf.'},
+                {'icon':'📱','title':'Mobiele App','text':'Toegang tot uw telefonie overal via mobiel.'}
+            ] %}
+
             <div class="row g-4 text-center">
-                {% for item in ['☎️ VoIP Trunks','☁️ Cloud PBX','💡 Consultancy'] %}
-                    {% set parts = item|split(' ', 2) %}
+                {% for item in voip_items %}
                     <div class="col-md-4">
                         <div class="card info-card p-4 h-100">
-                            <div class="icon-circle">{{ parts[0] }}</div>
-                            <h3 class="h5 mt-3">{{ parts[1] }}</h3>
-                            <p>Professionele en schaalbare oplossingen.</p>
+                            <div class="icon-circle">{{ item.icon }}</div>
+                            <h3 class="h5 mt-3">{{ item.title }}</h3>
+                            <p>{{ item.text }}</p>
                         </div>
                     </div>
                 {% endfor %}
@@ -46,7 +51,7 @@
         </div>
     </section>
 
-    <!-- TRUSTED BY – NAADLOOS -->
+    <!-- TRUSTED BY -->
     <section class="trusted-section py-5">
         <div class="container">
             <h2 class="fw-bold text-center mb-3">Vertrouwd door bedrijven</h2>
@@ -80,7 +85,7 @@
         </div>
     </section>
 
-    <!-- SUPPORT – KAARTEN STIJL OVER ONS -->
+    <!-- SUPPORT CARDS -->
     <section class="py-5 bg-light">
         <div class="container">
             <h2 class="fw-bold text-center mb-5">Ondersteuning & Support</h2>
@@ -109,15 +114,13 @@
 
     <!-- STIJLEN -->
     <style>
-        /* HERO */
         .hero{height:100vh;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;text-align:center}
         .hero-bg{position:absolute;inset:0;background-size:cover;background-position:center;filter:brightness(0.65)}
         .hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,31,77,.65),rgba(200,0,0,.35))}
-
-        .scroll-down{position:absolute;bottom:20px;left:50%;transform:translateX(-50%);color:#fff;font-size:2rem;animation:bounce 2s infinite}
+        .scroll-down{position:absolute;bottom:15px;left:50%;transform:translateX(-50%);color:#fff;font-size:2rem;animation:bounce 2s infinite}
         @keyframes bounce{0%,20%,50%,80%,100%{transform:translateY(0)}40%{transform:translateY(-10px)}60%{transform:translateY(-5px)}}
 
-        /* ICONS VOIP */
+        /* VOIP ICONS */
         .icon-circle{width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:#00316d;color:#fff;font-size:1.8rem;margin:auto;transition:.4s cubic-bezier(.22,1,.36,1)}
         .info-card{border:0;transition:transform .45s cubic-bezier(.22,1,.36,1), box-shadow .45s}
         .info-card:hover{transform:translateY(-14px) scale(1.04);box-shadow:0 30px 55px rgba(0,0,0,.2)}
@@ -137,85 +140,47 @@
         @keyframes scroll-logos{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
         /* CTA */
-        .cta-banner {
-            background: linear-gradient(135deg, #001f4d, #b30000);
-            position: relative;
-            overflow: hidden;
-        }
-        .cta-banner::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(circle at top left, rgba(255,255,255,0.1), transparent 70%);
-            pointer-events: none;
-        }
-        .btn-cta {
-            background: linear-gradient(135deg, #ff1c1c, #b71c1c);
-            color: #fff;
-            border: none;
-            padding: 0.75rem 2rem;
-            font-weight: 600;
-            border-radius: 12px;
-            box-shadow: 0 12px 30px rgba(183,28,28,0.45);
-            transition: all 0.35s ease;
-        }
-        .btn-cta:hover {
-            background: linear-gradient(135deg, #b71c1c, #ff1c1c);
-            transform: translateY(-4px) scale(1.07);
-            box-shadow: 0 18px 45px rgba(183,28,28,0.65);
-        }
+        .cta-banner{background:linear-gradient(135deg,#001f4d,#b30000);position:relative;overflow:hidden}
+        .cta-banner::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at top left, rgba(255,255,255,0.1), transparent 70%);pointer-events:none}
+        .btn-cta{background:linear-gradient(135deg,#ff1c1c,#b71c1c);color:#fff;border:none;padding:.75rem 2rem;font-weight:600;border-radius:12px;box-shadow:0 12px 30px rgba(183,28,28,0.45);transition:all 0.35s ease}
+        .btn-cta:hover{background:linear-gradient(135deg,#b71c1c,#ff1c1c);transform:translateY(-4px) scale(1.07);box-shadow:0 18px 45px rgba(183,28,28,0.65)}
 
         /* SUPPORT CARDS */
-        .badge-card {
-            background: #fff;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-            transition: transform 0.4s ease, box-shadow 0.4s ease;
-            cursor: default;
-        }
-        .badge-card:hover {
-            transform: translateY(-10px) rotateX(2deg);
-            box-shadow: 0 18px 40px rgba(0,0,0,0.15);
-        }
-        .badge-icon {
-            width: 100%;
-            height: 120px;
-            background: linear-gradient(135deg,#001f4d,#b30000);
-            color: #fff;
-            font-size: 3rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-bottom-left-radius: 50% 20px;
-            border-bottom-right-radius: 50% 20px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        .badge-card:hover .badge-icon {
-            transform: scale(1.2);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.25);
-        }
-        .badge-card h5 {
-            font-weight: 600;
-            color: #001f4d;
-            margin-bottom: 0.5rem;
-            font-size: 1rem;
-        }
-        .badge-card p {
-            color: #333;
-            font-size: 0.9rem;
-            line-height: 1.5;
-        }
+        .badge-card{background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 6px 18px rgba(0,0,0,0.08);transition:transform 0.4s ease, box-shadow 0.4s ease;cursor:default}
+        .badge-card:hover{transform:translateY(-10px) rotateX(2deg);box-shadow:0 18px 40px rgba(0,0,0,0.15)}
+        .badge-icon{width:100%;height:120px;background:linear-gradient(135deg,#001f4d,#b30000);color:#fff;font-size:3rem;display:flex;align-items:center;justify-content:center;border-bottom-left-radius:50% 20px;border-bottom-right-radius:50% 20px;box-shadow:0 4px 12px rgba(0,0,0,0.2);transition:transform 0.3s, box-shadow 0.3s}
+        .badge-card:hover .badge-icon{transform:scale(1.2);box-shadow:0 8px 20px rgba(0,0,0,0.25)}
+        .badge-card h5{font-weight:600;color:#001f4d;margin-bottom:0.5rem;font-size:1rem}
+        .badge-card p{color:#333;font-size:0.9rem;line-height:1.5}
 
         /* RESPONSIVE */
         @media (max-width:768px){
-            .hero h1{font-size:2.5rem;}
-            .hero p{font-size:1.1rem;}
+            .hero h1{font-size:2.5rem}
+            .hero p{font-size:1.1rem}
             .badge-icon { height: 100px; font-size: 2.5rem; }
             .badge-card h5 { font-size: 0.95rem; }
             .badge-card p { font-size: 0.85rem; }
+
+            /* Fix support cards for mobile */
+            .row.g-4 > [class*='col-']{
+                flex: 0 0 100%;
+                max-width: 100%;
+                margin-bottom: 1rem;
+            }
+            @media (min-width: 576px){
+                .row.g-4 > [class*='col-']{
+                    flex: 0 0 50%;
+                    max-width: 50%;
+                }
+            }
         }
     </style>
+
+    <script>
+        document.addEventListener('scroll', function(){
+            const bg = document.querySelector('.hero-bg');
+            if(bg) bg.style.transform = 'translateY(' + window.scrollY * 0.3 + 'px) scale(1.1)';
+        });
+    </script>
 
 {% endblock %}
