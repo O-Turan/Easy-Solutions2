@@ -5,18 +5,15 @@
 {% block body %}
 
     <!-- HERO SECTION -->
-    <header class="py-5 position-relative text-white" style="background: linear-gradient(135deg, #001f4d, #b30000);">
+    <header class="hero-contact position-relative text-white">
         <div class="container py-5 text-center">
-            <span class="badge bg-light text-dark mb-3">We helpen graag</span>
-            <h1 class="display-5 fw-bold mb-2">Neem contact op</h1>
-            <p class="lead opacity-75 mb-0">
+            <h1 class="display-4 fw-bold mb-3">Neem contact op</h1>
+            <p class="lead opacity-75">
                 Vragen of klaar om te starten? We denken graag met je mee.
             </p>
         </div>
-
-        <svg viewBox="0 0 1440 120" class="position-absolute start-0 w-100"
-             style="bottom:-1px" preserveAspectRatio="none" height="60">
-            <path fill="#ffffff"
+        <svg viewBox="0 0 1440 120" class="hero-wave" preserveAspectRatio="none">
+            <path fill="#fff"
                   d="M0,64L48,74.7C96,85,192,107,288,112C384,117,480,107,576,96C672,85,768,75,864,80C960,85,1056,107,1152,112C1248,117,1344,107,1392,101.3L1440,96L1440,120L0,120Z"/>
         </svg>
     </header>
@@ -27,11 +24,11 @@
 
                 <!-- FORM -->
                 <div class="col-lg-7">
-                    <div class="card shadow-sm rounded-4 p-4 p-lg-5">
+                    <div class="glass-card p-4 p-lg-5">
 
                         <div class="text-center mb-4">
-                            <h2 class="h4 fw-bold mb-1">Stuur ons een bericht</h2>
-                            <p class="text-muted small mb-0">
+                            <h2 class="h4 fw-bold">Stuur ons een bericht</h2>
+                            <p class="text-muted small">
                                 We reageren doorgaans binnen één werkdag.
                             </p>
                         </div>
@@ -58,36 +55,36 @@
                             <div class="row g-3">
 
                                 <div class="col-md-6">
-                                    <label class="form-label fw-semibold">Naam</label>
-                                    <input type="text" class="form-control"
+                                    <label class="form-label fw-semibold">Naam*</label>
+                                    <input type="text" class="form-control form-modern"
                                            name="Naam" placeholder="Uw naam"
                                            required value="{{ formData.Naam|default('') }}">
                                 </div>
 
                                 <div class="col-md-6">
                                     <label class="form-label fw-semibold">Bedrijf</label>
-                                    <input type="text" class="form-control"
+                                    <input type="text" class="form-control form-modern"
                                            name="Bedrijf" placeholder="Bedrijfsnaam"
                                            value="{{ formData.Bedrijf|default('') }}">
                                 </div>
 
                                 <div class="col-md-6">
-                                    <label class="form-label fw-semibold">E-mailadres</label>
-                                    <input type="email" class="form-control"
+                                    <label class="form-label fw-semibold">E-mailadres*</label>
+                                    <input type="email" class="form-control form-modern"
                                            name="email" placeholder="naam@bedrijf.nl"
                                            required value="{{ formData.email|default('') }}">
                                 </div>
 
                                 <div class="col-md-6">
                                     <label class="form-label fw-semibold">Telefoonnummer</label>
-                                    <input type="tel" class="form-control"
+                                    <input type="tel" class="form-control form-modern"
                                            name="Telefoonnummer" placeholder="06 12345678"
                                            value="{{ formData.Telefoonnummer|default('') }}">
                                 </div>
 
                                 <div class="col-12">
-                                    <label class="form-label fw-semibold">Bericht</label>
-                                    <textarea class="form-control"
+                                    <label class="form-label fw-semibold">Bericht*</label>
+                                    <textarea class="form-control form-modern"
                                               name="Bericht" rows="4"
                                               placeholder="Waarmee kunnen we je helpen?"
                                               required>{{ formData.Bericht|default('') }}</textarea>
@@ -138,34 +135,56 @@
 
     <!-- STYLES -->
     <style>
-        /* KNOP */
-        .btn-super {
-            background: linear-gradient(135deg, #001f4d, #b30000);
-            color: #fff !important;
-            font-weight: 700;
-            font-size: 1.05rem;
-            letter-spacing: 0.5px;
-            overflow: hidden;
-            position: relative;
-            transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+        /* HERO */
+        .hero-contact{background:radial-gradient(circle at top left,#002b6f,#00152f)}
+        .hero-badge{background:rgba(255,255,255,.15);padding:.4rem 1rem;border-radius:999px;font-size:.85rem}
+        .hero-wave{position:absolute;bottom:-1px;width:100%;height:60px}
+
+        /* FORM CARD */
+        .glass-card{
+            background:rgba(255,255,255,.95);
+            border-radius:24px;
+            box-shadow:0 30px 80px rgba(0,0,0,.12);
         }
-        .btn-super .btn-text { position: relative; z-index: 2; color: #fff !important; }
-        .btn-super .btn-glow {
-            content: "";
-            position: absolute;
-            top: -50%; left: -50%; width: 200%; height: 200%;
-            background: radial-gradient(circle at center, rgba(255,255,255,0.25) 0%, transparent 70%);
-            opacity: 0;
-            transition: opacity 0.3s, transform 0.5s;
-            z-index: 1;
+        .form-label{font-size:.8rem;font-weight:600;color:#374151;margin-bottom:.25rem}
+        .form-modern{border-radius:14px;padding:14px 16px;border:1px solid #e5e7eb}
+        .form-modern:focus{border-color:#002b6f;box-shadow:none}
+
+
+
+        /* BUTTON */
+        .btn-super{
+            background: linear-gradient(135deg,#002b6f,#00152f);
+            color:#fff !important; /* altijd wit */
+            font-weight:700;
+            font-size:1rem;
+            position:relative;
+            overflow:hidden;
+            transition: transform .3s ease, box-shadow .3s ease, background .3s ease;
         }
-        .btn-super:hover, .btn-super:focus, .btn-super:active {
-            transform: translateY(-4px) scale(1.02);
-            box-shadow: 0 12px 35px rgba(0,0,0,0.3);
-            color: #fff !important;
+        .btn-super .btn-glow{
+            content:"";
+            position:absolute;
+            top:-50%;
+            left:-50%;
+            width:200%;
+            height:200%;
+            background:radial-gradient(circle at center,rgba(255,255,255,.25) 0%,transparent 70%);
+            opacity:0;
+            transition:opacity .3s, transform .5s;
+            z-index:1;
         }
-        .btn-super:hover .btn-glow{ opacity:1; transform: rotate(45deg); }
-        .btn-super:active{ transform: translateY(0) scale(0.98); box-shadow: 0 6px 18px rgba(0,0,0,0.25); }
+        .btn-super:hover,
+        .btn-super:focus,
+        .btn-super:active{
+            color:#fff !important;
+            transform:translateY(-4px) scale(1.02);
+            box-shadow:0 12px 35px rgba(0,0,0,.25);
+        }
+        .btn-super:hover .btn-glow{
+            opacity:1;
+            transform:rotate(45deg);
+        }
 
         /* NEXT-LEVEL INFO CARD */
         .badge-card{
@@ -186,7 +205,7 @@
             justify-content:center;
             font-size:2rem;
             border-radius:50%;
-            background: linear-gradient(135deg, #001f4d, #b30000);
+            background: linear-gradient(135deg, #002b6f,#00152f);
             color:#fff;
             box-shadow: 0 8px 20px rgba(0,0,0,0.2);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
