@@ -10,7 +10,13 @@
 
     <!-- HERO -->
     <main class="hero text-white text-center d-flex align-items-center">
-        <div class="hero-bg" style="background-image:url('{{ asset('assets/hero-background.webp') }}');"></div>
+        <!-- LCP-geoptimaliseerde hero image -->
+        <img src="{{ asset('assets/hero-background.webp') }}"
+             class="hero-bg-img"
+             alt="Innovatieve & Betrouwbare Telecomoplossingen"
+             fetchpriority="high"
+             width="1920" height="1080">
+
         <div class="hero-overlay"></div>
 
         <div class="container position-relative">
@@ -26,7 +32,7 @@
         <a href="#section1" class="scroll-down">↓</a>
     </main>
 
-    <!-- VOIP -->
+    <!-- VOIP & CLOUD -->
     <section id="section1" class="py-5 bg-light">
         <div class="container">
             <h2 class="fw-bold text-center mb-5">VoIP & Cloud Telefonie</h2>
@@ -55,9 +61,7 @@
     <section class="trusted-section py-5">
         <div class="container">
             <h2 class="fw-bold text-center mb-3">Vertrouwd door bedrijven</h2>
-            <p class="text-center text-muted mb-5">
-                Dagelijks actief voor organisaties in heel Nederland
-            </p>
+            <p class="text-center text-muted mb-5">Dagelijks actief voor organisaties in heel Nederland</p>
         </div>
 
         <div class="logo-marquee">
@@ -97,6 +101,7 @@
                     {'icon':'🌐','title':'Netwerk','text':'Communicatie via het betrouwbare KPN-netwerk.'},
                     {'icon':'👔','title':'Specialisten','text':'Ervaren telecomspecialisten sinds 2008.'}
                 ] %}
+
                 {% for s in support %}
                     <div class="col-md-3 col-sm-6 d-flex">
                         <div class="badge-card h-100 text-center p-0 w-100">
@@ -115,17 +120,66 @@
     <!-- STIJLEN -->
     <style>
         /* HERO */
-        .hero{height:100vh;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;text-align:center}
-        .hero-bg{position:absolute;inset:0;background-size:cover;background-position:center;filter:brightness(0.65)}
-        .hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,31,77,.65),rgba(200,0,0,.35))}
-        .scroll-down{position:absolute;bottom:15px;left:50%;transform:translateX(-50%);color:#fff;font-size:2rem;animation:bounce 2s infinite}
-        @keyframes bounce{0%,20%,50%,80%,100%{transform:translateY(0)}40%{transform:translateY(-10px)}60%{transform:translateY(-5px)}}
+        .hero{
+            height:100vh;
+            position:relative;
+            overflow:hidden;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            text-align:center;
+        }
+        .hero-bg-img{
+            position:absolute;
+            inset:0;
+            width:100%;
+            height:100%;
+            object-fit:cover;
+            z-index:1;
+        }
+        .hero-overlay{
+            position:absolute;
+            inset:0;
+            background:linear-gradient(135deg,rgba(0,31,77,.65),rgba(200,0,0,.35));
+            z-index:2;
+        }
+        .hero .container{position:relative;z-index:3;}
+        .scroll-down{
+            position:absolute;
+            bottom:15px;
+            left:50%;
+            transform:translateX(-50%);
+            color:#fff;
+            font-size:2rem;
+            animation:bounce 2s infinite;
+            z-index:3;
+        }
+        @keyframes bounce{
+            0%,20%,50%,80%,100%{transform:translateY(0)}
+            40%{transform:translateY(-10px)}
+            60%{transform:translateY(-5px)}
+        }
 
         /* VOIP ICONS */
-        .icon-circle{width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:#00316d;color:#fff;font-size:1.8rem;margin:auto;transition:.4s cubic-bezier(.22,1,.36,1)}
-        .info-card{border:0;transition:transform .45s cubic-bezier(.22,1,.36,1), box-shadow .45s;display:flex;flex-direction:column;align-items:center;justify-content:flex-start}
-        .info-card:hover{transform:translateY(-14px) scale(1.04);box-shadow:0 30px 55px rgba(0,0,0,.2)}
-        .info-card:hover .icon-circle{transform:scale(1.25) rotate(6deg);background:linear-gradient(135deg,#00316d,#c62828)}
+        .icon-circle{
+            width:60px;height:60px;border-radius:50%;
+            display:flex;align-items:center;justify-content:center;
+            background:#00316d;color:#fff;font-size:1.8rem;margin:auto;
+            transition:.4s cubic-bezier(.22,1,.36,1);
+        }
+        .info-card{
+            border:0;
+            transition:transform .45s cubic-bezier(.22,1,.36,1), box-shadow .45s;
+            display:flex;flex-direction:column;align-items:center;justify-content:flex-start;
+        }
+        .info-card:hover{
+            transform:translateY(-14px) scale(1.04);
+            box-shadow:0 30px 55px rgba(0,0,0,.2);
+        }
+        .info-card:hover .icon-circle{
+            transform:scale(1.25) rotate(6deg);
+            background:linear-gradient(135deg,#00316d,#c62828);
+        }
 
         /* TRUSTED BY */
         .trusted-section{background:#fff;overflow:hidden}
@@ -187,7 +241,6 @@
             .badge-card h5 { font-size: 0.95rem; }
             .badge-card p { font-size: 0.85rem; }
 
-            /* Force full width for cards on mobile */
             .row.g-4 > [class*='col-'] { flex: 0 0 100%; max-width: 100%; margin-bottom:1rem; }
             @media (min-width:576px){ .row.g-4 > [class*='col-'] { flex: 0 0 50%; max-width:50%; } }
         }
@@ -195,7 +248,7 @@
 
     <script>
         document.addEventListener('scroll', function(){
-            const bg = document.querySelector('.hero-bg');
+            const bg = document.querySelector('.hero-bg-img');
             if(bg) bg.style.transform = 'translateY(' + window.scrollY * 0.3 + 'px) scale(1.1)';
         });
     </script>
