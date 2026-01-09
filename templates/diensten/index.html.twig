@@ -16,7 +16,8 @@
             </p>
             <div class="d-flex justify-content-center gap-3 animate-fade delay-2">
                 <a href="{{ path('offerte') }}" class="btn btn-primary btn-lg btn-glow">Nieuwe klant?</a>
-                <a href="{{ path('app_dienst_white_label') }}" class="btn btn-outline-light btn-lg btn-glow">Reseller worden?</a>
+                <a href="{{ path('app_dienst_white_label') }}" class="btn btn-outline-light btn-lg btn-glow">Reseller
+                    worden?</a>
             </div>
         </div>
     </section>
@@ -64,7 +65,8 @@
         <div class="container">
             <h2 class="fw-bold mb-3 text-white">Wilt u uw telecom naar een hoger niveau tillen?</h2>
             <p class="lead mb-4 text-white">
-                Neem contact met ons op en ontdek hoe Easy Solutions uw bedrijf kan helpen met VoIP- en telecomoplossingen.
+                Neem contact met ons op en ontdek hoe Easy Solutions uw bedrijf kan helpen met VoIP- en
+                telecomoplossingen.
             </p>
             <a href="{{ path('app_contact') }}" class="btn btn-cta btn-lg px-5 py-3 rounded-pill">
                 Contact opnemen
@@ -85,10 +87,11 @@
             color: #fff;
             position: relative;
         }
+
         .hero-section .overlay {
             position: absolute;
             inset: 0;
-            background: rgba(0,0,0,0.5);
+            background: rgba(0, 0, 0, 0.5);
         }
 
         /* BUTTONS */
@@ -96,21 +99,27 @@
             background: #b30000;
             border: none;
         }
-        .btn-primary:hover { background:#990000; }
+
+        .btn-primary:hover {
+            background: #990000;
+        }
+
         .btn-glow {
-            box-shadow: 0 0 18px rgba(179,0,0,.55);
+            box-shadow: 0 0 18px rgba(179, 0, 0, .55);
             transition: .3s ease;
         }
+
         .btn-glow:hover {
             transform: translateY(-2px);
-            box-shadow: 0 0 30px rgba(179,0,0,.8);
+            box-shadow: 0 0 30px rgba(179, 0, 0, .8);
         }
 
         /* CTA */
-        .cta-section{
+        .cta-section {
             background: #001f4d;
         }
-        .btn-cta{
+
+        .btn-cta {
             background: #b30000;
             color: #fff;
             border-radius: 6px;
@@ -118,10 +127,11 @@
             font-weight: 600;
             transition: all 0.3s ease;
         }
-        .btn-cta:hover{
+
+        .btn-cta:hover {
             background: #e53935;
             transform: translateY(-2px) scale(1.03);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
         }
 
 
@@ -130,13 +140,14 @@
             background: #fff;
             border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 15px 35px rgba(0,0,0,.08);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, .08);
             transition: transform .45s ease, box-shadow .45s ease;
             position: relative;
         }
+
         .dienst-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 30px 60px rgba(0,0,0,.15);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, .15);
         }
 
         /* IMAGE */
@@ -148,6 +159,7 @@
             overflow: hidden;
             transition: transform .6s ease;
         }
+
         .dienst-card:hover .dienst-image {
             transform: scale(1.08);
         }
@@ -158,8 +170,8 @@
             inset: 0;
             background: linear-gradient(
                     to bottom,
-                    rgba(0,0,0,.05),
-                    rgba(0,0,0,.35)
+                    rgba(0, 0, 0, .05),
+                    rgba(0, 0, 0, .35)
             );
         }
 
@@ -167,13 +179,16 @@
         .dienst-body {
             padding: 1.6rem 1.4rem;
         }
+
         .dienst-body h3 {
             color: #0f172a;
         }
 
         /* MOBILE */
-        @media (max-width:768px){
-            .dienst-image { aspect-ratio: 4 / 3; }
+        @media (max-width: 768px) {
+            .dienst-image {
+                aspect-ratio: 4 / 3;
+            }
         }
 
         /* ANIMATIONS */
@@ -182,17 +197,44 @@
             transform: translateY(20px);
             animation: fadeInUp .9s forwards;
         }
-        .animate-fade.delay-1{animation-delay:.1s}
-        .animate-fade.delay-2{animation-delay:.2s}
-        .animate-fade.delay-3{animation-delay:.3s}
-        .animate-fade.delay-4{animation-delay:.4s}
-        .animate-fade.delay-5{animation-delay:.5s}
-        .animate-fade.delay-6{animation-delay:.6s}
-        .animate-fade.delay-7{animation-delay:.7s}
-        .animate-fade.delay-8{animation-delay:.8s}
+
+        .animate-fade.delay-1 {
+            animation-delay: .1s
+        }
+
+        .animate-fade.delay-2 {
+            animation-delay: .2s
+        }
+
+        .animate-fade.delay-3 {
+            animation-delay: .3s
+        }
+
+        .animate-fade.delay-4 {
+            animation-delay: .4s
+        }
+
+        .animate-fade.delay-5 {
+            animation-delay: .5s
+        }
+
+        .animate-fade.delay-6 {
+            animation-delay: .6s
+        }
+
+        .animate-fade.delay-7 {
+            animation-delay: .7s
+        }
+
+        .animate-fade.delay-8 {
+            animation-delay: .8s
+        }
 
         @keyframes fadeInUp {
-            to { opacity:1; transform:none; }
+            to {
+                opacity: 1;
+                transform: none;
+            }
         }
     </style>
 {% endblock %}
