@@ -39,8 +39,8 @@
 
             <div class="row g-4 text-center">
                 {% for item in voip_items %}
-                    <div class="col-md-4">
-                        <div class="card info-card p-4 h-100">
+                    <div class="col-md-4 d-flex">
+                        <div class="card info-card p-4 h-100 w-100">
                             <div class="icon-circle">{{ item.icon }}</div>
                             <h3 class="h5 mt-3">{{ item.title }}</h3>
                             <p>{{ item.text }}</p>
@@ -99,7 +99,7 @@
                 ] %}
                 {% for s in support %}
                     <div class="col-md-3 col-sm-6 d-flex">
-                        <div class="badge-card h-100 text-center p-0">
+                        <div class="badge-card h-100 text-center p-0 w-100">
                             <div class="badge-icon">{{ s.icon }}</div>
                             <div class="card-body p-4">
                                 <h5 class="fw-bold">{{ s.title }}</h5>
@@ -114,6 +114,7 @@
 
     <!-- STIJLEN -->
     <style>
+        /* HERO */
         .hero{height:100vh;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;text-align:center}
         .hero-bg{position:absolute;inset:0;background-size:cover;background-position:center;filter:brightness(0.65)}
         .hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,31,77,.65),rgba(200,0,0,.35))}
@@ -122,7 +123,7 @@
 
         /* VOIP ICONS */
         .icon-circle{width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:#00316d;color:#fff;font-size:1.8rem;margin:auto;transition:.4s cubic-bezier(.22,1,.36,1)}
-        .info-card{border:0;transition:transform .45s cubic-bezier(.22,1,.36,1), box-shadow .45s}
+        .info-card{border:0;transition:transform .45s cubic-bezier(.22,1,.36,1), box-shadow .45s;display:flex;flex-direction:column;align-items:center;justify-content:flex-start}
         .info-card:hover{transform:translateY(-14px) scale(1.04);box-shadow:0 30px 55px rgba(0,0,0,.2)}
         .info-card:hover .icon-circle{transform:scale(1.25) rotate(6deg);background:linear-gradient(135deg,#00316d,#c62828)}
 
@@ -143,34 +144,52 @@
         .cta-banner{background: #001f4d;}
         .btn-cta{background: #b30000;color: #fff;border-radius: 6px;padding: 0.7rem 1.8rem;font-weight: 600;transition: all 0.3s ease;}
         .btn-cta:hover{background: #e53935;transform: translateY(-2px) scale(1.03);box-shadow: 0 10px 20px rgba(0,0,0,0.15);}
-        /* SUPPORT CARDS */
-        .badge-card{background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 6px 18px rgba(0,0,0,0.08);transition:transform 0.4s ease, box-shadow 0.4s ease;cursor:default}
-        .badge-card:hover{transform:translateY(-10px) rotateX(2deg);box-shadow:0 18px 40px rgba(0,0,0,0.15)}
-        .badge-icon{width:100%;height:120px;background:linear-gradient(135deg,#001f4d,#b30000);color:#fff;font-size:3rem;display:flex;align-items:center;justify-content:center;border-bottom-left-radius:50% 20px;border-bottom-right-radius:50% 20px;box-shadow:0 4px 12px rgba(0,0,0,0.2);transition:transform 0.3s, box-shadow 0.3s}
-        .badge-card:hover .badge-icon{transform:scale(1.2);box-shadow:0 8px 20px rgba(0,0,0,0.25)}
-        .badge-card h5{font-weight:600;color:#001f4d;margin-bottom:0.5rem;font-size:1rem}
-        .badge-card p{color:#333;font-size:0.9rem;line-height:1.5}
 
-        /* RESPONSIVE */
+        /* BADGE CARDS */
+        .badge-card {
+            background: #fff;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            cursor: default;
+            display: flex;
+            flex-direction: column;
+        }
+        .badge-card:hover {
+            transform: translateY(-10px) rotateX(2deg);
+            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.15);
+        }
+        .badge-icon {
+            width: 100%;
+            height: 120px;
+            background: linear-gradient(135deg, #001f4d, #b30000);
+            color: #fff;
+            font-size: 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-bottom-left-radius: 50% 20px;
+            border-bottom-right-radius: 50% 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .badge-card:hover .badge-icon { transform: scale(1.2); box-shadow: 0 8px 20px rgba(0,0,0,0.25); }
+        .badge-card h5 { font-weight: 600; color: #001f4d; margin-bottom: 0.5rem; font-size: 1rem; }
+        .badge-card p { color: #333; font-size: 0.9rem; line-height: 1.5; }
+
+        /* RESPONSIVE FIXES */
         @media (max-width:768px){
             .hero h1{font-size:2.5rem}
             .hero p{font-size:1.1rem}
+            .icon-circle{width:50px;height:50px;font-size:1.5rem}
             .badge-icon { height: 100px; font-size: 2.5rem; }
             .badge-card h5 { font-size: 0.95rem; }
             .badge-card p { font-size: 0.85rem; }
 
-            /* Fix support cards for mobile */
-            .row.g-4 > [class*='col-']{
-                flex: 0 0 100%;
-                max-width: 100%;
-                margin-bottom: 1rem;
-            }
-            @media (min-width: 576px){
-                .row.g-4 > [class*='col-']{
-                    flex: 0 0 50%;
-                    max-width: 50%;
-                }
-            }
+            /* Force full width for cards on mobile */
+            .row.g-4 > [class*='col-'] { flex: 0 0 100%; max-width: 100%; margin-bottom:1rem; }
+            @media (min-width:576px){ .row.g-4 > [class*='col-'] { flex: 0 0 50%; max-width:50%; } }
         }
     </style>
 
