@@ -19,15 +19,15 @@
 
     <!-- INFO -->
     <section class="py-5 bg-white" id="info-section">
-        <div class="container">
-            <h2 class="fw-bold mb-4 text-center">Wat betekent het om KPN Business Partner te zijn?</h2>
-            <p class="text-center mx-auto" style="max-width:750px;">
+        <div class="container text-center" style="max-width:800px;">
+            <h2 class="fw-bold mb-4">Wat betekent het om KPN Business Partner te zijn?</h2>
+            <p>
                 Als KPN Business Partner leveren wij professionele telecomdiensten via het vertrouwde KPN-netwerk.
             </p>
         </div>
     </section>
 
-    <!-- INFO CARDS (BADGE STYLE) -->
+    <!-- INFO CARDS -->
     <section class="py-5 bg-light">
         <div class="container">
             <h2 class="fw-bold text-center mb-4">Waarom kiezen voor KPN via Easy Solutions?</h2>
@@ -35,16 +35,15 @@
                 Profiteer van betrouwbaarheid, kwaliteit en continuïteit.
             </p>
 
-            <div class="row g-4">
+            <div class="row g-4 justify-content-center">
                 {% set cards = [
                     {'icon':'🔗','title':'Betrouwbare Netwerkverbinding','text':'Dankzij KPN heeft uw organisatie altijd een stabiele en kwalitatieve telefoonverbinding.'},
                     {'icon':'🔊','title':'Hoge Kwaliteit','text':'Gesprekken verlopen duidelijk en zonder storingen dankzij het hoogwaardige KPN-netwerk.'},
                     {'icon':'⏱️','title':'Continuïteit','text':'Uw telecomdiensten blijven altijd operationeel, ook bij onverwachte situaties.'},
                     {'icon':'🛠️','title':'Maatwerk Oplossingen','text':'Telefonie en extra diensten die volledig zijn afgestemd op de wensen van jouw bedrijf.'}
                 ] %}
-
                 {% for card in cards %}
-                    <div class="col-lg-3 col-md-6">
+                    <div class="col-lg-3 col-md-6 d-flex">
                         <div class="badge-card h-100 text-center">
                             <div class="badge-icon">{{ card.icon }}</div>
                             <div class="card-body p-4">
@@ -69,86 +68,127 @@
 
     <!-- STYLES -->
     <style>
-        /* HERO */
+        /* HERO - gelijk aan andere secties */
         .hero-section{
-            height:70vh;
+            height:60vh;
             position:relative;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            text-align:center;
             overflow:hidden;
         }
         .hero-bg{
             position:absolute;
             inset:0;
             background:url('{{ asset("assets/kpn-hero.webp") }}') center/cover no-repeat;
-            filter:brightness(.55);
+            filter:brightness(0.6);
+            transform:scale(1.1);
             z-index:1;
+            transition: transform 1.5s ease;
+        }
+        .hero-section:hover .hero-bg{
+            transform:scale(1.15);
         }
         .hero-overlay{
             position:absolute;
             inset:0;
-            background:linear-gradient(135deg,rgba(0,31,77,.6),rgba(179,0,0,.5));
+            background:linear-gradient(135deg, rgba(0,31,77,0.7), rgba(179,0,0,0.6));
             z-index:2;
         }
-        .hero-content{position:relative;z-index:3;}
+        .hero-content{
+            position:relative;
+            z-index:3;
+        }
+
+        .scroll-down{
+            display:inline-block;
+            margin-top:1rem;
+            font-size:2rem;
+            animation:bounce 2s infinite;
+            color:#fff;
+        }
+        @keyframes bounce{
+            0%,20%,50%,80%,100%{transform:translateY(0)}
+            40%{transform:translateY(-10px)}
+            60%{transform:translateY(-5px)}
+        }
 
         /* BADGE CARDS */
-        .badge-card {
-            background: #fff;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-            transition: transform 0.4s ease, box-shadow 0.4s ease;
-            cursor: default;
+        .badge-card{
+            background:#fff;
+            border-radius:20px;
+            overflow:hidden;
+            box-shadow:0 6px 18px rgba(0,0,0,0.08);
+            transition:transform 0.4s ease, box-shadow 0.4s ease;
+            cursor:default;
         }
-        .badge-card:hover {
-            transform: translateY(-10px) rotateX(2deg);
-            box-shadow: 0 18px 40px rgba(0,0,0,0.15);
+        .badge-card:hover{
+            transform:translateY(-10px) rotateX(2deg);
+            box-shadow:0 18px 40px rgba(0,0,0,0.15);
         }
-        .badge-icon {
-            width: 100%;
-            height: 120px;
-            background: linear-gradient(135deg,#001f4d,#b30000);
-            color: #fff;
-            font-size: 3rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-bottom-left-radius: 50% 20px;
-            border-bottom-right-radius: 50% 20px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        .badge-icon{
+            width:100%;
+            height:120px;
+            background:linear-gradient(135deg,#001f4d,#b30000);
+            color:#fff;
+            font-size:3rem;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            border-bottom-left-radius:50% 20px;
+            border-bottom-right-radius:50% 20px;
+            box-shadow:0 4px 12px rgba(0,0,0,0.2);
             transition: transform 0.3s, box-shadow 0.3s;
         }
-        .badge-card:hover .badge-icon {
-            transform: scale(1.2);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+        .badge-card:hover .badge-icon{
+            transform:scale(1.2);
+            box-shadow:0 8px 20px rgba(0,0,0,0.25);
         }
-        .badge-card h5 {
-            font-weight: 600;
-            color: #001f4d;
-            margin-bottom: 0.5rem;
-            font-size: 1rem;
+        .badge-card h5{
+            font-weight:600;
+            color:#001f4d;
+            margin-bottom:.5rem;
+            font-size:1rem;
         }
-        .badge-card p {
-            color: #333;
-            font-size: 0.9rem;
-            line-height: 1.5;
+        .badge-card p{
+            color:#333;
+            font-size:.9rem;
+            line-height:1.5;
         }
+
         /* CTA */
-        .cta-section{
-            background: #001f4d;
-        }
+        .cta-section{background:#001f4d;}
         .btn-cta{
-            background: #b30000;
-            color: #fff;
-            border-radius: 6px;
-            padding: 0.7rem 1.8rem;
-            font-weight: 600;
-            transition: all 0.3s ease;
+            background:#b30000;
+            color:#fff;
+            border-radius:6px;
+            padding:.7rem 1.8rem;
+            font-weight:600;
+            transition:all .3s ease;
         }
         .btn-cta:hover{
-            background: #e53935;
-            transform: translateY(-2px) scale(1.03);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+            background:#e53935;
+            transform:translateY(-2px) scale(1.03);
+            box-shadow:0 10px 20px rgba(0,0,0,0.15);
+        }
+
+        /* RESPONSIVE */
+        @media(max-width:768px){
+            .hero-section h1{font-size:2.5rem;}
+            .hero-section p{font-size:1.1rem;}
+            .badge-icon{height:100px;font-size:2.5rem;}
+            .badge-card p{font-size:.85rem;}
         }
     </style>
+
+    <!-- PARALLAX HERO -->
+    <script>
+        document.addEventListener('scroll', function(){
+            const scrolled = window.scrollY;
+            const bg = document.querySelector('.hero-bg');
+            if(bg) bg.style.transform = 'translateY(' + scrolled * 0.2 + 'px) scale(1.05)';
+        });
+    </script>
 
 {% endblock %}
