@@ -6,9 +6,14 @@
 
     <section class="py-5" style="background-color: #f8f9fa;">
         <div class="container">
-            <h1 class="fw-bold mb-5 text-center">Privacybeleid</h1>
+            <h1 class="fw-bold mb-4 text-center">Privacybeleid</h1>
 
-            <p class="mb-4">Bij <strong>Easy Solutions</strong> hechten we veel waarde aan de bescherming van uw persoonsgegevens. In dit privacybeleid leest u welke gegevens we verzamelen, hoe we deze gebruiken en hoe we uw privacy beschermen.</p>
+            <!-- Introductie in card -->
+            <div class="mb-5">
+                <div class="policy-card p-4">
+                    <p class="mb-0">Bij <strong>Easy Solutions</strong> hechten we veel waarde aan de bescherming van uw persoonsgegevens. In dit privacybeleid leest u welke gegevens we verzamelen, hoe we deze gebruiken en hoe we uw privacy beschermen.</p>
+                </div>
+            </div>
 
             <!-- Belangrijke secties in kaarten -->
             {% set sections = [
@@ -42,7 +47,6 @@
             border-radius: 15px;
             box-shadow: 0 8px 25px rgba(0,0,0,0.08);
             transition: transform 0.35s ease, box-shadow 0.35s ease;
-            padding: 2rem;
         }
         .policy-card:hover {
             transform: translateY(-8px);
