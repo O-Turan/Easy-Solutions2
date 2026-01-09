@@ -19,9 +19,9 @@
 
     <!-- UITLEG -->
     <section class="py-5 bg-white" id="info-section">
-        <div class="container">
+        <div class="container text-center" style="max-width:800px;">
             <h2 class="fw-bold mb-4">Wat is Nummerportering?</h2>
-            <p>
+            <p class="mx-auto">
                 Nummerportering is een proces waarbij je jouw bestaande telefoonnummers neemt naar een nieuwe provider of telefoniesysteem.
                 Dit zorgt ervoor dat jouw klanten jou nog steeds kunnen bereiken op dezelfde nummers, ook als jij overstapt.
                 Het proces wordt met uiterste zorg uitgevoerd om onderbrekingen te voorkomen, zodat jouw bereikbaarheid altijd gegarandeerd is.
@@ -38,7 +38,7 @@
                 Wij zorgen voor een veilige en snelle overdracht van uw telefoonnummers, zodat uw bedrijf altijd bereikbaar blijft.
             </p>
 
-            <div class="row g-4">
+            <div class="row g-4 justify-content-center">
                 {% set cards = [
                     {'icon':'⚡','title':'Snelle Overdracht','text':'Uw nummers worden zonder vertraging overgezet naar het nieuwe systeem.'},
                     {'icon':'🔄','title':'Geen Onderbrekingen','text':'Uw bereikbaarheid blijft continu, zodat uw klanten u altijd kunnen bereiken.'},
@@ -47,7 +47,7 @@
                 ] %}
 
                 {% for card in cards %}
-                    <div class="col-md-6 col-lg-3">
+                    <div class="col-12 col-md-6 col-lg-3 d-flex">
                         <div class="badge-card h-100 text-center">
                             <div class="badge-icon">{{ card.icon }}</div>
                             <div class="card-body p-4">
@@ -94,7 +94,7 @@
         }
         .hero-content{position:relative;z-index:3;}
 
-        /* SCROLL PIJL (zelfde als Hosted PBX, lager gezet) */
+        /* SCROLL PIJL */
         .scroll-down{
             position:absolute;
             bottom:-40px;
@@ -170,6 +170,26 @@
             background: #e53935;
             transform: translateY(-2px) scale(1.03);
             box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        }
+
+        /* RESPONSIVE */
+        @media (max-width:768px){
+            .badge-icon { height: 100px; font-size: 2.5rem; }
+            .badge-card h5 { font-size: 0.95rem; }
+            .badge-card p { font-size: 0.85rem; }
+
+            /* Cards full width on small screens */
+            .row.g-4 > [class*='col-']{
+                flex: 0 0 100%;
+                max-width: 100%;
+                margin-bottom: 1rem;
+            }
+            @media (min-width: 576px){
+                .row.g-4 > [class*='col-']{
+                    flex: 0 0 50%;
+                    max-width: 50%;
+                }
+            }
         }
     </style>
 

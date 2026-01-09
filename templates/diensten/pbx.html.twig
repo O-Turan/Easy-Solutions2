@@ -2,6 +2,10 @@
 
 {% block title %}PBX - Easy Solutions{% endblock %}
 
+{% block meta_description %}
+    Professionele PBX-oplossingen voor bedrijven. Beheer interne en externe gesprekken efficiënt met betrouwbare telefooncentrales.
+{% endblock %}
+
 {% block body %}
 
     <!-- HERO SECTION -->
@@ -19,7 +23,7 @@
 
     <!-- UITLEG PBX -->
     <section class="py-5 bg-white" id="info-section">
-        <div class="container">
+        <div class="container text-center" style="max-width:800px;">
             <h2 class="fw-bold mb-4">Wat is een PBX?</h2>
             <p>
                 Een PBX (Private Branch Exchange) is een intern telefooncentrale voor jouw bedrijf die inkomende en uitgaande gesprekken regelt.
@@ -37,7 +41,7 @@
                 Onze PBX-oplossingen bieden controle, betrouwbaarheid en flexibiliteit voor uw bedrijf.
             </p>
 
-            <div class="row g-4">
+            <div class="row g-4 justify-content-center">
                 {% set cards = [
                     {'icon':'📞','title':'Volledige Controle','text':'Beheer interne en externe gesprekken efficiënt met uitgebreide functies.'},
                     {'icon':'⚙️','title':'Flexibel Inrichten','text':'Pas de PBX aan naar de behoeften van uw bedrijf, van kleine teams tot grote organisaties.'},
@@ -45,7 +49,7 @@
                     {'icon':'🔗','title':'Integratie met Systemen','text':'Koppel uw PBX eenvoudig aan CRM, softwaretools en mobiele apps.'}
                 ] %}
                 {% for card in cards %}
-                    <div class="col-lg-3 col-md-6">
+                    <div class="col-12 col-md-6 col-lg-3 d-flex">
                         <div class="badge-card h-100 text-center p-0">
                             <div class="badge-icon">{{ card.icon }}</div>
                             <div class="card-body p-4">
@@ -60,10 +64,10 @@
     </section>
 
     <!-- CTA SECTION -->
-    <section class="py-5 text-center cta-section">
+    <section class="py-5 text-center text-white cta-section">
         <div class="container">
-            <h2 class="fw-bold mb-3 text-white">Klaar voor professionele PBX?</h2>
-            <p class="lead mb-4 text-white">Neem contact op en ontdek hoe wij uw bedrijfscommunicatie optimaliseren.</p>
+            <h2 class="fw-bold mb-3">Klaar voor professionele PBX?</h2>
+            <p class="lead mb-4">Neem contact op en ontdek hoe wij uw bedrijfscommunicatie optimaliseren.</p>
             <a href="/contact" class="btn btn-cta btn-lg text-white">Contact opnemen</a>
         </div>
     </section>
@@ -187,6 +191,22 @@
         @media (max-width: 768px){
             .hero-section h1{font-size:2.5rem;}
             .hero-section p{font-size:1.1rem;}
+            .badge-icon { height: 100px; font-size: 2.5rem; }
+            .badge-card h5 { font-size: 0.95rem; }
+            .badge-card p { font-size: 0.85rem; }
+
+            /* Cards full width on small screens */
+            .row.g-4 > [class*='col-']{
+                flex: 0 0 100%;
+                max-width: 100%;
+                margin-bottom: 1rem;
+            }
+            @media (min-width: 576px){
+                .row.g-4 > [class*='col-']{
+                    flex: 0 0 50%;
+                    max-width: 50%;
+                }
+            }
         }
     </style>
 
