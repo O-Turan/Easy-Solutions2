@@ -5,89 +5,66 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Easy Solutions — Professionele VoIP & Telecom{% endblock %}</title>
 
-    <!-- Meta SEO -->
-    <meta name="description" content="{% block meta_description %}Easy Solutions levert hoogwaardige VoIP-, telecom- en cloudtelefonie-oplossingen voor bedrijven, ZZP’ers en consumenten.{% endblock %}">
-    <meta name="keywords" content="VoIP, telefonie, hosted telefonie, PBX, SIP Trunk, telecom, zakelijke telefonie, Easy Solutions, nummerportering, telefonieoplossingen">
+    <!-- SEO -->
+    <meta name="description" content="{% block meta_description %}Easy Solutions levert hoogwaardige VoIP-, telecom- en cloudtelefonie-oplossingen.{% endblock %}">
     <meta name="robots" content="index, follow">
 
     <!-- Open Graph -->
-    <meta property="og:title" content="{% block og_title %}Easy Solutions — VoIP & Telecom{% endblock %}">
-    <meta property="og:description" content="{% block og_description %}Uw partner voor professionele VoIP-, cloud- en telecomoplossingen.{% endblock %}">
+    <meta property="og:title" content="Easy Solutions — VoIP & Telecom">
+    <meta property="og:description" content="Uw partner voor professionele VoIP-oplossingen">
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ app.request.uri }}">
-    <meta property="og:image" content="{{ asset('assets/easy-solutions-high-resolution-logo-transparent.webp') }}">
+    <meta property="og:image" content="{{ asset('assets/LOGO.webp') }}">
 
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- CSS -->
     {% block stylesheets %}
         {{ encore_entry_link_tags('app') }}
     {% endblock %}
-
-    <!-- Favicon -->
-    <link rel="icon" href="data:image/svg+xml,
-        <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'>
-            <text y='1.2em' font-size='96'>⚫️</text>
-        </svg>">
-
-    <!-- Schema.org JSON-LD -->
-    <script type="application/ld+json">
-        {
-          "@context": "https://schema.org",
-          "@type": "Organization",
-          "name": "Easy Solutions",
-          "url": "{{ app.request.schemeAndHttpHost }}",
-          "logo": "{{ asset('assets/easy-solutions-high-resolution-logo-transparent.webp') }}",
-          "contactPoint": {
-            "@type": "ContactPoint",
-            "telephone": "+31 880666100",
-            "contactType": "customer service",
-            "email": "info@easysolutions.nl",
-            "areaServed": "NL",
-            "availableLanguage": "nl"
-          },
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "Regulusweg 5",
-            "postalCode": "2516AC",
-            "addressLocality": "Den Haag",
-            "addressCountry": "NL"
-          }
-        }
-    </script>
-
 </head>
+
 <body>
 
-<!-- Navbar -->
+<!-- NAVBAR -->
 <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
     <div class="container">
+
         <a class="navbar-brand" href="{{ path('app_home') }}">
-            <img src="{{ asset('assets/easy-solutions-high-resolution-logo-transparent.webp') }}" alt="Easy Solutions logo" width="180">
+            <img src="{{ asset('assets/LOGO.webp') }}"
+                 alt="Easy Solutions logo"
+                 width="240"
+                 height="60">
         </a>
 
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-label="Navigatiemenu openen">
+        <button class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navMenu"
+                aria-label="Navigatiemenu openen">
             <span class="navbar-toggler-icon"></span>
         </button>
-
 
         <div class="collapse navbar-collapse" id="navMenu">
             <ul class="navbar-nav ms-auto gap-3">
 
                 <li class="nav-item">
-                    <a class="nav-link {% if app.request.attributes.get('_route') == 'app_home' %}active{% endif %}" href="{{ path('app_home') }}">Home</a>
+                    <a class="nav-link" href="{{ path('app_home') }}">Home</a>
                 </li>
 
-                <!-- Diensten Dropdown -->
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle {% if app.request.attributes.get('_route') starts with 'app_dienst' %}active{% endif %}" href="#" id="dienstenDropdown"
-                       role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <!-- DIENSTEN -->
+                <li class="nav-item dropdown dropdown-hover">
+                    <a class="nav-link dropdown-toggle"
+                       href="#"
+                       id="dienstenDropdown"
+                       role="button"
+                       data-bs-toggle="dropdown"
+                       aria-expanded="false">
                         Diensten
                     </a>
 
-                    <ul class="dropdown-menu" aria-labelledby="dienstenDropdown">
-                        <li><a class="dropdown-item" href="{{ path('app_diensten') }}">Alle Diensten</a></li>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="{{ path('app_diensten') }}">Alle diensten</a></li>
                         <li><hr class="dropdown-divider"></li>
                         <li><a class="dropdown-item" href="{{ path('app_dienst_hosted_telefonie') }}">Hosted telefonie</a></li>
                         <li><a class="dropdown-item" href="{{ path('app_dienst_hosted_pbx') }}">Hosted PBX</a></li>
@@ -100,29 +77,25 @@
                     </ul>
                 </li>
 
-                <li class="nav-item">
-                    <a class="nav-link {% if app.request.attributes.get('_route') == 'app_over_ons' %}active{% endif %}" href="{{ path('app_over_ons') }}">Over ons</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link {% if app.request.attributes.get('_route') == 'app_contact' %}active{% endif %}" href="{{ path('app_contact') }}">Contact</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link {% if app.request.attributes.get('_route') == 'offerte' %}active{% endif %}" href="{{ path('offerte') }}">Offerte</a>
-                </li>
+                <li class="nav-item"><a class="nav-link" href="{{ path('app_over_ons') }}">Over ons</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ path('app_contact') }}">Contact</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ path('offerte') }}">Offerte</a></li>
 
             </ul>
         </div>
     </div>
 </nav>
 
+<!-- HOVER FIX (DESKTOP ONLY) -->
 <style>
-    /* Lichte moderne navbar */
-    .navbar-light {
-        background-color: #ffffff;
+    @media (min-width: 992px) {
+        .dropdown-hover:hover > .dropdown-menu {
+            display: block;
+            margin-top: 0;
+        }
     }
 
+    /* NAVBAR LINKS */
     .navbar-light .navbar-nav .nav-link {
         color: #001f4d;
         font-weight: 500;
@@ -130,73 +103,44 @@
         transition: color 0.3s, transform 0.3s;
     }
 
+    /* Rode lijn onder normale links (niet dropdown) */
+    .navbar-light .navbar-nav .nav-link:not(.dropdown-toggle)::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -5px;
+        width: 0%;
+        height: 2px;
+        background: #b30000;
+        border-radius: 2px;
+        transition: width 0.3s ease;
+    }
+
+    .navbar-light .navbar-nav .nav-link:not(.dropdown-toggle):hover::after,
+    .navbar-light .navbar-nav .nav-link:not(.dropdown-toggle).active::after {
+        width: 100%;
+    }
+
     .navbar-light .navbar-nav .nav-link:hover {
         color: #b30000;
         transform: translateY(-2px);
     }
-
-    .navbar-light .navbar-nav .nav-link.active::after {
-        content: '';
-        position: absolute;
-        bottom: -5px;
-        left: 0;
-        width: 100%;
-        height: 2px;
-        background: #b30000;
-        border-radius: 2px;
-    }
-
-    .dropdown-menu {
-        background-color: #ffffff;
-        border: 1px solid rgba(0,0,0,0.1);
-    }
-
-    .dropdown-menu .dropdown-item {
-        color: #001f4d;
-        transition: color 0.3s, background 0.3s;
-    }
-
-    .dropdown-menu .dropdown-item:hover {
-        color: #b30000;
-        background-color: rgba(179,0,0,0.05);
-    }
-
-    .navbar-toggler {
-        border-color: rgba(0,31,77,0.2);
-    }
-
-    .navbar-toggler-icon {
-        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%280, 31, 77, 0.7%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
-    }
-
-    @media (max-width: 991px) {
-        .navbar-nav {
-            text-align: center;
-        }
-    }
 </style>
 
-
-
-<!-- Page content -->
 <main>
     {% block body %}{% endblock %}
 </main>
 
-<!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-
-<!-- App JS -->
 {% block javascripts %}
     {{ encore_entry_script_tags('app') }}
 {% endblock %}
 
-<!-- Footer -->
+<!-- FOOTER (EXACT JOUW CODE) -->
 <footer class="footer bg-gradient-dark text-white pt-5 pb-4">
     <div class="container">
         <div class="row">
 
-            <!-- Over ons -->
             <div class="col-md-4 mb-4">
                 <h5 class="fw-bold mb-3">Easy Solutions</h5>
                 <p class="text-white-50 small">
@@ -204,7 +148,6 @@
                 </p>
             </div>
 
-            <!-- Navigatie -->
             <div class="col-md-4 mb-4">
                 <h5 class="fw-bold mb-3">Navigatie</h5>
                 <ul class="list-unstyled">
@@ -216,13 +159,12 @@
                 </ul>
             </div>
 
-            <!-- Contact -->
             <div class="col-md-4 mb-4">
                 <h5 class="fw-bold mb-3">Contact</h5>
                 <ul class="list-unstyled text-white-50 small">
-                    <li><i class="bi bi-envelope-fill me-1"></i> info@easysolutions.nl</li>
-                    <li><i class="bi bi-telephone-fill me-1"></i> +31 880666100</li>
-                    <li><i class="bi bi-geo-alt-fill me-1"></i> Regulusweg 5, 2516AC, Den Haag</li>
+                    <li>info@easysolutions.nl</li>
+                    <li>+31 880666100</li>
+                    <li>Regulusweg 5, Den Haag</li>
                 </ul>
             </div>
 
@@ -231,8 +173,8 @@
         <hr class="border-secondary">
 
         <div class="d-flex flex-column flex-md-row justify-content-between align-items-center small text-white-50">
-            <span>© {{ "now"|date("Y") }} Easy Solutions — Alle rechten voorbehouden</span>
-            <div class="d-flex gap-3 mt-2 mt-md-0">
+            <span>© {{ "now"|date("Y") }} Easy Solutions</span>
+            <div class="d-flex gap-3">
                 <a href="{{ path('app_privacy_beleid') }}" class="footer-link">Privacybeleid</a>
                 <a href="{{ path('app_algemene_voorwaarden') }}" class="footer-link">Algemene Voorwaarden</a>
             </div>
@@ -242,36 +184,17 @@
 
 <style>
     .footer {
-        background: linear-gradient(135deg, #001f4d, #0d0d0d); /* donkerblauw naar zwart gradient */
-        color: #fff;
+        background: linear-gradient(135deg, #001f4d, #0d0d0d);
     }
-
     .footer a.footer-link {
-        color: #fff; /* links standaard wit */
+        color: #fff;
         text-decoration: none;
         transition: color 0.3s;
     }
-
     .footer a.footer-link:hover {
-        color: #b30000; /* rode hover */
-    }
-
-    .footer hr {
-        border-color: rgba(255,255,255,0.1);
-    }
-
-    .footer i {
         color: #b30000;
     }
-
-    @media (max-width: 768px) {
-        .footer .d-flex {
-            flex-direction: column !important;
-            gap: 0.5rem;
-        }
-    }
 </style>
-
 
 </body>
 </html>

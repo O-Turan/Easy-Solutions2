@@ -59,7 +59,6 @@
         </div>
     </section>
 
-
     <!-- CTA SECTION -->
     <section class="py-5 text-center cta-section">
         <div class="container">
@@ -74,8 +73,6 @@
         </div>
     </section>
 
-
-
 {% endblock %}
 
 {% block javascripts %}
@@ -83,7 +80,9 @@
         /* HERO */
         .hero-section {
             height: 70vh;
-            background: linear-gradient(135deg, #001f4d, #b30000);
+            background: linear-gradient(135deg, rgba(0,31,77,0.6), rgba(179,0,0,0.6)),
+            url('{{ asset('assets/diensten_background.webp') }}') no-repeat center center;
+            background-size: cover;
             color: #fff;
             position: relative;
         }
@@ -91,7 +90,7 @@
         .hero-section .overlay {
             position: absolute;
             inset: 0;
-            background: rgba(0, 0, 0, 0.5);
+            background: rgba(0, 0, 0, 0.3); /* extra overlay voor contrast */
         }
 
         /* BUTTONS */
@@ -133,7 +132,6 @@
             transform: translateY(-2px) scale(1.03);
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
         }
-
 
         /* DIENST CARDS – PREMIUM */
         .dienst-card {
