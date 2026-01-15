@@ -96,16 +96,32 @@
 
             <div class="row g-4">
                 {% set support = [
-                    {'icon':'🏢','title':'Nummerportering','text':'Soepele en snelle nummerporteringen.'},
-                    {'icon':'🎧','title':'Support','text':'Snelle support via telefoon, e-mail of ticket.'},
-                    {'icon':'🌐','title':'Netwerk','text':'Communicatie via het betrouwbare KPN-netwerk.'},
-                    {'icon':'👔','title':'Specialisten','text':'Ervaren telecomspecialisten sinds 2008.'}
+                    {
+                        'title':'Nummerportering',
+                        'text':'Soepele en snelle nummerporteringen.',
+                        'icon_svg':'<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-building2-icon lucide-building-2"><path d="M10 12h4"/><path d="M10 8h4"/><path d="M14 21v-3a2 2 0 0 0-4 0v3"/><path d="M6 10H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-2"/><path d="M6 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16"/></svg>'
+                    },
+                    {
+                        'title':'Support',
+                        'text':'Snelle support via telefoon, e-mail of ticket.',
+                        'icon_svg':'<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail-check-icon lucide-mail-check"><path d="M22 13V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v12c0 1.1.9 2 2 2h8"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/><path d="m16 19 2 2 4-4"/></svg>'
+                    },
+                    {
+                        'title':'Netwerk',
+                        'text':'Communicatie via het betrouwbare KPN-netwerk.',
+                        'icon_svg':'<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-down-icon lucide-arrow-up-down"><path d="m21 16-4 4-4-4"/><path d="M17 20V4"/><path d="m3 8 4-4 4 4"/><path d="M7 4v16"/></svg>'
+                    },
+                    {
+                        'title':'Specialisten',
+                        'text':'Ervaren telecomspecialisten sinds 2008.',
+                        'icon_svg':'<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user-round-icon lucide-user-round"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/></svg>'
+                    }
                 ] %}
 
                 {% for s in support %}
                     <div class="col-md-3 col-sm-6 d-flex">
                         <div class="badge-card h-100 text-center p-0 w-100">
-                            <div class="badge-icon">{{ s.icon }}</div>
+                            <div class="badge-icon">{{ s.icon_svg|raw }}</div>
                             <div class="card-body p-4">
                                 <h5 class="fw-bold">{{ s.title }}</h5>
                                 <p>{{ s.text }}</p>
@@ -254,3 +270,4 @@
     </script>
 
 {% endblock %}
+
