@@ -41,20 +41,33 @@
                 Onze PBX-oplossingen bieden controle, betrouwbaarheid en flexibiliteit voor uw bedrijf.
             </p>
 
-            <div class="row g-4 justify-content-center">
-                {% set cards = [
-                    {'icon':'📞','title':'Volledige Controle','text':'Beheer interne en externe gesprekken efficiënt met uitgebreide functies.'},
-                    {'icon':'⚙️','title':'Flexibel Inrichten','text':'Pas de PBX aan naar de behoeften van uw bedrijf, van kleine teams tot grote organisaties.'},
-                    {'icon':'✅','title':'Betrouwbaar','text':'Goede infrastructuur voor stabiele verbindingen en minimale uitvaltijd.'},
-                    {'icon':'🔗','title':'Integratie met Systemen','text':'Koppel uw PBX eenvoudig aan CRM, softwaretools en mobiele apps.'}
+            <div class="row g-4">
+                {% set support = [
+                    {
+                        'title':'Volledige Controle','text':'Beheer interne en externe gesprekken efficiënt met uitgebreide functies.',
+                        'icon_svg':'<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-computer-icon lucide-computer"><rect width="14" height="8" x="5" y="2" rx="2"/><rect width="20" height="8" x="2" y="14" rx="2"/><path d="M6 18h2"/><path d="M12 18h6"/></svg>'
+                    },
+                    {
+                        'title':'Flexibel Inrichten','text':'Pas de PBX aan naar de behoeften van uw bedrijf, van kleine teams tot grote organisaties.',
+                        'icon_svg':'<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-combine-icon lucide-combine"><path d="M14 3a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1"/><path d="M19 3a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1"/><path d="m7 15 3 3"/><path d="m7 21 3-3H5a2 2 0 0 1-2-2v-2"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="3" width="7" height="7" rx="1"/></svg>'
+                    },
+                    {
+                        'title':'Betrouwbaar','text':'Goede infrastructuur voor stabiele verbindingen en minimale uitvaltijd.',
+                        'icon_svg':'<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-bookmark-check-icon lucide-bookmark-check"><path d="M17 3a2 2 0 0 1 2 2v15a1 1 0 0 1-1.496.868l-4.512-2.578a2 2 0 0 0-1.984 0l-4.512 2.578A1 1 0 0 1 5 20V5a2 2 0 0 1 2-2z"/><path d="m9 10 2 2 4-4"/></svg>'
+                    },
+                    {
+                        'title':'Integratie met Systemen','text':'Koppel uw PBX eenvoudig aan CRM, softwaretools en mobiele apps.',
+                        'icon_svg':'<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-blocks-icon lucide-blocks"><path d="M10 22V7a1 1 0 0 0-1-1H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-5a1 1 0 0 0-1-1H2"/><rect x="14" y="2" width="8" height="8" rx="1"/></svg>'
+                    }
                 ] %}
-                {% for card in cards %}
-                    <div class="col-12 col-md-6 col-lg-3 d-flex">
-                        <div class="badge-card h-100 text-center p-0">
-                            <div class="badge-icon">{{ card.icon }}</div>
+
+                {% for s in support %}
+                    <div class="col-md-3 col-sm-6 d-flex">
+                        <div class="badge-card h-100 text-center p-0 w-100">
+                            <div class="badge-icon">{{ s.icon_svg|raw }}</div>
                             <div class="card-body p-4">
-                                <h5 class="fw-bold">{{ card.title }}</h5>
-                                <p>{{ card.text }}</p>
+                                <h5 class="fw-bold">{{ s.title }}</h5>
+                                <p>{{ s.text }}</p>
                             </div>
                         </div>
                     </div>
