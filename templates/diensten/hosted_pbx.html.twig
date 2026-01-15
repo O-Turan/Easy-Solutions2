@@ -39,24 +39,42 @@
             </p>
 
             <div class="row g-4">
-                {% set cards = [
-                    {'icon':'📞','title':'Altijd Bereikbaar','text':'Jouw telefoonsysteem is online beschikbaar, waar je ook bent.'},
-                    {'icon':'➕','title':'Eenvoudig Uitbreiden','text':'Voeg nieuwe gebruikers toe of pas functionaliteiten aan zonder gedoe.'},
-                    {'icon':'☁️','title':'Volledig Cloudbeheer','text':'Beheer alles online via een overzichtelijk dashboard.'},
-                    {'icon':'💰','title':'Kosten-Efficiënt','text':'Geen dure fysieke PBX meer, je betaalt alleen voor wat je gebruikt.'}
+                {% set support = [
+                    {
+                        'title':'Keuzemenu',
+                        'text':'Laat bellers eenvoudig kiezen via een keuzemenu en verbind ze direct met de juiste afdeling. Zo verkort je wachttijden en zorg je voor een professionele eerste indruk.',
+                        'icon_svg':'<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-logs-icon lucide-logs"><path d="M3 5h1"/><path d="M3 12h1"/><path d="M3 19h1"/><path d="M8 5h1"/><path d="M8 12h1"/><path d="M8 19h1"/><path d="M13 5h8"/><path d="M13 12h8"/><path d="M13 19h8"/></svg>'
+                    },
+                    {
+                        'title':'Belgroepen',
+                        'text':'Inkomende gesprekken worden automatisch verdeeld over meerdere medewerkers. Zo wordt elke oproep snel beantwoord en blijft je organisatie altijd professioneel bereikbaar, ook tijdens drukke momenten.',
+                        'icon_svg':'<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-boxes-icon lucide-boxes"><path d="M2.97 12.92A2 2 0 0 0 2 14.63v3.24a2 2 0 0 0 .97 1.71l3 1.8a2 2 0 0 0 2.06 0L12 19v-5.5l-5-3-4.03 2.42Z"/><path d="m7 16.5-4.74-2.85"/><path d="m7 16.5 5-3"/><path d="M7 16.5v5.17"/><path d="M12 13.5V19l3.97 2.38a2 2 0 0 0 2.06 0l3-1.8a2 2 0 0 0 .97-1.71v-3.24a2 2 0 0 0-.97-1.71L17 10.5l-5 3Z"/><path d="m17 16.5-5-3"/><path d="m17 16.5 4.74-2.85"/><path d="M17 16.5v5.17"/><path d="M7.97 4.42A2 2 0 0 0 7 6.13v4.37l5 3 5-3V6.13a2 2 0 0 0-.97-1.71l-3-1.8a2 2 0 0 0-2.06 0l-3 1.8Z"/><path d="M12 8 7.26 5.15"/><path d="m12 8 4.74-2.85"/><path d="M12 13.5V8"/></svg>'
+                    },
+                    {
+                        'title':'Openingstijden',
+                        'text':'Bepaal wanneer je bereikbaar bent en wat er gebeurt buiten kantooruren. Oproepen worden automatisch doorgeschakeld naar voicemail, een keuzemenu of een andere bestemming.',
+                        'icon_svg':'<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clock-icon lucide-clock"><path d="M12 6v6l4 2"/><circle cx="12" cy="12" r="10"/></svg>'
+                    },
+                    {
+                        'title':'Gesprekken opnemen',
+                        'text':'Neem inkomende en uitgaande gesprekken automatisch op voor training, kwaliteitscontrole of naslag. Opnames zijn veilig opgeslagen en eenvoudig terug te luisteren.',
+                        'icon_svg':'<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-cassette-tape-icon lucide-cassette-tape"><rect width="20" height="16" x="2" y="4" rx="2"/><circle cx="8" cy="10" r="2"/><path d="M8 12h8"/><circle cx="16" cy="10" r="2"/><path d="m6 20 .7-2.9A1.4 1.4 0 0 1 8.1 16h7.8a1.4 1.4 0 0 1 1.4 1l.7 3"/></svg>'
+                    }
                 ] %}
-                {% for card in cards %}
-                    <div class="col-lg-3 col-md-6">
-                        <div class="badge-card h-100 text-center p-0">
-                            <div class="badge-icon">{{ card.icon }}</div>
+
+                {% for s in support %}
+                    <div class="col-md-3 col-sm-6 d-flex">
+                        <div class="badge-card h-100 text-center p-0 w-100">
+                            <div class="badge-icon">{{ s.icon_svg|raw }}</div>
                             <div class="card-body p-4">
-                                <h4 class="fw-bold">{{ card.title }}</h4>
-                                <p>{{ card.text }}</p>
+                                <h5 class="fw-bold">{{ s.title }}</h5>
+                                <p>{{ s.text }}</p>
                             </div>
                         </div>
                     </div>
                 {% endfor %}
             </div>
+        </div>
         </div>
     </section>
 
