@@ -42,26 +42,42 @@
                 bedrijfsbehoeften.
             </p>
 
-            <div class="row g-4">
-                {% set cards = [
-                    {'icon':'📞','title':'Altijd Bereikbaar','text':'Jouw telefoonsysteem is volledig online en beschikbaar, waar je ook bent.'},
-                    {'icon':'➕','title':'Eenvoudig Uitbreiden','text':'Voeg eenvoudig nieuwe gebruikers toe of pas functionaliteiten aan zonder gedoe.'},
-                    {'icon':'☁️','title':'Volledig Cloudbeheer','text':'Beheer alles online via een overzichtelijk dashboard.'},
-                    {'icon':'💰','title':'Kosten-Efficiënt','text':'Geen dure fysieke telefooncentrales meer, je betaalt alleen voor wat je gebruikt.'}
-                ] %}
-                {% for card in cards %}
-                    <div class="col-lg-3 col-md-6">
-                        <div class="badge-card h-100 text-center p-0">
-                            <div class="badge-icon">{{ card.icon }}</div>
-                            <div class="card-body p-4">
-                                <h5 class="fw-bold">{{ card.title }}</h5>
-                                <p>{{ card.text }}</p>
+                    <div class="row g-4">
+                        {% set support = [
+                            {
+                                'title':'Altijd Bereikbaar',
+                                'text':'Jouw telefoonsysteem is volledig online en beschikbaar, waar je ook bent.',
+                                'icon_svg':'<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone-incoming-icon lucide-phone-incoming"><path d="M16 2v6h6"/><path d="m22 2-6 6"/><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></svg>'
+                            },
+                            {
+                                'title':'Eenvoudig Uitbreiden',
+                                'text':'Voeg eenvoudig nieuwe gebruikers toe of pas functionaliteiten aan zonder gedoe.',
+                                'icon_svg':'<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-git-fork-icon lucide-git-fork"><circle cx="12" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><circle cx="18" cy="6" r="3"/><path d="M18 9v2c0 .6-.4 1-1 1H7c-.6 0-1-.4-1-1V9"/><path d="M12 12v3"/></svg>'
+                            },
+                            {
+                                'title':'Volledig Cloudbeheer','text':'Beheer alles online via een overzichtelijk dashboard.',
+                                'icon_svg':'<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-cloud-cog-icon lucide-cloud-cog"><path d="m10.852 19.772-.383.924"/><path d="m13.148 14.228.383-.923"/><path d="M13.148 19.772a3 3 0 1 0-2.296-5.544l-.383-.923"/><path d="m13.53 20.696-.382-.924a3 3 0 1 1-2.296-5.544"/><path d="m14.772 15.852.923-.383"/><path d="m14.772 18.148.923.383"/><path d="M4.2 15.1a7 7 0 1 1 9.93-9.858A7 7 0 0 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.2"/><path d="m9.228 15.852-.923-.383"/><path d="m9.228 18.148-.923.383"/></svg>'
+                            },
+                            {
+                                'title':'Kosten-Efficiënt','text':'Geen dure fysieke telefooncentrales meer, je betaalt alleen voor wat je gebruikt.',
+                                'icon_svg':'<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-hand-coins-icon lucide-hand-coins"><path d="M11 15h2a2 2 0 1 0 0-4h-3c-.6 0-1.1.2-1.4.6L3 17"/><path d="m7 21 1.6-1.4c.3-.4.8-.6 1.4-.6h4c1.1 0 2.1-.4 2.8-1.2l4.6-4.4a2 2 0 0 0-2.75-2.91l-4.2 3.9"/><path d="m2 16 6 6"/><circle cx="16" cy="9" r="2.9"/><circle cx="6" cy="5" r="3"/></svg>'
+                            }
+                        ] %}
+
+                        {% for s in support %}
+                            <div class="col-md-3 col-sm-6 d-flex">
+                                <div class="badge-card h-100 text-center p-0 w-100">
+                                    <div class="badge-icon">{{ s.icon_svg|raw }}</div>
+                                    <div class="card-body p-4">
+                                        <h5 class="fw-bold">{{ s.title }}</h5>
+                                        <p>{{ s.text }}</p>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
+                        {% endfor %}
                     </div>
-                {% endfor %}
-            </div>
-        </div>
+                </div>
+
     </section>
 
     <!-- CTA SECTION -->
