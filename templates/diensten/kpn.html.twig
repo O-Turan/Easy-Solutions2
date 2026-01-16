@@ -38,20 +38,33 @@
                 Profiteer van betrouwbaarheid, kwaliteit en continuïteit.
             </p>
 
-            <div class="row g-4 justify-content-center">
-                {% set cards = [
-                    {'icon':'🔗','title':'Betrouwbare Netwerkverbinding','text':'Dankzij KPN heeft uw organisatie altijd een stabiele en kwalitatieve telefoonverbinding.'},
-                    {'icon':'🔊','title':'Hoge Kwaliteit','text':'Gesprekken verlopen duidelijk en zonder storingen dankzij het hoogwaardige KPN-netwerk.'},
-                    {'icon':'⏱️','title':'Continuïteit','text':'Uw telecomdiensten blijven altijd operationeel, ook bij onverwachte situaties.'},
-                    {'icon':'🛠️','title':'Maatwerk Oplossingen','text':'Telefonie en extra diensten die volledig zijn afgestemd op de wensen van jouw bedrijf.'}
+            <div class="row g-4">
+                {% set support = [
+                    {
+                        'title':'Betrouwbare Netwerkverbinding','text':'Dankzij KPN heeft uw organisatie altijd een stabiele en kwalitatieve telefoonverbinding.',
+                        'icon_svg':'<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-wifi-icon lucide-wifi"><path d="M12 20h.01"/><path d="M2 8.82a15 15 0 0 1 20 0"/><path d="M5 12.859a10 10 0 0 1 14 0"/><path d="M8.5 16.429a5 5 0 0 1 7 0"/></svg>'
+                    },
+                    {
+                        'title':'Hoge Kwaliteit','text':'Gesprekken verlopen duidelijk en zonder storingen dankzij het hoogwaardige KPN-netwerk.',
+                        'icon_svg':'<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-check-icon lucide-shield-check"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>'
+                    },
+                    {
+                        'title':'Continuïteit','text':'Uw telecomdiensten blijven altijd operationeel, ook bij onverwachte situaties.',
+                        'icon_svg':'<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-rotate-cw-icon lucide-rotate-cw"><path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/></svg>'
+                    },
+                    {
+                        'title':'Maatwerk Oplossingen','text':'Telefonie en extra diensten die volledig zijn afgestemd op de wensen van jouw bedrijf.',
+                        'icon_svg':'<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-pencil-ruler-icon lucide-pencil-ruler"><path d="M13 7 8.7 2.7a2.41 2.41 0 0 0-3.4 0L2.7 5.3a2.41 2.41 0 0 0 0 3.4L7 13"/><path d="m8 6 2-2"/><path d="m18 16 2-2"/><path d="m17 11 4.3 4.3c.94.94.94 2.46 0 3.4l-2.6 2.6c-.94.94-2.46.94-3.4 0L11 17"/><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"/><path d="m15 5 4 4"/></svg>'
+                    }
                 ] %}
-                {% for card in cards %}
-                    <div class="col-lg-3 col-md-6 d-flex">
-                        <div class="badge-card h-100 text-center">
-                            <div class="badge-icon">{{ card.icon }}</div>
+
+                {% for s in support %}
+                    <div class="col-md-3 col-sm-6 d-flex">
+                        <div class="badge-card h-100 text-center p-0 w-100">
+                            <div class="badge-icon">{{ s.icon_svg|raw }}</div>
                             <div class="card-body p-4">
-                                <h5 class="fw-bold">{{ card.title }}</h5>
-                                <p>{{ card.text }}</p>
+                                <h5 class="fw-bold">{{ s.title }}</h5>
+                                <p>{{ s.text }}</p>
                             </div>
                         </div>
                     </div>
