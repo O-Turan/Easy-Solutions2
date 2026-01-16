@@ -146,7 +146,7 @@
     {{ encore_entry_script_tags('app') }}
 {% endblock %}
 
-<!-- FOOTER (AANGEPAST MET AANVULLENDE DIENSTEN) -->
+<!-- FOOTER (AANGEPAST MET ALLE DIENSTEN) -->
 <footer class="footer bg-gradient-dark text-white pt-5 pb-4">
     <div class="container">
         <div class="row">
@@ -158,7 +158,7 @@
                 </p>
             </div>
 
-            <div class="col-md-3 mb-4">
+            <div class="col-md-2 mb-4">
                 <h5 class="fw-bold mb-3">Navigatie</h5>
                 <ul class="list-unstyled">
                     <li><a href="{{ path('app_home') }}" class="footer-link">Home</a></li>
@@ -172,12 +172,18 @@
             <div class="col-md-3 mb-4">
                 <h5 class="fw-bold mb-3">Aanvullende diensten</h5>
                 <ul class="list-unstyled">
+                    <li><a href="{{ path('app_dienst_hosted_telefonie') }}" class="footer-link">Hosted telefonie</a></li>
                     <li><a href="{{ path('app_dienst_hosted_pbx') }}" class="footer-link">Hosted PBX</a></li>
                     <li><a href="{{ path('app_dienst_pbx') }}" class="footer-link">PBX</a></li>
+                    <li><a href="{{ path('app_dienst_white_label') }}" class="footer-link">White-label Telecom</a></li>
+                    <li><a href="{{ path('app_dienst_sip_trunk') }}" class="footer-link">SIP Trunk</a></li>
+                    <li><a href="{{ path('app_dienst_kpn') }}" class="footer-link">KPN Business Partner</a></li>
+                    <li><a href="{{ path('app_dienst_nummerportering') }}" class="footer-link">Nummerportering</a></li>
+                    <li><a href="{{ path('app_dienst_mobiele_app') }}" class="footer-link">Mobiele app</a></li>
                 </ul>
             </div>
 
-            <div class="col-md-3 mb-4">
+            <div class="col-md-2 mb-4">
                 <h5 class="fw-bold mb-3">Contact</h5>
                 <ul class="list-unstyled text-white-50 small">
                     <li>info@easysolutions.nl</li>
