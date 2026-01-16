@@ -34,7 +34,7 @@
                 <!-- Onze Missie -->
                 <div class="col-md-6">
                     <div class="mission-card p-4 h-100 text-center animate__animated animate__fadeInLeft">
-                        <div class="mission-icon">🎯</div>
+                        <div class="mission-icon"><svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-crosshair-icon lucide-crosshair"><circle cx="12" cy="12" r="10"/><line x1="22" x2="18" y1="12" y2="12"/><line x1="6" x2="2" y1="12" y2="12"/><line x1="12" x2="12" y1="6" y2="2"/><line x1="12" x2="12" y1="22" y2="18"/></svg></div>
                         <h4 class="fw-bold mb-3">Onze Missie</h4>
                         <p>
                             Wij geloven dat succes voortkomt uit focus. Easy Solutions zorgt dat uw telecomsystemen top presteren
@@ -47,7 +47,7 @@
                 <!-- Onze Specialisatie -->
                 <div class="col-md-6">
                     <div class="mission-card p-4 h-100 text-center animate__animated animate__fadeInRight">
-                        <div class="mission-icon">💡</div>
+                        <div class="mission-icon"><svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-lightbulb-icon lucide-lightbulb"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg></div>
                         <h4 class="fw-bold mb-3">Onze Specialisatie</h4>
                         <p>
                             Wij richten ons volledig op telecom: hosted telefonie, SIP-trunks, nummerportering, PBX en hosted PBX.
@@ -66,19 +66,32 @@
         <div class="container">
             <h2 class="fw-bold mb-5 text-center">Waarom Kiezen Voor Easy Solutions</h2>
             <div class="row g-4">
-                {% set cards = [
-                    {'icon':'☁️','title':'Zorgeloos in de Cloud','text':'Locatie-onafhankelijk veilig werken en communiceren via onze hosted telefonie oplossingen.'},
-                    {'icon':'🛠️','title':'Betrouwbaar Support','text':'Directe ondersteuning bij vragen of storingen via telefoon of e-mail.'},
-                    {'icon':'🔗','title':'KPN Netwerk','text':'Uw communicatie verloopt via het betrouwbare KPN-netwerk voor maximale kwaliteit.'},
-                    {'icon':'👨‍💼','title':'Ervaren Specialisten','text':'Onze medewerkers hebben minimaal 5 jaar ervaring in professionele telecom- en VoIP-diensten.'}
+                {% set support = [
+                    {
+                        'title':'Zorgeloos in de Cloud','text':'Locatie-onafhankelijk veilig werken en communiceren via onze hosted telefonie oplossingen.',
+                        'icon_svg':'<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-cloudy-icon lucide-cloudy"><path d="M17.5 12a1 1 0 1 1 0 9H9.006a7 7 0 1 1 6.702-9z"/><path d="M21.832 9A3 3 0 0 0 19 7h-2.207a5.5 5.5 0 0 0-10.72.61"/></svg>'
+                    },
+                    {
+                        'title':'Betrouwbaar Support','text':'Directe ondersteuning bij vragen of storingen via telefoon of e-mail.',
+                        'icon_svg':'<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-hand-helping-icon lucide-hand-helping"><path d="M11 12h2a2 2 0 1 0 0-4h-3c-.6 0-1.1.2-1.4.6L3 14"/><path d="m7 18 1.6-1.4c.3-.4.8-.6 1.4-.6h4c1.1 0 2.1-.4 2.8-1.2l4.6-4.4a2 2 0 0 0-2.75-2.91l-4.2 3.9"/><path d="m2 13 6 6"/></svg>'
+                    },
+                    {
+                        'title':'KPN Netwerk','text':'Uw communicatie verloopt via het betrouwbare KPN-netwerk voor maximale kwaliteit.',
+                        'icon_svg':'<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-wifi-cog-icon lucide-wifi-cog"><path d="m14.305 19.53.923-.382"/><path d="m15.228 16.852-.923-.383"/><path d="m16.852 15.228-.383-.923"/><path d="m16.852 20.772-.383.924"/><path d="m19.148 15.228.383-.923"/><path d="m19.53 21.696-.382-.924"/><path d="M2 7.82a15 15 0 0 1 20 0"/><path d="m20.772 16.852.924-.383"/><path d="m20.772 19.148.924.383"/><path d="M5 11.858a10 10 0 0 1 11.5-1.785"/><path d="M8.5 15.429a5 5 0 0 1 2.413-1.31"/><circle cx="18" cy="18" r="3"/></svg>'
+                    },
+                    {
+                        'title':'Ervaren Specialisten','text':'Onze medewerkers hebben minimaal 5 jaar ervaring in professionele telecom- en VoIP-diensten.',
+                        'icon_svg':'<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user-round-check-icon lucide-user-round-check"><path d="M2 21a8 8 0 0 1 13.292-6"/><circle cx="10" cy="8" r="5"/><path d="m16 19 2 2 4-4"/></svg>'
+                    }
                 ] %}
-                {% for card in cards %}
-                    <div class="col-lg-3 col-md-6">
-                        <div class="badge-card h-100 text-center p-0">
-                            <div class="badge-icon">{{ card.icon }}</div>
+
+                {% for s in support %}
+                    <div class="col-md-3 col-sm-6 d-flex">
+                        <div class="badge-card h-100 text-center p-0 w-100">
+                            <div class="badge-icon">{{ s.icon_svg|raw }}</div>
                             <div class="card-body p-4">
-                                <h5 class="fw-bold">{{ card.title }}</h5>
-                                <p>{{ card.text }}</p>
+                                <h5 class="fw-bold">{{ s.title }}</h5>
+                                <p>{{ s.text }}</p>
                             </div>
                         </div>
                     </div>
