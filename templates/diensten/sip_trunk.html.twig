@@ -41,20 +41,33 @@
                 Onze SIP Trunks zorgen voor stabiele en hoogwaardige telefonie, met flexibiliteit voor uw bedrijf.
             </p>
 
-            <div class="row g-4 justify-content-center">
-                {% set cards = [
-                    {'icon':'📈','title':'Schaalbaar','text':'Voeg eenvoudig nieuwe lijnen toe naarmate jouw bedrijf groeit, zonder extra hardware.'},
-                    {'icon':'🔊','title':'Hoge Gesprekskwaliteit','text':'Profiteer van betrouwbare, kristalheldere gesprekken dankzij moderne internetverbindingen.'},
-                    {'icon':'💰','title':'Kostenefficiënt','text':'Betaal alleen voor wat je gebruikt en voorkom dure telefoonlijnen.'},
-                    {'icon':'⚙️','title':'Flexibel','text':'Integreer eenvoudig met bestaande PBX-systemen en bedrijfsapplicaties voor optimale workflow.'}
+            <div class="row g-4">
+                {% set support = [
+                    {
+                        'title':'Eigen PBX','text':'Beheer je eigen telefooncentrale met volledige controle over instellingen, gebruikers en functionaliteiten. Ideaal voor organisaties die maximale flexibiliteit en maatwerk wensen.',
+                        'icon_svg':'<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-hard-drive-icon lucide-hard-drive"><line x1="22" x2="2" y1="12" y2="12"/><path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/><line x1="6" x2="6.01" y1="16" y2="16"/><line x1="10" x2="10.01" y1="16" y2="16"/></svg>'
+                    },
+                    {
+                        'title':'Hoge Gesprekskwaliteit','text':'Profiteer van betrouwbare, kristalheldere gesprekken dankzij moderne internetverbindingen.',
+                        'icon_svg':'<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-speech-icon lucide-speech"><path d="M8.8 20v-4.1l1.9.2a2.3 2.3 0 0 0 2.164-2.1V8.3A5.37 5.37 0 0 0 2 8.25c0 2.8.656 3.054 1 4.55a5.77 5.77 0 0 1 .029 2.758L2 20"/><path d="M19.8 17.8a7.5 7.5 0 0 0 .003-10.603"/><path d="M17 15a3.5 3.5 0 0 0-.025-4.975"/></svg>'
+                    },
+                    {
+                        'title':'3CX Centrale','text':'Een krachtige en betrouwbare VoIP-centrale met uitgebreide functies zoals belgroepen, keuzemenu’s en vaste openingstijden. Volledig schaalbaar en ideaal voor moderne bedrijven.',
+                        'icon_svg':'<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-database-zap-icon lucide-database-zap"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5V19A9 3 0 0 0 15 21.84"/><path d="M21 5V8"/><path d="M21 12L18 17H22L19 22"/><path d="M3 12A9 3 0 0 0 14.59 14.87"/></svg>'
+                    },
+                    {
+                        'title':'Flexibel','text':'Integreer eenvoudig met bestaande PBX-systemen en bedrijfsapplicaties voor optimale workflow.',
+                        'icon_svg':'<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-link-icon lucide-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>'
+                    }
                 ] %}
-                {% for card in cards %}
-                    <div class="col-lg-3 col-md-6 d-flex">
-                        <div class="badge-card h-100 text-center">
-                            <div class="badge-icon">{{ card.icon }}</div>
+
+                {% for s in support %}
+                    <div class="col-md-3 col-sm-6 d-flex">
+                        <div class="badge-card h-100 text-center p-0 w-100">
+                            <div class="badge-icon">{{ s.icon_svg|raw }}</div>
                             <div class="card-body p-4">
-                                <h5 class="fw-bold">{{ card.title }}</h5>
-                                <p>{{ card.text }}</p>
+                                <h5 class="fw-bold">{{ s.title }}</h5>
+                                <p>{{ s.text }}</p>
                             </div>
                         </div>
                     </div>
