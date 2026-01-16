@@ -105,7 +105,6 @@
         height: auto;
     }
 
-
     /* NAVBAR LINKS */
     .navbar-light .navbar-nav .nav-link {
         color: #001f4d;
@@ -147,19 +146,19 @@
     {{ encore_entry_script_tags('app') }}
 {% endblock %}
 
-<!-- FOOTER (EXACT JOUW CODE) -->
+<!-- FOOTER (AANGEPAST MET AANVULLENDE DIENSTEN) -->
 <footer class="footer bg-gradient-dark text-white pt-5 pb-4">
     <div class="container">
         <div class="row">
 
-            <div class="col-md-4 mb-4">
+            <div class="col-md-3 mb-4">
                 <h5 class="fw-bold mb-3">Easy Solutions</h5>
                 <p class="text-white-50 small">
                     Wij leveren innovatieve en betrouwbare VoIP-oplossingen om uw bedrijf te laten groeien.
                 </p>
             </div>
 
-            <div class="col-md-4 mb-4">
+            <div class="col-md-3 mb-4">
                 <h5 class="fw-bold mb-3">Navigatie</h5>
                 <ul class="list-unstyled">
                     <li><a href="{{ path('app_home') }}" class="footer-link">Home</a></li>
@@ -170,7 +169,15 @@
                 </ul>
             </div>
 
-            <div class="col-md-4 mb-4">
+            <div class="col-md-3 mb-4">
+                <h5 class="fw-bold mb-3">Aanvullende diensten</h5>
+                <ul class="list-unstyled">
+                    <li><a href="{{ path('app_dienst_hosted_pbx') }}" class="footer-link">Hosted PBX</a></li>
+                    <li><a href="{{ path('app_dienst_pbx') }}" class="footer-link">PBX</a></li>
+                </ul>
+            </div>
+
+            <div class="col-md-3 mb-4">
                 <h5 class="fw-bold mb-3">Contact</h5>
                 <ul class="list-unstyled text-white-50 small">
                     <li>info@easysolutions.nl</li>
