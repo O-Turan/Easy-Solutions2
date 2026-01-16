@@ -38,16 +38,16 @@
             <h2 class="fw-bold text-center mb-5">VoIP & Cloud Telefonie</h2>
 
             {% set voip_items = [
-                {'icon':'🖥️','title':'White Label','text':'Aanpasbare telecomoplossingen voor uw merk.'},
-                {'icon':'☁️','title':'Hosted Telefonie','text':'Betrouwbare cloud PBX voor elk bedrijf.'},
-                {'icon':'📱','title':'Mobiele App','text':'Toegang tot uw telefonie overal via mobiel.'}
+                {'icon_svg':'<svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-computer-icon lucide-computer"><rect width="14" height="8" x="5" y="2" rx="2"/><rect width="20" height="8" x="2" y="14" rx="2"/><path d="M6 18h2"/><path d="M12 18h6"/></svg>','title':'White Label','text':'Aanpasbare telecomoplossingen voor uw merk.'},
+                {'icon_svg':'<svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-cloud-download-icon lucide-cloud-download"><path d="M12 13v8l-4-4"/><path d="m12 21 4-4"/><path d="M4.393 15.269A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.436 8.284"/></svg>','title':'Hosted Telefonie','text':'Betrouwbare cloud PBX voor elk bedrijf.'},
+                {'icon_svg':'<svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-smartphone-icon lucide-smartphone"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></svg>','title':'Mobiele App','text':'Toegang tot uw telefonie overal via mobiel.'}
             ] %}
 
             <div class="row g-4 text-center">
                 {% for item in voip_items %}
                     <div class="col-md-4 d-flex">
                         <div class="card info-card p-4 h-100 w-100">
-                            <div class="icon-circle">{{ item.icon }}</div>
+                            <div class="icon-circle">{{ item.icon_svg|raw }}</div>
                             <h3 class="h5 mt-3">{{ item.title }}</h3>
                             <p>{{ item.text }}</p>
                         </div>
@@ -99,7 +99,7 @@
                     {
                         'title':'Nummerportering',
                         'text':'Soepele en snelle nummerporteringen.',
-                        'icon_svg':'<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-import-icon lucide-import"><path d="M12 3v12"/><path d="m8 11 4 4 4-4"/><path d="M8 5H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-4"/></svg>'
+                        'icon_svg':'<svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-book-user-icon lucide-book-user"><path d="M15 13a3 3 0 1 0-6 0"/><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20"/><circle cx="12" cy="8" r="2"/></svg>'
                     },
                     {
                         'title':'Support',

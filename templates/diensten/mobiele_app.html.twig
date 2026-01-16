@@ -22,11 +22,10 @@
         <div class="container">
             <h2 class="fw-bold mb-4 text-center">Wat is onze Mobiele App?</h2>
             <p class="text-center mx-auto" style="max-width:800px;">
-                Onze mobiele app (Werktel) stelt jou in staat om jouw telefonie, instellingen en gebruikersbeheer rechtstreeks
+                Onze mobiele app stelt jou in staat om jouw telefonie rechtstreeks
                 vanaf je telefoon of tablet te beheren. Of je nu op kantoor bent, onderweg of thuis werkt, je hebt altijd
-                toegang tot allerlei belangrijke functies onder anderen bellen, voicemail, doorverbinden en aanwezigheid.
-                De app heeft een gebruikersvriendelijke interface en we zorgen ervoor dat jouw bedrijf altijd verbonden blijft,
-                zonder dat je fysieke apparaten nodig hebt.
+                toegang tot allerlei belangrijke functies onder anderen bellen, voicemail, doorverbinden.
+                De app heeft een gebruikersvriendelijke interface en we zorgen ervoor dat jouw bedrijf altijd verbonden blijft.
             </p>
         </div>
     </section>
@@ -41,20 +40,32 @@
             </p>
 
             <div class="row g-4">
-                {% set cards = [
-                    {'icon':'📱','title':'Altijd Verbonden','text':'Blijf bereikbaar en beheer je oproepen, voicemail en instellingen vanaf elke locatie.'},
-                    {'icon':'🖥️','title':'Gebruiksvriendelijke Interface','text':'Gemaakt door gebruikers voor gebruikers zodat u snel en eenvoudig kunt navigeren door alle functies.'},
-                    {'icon':'⚡','title':'Volledige Functionaliteit','text':'Beheer telefoongesprekken en doorschakelingen net zoals op kantoor.'},
-                    {'icon':'🔒','title':'Veilig en Betrouwbaar','text':'Geavanceerde beveiliging en een stabiele verbinding, zodat uw communicatie altijd veilig en vlot blijft.'}
+                {% set support = [
+                    {
+                        'title':'Altijd Verbonden','text':'Blijf bereikbaar en beheer je oproepen, voicemail en instellingen vanaf elke locatie.',
+                        'icon_svg':'<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-cable-icon lucide-cable"><path d="M17 19a1 1 0 0 1-1-1v-2a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2a1 1 0 0 1-1 1z"/><path d="M17 21v-2"/><path d="M19 14V6.5a1 1 0 0 0-7 0v11a1 1 0 0 1-7 0V10"/><path d="M21 21v-2"/><path d="M3 5V3"/><path d="M4 10a2 2 0 0 1-2-2V6a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2a2 2 0 0 1-2 2z"/><path d="M7 5V3"/></svg>'
+                    },
+                    {
+                        'title':'Gebruiksvriendelijke Interface','text':'Gemaakt door gebruikers voor gebruikers zodat u snel en eenvoudig kunt navigeren door alle functies.',
+                        'icon_svg':'<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-thumbs-up-icon lucide-thumbs-up"><path d="M15 5.88 14 10h5.83a2 2 0 0 1 1.92 2.56l-2.33 8A2 2 0 0 1 17.5 22H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h2.76a2 2 0 0 0 1.79-1.11L12 2a3.13 3.13 0 0 1 3 3.88Z"/><path d="M7 10v12"/></svg>'
+                    },
+                    {
+                        'title':'Volledige Functionaliteit','text':'Beheer telefoongesprekken en doorschakelingen net zoals op kantoor.',
+                        'icon_svg':'<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-gamepad-directional-icon lucide-gamepad-directional"><path d="M11.146 15.854a1.207 1.207 0 0 1 1.708 0l1.56 1.56A2 2 0 0 1 15 18.828V21a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1v-2.172a2 2 0 0 1 .586-1.414z"/><path d="M18.828 15a2 2 0 0 1-1.414-.586l-1.56-1.56a1.207 1.207 0 0 1 0-1.708l1.56-1.56A2 2 0 0 1 18.828 9H21a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1z"/><path d="M6.586 14.414A2 2 0 0 1 5.172 15H3a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1h2.172a2 2 0 0 1 1.414.586l1.56 1.56a1.207 1.207 0 0 1 0 1.708z"/><path d="M9 3a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2.172a2 2 0 0 1-.586 1.414l-1.56 1.56a1.207 1.207 0 0 1-1.708 0l-1.56-1.56A2 2 0 0 1 9 5.172z"/></svg>'
+                    },
+                    {
+                        'title':'Veilig en Betrouwbaar','text':'Geavanceerde beveiliging en een stabiele verbinding, zodat uw communicatie altijd veilig en vlot blijft.',
+                        'icon_svg':'<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-handshake-icon lucide-handshake"><path d="m11 17 2 2a1 1 0 1 0 3-3"/><path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4"/><path d="m21 3 1 11h-2"/><path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3"/><path d="M3 4h8"/></svg>'
+                    }
                 ] %}
 
-                {% for card in cards %}
-                    <div class="col-md-6 col-lg-3">
-                        <div class="badge-card h-100 text-center">
-                            <div class="badge-icon">{{ card.icon }}</div>
+                {% for s in support %}
+                    <div class="col-md-3 col-sm-6 d-flex">
+                        <div class="badge-card h-100 text-center p-0 w-100">
+                            <div class="badge-icon">{{ s.icon_svg|raw }}</div>
                             <div class="card-body p-4">
-                                <h5 class="fw-bold mt-2">{{ card.title }}</h5>
-                                <p>{{ card.text }}</p>
+                                <h5 class="fw-bold">{{ s.title }}</h5>
+                                <p>{{ s.text }}</p>
                             </div>
                         </div>
                     </div>
