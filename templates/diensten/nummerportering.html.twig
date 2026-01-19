@@ -22,10 +22,14 @@
         <div class="container text-center" style="max-width:800px;">
             <h2 class="fw-bold mb-4">Wat is Nummerportering?</h2>
             <p class="text-center mx-auto mb-5 description-text">
-                Nummerportering is een proces waarbij je jouw bestaande telefoonnummers neemt naar een nieuwe provider of telefoniesysteem.
-                Dit zorgt ervoor dat jouw klanten jou nog steeds kunnen bereiken op dezelfde nummers, ook als jij overstapt.
-                Het proces wordt met uiterste zorg uitgevoerd om onderbrekingen te voorkomen, zodat jouw bereikbaarheid altijd gegarandeerd is.
-                Met nummerportering behoud je gegevens in jouw telefoniesystemen en hoef je geen nieuwe contactgegevens aan te maken.
+                Nummerportering is een proces waarbij je jouw bestaande telefoonnummers neemt naar een nieuwe provider
+                of telefoniesysteem.
+                Dit zorgt ervoor dat jouw klanten jou nog steeds kunnen bereiken op dezelfde nummers, ook als jij
+                overstapt.
+                Het proces wordt met uiterste zorg uitgevoerd om onderbrekingen te voorkomen, zodat jouw bereikbaarheid
+                altijd gegarandeerd is.
+                Met nummerportering behoud je gegevens in jouw telefoniesystemen en hoef je geen nieuwe contactgegevens
+                aan te maken.
             </p>
         </div>
     </section>
@@ -35,7 +39,8 @@
         <div class="container">
             <h2 class="fw-bold text-center mb-4">Waarom kiezen voor onze nummerportering?</h2>
             <p class="text-center mb-5">
-                Wij zorgen voor een veilige en snelle overdracht van uw telefoonnummers, zodat uw bedrijf altijd bereikbaar blijft.
+                Wij zorgen voor een veilige en snelle overdracht van uw telefoonnummers, zodat uw bedrijf altijd
+                bereikbaar blijft.
             </p>
 
             <div class="row g-4">
@@ -73,6 +78,50 @@
         </div>
     </section>
 
+    <!-- TEKST + FOTO SECTION ONDER CARDS -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <!-- Eerste rij: afbeelding links, tekst rechts -->
+            <div class="row align-items-center g-5 mb-5">
+                <div class="col-md-6">
+                    <img src="{{ asset('assets/diensten/nummerporteringtelefoon.webp') }}" alt="nummerportering"
+                         class="img-fluid rounded shadow-sm">
+                </div>
+                <div class="col-md-6">
+                    <h3 class="fw-bold mb-3">Overstappen zonder nummerverlies</h3>
+                    <p>
+                        Nummerportering betekent dat je je bestaande telefoonnummer gewoon kunt behouden wanneer je
+                        overstapt naar een andere telefonieoplossing of provider. Je klanten blijven je dus bereiken op
+                        hetzelfde nummer, zonder dat zij iets hoeven te merken van de overstap. Wij regelen het hele
+                        porteringstraject voor je: van de aanvraag tot de daadwerkelijke overzetting. Zo verloopt de
+                        overgang soepel en blijf je zonder onderbreking bereikbaar.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Tweede rij: afbeelding rechts, tekst links -->
+            <div class="row align-items-center g-5">
+                <div class="col-md-6 order-md-2">
+                    <img src="{{ asset('assets/diensten/nummerporteringbellen.webp') }}"
+                         alt="nummerportering" class="img-fluid rounded shadow-sm">
+                </div>
+                <div class="col-md-6 order-md-1">
+                    <h3 class="fw-bold mb-3">Overstappen zonder bereikbaarheidsverlies</h3>
+                    <p>
+                        Bij een overstap naar een nieuwe telefonieoplossing wil je natuurlijk je vertrouwde
+                        telefoonnummer behouden. Met nummerportering is dat geen probleem. Je blijft gewoon bereikbaar
+                        op hetzelfde nummer, terwijl de techniek op de achtergrond wordt vernieuwd. Voor klanten,
+                        leveranciers en collega’s verandert er niets. Wij nemen het volledige porteringstraject uit
+                        handen. We controleren de gegevens, stemmen de overstap af met de huidige provider en zorgen dat
+                        alles op het juiste moment wordt overgezet. Zo voorkomen we onderbrekingen en verloopt de
+                        overgang soepel. Nummerportering is daarmee een eenvoudige en veilige manier om te moderniseren,
+                        zonder in te leveren op bereikbaarheid.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- CTA -->
     <section class="py-5 text-center text-white cta-section">
         <div class="container">
@@ -85,42 +134,55 @@
     <!-- STYLES -->
     <style>
         /* HERO */
-        .hero-section{
-            height:60vh;
-            position:relative;
-            overflow:hidden;
+        .hero-section {
+            height: 60vh;
+            position: relative;
+            overflow: hidden;
         }
-        .hero-bg{
-            position:absolute;
-            inset:0;
-            background:url('{{ asset("assets/nummerportering-photo.webp") }}') center/cover no-repeat;
-            filter:brightness(.6);
-            transform:scale(1.1);
-            z-index:1;
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background: url('{{ asset("assets/nummerportering-photo.webp") }}') center/cover no-repeat;
+            filter: brightness(.6);
+            transform: scale(1.1);
+            z-index: 1;
         }
-        .hero-overlay{
-            position:absolute;
-            inset:0;
-            background:linear-gradient(135deg,rgba(0,31,77,.7),rgba(179,0,0,.6));
-            z-index:2;
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(0, 31, 77, .7), rgba(179, 0, 0, .6));
+            z-index: 2;
         }
-        .hero-content{position:relative;z-index:3;}
+
+        .hero-content {
+            position: relative;
+            z-index: 3;
+        }
 
         /* SCROLL PIJL */
-        .scroll-down{
-            position:absolute;
-            bottom:-40px;
-            left:50%;
-            transform:translateX(-50%);
-            font-size:2rem;
-            color:#fff;
-            animation:bounce 2s infinite;
-            z-index:5;
+        .scroll-down {
+            position: absolute;
+            bottom: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 2rem;
+            color: #fff;
+            animation: bounce 2s infinite;
+            z-index: 5;
         }
-        @keyframes bounce{
-            0%,20%,50%,80%,100%{transform:translate(-50%,0)}
-            40%{transform:translate(-50%,-10px)}
-            60%{transform:translate(-50%,-5px)}
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translate(-50%, 0)
+            }
+            40% {
+                transform: translate(-50%, -10px)
+            }
+            60% {
+                transform: translate(-50%, -5px)
+            }
         }
 
         /* BADGE CARDS */
@@ -128,18 +190,20 @@
             background: #fff;
             border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
             transition: transform 0.4s ease, box-shadow 0.4s ease;
             cursor: default;
         }
+
         .badge-card:hover {
             transform: translateY(-10px) rotateX(2deg);
-            box-shadow: 0 18px 40px rgba(0,0,0,0.15);
+            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.15);
         }
+
         .badge-icon {
             width: 100%;
             height: 120px;
-            background: linear-gradient(135deg,#001f4d,#b30000);
+            background: linear-gradient(135deg, #001f4d, #b30000);
             color: #fff;
             font-size: 3rem;
             display: flex;
@@ -147,19 +211,22 @@
             justify-content: center;
             border-bottom-left-radius: 50% 20px;
             border-bottom-right-radius: 50% 20px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
             transition: transform 0.3s, box-shadow 0.3s;
         }
+
         .badge-card:hover .badge-icon {
             transform: scale(1.2);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
         }
+
         .badge-card h5 {
             font-weight: 600;
             color: #001f4d;
             margin-bottom: 0.5rem;
             font-size: 1rem;
         }
+
         .badge-card p {
             color: #333;
             font-size: 0.9rem;
@@ -167,10 +234,11 @@
         }
 
         /* CTA */
-        .cta-section{
+        .cta-section {
             background: #001f4d;
         }
-        .btn-cta{
+
+        .btn-cta {
             background: #b30000;
             color: #fff;
             border-radius: 6px;
@@ -178,26 +246,37 @@
             font-weight: 600;
             transition: all 0.3s ease;
         }
-        .btn-cta:hover{
+
+        .btn-cta:hover {
             background: #e53935;
             transform: translateY(-2px) scale(1.03);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
         }
 
         /* RESPONSIVE */
-        @media (max-width:768px){
-            .badge-icon { height: 100px; font-size: 2.5rem; }
-            .badge-card h5 { font-size: 0.95rem; }
-            .badge-card p { font-size: 0.85rem; }
+        @media (max-width: 768px) {
+            .badge-icon {
+                height: 100px;
+                font-size: 2.5rem;
+            }
+
+            .badge-card h5 {
+                font-size: 0.95rem;
+            }
+
+            .badge-card p {
+                font-size: 0.85rem;
+            }
 
             /* Cards full width on small screens */
-            .row.g-4 > [class*='col-']{
+            .row.g-4 > [class*='col-'] {
                 flex: 0 0 100%;
                 max-width: 100%;
                 margin-bottom: 1rem;
             }
-            @media (min-width: 576px){
-                .row.g-4 > [class*='col-']{
+
+            @media (min-width: 576px) {
+                .row.g-4 > [class*='col-'] {
                     flex: 0 0 50%;
                     max-width: 50%;
                 }
@@ -206,9 +285,9 @@
     </style>
 
     <script>
-        document.addEventListener('scroll', function(){
+        document.addEventListener('scroll', function () {
             const bg = document.querySelector('.hero-bg');
-            if(bg) bg.style.transform = 'translateY(' + window.scrollY * 0.3 + 'px) scale(1.1)';
+            if (bg) bg.style.transform = 'translateY(' + window.scrollY * 0.3 + 'px) scale(1.1)';
         });
     </script>
 
