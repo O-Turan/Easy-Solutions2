@@ -26,8 +26,10 @@
         <div class="container text-center" style="max-width:800px;">
             <h2 class="fw-bold mb-4">Wat is een PBX?</h2>
             <p>
-                Een PBX (Private Branch Exchange) is een intern telefooncentrale voor jouw bedrijf die inkomende en uitgaande gesprekken regelt.
-                Met een PBX kan je efficiënter communiceren, interne extensies beheren en functies zoals wachtrijen, doorschakelingen en voicemail gebruiken.
+                Een PBX (Private Branch Exchange) is een intern telefooncentrale voor jouw bedrijf die inkomende en
+                uitgaande gesprekken regelt.
+                Met een PBX kan je efficiënter communiceren, interne extensies beheren en functies zoals wachtrijen,
+                doorschakelingen en voicemail gebruiken.
                 Moderne PBX-systemen zijn flexibel en kunnen zowel on-premise als in de cloud worden ingezet.
             </p>
         </div>
@@ -76,6 +78,51 @@
         </div>
     </section>
 
+    <!-- TEKST + FOTO SECTION ONDER CARDS -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <!-- Eerste rij: afbeelding links, tekst rechts -->
+            <div class="row align-items-center g-5 mb-5">
+                <div class="col-md-6">
+                    <img src="{{ asset('assets/diensten/businessman-talking-phone.webp') }}" alt="Hosted VoIP"
+                         class="img-fluid rounded shadow-sm">
+                </div>
+                <div class="col-md-6">
+                    <h3 class="fw-bold mb-3">Professioneel bellen, eenvoudig geregeld</h3>
+                    <p>
+                        Een PBX is eigenlijk de centrale van je zakelijke telefonie. Het regelt alle inkomende en
+                        uitgaande gesprekken, maar ook hoe collega’s onderling bellen. Dankzij een PBX hoeft niet
+                        iedereen een eigen telefoonlijn te hebben – alles loopt netjes via één systeem. Moderne PBX’en
+                        werken vaak via internet (VoIP), waardoor bellen goedkoper en veel flexibeler is. Je kunt
+                        functies gebruiken zoals voicemail, wachtrijen, doorverbinden en zelfs koppelingen met je
+                        computer of mobiel. Het mooiste is dat je hierdoor altijd professioneel bereikbaar bent, zonder
+                        dat je veel gedoe hebt met losse lijnen of dure apparatuur.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Tweede rij: afbeelding rechts, tekst links -->
+            <div class="row align-items-center g-5">
+                <div class="col-md-6 order-md-2">
+                    <img src="{{ asset('assets/diensten/telephone_man.webp') }}" alt="Hosted telefonie MKB"
+                         class="img-fluid rounded shadow-sm">
+                </div>
+                <div class="col-md-6 order-md-1">
+                    <h3 class="fw-bold mb-3">Altijd bereikbaar met PBX</h3>
+                    <p>
+                        Een PBX is de slimme schakel in je zakelijke telefonie. Het regelt dat iedereen binnen je
+                        organisatie soepel kan bellen, en dat inkomende gesprekken altijd bij de juiste persoon
+                        terechtkomen. Of je nu een klein team hebt of een groter bedrijf, een PBX houdt alles
+                        overzichtelijk en professioneel. Moderne PBX-systemen via VoIP maken het zelfs mogelijk om te
+                        bellen vanaf je laptop, telefoon of tablet, waar je ook bent. Met functies als voicemail,
+                        doorverbinden en wachtrijen mis je nooit een belangrijk gesprek.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
     <!-- CTA SECTION -->
     <section class="py-5 text-center text-white cta-section">
         <div class="container">
@@ -88,7 +135,7 @@
     <!-- STYLES -->
     <style>
         /* HERO */
-        .hero-section{
+        .hero-section {
             height: 60vh;
             position: relative;
             display: flex;
@@ -97,7 +144,8 @@
             text-align: center;
             overflow: hidden;
         }
-        .hero-bg{
+
+        .hero-bg {
             position: absolute;
             inset: 0;
             background: url('{{ asset("assets/pbx-hero-background.webp") }}') center/cover no-repeat;
@@ -106,37 +154,52 @@
             z-index: 1;
             transition: transform 1.5s ease;
         }
-        .hero-section:hover .hero-bg{
+
+        .hero-section:hover .hero-bg {
             transform: scale(1.15);
         }
-        .hero-overlay{
+
+        .hero-overlay {
             position: absolute;
             inset: 0;
-            background: linear-gradient(135deg, rgba(0,31,77,0.6), rgba(179,0,0,0.5));
+            background: linear-gradient(135deg, rgba(0, 31, 77, 0.6), rgba(179, 0, 0, 0.5));
             z-index: 2;
             animation: overlayPulse 6s infinite alternate;
         }
-        @keyframes overlayPulse{
-            0%{background: linear-gradient(135deg, rgba(0,31,77,0.6), rgba(179,0,0,0.5));}
-            100%{background: linear-gradient(135deg, rgba(0,31,77,0.7), rgba(179,0,0,0.6));}
+
+        @keyframes overlayPulse {
+            0% {
+                background: linear-gradient(135deg, rgba(0, 31, 77, 0.6), rgba(179, 0, 0, 0.5));
+            }
+            100% {
+                background: linear-gradient(135deg, rgba(0, 31, 77, 0.7), rgba(179, 0, 0, 0.6));
+            }
         }
-        .hero-content{
+
+        .hero-content {
             position: relative;
             z-index: 3;
         }
 
         /* Scroll-down arrow */
-        .scroll-down{
+        .scroll-down {
             display: inline-block;
             margin-top: 1rem;
             font-size: 2rem;
             animation: bounce 2s infinite;
             color: #fff;
         }
-        @keyframes bounce{
-            0%,20%,50%,80%,100%{transform:translateY(0)}
-            40%{transform:translateY(-10px)}
-            60%{transform:translateY(-5px)}
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0)
+            }
+            40% {
+                transform: translateY(-10px)
+            }
+            60% {
+                transform: translateY(-5px)
+            }
         }
 
         /* BADGE CARDS */
@@ -144,18 +207,20 @@
             background: #fff;
             border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
             transition: transform 0.4s ease, box-shadow 0.4s ease;
             cursor: default;
         }
+
         .badge-card:hover {
             transform: translateY(-10px) rotateX(2deg);
-            box-shadow: 0 18px 40px rgba(0,0,0,0.15);
+            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.15);
         }
+
         .badge-icon {
             width: 100%;
             height: 120px;
-            background: linear-gradient(135deg,#001f4d,#b30000);
+            background: linear-gradient(135deg, #001f4d, #b30000);
             color: #fff;
             font-size: 3rem;
             display: flex;
@@ -163,19 +228,22 @@
             justify-content: center;
             border-bottom-left-radius: 50% 20px;
             border-bottom-right-radius: 50% 20px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
             transition: transform 0.3s, box-shadow 0.3s;
         }
+
         .badge-card:hover .badge-icon {
             transform: scale(1.2);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
         }
+
         .badge-card h5 {
             font-weight: 600;
             color: #001f4d;
             margin-bottom: 0.5rem;
             font-size: 1rem;
         }
+
         .badge-card p {
             color: #333;
             font-size: 0.9rem;
@@ -183,10 +251,11 @@
         }
 
         /* CTA */
-        .cta-section{
+        .cta-section {
             background: #001f4d;
         }
-        .btn-cta{
+
+        .btn-cta {
             background: #b30000;
             color: #fff;
             border-radius: 6px;
@@ -194,28 +263,45 @@
             font-weight: 600;
             transition: all 0.3s ease;
         }
-        .btn-cta:hover{
+
+        .btn-cta:hover {
             background: #e53935;
             transform: translateY(-2px) scale(1.03);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
         }
 
         /* RESPONSIVE */
-        @media (max-width: 768px){
-            .hero-section h1{font-size:2.5rem;}
-            .hero-section p{font-size:1.1rem;}
-            .badge-icon { height: 100px; font-size: 2.5rem; }
-            .badge-card h5 { font-size: 0.95rem; }
-            .badge-card p { font-size: 0.85rem; }
+        @media (max-width: 768px) {
+            .hero-section h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-section p {
+                font-size: 1.1rem;
+            }
+
+            .badge-icon {
+                height: 100px;
+                font-size: 2.5rem;
+            }
+
+            .badge-card h5 {
+                font-size: 0.95rem;
+            }
+
+            .badge-card p {
+                font-size: 0.85rem;
+            }
 
             /* Cards full width on small screens */
-            .row.g-4 > [class*='col-']{
+            .row.g-4 > [class*='col-'] {
                 flex: 0 0 100%;
                 max-width: 100%;
                 margin-bottom: 1rem;
             }
-            @media (min-width: 576px){
-                .row.g-4 > [class*='col-']{
+
+            @media (min-width: 576px) {
+                .row.g-4 > [class*='col-'] {
                     flex: 0 0 50%;
                     max-width: 50%;
                 }
@@ -225,10 +311,10 @@
 
     <!-- PARALLAX HERO -->
     <script>
-        document.addEventListener('scroll', function(){
+        document.addEventListener('scroll', function () {
             const scrolled = window.scrollY;
             const bg = document.querySelector('.hero-bg');
-            if(bg) bg.style.transform = 'translateY(' + scrolled * 0.2 + 'px) scale(1.05)';
+            if (bg) bg.style.transform = 'translateY(' + scrolled * 0.2 + 'px) scale(1.05)';
         });
     </script>
 
