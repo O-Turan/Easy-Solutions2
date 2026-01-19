@@ -80,10 +80,14 @@
 
     </section>
 
-    <!-- NIEUWE TEKST SECTION -->
+    <!-- TEKST + FOTO SECTION ONDER CARDS -->
     <section class="py-5 bg-light">
         <div class="container">
-            <div class="row align-items-center g-5">
+            <!-- Eerste rij: afbeelding links, tekst rechts -->
+            <div class="row align-items-center g-5 mb-5">
+                <div class="col-md-6">
+                    <img src="{{ asset('assets/diensten/teamwork-makes-the-dream-work.webp') }}" alt="Hosted VoIP" class="img-fluid rounded shadow-sm">
+                </div>
                 <div class="col-md-6">
                     <h3 class="fw-bold mb-3">Telefonie die meebeweegt met uw organisatie</h3>
                     <p>
@@ -95,8 +99,14 @@
                         toekomstgerichte telefooncentrale, volledig in de cloud.
                     </p>
                 </div>
+            </div>
 
-                <div class="col-md-6">
+            <!-- Tweede rij: afbeelding rechts, tekst links -->
+            <div class="row align-items-center g-5">
+                <div class="col-md-6 order-md-2">
+                    <img src="{{ asset('assets/diensten/hands-hold-a-cellphone-showing-the-shopify-home-page.webp') }}" alt="Hosted telefonie MKB" class="img-fluid rounded shadow-sm">
+                </div>
+                <div class="col-md-6 order-md-1">
                     <h3 class="fw-bold mb-3">Hosted telefonie voor MKB en ZZP?</h3>
                     <p>
                         Hosted VoIP is uitermate geschikt voor zzp’ers en mkb-bedrijven. Je betaalt per gebruiker,
@@ -105,11 +115,11 @@
                         je bedrijf? Dan voeg je eenvoudig extra gebruikers toe. Daarnaast is een fysieke
                         telefooncentrale niet nodig: je vaste nummer is gewoon bereikbaar op je mobiele telefoon.
                     </p>
-
                 </div>
             </div>
         </div>
     </section>
+
 
     <!-- CTA SECTION -->
     <section class="py-5 text-center cta-section">

@@ -23,8 +23,10 @@
             <h2 class="fw-bold mb-4 text-center">Wat is Hosted PBX?</h2>
             <p class="text-center mx-auto" style="max-width:800px;">
                 Hosted PBX is een moderne cloudcentrale waarbij alle telefoonfunctionaliteit online wordt beheerd.
-                Medewerkers zijn altijd en overal bereikbaar via telefoon, app of desktop, en je kunt eenvoudig gebruikers en functies uitbreiden.
-                Kosten en beheer worden sterk verminderd, terwijl de bereikbaarheid en professionaliteit van jouw bedrijf stijgen.
+                Medewerkers zijn altijd en overal bereikbaar via telefoon, app of desktop, en je kunt eenvoudig
+                gebruikers en functies uitbreiden.
+                Kosten en beheer worden sterk verminderd, terwijl de bereikbaarheid en professionaliteit van jouw
+                bedrijf stijgen.
             </p>
         </div>
     </section>
@@ -78,6 +80,39 @@
         </div>
     </section>
 
+    <!-- TEKST SECTION ONDER CARDS -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-md-6">
+                    <h3 class="fw-bold mb-3">Telefonie die meebeweegt met uw organisatie</h3>
+                    <p>
+                        Een Virtual PBX, oftewel een virtuele telefooncentrale, groeit heel snel in populariteit. In
+                        plaats van een fysieke centrale, draait deze volledig in de cloud. Het idee lijkt op de oude
+                        digitale faxservices of e-mailservers: alles werkt op afstand zonder dat er hardware op locatie
+                        nodig is. Een virtueel PBX-systeem werkt via software, ook wel bekend als Software as a Service
+                        (SaaS). U betaalt een vast maandelijks bedrag en krijgt daar een complete telefooncentrale voor
+                        terug, inclusief onderhoud, garantie op bereikbaarheid en volledige service. Je hoeft niet te
+                        investeren in dure apparatuur of specialistische kennis om de centrale op te zetten en te
+                        beheren. Daardoor is een hosted PBX een toegankelijke en efficiënte oplossing voor organisaties
+                        van elke omvang.
+                    </p>
+                </div>
+
+                <div class="col-md-6">
+                    <h3 class="fw-bold mb-3">Hosted telefonie voor MKB en ZZP?</h3>
+                    <p>
+                        Hosted VoIP is uitermate geschikt voor zzp’ers en mkb-bedrijven. Je betaalt per gebruiker,
+                        waardoor het abonnement altijd aansluit op de grootte van je onderneming. Of je nu als
+                        zelfstandige werkt of samen met een klein team in een start-up, je betaalt nooit te veel. Groeit
+                        je bedrijf? Dan voeg je eenvoudig extra gebruikers toe. Daarnaast is een fysieke
+                        telefooncentrale niet nodig: je vaste nummer is gewoon bereikbaar op je mobiele telefoon.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- CTA SECTION -->
     <section class="py-5 text-center cta-section">
         <div class="container">
@@ -92,7 +127,7 @@
     <!-- STYLES -->
     <style>
         /* HERO */
-        .hero-section{
+        .hero-section {
             height: 60vh;
             position: relative;
             display: flex;
@@ -101,7 +136,8 @@
             text-align: center;
             overflow: hidden;
         }
-        .hero-bg{
+
+        .hero-bg {
             position: absolute;
             inset: 0;
             background: url('{{ asset("assets/hosted-pbx.webp") }}') center/cover no-repeat;
@@ -111,32 +147,42 @@
             z-index: 1;
             transition: transform 1.5s ease;
         }
-        .hero-section:hover .hero-bg{
+
+        .hero-section:hover .hero-bg {
             transform: scale(1.15);
         }
-        .hero-overlay{
+
+        .hero-overlay {
             position: absolute;
             inset: 0;
-            background: linear-gradient(135deg, rgba(0,31,77,0.7), rgba(179,0,0,0.6));
+            background: linear-gradient(135deg, rgba(0, 31, 77, 0.7), rgba(179, 0, 0, 0.6));
             z-index: 2;
         }
-        .hero-content{
+
+        .hero-content {
             position: relative;
             z-index: 3;
         }
 
         /* SCROLL DOWN */
-        .scroll-down{
+        .scroll-down {
             display: inline-block;
             margin-top: 1rem;
             font-size: 2rem;
             animation: bounce 2s infinite;
             color: #fff;
         }
-        @keyframes bounce{
-            0%,20%,50%,80%,100%{transform:translateY(0)}
-            40%{transform:translateY(-10px)}
-            60%{transform:translateY(-5px)}
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0)
+            }
+            40% {
+                transform: translateY(-10px)
+            }
+            60% {
+                transform: translateY(-5px)
+            }
         }
 
         /* BADGE CARDS */
@@ -144,18 +190,20 @@
             background: #fff;
             border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
             transition: transform 0.4s ease, box-shadow 0.4s ease;
             cursor: default;
         }
+
         .badge-card:hover {
             transform: translateY(-10px) rotateX(2deg);
-            box-shadow: 0 18px 40px rgba(0,0,0,0.15);
+            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.15);
         }
+
         .badge-icon {
             width: 100%;
             height: 120px;
-            background: linear-gradient(135deg,#001f4d,#b30000);
+            background: linear-gradient(135deg, #001f4d, #b30000);
             color: #fff;
             font-size: 3rem;
             display: flex;
@@ -163,19 +211,22 @@
             justify-content: center;
             border-bottom-left-radius: 50% 20px;
             border-bottom-right-radius: 50% 20px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
             transition: transform 0.3s, box-shadow 0.3s;
         }
+
         .badge-card:hover .badge-icon {
             transform: scale(1.2);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
         }
+
         .badge-card h5 {
             font-weight: 600;
             color: #001f4d;
             margin-bottom: 0.5rem;
             font-size: 1rem;
         }
+
         .badge-card p {
             color: #333;
             font-size: 0.9rem;
@@ -183,10 +234,11 @@
         }
 
         /* CTA */
-        .cta-section{
+        .cta-section {
             background: #001f4d;
         }
-        .btn-cta{
+
+        .btn-cta {
             background: #b30000;
             color: #fff;
             border-radius: 6px;
@@ -194,25 +246,31 @@
             font-weight: 600;
             transition: all 0.3s ease;
         }
-        .btn-cta:hover{
+
+        .btn-cta:hover {
             background: #e53935;
             transform: translateY(-2px) scale(1.03);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
         }
 
         /* RESPONSIVE */
-        @media (max-width: 768px){
-            .hero-section h1{font-size:2.5rem;}
-            .hero-section p{font-size:1.1rem;}
+        @media (max-width: 768px) {
+            .hero-section h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-section p {
+                font-size: 1.1rem;
+            }
         }
     </style>
 
     <!-- PARALLAX HERO -->
     <script>
-        document.addEventListener('scroll', function(){
+        document.addEventListener('scroll', function () {
             const scrolled = window.scrollY;
             const bg = document.querySelector('.hero-bg');
-            if(bg) bg.style.transform = 'translateY(' + scrolled * 0.2 + 'px) scale(1.05)';
+            if (bg) bg.style.transform = 'translateY(' + scrolled * 0.2 + 'px) scale(1.05)';
         });
     </script>
 
