@@ -9,24 +9,67 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Mime\Email;
 use Symfony\Component\Mime\Address;
 use Symfony\Component\Mailer\MailerInterface;
+use Symfony\Contracts\HttpClient\HttpClientInterface;
 
 class ContactController extends AbstractController
 {
     #[Route('/contact', name: 'app_contact')]
     public function index(): Response
     {
-        return $this->render('contact/index.html.twig');
+        // Geef site key door aan Twig
+        return $this->render('contact/index.html.twig', [
+            'recaptcha_site_key' => $_ENV['RECAPTCHA_SITE_KEY'],
+        ]);
     }
 
     #[Route('/contact/send', name: 'contact_send', methods: ['POST'])]
-    public function send(Request $request, MailerInterface $mailer): Response
+    public function send(
+        Request $request,
+        MailerInterface $mailer,
+        HttpClientInterface $httpClient
+    ): Response
     {
         // Honeypot anti-spam
         if ($request->request->get('_honey')) {
             return $this->redirectToRoute('app_contact');
         }
 
-        // Velden ophalen
+        // reCAPTCHA v3 token ophalen
+        $token = $request->request->get('g-recaptcha-response'); // <-- aangepast
+        if (!$token) {
+            return $this->render('contact/index.html.twig', [
+                'errors' => ['reCAPTCHA verificatie mislukt.'],
+                'formData' => $request->request->all(),
+                'recaptcha_site_key' => $_ENV['RECAPTCHA_SITE_KEY'],
+            ]);
+        }
+
+        // Verifieer token via Google API
+        try {
+            $response = $httpClient->request('POST', 'https://www.google.com/recaptcha/api/siteverify', [
+                'body' => [
+                    'secret' => $_ENV['RECAPTCHA_SECRET_KEY'],
+                    'response' => $token,
+                ],
+            ]);
+            $result = $response->toArray();
+        } catch (\Throwable $e) {
+            return $this->render('contact/index.html.twig', [
+                'errors' => ['reCAPTCHA server error: ' . $e->getMessage()],
+                'formData' => $request->request->all(),
+                'recaptcha_site_key' => $_ENV['RECAPTCHA_SITE_KEY'],
+            ]);
+        }
+
+        if (empty($result['success']) || $result['score'] < 0.5 || ($result['action'] ?? '') !== 'contact') {
+            return $this->render('contact/index.html.twig', [
+                'errors' => ['Verdachte activiteit gedetecteerd.'],
+                'formData' => $request->request->all(),
+                'recaptcha_site_key' => $_ENV['RECAPTCHA_SITE_KEY'],
+            ]);
+        }
+
+        // Velden ophalen en ontsmetten
         $naam = htmlspecialchars(trim($request->request->get('Naam', '')), ENT_QUOTES, 'UTF-8');
         $bedrijf = htmlspecialchars(trim($request->request->get('Bedrijf', '')), ENT_QUOTES, 'UTF-8');
         $email = trim($request->request->get('email', ''));
@@ -49,7 +92,8 @@ class ContactController extends AbstractController
         if (!empty($errors)) {
             return $this->render('contact/index.html.twig', [
                 'errors' => $errors,
-                'formData' => $request->request->all()
+                'formData' => $request->request->all(),
+                'recaptcha_site_key' => $_ENV['RECAPTCHA_SITE_KEY'],
             ]);
         }
 

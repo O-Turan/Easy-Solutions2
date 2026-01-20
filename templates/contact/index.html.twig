@@ -4,6 +4,9 @@
 
 {% block body %}
 
+    <!-- reCAPTCHA v3 -->
+    <script src="https://www.google.com/recaptcha/api.js?render={{ recaptcha_site_key }}"></script>
+
     <!-- HERO SECTION -->
     <header class="hero-contact position-relative text-white">
         <div class="container py-5 text-center">
@@ -49,8 +52,9 @@
                             </div>
                         {% endif %}
 
-                        <form action="{{ path('contact_send') }}" method="POST">
+                        <form id="contactForm" action="{{ path('contact_send') }}" method="POST">
                             <input type="text" name="_honey" style="display:none">
+                            <input type="hidden" name="g-recaptcha-response" id="g-recaptcha-response">
 
                             <div class="row g-3">
 
@@ -111,10 +115,18 @@
                     </div>
                 </div>
 
-                <!-- NEXT-LEVEL INFO CARD -->
+                <!-- INFO CARD -->
                 <div class="col-lg-4">
                     <div class="badge-card shadow-lg h-100 text-center p-4 d-flex flex-column justify-content-between">
-                        <div class="icon-circle-info mb-3"><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#d01616" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone-call-icon lucide-phone-call"><path d="M13 2a9 9 0 0 1 9 9"/><path d="M13 6a5 5 0 0 1 5 5"/><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></svg><path d="M13 2a9 9 0 0 1 9 9"/><path d="M13 6a5 5 0 0 1 5 5"/><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></svg></div>
+                        <div class="icon-circle-info mb-3">
+                            <!-- SVG blijft exact zoals jij had -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24"
+                                 fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M13 2a9 9 0 0 1 9 9"/>
+                                <path d="M13 6a5 5 0 0 1 5 5"/>
+                                <path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3"/>
+                            </svg>
+                        </div>
                         <div>
                             <h5 class="fw-bold mb-3">Waarom contact opnemen?</h5>
                             <ul class="list-unstyled small mb-4 text-start">
@@ -123,7 +135,7 @@
                                 <li class="mb-2">✔ Vrijblijvend & transparant</li>
                             </ul>
                         </div>
-                        <div class="small text-center badge-footer">
+                        <div class="small badge-footer">
                             Snel geholpen door een specialist
                         </div>
                     </div>
@@ -132,6 +144,20 @@
             </div>
         </div>
     </main>
+
+    <!-- reCAPTCHA submit -->
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            grecaptcha.ready(function () {
+                grecaptcha.execute('{{ recaptcha_site_key }}', {action: 'contact'}).then(function (token) {
+                    document.getElementById('g-recaptcha-response').value = token;
+                    document.getElementById('contactForm').submit();
+                });
+            });
+        });
+    </script>
 
     <!-- STYLES -->
     <style>
