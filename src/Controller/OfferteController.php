@@ -9,21 +9,59 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Mime\Email;
 use Symfony\Component\Mime\Address;
 use Symfony\Component\Mailer\MailerInterface;
+use Symfony\Contracts\HttpClient\HttpClientInterface;
 
 class OfferteController extends AbstractController
 {
     #[Route('/offerte', name: 'offerte')]
     public function index(): Response
     {
-        return $this->render('offerte/index.html.twig');
+        return $this->render('offerte/index.html.twig', [
+            'recaptcha_site_key' => $_ENV['RECAPTCHA_SITE_KEY'],
+        ]);
     }
 
     #[Route('/offerte/send', name: 'offerte_send', methods: ['POST'])]
-    public function send(Request $request, MailerInterface $mailer): Response
+    public function send(Request $request, MailerInterface $mailer, HttpClientInterface $httpClient): Response
     {
         // Honeypot
         if ($request->request->get('_honey')) {
             return $this->redirectToRoute('offerte');
+        }
+
+        // reCAPTCHA v3 token ophalen
+        $token = $request->request->get('g-recaptcha-response');
+        if (!$token) {
+            return $this->render('offerte/index.html.twig', [
+                'errors' => ['reCAPTCHA verificatie mislukt.'],
+                'formData' => $request->request->all(),
+                'recaptcha_site_key' => $_ENV['RECAPTCHA_SITE_KEY'],
+            ]);
+        }
+
+        // Verifieer token via Google API
+        try {
+            $response = $httpClient->request('POST', 'https://www.google.com/recaptcha/api/siteverify', [
+                'body' => [
+                    'secret' => $_ENV['RECAPTCHA_SECRET_KEY'],
+                    'response' => $token,
+                ],
+            ]);
+            $result = $response->toArray();
+        } catch (\Throwable $e) {
+            return $this->render('offerte/index.html.twig', [
+                'errors' => ['reCAPTCHA server error: ' . $e->getMessage()],
+                'formData' => $request->request->all(),
+                'recaptcha_site_key' => $_ENV['RECAPTCHA_SITE_KEY'],
+            ]);
+        }
+
+        if (empty($result['success']) || $result['score'] < 0.5 || ($result['action'] ?? '') !== 'offerte') {
+            return $this->render('offerte/index.html.twig', [
+                'errors' => ['Verdachte activiteit gedetecteerd.'],
+                'formData' => $request->request->all(),
+                'recaptcha_site_key' => $_ENV['RECAPTCHA_SITE_KEY'],
+            ]);
         }
 
         // Velden
@@ -33,12 +71,10 @@ class OfferteController extends AbstractController
         $telefoon = htmlspecialchars(trim($request->request->get('Telefoonnummer', '')), ENT_QUOTES, 'UTF-8');
         $accounts = htmlspecialchars(trim($request->request->get('Aantal_accounts', '')), ENT_QUOTES, 'UTF-8');
         $berichtRaw = trim($request->request->get('Bericht', ''));
-
         $bericht = nl2br(htmlspecialchars($berichtRaw, ENT_QUOTES, 'UTF-8'));
 
         // Validatie
         $errors = [];
-
         if ($naam === '') $errors[] = 'Naam ontbreekt';
         if ($bedrijf === '') $errors[] = 'Bedrijf ontbreekt';
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) $errors[] = 'E-mailadres is ongeldig';
@@ -49,10 +85,11 @@ class OfferteController extends AbstractController
             return $this->render('offerte/index.html.twig', [
                 'errors' => $errors,
                 'formData' => $request->request->all(),
+                'recaptcha_site_key' => $_ENV['RECAPTCHA_SITE_KEY'],
             ]);
         }
 
-        // Mail naar INFO@
+        // Mail naar info@
         $emailAdmin = (new Email())
             ->from(new Address('info@easysolutions.nl', 'Easysolutions.nl Offerte'))
             ->to('info@easysolutions.nl')
@@ -68,7 +105,7 @@ class OfferteController extends AbstractController
                 '<p><strong>Bericht:</strong><br>' . $bericht . '</p>'
             );
 
-        // Bevestiging naar klant
+        // Bevestiging naar gebruiker
         $emailUser = (new Email())
             ->from(new Address('info@easysolutions.nl', 'Easy Solutions'))
             ->to($email)
