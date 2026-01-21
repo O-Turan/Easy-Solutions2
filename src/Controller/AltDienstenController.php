@@ -28,4 +28,11 @@ class AltDienstenController extends AbstractController
         return $this->render('alt_diensten/zakelijke-voip-telefonie.html.twig');
     }
 
+    #[Route('/alt/diensten/zakelijktelefoonnummers', name: 'app_alt_diensten_zakelijktelefoonnummers')]
+    public function zakelijktelefoonnummers(): Response
+    {
+        return $this->render('alt_diensten/zakelijktelefoonnummers.html.twig');
+    }
+
+
 }
