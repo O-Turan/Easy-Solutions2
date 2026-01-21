@@ -15,4 +15,11 @@ class AltDienstenController extends AbstractController
             'controller_name' => 'AltDienstenController',
         ]);
     }
+
+    #[Route('/alt/diensten/telefoonnummers', name: 'app_dienst_telefoonnummers')]
+    public function telefoonnummers(): Response
+    {
+        return $this->render('alt_diensten/telefoonnummers.html.twig');
+    }
+
 }
