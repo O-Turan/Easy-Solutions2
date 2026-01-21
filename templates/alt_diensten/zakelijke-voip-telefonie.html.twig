@@ -1,0 +1,161 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Zakelijke VoIP Telefonie | Flexibel & Betrouwbaar – Easy Solutions
+{% endblock %}
+
+{% block meta_description %}
+    Zakelijke VoIP telefonie voor bedrijven. Professioneel bellen via internet met vaste nummers, belgroepen en keuzemenu’s. Vraag vrijblijvend een offerte aan.
+{% endblock %}
+
+{% block body %}
+
+    <!-- HERO -->
+    <header class="hero-voip position-relative text-white">
+        <div class="container py-5 text-center">
+            <h1 class="display-4 fw-bold mb-3">
+                Zakelijke VoIP Telefonie
+            </h1>
+            <p class="lead opacity-75">
+                Professioneel bellen via internet – flexibel, schaalbaar en klaar voor groei.
+            </p>
+            <a href="{{ path('offerte') }}" class="btn btn-hero px-5 py-3 rounded-pill mt-3">
+                Offerte aanvragen →
+            </a>
+        </div>
+
+        <svg viewBox="0 0 1440 120" class="hero-wave" preserveAspectRatio="none">
+            <path fill="#fff"
+                  d="M0,64L48,74.7C96,85,192,107,288,112C384,117,480,107,576,96C672,85,768,75,864,80C960,85,1056,107,1152,112C1248,117,1344,107,1392,101.3L1440,96L1440,120L0,120Z"/>
+        </svg>
+    </header>
+
+    <!-- WAT IS VOIP -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="fw-bold mb-3 text-center">
+                Wat is zakelijke VoIP telefonie?
+            </h2>
+            <p class="mx-auto text-center" style="max-width: 900px;">
+                Zakelijke VoIP telefonie (Voice over IP) betekent dat je telefoneert via internet
+                in plaats van via traditionele telefoonlijnen. Dit maakt bellen niet alleen
+                goedkoper, maar ook veel flexibeler. Met VoIP ben je overal bereikbaar:
+                op kantoor, thuis of onderweg — allemaal via één vast zakelijk nummer.
+            </p>
+        </div>
+    </section>
+
+    <!-- VOORDELEN -->
+    <section class="bg-light py-5">
+        <div class="container">
+            <h2 class="fw-bold text-center mb-4">
+                Voordelen van zakelijke VoIP bij Easy Solutions
+            </h2>
+
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <h3 class="h5 fw-bold">Kostenbesparend</h3>
+                    <p>
+                        Geen dure telefooncentrale of onderhoud. Je betaalt alleen voor wat je gebruikt.
+                    </p>
+                </div>
+                <div class="col-md-4">
+                    <h3 class="h5 fw-bold">Schaalbaar</h3>
+                    <p>
+                        Gebruikers toevoegen of verwijderen kan direct. Ideaal voor groeiende bedrijven.
+                    </p>
+                </div>
+                <div class="col-md-4">
+                    <h3 class="h5 fw-bold">Altijd bereikbaar</h3>
+                    <p>
+                        Bel via vaste toestellen, mobiele apps of softphones – allemaal met hetzelfde nummer.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FUNCTIES -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="fw-bold text-center mb-4">
+                Functionaliteiten van onze VoIP-oplossing
+            </h2>
+
+            <ul class="list-unstyled mx-auto" style="max-width: 700px;">
+                <li>✔ Online telefooncentrale (Hosted PBX)</li>
+                <li>✔ Belgroepen en wachtrijen</li>
+                <li>✔ Keuzemenu’s (IVR)</li>
+                <li>✔ Openingstijden & doorschakelingen</li>
+                <li>✔ Gesprekken opnemen</li>
+                <li>✔ Vast & mobiel combineren</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- WAAROM EASY SOLUTIONS -->
+    <section class="bg-dark text-white py-5">
+        <div class="container text-center">
+            <h2 class="fw-bold mb-3">
+                Waarom kiezen voor Easy Solutions?
+            </h2>
+            <p class="mb-4">
+                Geen standaardpakketten, maar een VoIP-oplossing die past bij jouw organisatie.
+                Persoonlijk advies, duidelijke prijzen en snelle ondersteuning.
+            </p>
+            <a href="{{ path('app_contact') }}" class="btn btn-light px-5 py-3 rounded-pill">
+                Neem contact op
+            </a>
+        </div>
+    </section>
+
+    <!-- FAQ (SEO!) -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="fw-bold text-center mb-4">
+                Veelgestelde vragen over zakelijke VoIP
+            </h2>
+
+            <div class="mx-auto" style="max-width: 800px;">
+                <h3 class="h6 fw-bold">Is VoIP betrouwbaar?</h3>
+                <p>Ja. Met een stabiele internetverbinding is VoIP net zo betrouwbaar als traditionele telefonie.</p>
+
+                <h3 class="h6 fw-bold">Kan ik mijn huidige nummer behouden?</h3>
+                <p>Ja, nummerbehoud is standaard mogelijk.</p>
+
+                <h3 class="h6 fw-bold">Heb ik speciale telefoons nodig?</h3>
+                <p>Nee. Je kunt bellen via VoIP-toestellen, mobiele apps of je computer.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SCHEMA.ORG -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "name": "Zakelijke VoIP Telefonie",
+            "provider": {
+                "@type": "Organization",
+                "name": "Easy Solutions",
+                "url": "https://easysolutions.nl"
+            },
+            "areaServed": "NL",
+            "description": "Zakelijke VoIP telefonie voor bedrijven. Flexibel, schaalbaar en professioneel bereikbaar via internet."
+        }
+    </script>
+
+    <!-- STYLES -->
+    <style>
+        .hero-voip{
+            background:radial-gradient(circle at top left,#002b6f,#00152f);
+        }
+        .hero-wave{position:absolute;bottom:-1px;width:100%;height:60px}
+        .btn-hero{
+            background:linear-gradient(135deg,#002b6f,#00152f);
+            color:#fff;
+            font-weight:700;
+        }
+    </style>
+
+{% endblock %}

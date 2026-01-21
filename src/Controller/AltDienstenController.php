@@ -22,4 +22,10 @@ class AltDienstenController extends AbstractController
         return $this->render('alt_diensten/telefoonnummers.html.twig');
     }
 
+    #[Route('/alt/diensten/zakelijke-voip-telefonie', name: 'app_dienst_zakelijke-voip_telefonie')]
+    public function zakelijke(): Response
+    {
+        return $this->render('alt_diensten/zakelijke-voip-telefonie.html.twig');
+    }
+
 }
