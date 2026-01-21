@@ -1,0 +1,414 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}VoIP nummers kiezen - Easy Solutions{% endblock %}
+
+{% block body %}
+
+    <!-- HERO SECTION -->
+    <section class="hero-section d-flex align-items-center justify-content-center text-center text-white">
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
+        <div class="container position-relative hero-content">
+            <h1 class="display-3 fw-bold animate__animated animate__fadeInDown">
+                Mooie VoIP nummers kiezen
+            </h1>
+            <p class="lead mb-4 animate__animated animate__fadeInUp animate__delay-1s">
+                die passen bij je bedrijf
+            </p>
+
+            <div class="d-flex gap-3 justify-content-center flex-wrap mt-3 animate__animated animate__fadeInUp animate__delay-2s">
+                <a href="#nummers-uitkiezen" class="btn btn-cta btn-lg text-white">Direct nieuwe nummers uitkiezen</a>
+                <a href="#overzicht" class="btn btn-outline-light btn-lg">VoIP nummers uitkiezen</a>
+            </div>
+
+            <a href="#intro" class="scroll-down">↓</a>
+        </div>
+    </section>
+
+    <!-- INTRO -->
+    <section id="intro" class="py-5 bg-white">
+        <div class="container">
+            <h2 class="fw-bold mb-4 text-center">Zakelijk telefoonnummer kiezen</h2>
+
+            <div class="mx-auto text-center" style="max-width: 900px;">
+                <p class="mb-3">
+                    Direct online mooie VoIP nummers kiezen naar wens doe je met onze unieke service.
+                    Wij hebben een grote voorraad van zakelijke VoIP telefoonnummer aanvragen die direct leverbaar zijn.
+                    Een regio nummer en 085 nummer aanvragen is binnen 2 minuten geregeld.
+                    Deze mooie zakelijk VoIP nummers zijn beschikbaar als enkelvoudige telefoonnummers en in blokken van 10
+                    en zelfs 100 VoIP nummers.
+                </p>
+                <p class="mb-4">
+                    Kies je voor een nieuw telefoonnummer dan activeren wij deze binnen 5 minuten en ben je direct bereikbaar.
+                    Je kunt hier meteen mooie VoIP nummers kiezen naar eigen wens.
+                </p>
+
+                <div id="nummers-uitkiezen" class="d-flex gap-3 justify-content-center flex-wrap mt-4">
+                    <a href="#" class="btn btn-cta btn-lg text-white">Direct nieuwe nummers uitkiezen</a>
+                    <a href="#overzicht" class="btn btn-outline-primary btn-lg">Overzicht telefoonnummer aanvragen</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NUMMERBEHOUD -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-md-6">
+                    <h2 class="fw-bold mb-3">Nummerbehoud - Verhuis je nummer mee</h2>
+                    <p class="mb-3">
+                        Nummerbehoud – Heb je een bestaand zakelijk telefoonnummer en wil je deze porteren naar VoIP?
+                        Verhuis deze dan eenvoudig mee naar ons platform (nummerbehoud).
+                        Jouw regio- of 085 nummer nemen wij over van je huidige provider en porteren deze naar VOIPZeker.
+                    </p>
+                    <p class="mb-4">
+                        Tijdens de overgang blijft je telefonie zonder enige onderbreking 100% bereikbaar.
+                    </p>
+                    <a href="#" class="btn btn-cta text-white">Lees alles over nummerbehoud</a>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="image-card p-4 rounded-4 shadow-sm bg-white">
+                        <h5 class="fw-bold mb-2">Zakelijk telefoonnummer</h5>
+                        <p class="mb-0">
+                            Neem je bestaande nummer mee of kies direct een nieuw (regionaal, 085, 088, servicenummer of internationaal).
+                            Alles snel geregeld en professioneel ingericht.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- OVERZICHT TELEFOONNUMMERS -->
+    <section id="overzicht" class="py-5 bg-white">
+        <div class="container">
+            <h2 class="fw-bold text-center mb-4">Overzicht telefoonnummer aanvragen</h2>
+
+            <p class="text-center mb-5 mx-auto" style="max-width: 950px;">
+                VOIPZeker heeft een groot aantal zakelijke VoIP telefoonnummers direct op voorraad, zoals regionale nummers,
+                085 nummers en 088 nummerblokken. Heel eenvoudig zelf mooie nummers kiezen. Hieronder vind je meer informatie
+                over alle beschikbare telefoonnummers, zoals de voordelen en verschillen.
+                <br><br>
+                Omdat je bij ons direct een mooi telefoonnummer naar wens kunt uitkiezen, bepaal je geheel zelf welke uitstraling
+                jij aan je bedrijf geeft. Heb je een grote organisatie met meerdere vestigingen en heb je veel nummers nodig,
+                kies dan voor een 088 nummerblok. Wil je je bedrijf een landelijke uitstraling geven, dan is een 085 nummer aanvragen
+                de ideale oplossing. Heb je al een bestaand zakelijk telefoonnummer, kies dan voor nummerbehoud zodat wij je
+                telefoonnummer porteren naar VoIP.
+            </p>
+
+            {% set nummerCards = [
+                {
+                    'title':'Regionale nummers',
+                    'subtitle':'Zakelijk telefoonnummer',
+                    'text':'Regionale telefoonnummers zijn gebonden aan een specifieke regio, zoals Amsterdam (020). Het telefoonnummer geeft een plaatselijke uitstraling.',
+                    'cta':'Bekijk regionale nummers',
+                    'href':'#',
+                    'icon_svg':'<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s8-4.5 8-11a8 8 0 1 0-16 0c0 6.5 8 11 8 11Z"/><circle cx="12" cy="10" r="3"/></svg>'
+                },
+                {
+                    'title':'085 nummers',
+                    'subtitle':'VoIP nummer',
+                    'text':'Met een 085 telefoonnummer geef je jouw bedrijf een landelijke en professionele uitstraling. Het telefoonnummer is niet gebonden aan een regio.',
+                    'cta':'Bekijk 085 nummers',
+                    'href':'#',
+                    'icon_svg':'<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12a8 8 0 1 0-16 0"/><path d="M12 2v4"/><path d="M4.9 4.9l2.8 2.8"/><path d="M19.1 4.9l-2.8 2.8"/><path d="M4 12h4"/><path d="M16 12h4"/><path d="M12 12l3 3"/></svg>'
+                },
+                {
+                    'title':'088 nummerblokken',
+                    'subtitle':'Mooie nummers kiezen',
+                    'text':'Landelijke 088 nummers worden verkocht in minimale afnames van 100 stuks. Deze nummers worden veelal gebruikt door grote bedrijven.',
+                    'cta':'Meer informatie',
+                    'href':'#',
+                    'icon_svg':'<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>'
+                },
+                {
+                    'title':'Internationale nummers',
+                    'subtitle':'Zakelijk mooi nummer',
+                    'text':'Heb jij een onderneming in het buitenland, of ben je van plan daar een vestiging te openen? Kies dan direct een nieuw buitenlands nummer uit voor de juiste uitstraling.',
+                    'cta':'Bekijk buitenlandse nummers',
+                    'href':'#',
+                    'icon_svg':'<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15 15 0 0 1 0 20"/><path d="M12 2a15 15 0 0 0 0 20"/></svg>'
+                },
+                {
+                    'title':'0800 en 0900 nummers',
+                    'subtitle':'Zakelijk voip nummer',
+                    'text':'Servicenummers zoals 0800- en 0900 zijn geliefd bij overheidsinstanties en service verlenende bedrijven. Bekijk hier de mogelijkheden.',
+                    'cta':'Bekijk servicenummers',
+                    'href':'#',
+                    'icon_svg':'<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7 12.8 12.8 0 0 0 .7 2.8 2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5 12.8 12.8 0 0 0 2.8.7A2 2 0 0 1 22 16.9Z"/></svg>'
+                },
+                {
+                    'title':'Nummerbehoud',
+                    'subtitle':'Nummerbehoud mooi nummer',
+                    'text':'Behoud je eigen zakelijke telefoonnummers en verhuis deze eenvoudig en direct mee naar VOIPZeker. Lekker vertrouwd zaken doen op zijn best.',
+                    'cta':'Meer informatie',
+                    'href':'#',
+                    'icon_svg':'<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/><path d="M22 10v6a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h10"/></svg>'
+                }
+            ] %}
+
+            <div class="row g-4">
+                {% for c in nummerCards %}
+                    <div class="col-lg-4 col-md-6 d-flex">
+                        <div class="service-card w-100">
+                            <div class="service-icon">
+                                {{ c.icon_svg|raw }}
+                            </div>
+                            <div class="p-4">
+                                <div class="small text-muted mb-1">{{ c.subtitle }}</div>
+                                <h5 class="fw-bold mb-2">{{ c.title }}</h5>
+                                <p class="mb-4">{{ c.text }}</p>
+                                <a href="{{ c.href }}" class="service-link">{{ c.cta }} →</a>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <!-- WAAROM KIEZEN -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="fw-bold text-center mb-4">Waarom bedrijven voor VOIPZeker kiezen</h2>
+
+            {% set why = [
+                {
+                    'title':'Beste support',
+                    'text':'Onze service is door klanten met een 9,5 gewaardeerd. Heb je vragen? Dan krijg je bij ons altijd een expert aan de lijn die jouw vragen direct beantwoord.',
+                    'icon_svg':'<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12a10 10 0 1 0-20 0"/><path d="M2 12a4 4 0 0 0 4 4h1v-8H6a4 4 0 0 0-4 4Z"/><path d="M22 12a4 4 0 0 1-4 4h-1v-8h1a4 4 0 0 1 4 4Z"/><path d="M10 16h4"/></svg>'
+                },
+                {
+                    'title':'Altijd online',
+                    'text':'Nederlands meest redundant uitgevoerde fail-over systeem. Jij kunt erop vertrouwen dat je altijd en overal bereikbaar blijft, ook in geval van nood.',
+                    'icon_svg':'<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13a10 10 0 0 1 14-7"/><path d="M19 11a10 10 0 0 1-14 7"/><path d="M12 12v9"/><path d="M8 21h8"/></svg>'
+                },
+                {
+                    'title':'Flexibel',
+                    'text':'Snel en eenvoudig uitbreiden met nieuwe gebruikers, telefoonnummers en add-on functies. Real-time te regelen vanuit je Unite telefooncentrale.',
+                    'icon_svg':'<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20"/><path d="M2 12h20"/><path d="M7 7h10"/><path d="M7 17h10"/></svg>'
+                },
+                {
+                    'title':'Eenvoudig beheer',
+                    'text':'Eén compleet systeem waarmee je de telefonie van alle vestigingen eenvoudig aanstuurt. Eén eigen managementsysteem waarin je alles real-time kunt wijzigen.',
+                    'icon_svg':'<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M12 4h9"/><path d="M3 6h6"/><path d="M3 18h6"/><path d="M6 6v12"/></svg>'
+                },
+                {
+                    'title':'Alles onder 1 dak',
+                    'text':'Eén aanspreekpunt voor internet, netwerk, online werkplekken, vaste telefonie, mobiele telefonie, apps, desktop bellen, videoconference, stemartiesten en bekabeling.',
+                    'icon_svg':'<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 10v11h14V10"/><path d="M9 21v-6h6v6"/></svg>'
+                },
+                {
+                    'title':'100% tevredenheid',
+                    'text':'Waar een ander stopt gaan wij verder. Wij zien jouw organisatie als de onze en zorgen daarom dat alles tot in de puntjes geregeld is.',
+                    'icon_svg':'<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>'
+                }
+            ] %}
+
+            <div class="row g-4 mt-1">
+                {% for w in why %}
+                    <div class="col-lg-4 col-md-6 d-flex">
+                        <div class="badge-card h-100 text-center p-0 w-100">
+                            <div class="badge-icon">{{ w.icon_svg|raw }}</div>
+                            <div class="card-body p-4">
+                                <h5 class="fw-bold">{{ w.title }}</h5>
+                                <p class="mb-0">{{ w.text }}</p>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-5 text-center cta-section">
+        <div class="container">
+            <h2 class="fw-bold mb-3 text-white">Klaar om je zakelijke nummer te regelen?</h2>
+            <p class="lead mb-4 text-white">
+                Kies direct een mooi VoIP nummer of verhuis je huidige nummer mee — snel, professioneel en zonder gedoe.
+            </p>
+            <div class="d-flex gap-3 justify-content-center flex-wrap">
+                <a href="#" class="btn btn-cta btn-lg text-white">Direct nieuwe nummers uitkiezen</a>
+                <a href="/contact" class="btn btn-outline-light btn-lg">Contact opnemen</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- STYLES -->
+    <style>
+        /* HERO */
+        .hero-section {
+            height: 65vh;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background: url('{{ asset("assets/hosted-pbx.webp") }}') center/cover no-repeat;
+            filter: brightness(0.55);
+            transform: scale(1.1);
+            z-index: 1;
+            transition: transform 1.5s ease;
+        }
+
+        .hero-section:hover .hero-bg {
+            transform: scale(1.15);
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(0, 31, 77, 0.75), rgba(179, 0, 0, 0.55));
+            z-index: 2;
+        }
+
+        .hero-content { z-index: 3; }
+
+        /* SCROLL DOWN */
+        .scroll-down {
+            display: inline-block;
+            margin-top: 1.2rem;
+            font-size: 2rem;
+            animation: bounce 2s infinite;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0) }
+            40% { transform: translateY(-10px) }
+            60% { transform: translateY(-5px) }
+        }
+
+        /* SERVICE CARDS (overzicht) */
+        .service-card {
+            background: #fff;
+            border-radius: 20px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+            transition: transform 0.35s ease, box-shadow 0.35s ease;
+            position: relative;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.14);
+        }
+
+        .service-icon {
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #001f4d, #b30000);
+            color: #fff;
+        }
+
+        .service-icon svg {
+            opacity: 0.95;
+        }
+
+        .service-link {
+            font-weight: 700;
+            text-decoration: none;
+            color: #001f4d;
+        }
+
+        .service-link:hover {
+            color: #b30000;
+            text-decoration: underline;
+        }
+
+        /* WHY (badge cards zoals je Hosted PBX) */
+        .badge-card {
+            background: #fff;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            cursor: default;
+        }
+
+        .badge-card:hover {
+            transform: translateY(-10px) rotateX(2deg);
+            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .badge-icon {
+            width: 100%;
+            height: 120px;
+            background: linear-gradient(135deg, #001f4d, #b30000);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-bottom-left-radius: 50% 20px;
+            border-bottom-right-radius: 50% 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .badge-card:hover .badge-icon {
+            transform: scale(1.2);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+        }
+
+        .badge-card h5 {
+            font-weight: 700;
+            color: #001f4d;
+            margin-bottom: 0.5rem;
+            font-size: 1.05rem;
+        }
+
+        .badge-card p {
+            color: #333;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* CTA */
+        .cta-section { background: #001f4d; }
+
+        .btn-cta {
+            background: #b30000;
+            color: #fff;
+            border-radius: 8px;
+            padding: 0.8rem 1.8rem;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            border: none;
+        }
+
+        .btn-cta:hover {
+            background: #e53935;
+            transform: translateY(-2px) scale(1.03);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Kleine extra card in nummerbehoud */
+        .image-card {
+            border: 1px solid rgba(0,0,0,0.06);
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .hero-section { height: 70vh; }
+            .hero-section h1 { font-size: 2.3rem; }
+        }
+    </style>
+
+    <!-- PARALLAX HERO -->
+    <script>
+        document.addEventListener('scroll', function () {
+            const scrolled = window.scrollY;
+            const bg = document.querySelector('.hero-bg');
+            if (bg) bg.style.transform = 'translateY(' + scrolled * 0.2 + 'px) scale(1.08)';
+        });
+    </script>
+
+{% endblock %}
