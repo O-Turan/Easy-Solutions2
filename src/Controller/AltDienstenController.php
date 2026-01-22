@@ -64,6 +64,12 @@ class AltDienstenController extends AbstractController
         return $this->render('alt_diensten/mobiel.html.twig');
     }
 
+    #[Route('/alt/diensten/voip', name: 'app_dienst_voip')]
+    public function vo(): Response
+    {
+        return $this->render('alt_diensten/voip.html.twig');
+    }
+
 
     #[Route('/alt/diensten/088-nummers', name: 'app_dienst_088_nummers')]
     public function nummer088(): Response
