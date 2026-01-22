@@ -81,4 +81,10 @@ class AltDienstenController extends AbstractController
         return $this->render('alt_diensten/zakelijktelefoonnummers.html.twig');
     }
 
+    #[Route('/alt/diensten/vast-op-de-mobiel', name: 'app_dienst_vast-op-de-mobiel')]
+    public function vast(): Response
+    {
+        return $this->render('alt_diensten/vast-op-de-mobiel.html.twig');
+    }
+
 }
