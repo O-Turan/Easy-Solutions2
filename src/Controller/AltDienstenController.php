@@ -34,4 +34,10 @@ class AltDienstenController extends AbstractController
         return $this->render('alt_diensten/voip-telefooncentrale.html.twig');
     }
 
+    #[Route('/alt/diensten/overstappen-op-voip-telefonie', name: 'app_dienst_overstappen-op-voip-telefonie')]
+    public function overstap(): Response
+    {
+        return $this->render('alt_diensten/overstappen-op-voip-telefonie.html.twig');
+    }
+
 }
