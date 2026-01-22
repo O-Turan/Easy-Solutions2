@@ -1,0 +1,169 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Zakelijke VoIP Telefonie Pakketten | Easy Solutions – Flexibel & Schaalbaar
+{% endblock %}
+
+{% block meta_description %}
+    Bekijk de zakelijke VoIP telefonie pakketten van Easy Solutions: flexibel, schaalbaar en volledig afgestemd op jouw bedrijf. Vraag een vrijblijvende offerte aan!
+{% endblock %}
+
+{% block body %}
+
+    <!-- HERO -->
+    <section class="hero-voip-pakketten text-white text-center py-5">
+        <div class="container">
+            <h1 class="display-4 fw-bold">Zakelijke VoIP Telefonie Pakketten van Easy Solutions</h1>
+            <p class="lead opacity-75">
+                Kies het abonnement dat past bij jouw bedrijf – van kleine teams tot grote organisaties.
+            </p>
+            <a href="{{ path('offerte') }}" class="btn btn-cta btn-lg mt-3">Offerte aanvragen</a>
+        </div>
+    </section>
+
+    <!-- INTRO -->
+    <section class="py-5">
+        <div class="container text-center">
+            <h2 class="fw-bold mb-3">VoIP abonnementen voor elk bedrijf</h2>
+            <p class="mx-auto" style="max-width:850px;">
+                Met de VoIP telefonie pakketten van <strong>Easy Solutions</strong> bepaal je zelf hoeveel functionaliteit jouw bedrijf nodig heeft.
+                Of je nu één gebruiker hebt of tientallen medewerkers – we hebben een plan dat bij je past. VoIP telefonie biedt flexibiliteit,
+                schaalbaarheid en moderne functies voor effectieve bedrijfscommunicatie. :contentReference[oaicite:1]{index=1}
+            </p>
+        </div>
+    </section>
+
+    <!-- PAKKETTEN OVERZICHT -->
+    <section class="bg-light py-5">
+        <div class="container">
+            <h2 class="fw-bold text-center mb-4">Onze VoIP telefonie pakketten</h2>
+
+            <div class="row g-4 justify-content-center">
+                <div class="col-md-4 text-center">
+                    <h3 class="h5 fw-bold">Basis VoIP</h3>
+                    <p>
+                        Perfect voor kleine teams: flexibel maandelijks opzegbaar, basisfuncties en altijd bereikbaar via internet.
+                    </p>
+                    <ul class="list-unstyled">
+                        <li>✔ Onbeperkt bellen binnen Nederland</li>
+                        <li>✔ Integratie met mobiele app</li>
+                        <li>✔ Basis telefooncentrale functies</li>
+                    </ul>
+                </div>
+
+                <div class="col-md-4 text-center">
+                    <h3 class="h5 fw-bold">Compleet VoIP</h3>
+                    <p>
+                        Voor groeiende bedrijven: extra functies zoals wachtrijen, keuzemenu’s en uitgebreide rapportages.
+                    </p>
+                    <ul class="list-unstyled">
+                        <li>✔ Alles uit Basis</li>
+                        <li>✔ Auto-attendant & IVR</li>
+                        <li>✔ Gespreksstatistieken</li>
+                    </ul>
+                </div>
+
+                <div class="col-md-4 text-center">
+                    <h3 class="h5 fw-bold">Enterprise VoIP</h3>
+                    <p>
+                        Voor grote organisaties of maatwerk: integraties, API-koppelingen en dedicated support.
+                    </p>
+                    <ul class="list-unstyled">
+                        <li>✔ Alles uit Compleet</li>
+                        <li>✔ CRM-integraties</li>
+                        <li>✔ Premium support</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- VOORDELEN GLOBAL -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="fw-bold text-center mb-4">Wat je krijgt met Easy Solutions VoIP</h2>
+            <div class="row g-4 text-center mx-auto" style="max-width:900px;">
+                <div class="col-md-4">
+                    <h3 class="h5 fw-bold">Altijd en overal bereikbaar</h3>
+                    <p>
+                        Met VoIP van Easy Solutions kun je bellen via vaste toestellen, apps of desktop – thuis, op kantoor of onderweg. :contentReference[oaicite:2]{index=2}
+                    </p>
+                </div>
+                <div class="col-md-4">
+                    <h3 class="h5 fw-bold">Flexibel & schaalbaar</h3>
+                    <p>
+                        Je abonnement groeit mee met je bedrijf. Extra gebruikers toevoegen is simpel zonder extra investering. :contentReference[oaicite:3]{index=3}
+                    </p>
+                </div>
+                <div class="col-md-4">
+                    <h3 class="h5 fw-bold">Professionele functies</h3>
+                    <p>
+                        Denk aan belgroepen, voicemail, CRM-integraties en API-opties – allemaal beschikbaar binnen de juiste pakketten. :contentReference[oaicite:4]{index=4}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="bg-dark text-white text-center py-5">
+        <div class="container">
+            <h2 class="fw-bold mb-3">Kies het juiste VoIP pakket</h2>
+            <p class="mb-4">
+                Wil je advies over welk VoIP abonnement bij jouw organisatie past? Neem contact op met onze experts.
+            </p>
+            <a href="{{ path('offerte') }}" class="btn btn-light btn-lg me-3">Offerte aanvragen</a>
+            <a href="{{ path('app_contact') }}" class="btn btn-outline-light btn-lg">Contact opnemen</a>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="fw-bold text-center mb-4">Veelgestelde vragen over VoIP pakketten</h2>
+
+            <div class="mx-auto" style="max-width:820px;">
+                <h3 class="h6 fw-bold">Wat is inbegrepen in een VoIP abonnement?</h3>
+                <p>
+                    Afhankelijk van het pakket krijg je verschillende functies, zoals onbeperkt bellen, keuzemenu’s of CRM-integraties.
+                </p>
+
+                <h3 class="h6 fw-bold">Kan ik van pakket wisselen?</h3>
+                <p>
+                    Ja, bij Easy Solutions kun je eenvoudig upgraden of downgraden naargelang je zakelijke behoeften.
+                </p>
+
+                <h3 class="h6 fw-bold">Hoe snel kan ik starten?</h3>
+                <p>
+                    Zodra je abonnement actief is, kun je direct beginnen met bellen via je VoIP-centrale.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SCHEMA.ORG JSON-LD -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "name": "Zakelijke VoIP Telefonie Pakketten",
+            "provider": {
+                "@type": "Organization",
+                "name": "Easy Solutions"
+            },
+            "description": "Flexibele en schaalbare VoIP telefonie abonnementen voor bedrijven, afgestemd op groei en functionaliteit."
+        }
+    </script>
+
+    <style>
+        .hero-voip-pakketten {
+            background: radial-gradient(circle at top left,#002b6f,#00152f);
+        }
+        .btn-cta {
+            background:#d11010;
+            color:white;
+            font-weight:600;
+        }
+    </style>
+
+{% endblock %}
