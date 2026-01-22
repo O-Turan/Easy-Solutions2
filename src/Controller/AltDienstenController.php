@@ -40,4 +40,16 @@ class AltDienstenController extends AbstractController
         return $this->render('alt_diensten/overstappen-op-voip-telefonie.html.twig');
     }
 
+    #[Route('/alt/diensten/mogelijkheden-van-voip-telefonie', name: 'app_dienst_mogelijkheden-van-voip-telefonie')]
+    public function mogelijkheden(): Response
+    {
+        return $this->render('alt_diensten/mogelijkheden-van-voip-telefonie.html.twig');
+    }
+
+    #[Route('/alt/diensten/zakelijke-telefonie-pakketten', name: 'app_dienst_zakelijke-telefonie-pakketten')]
+    public function zakelijk(): Response
+    {
+        return $this->render('alt_diensten/zakelijke-telefonie-pakketten.html.twig');
+    }
+
 }
