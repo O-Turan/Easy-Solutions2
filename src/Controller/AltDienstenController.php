@@ -73,12 +73,13 @@ class AltDienstenController extends AbstractController
     #[Route('/alt/diensten/regionale-nummers', name: 'app_dienst_regionale_nummers')]
     public function regionaleNummers(): Response
     {
-        return $this->render('alt_diensten/regionale.index.html.twig');
+        return $this->render('alt_diensten/regionale.html.twig');
     }
-    #[Route('/alt/diensten/zakelijktelefoonnummers', name: 'app_alt_diensten_zakelijktelefoonnummers')]
+    #[Route('/alt/diensten/zakelijktelefoonnummers', name: 'app_dienst_zakelijktelefoonnummers')]
     public function zakelijktelefoonnummers(): Response
     {
         return $this->render('alt_diensten/zakelijktelefoonnummers.html.twig');
     }
+
 
 }
