@@ -17,9 +17,15 @@
             </p>
 
             <div class="d-flex gap-3 justify-content-center flex-wrap mt-3">
-                <a href="/contact" class="btn btn-cta btn-lg text-white">Klant worden</a>
-                <a href="/contact" class="btn btn-outline-light btn-lg">Contact opnemen</a>
+                <a href="{{ path('offerte') }}" class="btn btn-cta btn-lg text-white">
+                    Klant worden
+                </a>
+
+                <a href="{{ path('app_contact') }}" class="btn btn-outline-light btn-lg">
+                    Contact opnemen
+                </a>
             </div>
+
 
             <a href="#intro" class="scroll-down">↓</a>
         </div>
@@ -48,7 +54,9 @@
 
                 <div class="d-flex gap-3 justify-content-center flex-wrap mt-4">
                     <a href="#overzicht" class="btn btn-cta btn-lg text-white">Bekijk mogelijkheden</a>
-                    <a href="/contact" class="btn btn-outline-primary btn-lg">Advies aanvragen</a>
+                    <a href="{{ path('app_contact') }}" class="btn btn-outline-light btn-lg">
+                        advies vragen
+                    </a>
                 </div>
             </div>
         </div>
@@ -142,7 +150,9 @@
                         Tijdens de overstap blijft je telefonie bereikbaar. Wij begeleiden je stap voor stap en zorgen dat
                         de overgang zo soepel mogelijk verloopt.
                     </p>
-                    <a href="/contact" class="btn btn-cta text-white">Meer informatie</a>
+                    <a href="{{ path('app_contact') }}" class="btn btn-outline-light btn-lg">
+                        informatie
+                    </a>
                 </div>
 
                 <div class="col-md-6">
@@ -252,7 +262,9 @@
                 Vraag advies aan of kies direct de mogelijkheden voor jouw organisatie.
             </p>
             <div class="d-flex gap-3 justify-content-center flex-wrap">
-                <a href="/contact" class="btn btn-cta btn-lg text-white">Contact opnemen</a>
+                <a href="{{ path('app_contact') }}" class="btn btn-outline-light btn-lg">
+                    Contact opnemen
+                </a>
                 <a href="#intro" class="btn btn-outline-light btn-lg">Terug naar boven</a>
             </div>
         </div>
