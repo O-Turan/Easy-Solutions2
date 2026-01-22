@@ -1,143 +1,211 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Zakelijke VoIP Telefonie Pakketten - Easy Solutions{% endblock %}
-
-{% block meta_description %}
-    Ontdek de zakelijke VoIP telefonie pakketten van Easy Solutions: flexibele abonnementen met krachtige functies voor elk bedrijf. Vergelijk en kies wat bij jou past.
-{% endblock %}
+{% block title %}Vast op de mobiel - Easy Solutions{% endblock %}
 
 {% block body %}
 
-    <!-- HERO -->
-    <header class="hero-offerte position-relative text-white">
-        <div class="container py-5 text-center">
-            <h1 class="display-4 fw-bold mb-3">Zakelijke VoIP Telefonie Pakketten</h1>
-            <p class="lead opacity-75">
-                Flexibele pakketten voor elk bedrijf, van kleine teams tot grote organisaties, met ondersteuning van **Easy Solutions**.
+    <!-- HERO SECTION -->
+    <section class="hero-section d-flex align-items-center justify-content-center text-center text-white">
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
+        <div class="container position-relative hero-content">
+            <h1 class="display-3 fw-bold animate__animated animate__fadeInDown">Vast op de mobiel</h1>
+            <p class="lead mb-4 animate__animated animate__fadeInUp animate__delay-1s">
+                Gebruik je vaste zakelijke nummer direct op je smartphone met VoIP van Easy Solutions.
+            </p>
+            <a href="#uitleg" class="scroll-down">↓</a>
+        </div>
+    </section>
+
+    <!-- UITLEG -->
+    <section id="uitleg" class="py-5 bg-white">
+        <div class="container">
+            <h2 class="fw-bold mb-4 text-center">Wat betekent “Vast op de mobiel”?</h2>
+            <p class="text-center mx-auto" style="max-width:850px;">
+                Bij <strong>Easy Solutions</strong> betekent “Vast op de mobiel” dat je jouw zakelijke vaste nummer
+                koppelt aan je mobiele telefoon. Hierdoor belt en word je gebeld via je vaste nummer, ook als je
+                onderweg bent — zonder extra hardware en volledig beheerd via onze VoIP‑omgeving.
+            </p>
+            <p class="text-center mx-auto" style="max-width:850px;">
+                Deze oplossing is ideaal voor bedrijven waar medewerkers vaak op locatie, onderweg of thuis
+                werken. Je blijft professioneel en consistent bereikbaar via één nummer, zonder concessies te
+                doen aan functionaliteit.
             </p>
         </div>
-    </header>
+    </section>
 
-    <main class="py-5">
+    <!-- VOORDELEN -->
+    <section class="py-5 bg-light">
         <div class="container">
+            <h2 class="fw-bold text-center mb-4">Waarom kiezen voor Vast op de mobiel met Easy Solutions?</h2>
+            <p class="text-center mb-5 mx-auto" style="max-width:800px;">
+                De mobiele integratie van je vaste nummer biedt flexibiliteit en eenvoud. Met <strong>Easy Solutions</strong>
+                combineer je de kracht van een zakelijke VoIP‑telefooncentrale met de mobiliteit van je smartphone.
+            </p>
 
-            <!-- INLEIDING -->
-            <section class="mb-5">
-                <h2 class="fw-bold mb-4 text-center">Wat zijn zakelijke VoIP pakketten?</h2>
-                <p>
-                    Met een zakelijk VoIP pakket van <strong>Easy Solutions</strong> beschik je over een complete telefonieoplossing via internet.
-                    Geen losse toestellen meer nodig: al je telefoongesprekken, zowel vast als mobiel, verlopen via één centrale oplossing.
-                    Ideaal voor bedrijven die willen professionaliseren, schaalbaar willen zijn en meer controle willen over hun bereikbaarheid.
-                </p>
-                <p>
-                    Onze pakketten zijn afgestemd op verschillende bedrijfsbehoeften: van starters tot grote organisaties.
-                    Elk pakket biedt basisfuncties zoals voicemail, wachtrijen, keuzemenu’s en doorkiesnummers.
-                    Voor grotere organisaties kunnen extra functies zoals CRM-integratie, maatwerk routing en premium support worden toegevoegd.
-                </p>
-            </section>
+            <div class="row g-4">
+                {% set benefits = [
+                    {
+                        'title':'Professionele uitstraling',
+                        'text':'Je belt uit met je vaste zakelijke nummer, zelfs vanaf je mobiele telefoon.',
+                        'icon_svg':'<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone-forwarded-icon lucide-phone-forwarded"><path d="M15 7v3a5 5 0 0 1-9.9 1"/><path d="M15 5h6"/><path d="M9 5H3v6"/></svg>'
+                    },
+                    {
+                        'title':'Altijd en overal bereikbaar',
+                        'text':'Medewerkers kunnen bellen en gebeld worden via het vaste nummer zonder vaste locatie.',
+                        'icon_svg':'<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-smartphone-icon lucide-smartphone"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg>'
+                    },
+                    {
+                        'title':'Eenvoudig beheer',
+                        'text':'Beheer al je nummers, devices en instellingen in het overzichtelijke Easy Solutions dashboard.',
+                        'icon_svg':'<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-settings-icon lucide-settings"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09a1.65 1.65 0 0 0-1-.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09c.67 0 1.29-.41 1.51-1a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33h.09c.59-.17 1.21-.17 1.8 0h.09a1.65 1.65 0 0 0 1.51-1.82V3a2 2 0 0 1 4 0v.09c0 .67.41 1.29 1 1.51h.09a1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82v.09c.17.59.17 1.21 0 1.8v.09a1.65 1.65 0 0 0 1 1.51z"/></svg>'
+                    }
+                ] %}
 
-            <!-- PAKKETTEN OVERZICHT -->
-            <section class="mb-5">
-                <h2 class="fw-bold mb-4 text-center">Onze VoIP pakketten</h2>
-                <div class="row g-4 justify-content-center">
-                    <div class="col-md-4 text-center">
-                        <h3 class="h5 fw-bold">Basis Zakelijk</h3>
-                        <p>Voor kleine teams en starters die eenvoudig en professioneel willen bellen.</p>
-                        <ul class="list-unstyled">
-                            <li>✔ Bellen via internet in Nederland</li>
-                            <li>✔ Online telefooncentrale</li>
-                            <li>✔ Standaard belplanfuncties</li>
-                        </ul>
+                {% for b in benefits %}
+                    <div class="col-md-4 col-sm-6 d-flex">
+                        <div class="badge-card h-100 text-center p-0 w-100">
+                            <div class="badge-icon">{{ b.icon_svg|raw }}</div>
+                            <div class="card-body p-4">
+                                <h5 class="fw-bold">{{ b.title }}</h5>
+                                <p>{{ b.text }}</p>
+                            </div>
+                        </div>
                     </div>
-
-                    <div class="col-md-4 text-center">
-                        <h3 class="h5 fw-bold">Compleet Zakelijk</h3>
-                        <p>Voor bedrijven die extra functionaliteiten nodig hebben en groeien.</p>
-                        <ul class="list-unstyled">
-                            <li>✔ Alles uit Basis</li>
-                            <li>✔ IVR / keuzemenu’s</li>
-                            <li>✔ Wachtrijen & belgroepen</li>
-                        </ul>
-                    </div>
-
-                    <div class="col-md-4 text-center">
-                        <h3 class="h5 fw-bold">Enterprise / Maatwerk</h3>
-                        <p>Voor grote organisaties met specifieke wensen en integraties.</p>
-                        <ul class="list-unstyled">
-                            <li>✔ CRM-integraties</li>
-                            <li>✔ Premium support</li>
-                            <li>✔ Maatwerk inrichting</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-            <!-- VOORDELEN -->
-            <section class="mb-5 bg-light py-5">
-                <h2 class="fw-bold text-center mb-4">Waarom kiezen voor VoIP van Easy Solutions?</h2>
-                <div class="row g-4">
-                    <div class="col-md-4 text-center">
-                        <h5 class="fw-bold">Altijd en overal bereikbaar</h5>
-                        <p>Of je nu op kantoor, thuis of onderweg bent: met VoIP van Easy Solutions mis je nooit een gesprek.</p>
-                    </div>
-                    <div class="col-md-4 text-center">
-                        <h5 class="fw-bold">Schaalbaar en flexibel</h5>
-                        <p>Voeg eenvoudig gebruikers toe of pas functies aan wanneer je organisatie groeit.</p>
-                    </div>
-                    <div class="col-md-4 text-center">
-                        <h5 class="fw-bold">Eenvoudig beheer</h5>
-                        <p>Alles overzichtelijk in één online centrale, inclusief routing, keuzemenu’s en wachtrijen.</p>
-                    </div>
-                </div>
-            </section>
-
-            <!-- FUNCTIONALITEITEN -->
-            <section class="mb-5">
-                <h2 class="fw-bold text-center mb-4">Belangrijkste functionaliteiten</h2>
-                <ul class="mx-auto" style="max-width:900px;">
-                    <li>✔ Online telefooncentrale met volledige belplanopties</li>
-                    <li>✔ Doorkiesnummers voor afdelingen en medewerkers</li>
-                    <li>✔ Keuzemenu’s, wachtrijen en voicemail</li>
-                    <li>✔ Integratie met CRM-systemen en API’s</li>
-                    <li>✔ Professionele rapportages en statistieken</li>
-                    <li>✔ Ondersteuning voor vaste, mobiele en softphone-apparaten</li>
-                </ul>
-            </section>
-
-            <!-- FAQ -->
-            <section class="mb-5 bg-light py-5">
-                <h2 class="fw-bold text-center mb-4">Veelgestelde vragen</h2>
-                <div class="mx-auto" style="max-width:900px;">
-                    <h3 class="h6 fw-bold">Wat is inbegrepen in een VoIP abonnement?</h3>
-                    <p>
-                        Elk VoIP pakket van Easy Solutions bevat alle basisfuncties zoals bellen via internet, online telefooncentrale,
-                        voicemail, keuzemenu’s en wachtrijen. Extra functies zijn beschikbaar afhankelijk van het gekozen pakket.
-                    </p>
-
-                    <h3 class="h6 fw-bold">Kan ik later van pakket wisselen?</h3>
-                    <p>
-                        Ja, bij Easy Solutions is het eenvoudig om je pakket aan te passen naarmate je organisatie groeit of je behoeften veranderen.
-                    </p>
-
-                    <h3 class="h6 fw-bold">Hoe snel kan ik starten?</h3>
-                    <p>
-                        Binnen korte tijd staat je VoIP omgeving live, zodat je direct kunt bellen en gebeld worden via je nieuwe zakelijke oplossing.
-                    </p>
-                </div>
-            </section>
-
-            <!-- CTA -->
-            <section class="py-5 text-center cta-section">
-                <div class="container">
-                    <h2 class="fw-bold mb-3 text-white">Meer weten over zakelijke VoIP pakketten?</h2>
-                    <p class="lead mb-4 text-white">
-                        Ontdek welke oplossing het beste past bij jouw organisatie met **Easy Solutions**.
-                    </p>
-                    <a href="/contact" class="btn btn-cta btn-lg text-white">Contact opnemen</a>
-                </div>
-            </section>
-
+                {% endfor %}
+            </div>
         </div>
-    </main>
+    </section>
+
+    <!-- TEKST + FOTO -->
+    <section class="py-5 bg-white">
+        <div class="container">
+            <!-- Eerste rij -->
+            <div class="row align-items-center g-5 mb-5">
+                <div class="col-md-6">
+                    <img src="{{ asset('assets/diensten/mobile-via-voip.webp') }}" alt="Vast op de mobiel" class="img-fluid rounded shadow-sm">
+                </div>
+                <div class="col-md-6">
+                    <h3 class="fw-bold mb-3">Hoe werkt Vast op de mobiel bij Easy Solutions?</h3>
+                    <p>
+                        Met de VoIP oplossingen van <strong>Easy Solutions</strong> koppel je jouw vaste zakelijke nummer
+                        aan jouw mobiele apparaat. Zodra je bent ingelogd via onze app of softphone, kun je direct
+                        bellen en gebeld worden via je zakelijke nummer — zonder aparte vaste telefoon.
+                    </p>
+                    <p>
+                        De koppeling wordt door <strong>Easy Solutions</strong> voor je ingericht en beheerd, zodat je je
+                        geen zorgen hoeft te maken over technische details. Alles werkt via internet en is eenvoudig
+                        aan te passen in het Easy Solutions dashboard.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Tweede rij -->
+            <div class="row align-items-center g-5">
+                <div class="col-md-6 order-md-2">
+                    <img src="{{ asset('assets/diensten/mobile-flexibility.webp') }}" alt="Mobiel flexibel bellen" class="img-fluid rounded shadow-sm">
+                </div>
+                <div class="col-md-6 order-md-1">
+                    <h3 class="fw-bold mb-3">Voor wie is dit geschikt?</h3>
+                    <p>
+                        “Vast op de mobiel” via <strong>Easy Solutions</strong> is ideaal voor bedrijven met flexibele
+                        werkstijlen: medewerkers die veel onderweg zijn, hybride teams, of organisaties zonder fysieke
+                        telefooncentrale op kantoor.
+                    </p>
+                    <p>
+                        Iedereen kan direct bereikbaar zijn op het zakelijke nummer via een mobiele telefoon — en dat
+                        zonder extra hardware. Dit maakt het systeem schaalbaar, betaalbaar en toekomstgericht.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="fw-bold text-center mb-4">Veelgestelde vragen over Vast op de mobiel</h2>
+            <div class="mx-auto" style="max-width:800px;">
+                <h3 class="h6 fw-bold">Werkt dit ook zonder VoIP abonnement?</h3>
+                <p>
+                    Nee — “Vast op de mobiel” werkt alleen in combinatie met een VoIP‑abonnement bij <strong>Easy Solutions</strong>,
+                    omdat het vaste zakelijke nummer via internet wordt beheerd.
+                </p>
+
+                <h3 class="h6 fw-bold">Kan ik meerdere mobiele apparaten koppelen?</h3>
+                <p>
+                    Ja — je kunt meerdere mobiele toestellen koppelen aan hetzelfde vaste nummer. Dit is handig voor teams met meerdere medewerkers.
+                </p>
+
+                <h3 class="h6 fw-bold">Blijft mijn vaste zakelijke nummer behouden?</h3>
+                <p>
+                    Zeker — je vaste zakelijke nummer blijft actief en zichtbaar voor klanten en relaties, ongeacht vanaf welk apparaat je belt.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA SECTION -->
+    <section class="py-5 text-center cta-section">
+        <div class="container">
+            <h2 class="fw-bold mb-3 text-white">Professioneel mobiel bellen met Easy Solutions?</h2>
+            <p class="lead mb-4 text-white">
+                Neem contact op met onze specialisten en ontdek hoe jouw bedrijf profiteert van Vast op de mobiel.
+            </p>
+            <a href="/contact" class="btn btn-cta btn-lg text-white">Contact opnemen</a>
+        </div>
+    </section>
+
+    <!-- STYLES (zelfde look/feel) -->
+    <style>
+        .hero-section {
+            height: 60vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+        }
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background: url('{{ asset("assets/diensten/vast-op-de-mobiel-hero.webp") }}') center/cover no-repeat;
+            background-size: cover;
+            filter: brightness(0.6);
+            transform: scale(1.1);
+            z-index: 1;
+        }
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(0,31,77,0.7), rgba(179,0,0,0.6));
+            z-index: 2;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 3;
+        }
+        .scroll-down {
+            display: inline-block;
+            margin-top:1rem;
+            font-size:2rem;
+            animation:bounce 2s infinite;
+            color:#fff;
+        }
+        @keyframes bounce {0%,20%,50%,80%,100%{transform:translateY(0)}40%{transform:translateY(-10px)}60%{transform:translateY(-5px)}}
+
+        .badge-card {
+            background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 6px 18px rgba(0,0,0,0.08);transition:transform 0.4s ease,box-shadow 0.4s ease;
+        }
+        .badge-card:hover {transform:translateY(-10px) rotateX(2deg);box-shadow:0 18px 40px rgba(0,0,0,0.15);}
+        .badge-icon {width:100%;height:120px;background:linear-gradient(135deg,#001f4d,#b30000);color:#fff;font-size:3rem;display:flex;align-items:center;justify-content:center;}
+        .badge-card h5 {font-weight:600;color:#001f4d;margin-bottom:0.5rem;font-size:1rem;}
+        .badge-card p {color:#333;font-size:0.9rem;line-height:1.5;}
+
+        .cta-section {background:#001f4d;}
+        .btn-cta {background:#b30000;color:#fff;font-weight:600;padding:0.8rem 1.8rem;border-radius:6px;}
+        .btn-cta:hover {background:#e53935;}
+    </style>
 
 {% endblock %}
