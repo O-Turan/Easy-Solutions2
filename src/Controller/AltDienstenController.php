@@ -52,4 +52,33 @@ class AltDienstenController extends AbstractController
         return $this->render('alt_diensten/zakelijke-telefonie-pakketten.html.twig');
     }
 
+
+    #[Route('/alt/diensten/088-nummers', name: 'app_dienst_088_nummers')]
+    public function nummer088(): Response
+    {
+        return $this->render('alt_diensten/088nummer.html.twig');
+    }
+
+    #[Route('/alt/diensten/085-nummers', name: 'app_dienst_085_nummers')]
+    public function nummer085(): Response
+    {
+        return $this->render('alt_diensten/085nummer.html.twig');
+    }
+
+    #[Route('/alt/diensten/nummer-kiezen', name: 'app_dienst_nummer_kiezen')]
+    public function nummerKiezen(): Response
+    {
+        return $this->render('alt_diensten/nummerkiezen.html.twig');
+    }
+    #[Route('/alt/diensten/regionale-nummers', name: 'app_dienst_regionale_nummers')]
+    public function regionaleNummers(): Response
+    {
+        return $this->render('alt_diensten/regionale.index.html.twig');
+    }
+    #[Route('/alt/diensten/zakelijktelefoonnummers', name: 'app_alt_diensten_zakelijktelefoonnummers')]
+    public function zakelijktelefoonnummers(): Response
+    {
+        return $this->render('alt_diensten/zakelijktelefoonnummers.html.twig');
+    }
+
 }
