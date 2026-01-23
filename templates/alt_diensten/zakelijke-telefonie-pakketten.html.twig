@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Zakelijke VoIP Pakketten - Easy Solutions{% endblock %}
+{% block title %}Zakelijke VoIP Telefonie Pakketten – Easy Solutions{% endblock %}
 
 {% block body %}
 
@@ -9,63 +9,64 @@
         <div class="hero-bg"></div>
         <div class="hero-overlay"></div>
         <div class="container position-relative hero-content">
-            <h1 class="display-3 fw-bold animate__animated animate__fadeInDown">Zakelijke VoIP Pakketten</h1>
+            <h1 class="display-3 fw-bold animate__animated animate__fadeInDown">Zakelijke VoIP Telefonie Pakketten</h1>
             <p class="lead mb-4 animate__animated animate__fadeInUp animate__delay-1s">
-                Kies het pakket dat past bij jouw organisatie en profiteer van professionele VoIP telefonie met Easy Solutions.
+                Kies het VoIP pakket dat past bij jouw bedrijf — professioneel bellen via internet met Easy Solutions.
             </p>
             <a href="#pakketten" class="scroll-down">↓</a>
         </div>
     </section>
 
-    <!-- UITLEG PAKKETTEN -->
-    <section class="py-5 bg-white">
+    <!-- INTRO -->
+    <section id="intro" class="py-5 bg-white">
         <div class="container">
-            <h2 class="fw-bold mb-4 text-center">Wat zijn VoIP pakketten bij Easy Solutions?</h2>
-            <p class="text-center mx-auto" style="max-width:800px;">
-                Bij <strong>Easy Solutions</strong> bieden we verschillende zakelijke VoIP pakketten aan. Elk pakket is afgestemd op de grootte van je organisatie en de functionaliteit die je nodig hebt.
-                Of je nu een klein team hebt of een grote onderneming, met <strong>Easy Solutions</strong> regel je alles eenvoudig: bellen, belgroepen, keuzemenu’s en voicemail.
+            <h2 class="fw-bold text-center mb-4">Wat zijn VoIP Telefonie Pakketten?</h2>
+            <p class="text-center mx-auto" style="max-width:850px;">
+                Met zakelijke VoIP telefonie van <strong>Easy Solutions</strong> bel je via internet in plaats van via
+                traditionele vaste lijnen. Zo werk je flexibel én professioneel, zonder dure hardware.
             </p>
-            <p class="text-center mx-auto" style="max-width:800px;">
-                Onze pakketten zijn volledig cloud-gebaseerd, waardoor je geen dure hardware nodig hebt en altijd flexibel blijft. Met <strong>Easy Solutions</strong> heb je alle controle in één overzichtelijk platform.
+            <p class="text-center mx-auto" style="max-width:850px;">
+                Onze VoIP pakketten zijn erop gericht om bellen eenvoudiger te maken voor bedrijven van elke omvang — van
+                klein team tot grote organisatie — met functies die je bereikbaarheid verhogen en je communicatie
+                betrouwbaar houden.
             </p>
         </div>
     </section>
 
-    <!-- VOIP PAKKETTEN INFO CARDS -->
+    <!-- OVERZICHT PAKKETTEN -->
     <section id="pakketten" class="py-5 bg-light">
         <div class="container">
-            <h2 class="fw-bold text-center mb-4">Onze VoIP pakketten</h2>
+            <h2 class="fw-bold text-center mb-4">Onze VoIP Telefonie Pakketten</h2>
             <p class="text-center mb-5 mx-auto" style="max-width:800px;">
-                <strong>Easy Solutions</strong> heeft pakketten ontwikkeld die passen bij elke organisatie. Van starters tot volledige bedrijven, wij zorgen dat je professioneel bereikbaar bent.
+                De VoIP pakketten van <strong>Easy Solutions</strong> zijn ontworpen om te voldoen aan verschillende
+                zakelijke behoeften — van eenvoudig bellen tot geavanceerde telefonie-functionaliteit.
             </p>
 
             <div class="row g-4">
                 {% set pakketten = [
                     {
-                        'title':'Basis Pakket',
-                        'text':'Met het <strong>Easy Solutions</strong> Basis Pakket kun je direct starten met zakelijk bellen via VoIP. Perfect voor kleine teams of zzp’ers die eenvoudig en professioneel willen bellen.',
-                        'icon_svg':'<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5h18v14H3z"/></svg>'
+                        'title':'Startpakket VoIP',
+                        'text':'Een ideaal instappakket voor kleine teams of zelfstandigen: professioneel bellen via internet zonder complexiteit.',
+                        'icon':'📞'
                     },
                     {
-                        'title':'Compleet Pakket',
-                        'text':'Het <strong>Easy Solutions</strong> Compleet Pakket bevat alle standaardfuncties plus keuzemenu’s, belgroepen en uitgebreide voicemail-opties. Ideaal voor MKB-bedrijven.',
-                        'icon_svg':'<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>'
+                        'title':'Business VoIP',
+                        'text':'Ons meest gekozen pakket met extra functies zoals wachtrijen, keuzemenu’s en uitgebreide voicemail-opties.',
+                        'icon':'📊'
                     },
                     {
-                        'title':'Enterprise / Maatwerk',
-                        'text':'Voor grote organisaties biedt <strong>Easy Solutions</strong> maatwerkoplossingen, inclusief integraties, dedicated support en volledige inrichting op maat van jouw wensen.',
-                        'icon_svg':'<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="M4 12h16"/></svg>'
+                        'title':'Enterprise VoIP',
+                        'text':'Voor grote organisaties: uitgebreide functionaliteit, CRM-integratie en persoonlijke ondersteuning door Easy Solutions.',
+                        'icon':'🚀'
                     }
                 ] %}
 
                 {% for p in pakketten %}
                     <div class="col-md-4 d-flex">
-                        <div class="badge-card h-100 text-center p-0 w-100">
-                            <div class="badge-icon">{{ p.icon_svg|raw }}</div>
-                            <div class="card-body p-4">
-                                <h5 class="fw-bold">{{ p.title }}</h5>
-                                <p>{{ p.text|raw }}</p>
-                            </div>
+                        <div class="badge-card h-100 text-center p-4 w-100">
+                            <div class="badge-icon">{{ p.icon }}</div>
+                            <h5 class="fw-bold mt-3">{{ p.title }}</h5>
+                            <p class="mt-2">{{ p.text }}</p>
                         </div>
                     </div>
                 {% endfor %}
@@ -73,21 +74,48 @@
         </div>
     </section>
 
-    <!-- TEKST + FOTO -->
+    <!-- RIJ MET UITLEG + FOTO -->
     <section class="py-5 bg-white">
         <div class="container">
+            <!-- Eerste rij -->
             <div class="row align-items-center g-5 mb-5">
                 <div class="col-md-6">
-                    <img src="{{ asset('assets/diensten/business-team-phone.webp') }}" alt="Easy Solutions VoIP" class="img-fluid rounded shadow-sm">
+                    <img src="{{ asset('assets/diensten/business-voip-team.webp') }}"
+                         alt="Zakelijke VoIP Telefonie Easy Solutions"
+                         class="img-fluid rounded shadow-sm">
                 </div>
                 <div class="col-md-6">
-                    <h3 class="fw-bold mb-3">Waarom kiezen voor Easy Solutions?</h3>
+                    <h3 class="fw-bold mb-3">Waarom VoIP kiezen met Easy Solutions?</h3>
                     <p>
-                        <strong>Easy Solutions</strong> zorgt dat je direct professioneel bereikbaar bent. Met onze pakketten kun je eenvoudig uitbreiden of aanpassen naarmate je organisatie groeit.
-                        Je krijgt persoonlijke ondersteuning, stabiele infrastructuur en een overzichtelijk platform voor al je VoIP-functionaliteiten.
+                        Zakelijke VoIP telefonie van <strong>Easy Solutions</strong> geeft je direct professionele
+                        communicatie via internet. Je hoeft geen traditionele telefooncentrale of dure apparatuur aan
+                        te schaffen: alles wordt cloud-gebaseerd geregeld.
                     </p>
                     <p>
-                        Of het nu gaat om keuzemenu’s, belgroepen, voicemail of opnamefuncties: bij <strong>Easy Solutions</strong> wordt alles volledig beheerd, zodat jij je kunt focussen op je bedrijf.
+                        Je profiteert van functies zoals voicemail, belgroepen en keuzemenu’s, maar je behoudt ook de
+                        flexibiliteit om te bellen vanaf vaste toestellen, softphones of mobiele apps. Zo ben je altijd
+                        bereikbaar, ongeacht waar je werkt.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Tweede rij -->
+            <div class="row align-items-center g-5">
+                <div class="col-md-6 order-md-2">
+                    <img src="{{ asset('assets/diensten/voip-features-overview.webp') }}"
+                         alt="VoIP Telefonie Functionaliteit"
+                         class="img-fluid rounded shadow-sm">
+                </div>
+                <div class="col-md-6 order-md-1">
+                    <h3 class="fw-bold mb-3">Wat biedt een VoIP pakket allemaal?</h3>
+                    <p>
+                        Met een zakelijk VoIP pakket van Easy Solutions beschik je over krachtige functionaliteit
+                        waaronder keuzemenu’s, automatische doorschakelingen, voicemail-naar-e-mail, belgroepen en
+                        integraties met andere systemen.
+                    </p>
+                    <p>
+                        Bovendien zijn onze oplossingen schaalbaar: je kunt eenvoudig extra gebruikers toevoegen,
+                        meerdere lijnen beheren en realtime aanpassingen doen via het Easy Solutions dashboard.
                     </p>
                 </div>
             </div>
@@ -97,9 +125,10 @@
     <!-- CTA SECTION -->
     <section class="py-5 text-center cta-section">
         <div class="container">
-            <h2 class="fw-bold mb-3 text-white">Direct zakelijk bellen met Easy Solutions?</h2>
+            <h2 class="fw-bold mb-3 text-white">Kies jouw VoIP pakket</h2>
             <p class="lead mb-4 text-white">
-                Ontdek welk VoIP pakket het beste past bij jouw organisatie en ervaar het gemak van professioneel bellen via de cloud.
+                Neem contact op met de experts van <strong>Easy Solutions</strong> en ontdek welk VoIP pakket
+                het beste past bij jouw organisatie.
             </p>
             <a href="/contact" class="btn btn-cta btn-lg text-white">Contact opnemen</a>
         </div>
@@ -119,46 +148,45 @@
         .hero-bg {
             position: absolute;
             inset: 0;
-            background: url('{{ asset("assets/hosted-pbx.webp") }}') center/cover no-repeat;
+            background: url('{{ asset("assets/diensten/voip-telefonie-hero.webp") }}') center/cover no-repeat;
             background-size: cover;
             filter: brightness(0.6);
-            transform: scale(1.1);
             z-index: 1;
-            transition: transform 1.5s ease;
         }
         .hero-overlay {
             position: absolute;
             inset: 0;
-            background: linear-gradient(135deg, rgba(0, 31, 77, 0.7), rgba(179, 0, 0, 0.6));
+            background: linear-gradient(135deg, rgba(0,31,77,0.7), rgba(179,0,0,0.6));
             z-index: 2;
         }
-        .hero-content { position: relative; z-index: 3; }
-        .scroll-down { display: inline-block; margin-top: 1rem; font-size: 2rem; animation: bounce 2s infinite; color: #fff; }
-        @keyframes bounce { 0%,20%,50%,80%,100%{transform:translateY(0);}40%{transform:translateY(-10px);}60%{transform:translateY(-5px);} }
+        .hero-content { z-index: 3; }
+        .scroll-down {
+            display: inline-block;
+            margin-top: 1rem;
+            font-size: 2rem;
+            color: #fff;
+            animation: bounce 2s infinite;
+        }
+        @keyframes bounce {0%,20%,50%,80%,100%{transform:translateY(0);}40%{transform:translateY(-10px);}60%{transform:translateY(-5px);}}
 
-        .badge-card { background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 6px 18px rgba(0,0,0,0.08);transition: transform 0.4s ease, box-shadow 0.4s ease; cursor: default; }
-        .badge-card:hover { transform: translateY(-10px) rotateX(2deg); box-shadow:0 18px 40px rgba(0,0,0,0.15);}
-        .badge-icon { width:100%; height:120px; background: linear-gradient(135deg, #001f4d, #b30000); color:#fff; font-size:3rem; display:flex; align-items:center; justify-content:center; border-bottom-left-radius:50% 20px; border-bottom-right-radius:50% 20px; box-shadow:0 4px 12px rgba(0,0,0,0.2); transition: transform 0.3s, box-shadow 0.3s; }
-        .badge-card:hover .badge-icon { transform: scale(1.2); box-shadow:0 8px 20px rgba(0,0,0,0.25); }
-        .badge-card h5 { font-weight:600;color:#001f4d;margin-bottom:0.5rem;font-size:1rem; }
-        .badge-card p { color:#333; font-size:0.9rem; line-height:1.5; }
+        .badge-card {
+            background:#fff;border-radius:20px;
+            box-shadow:0 6px 18px rgba(0,0,0,0.08);
+            transition:transform .35s ease,box-shadow .35s ease;
+        }
+        .badge-card:hover {
+            transform:translateY(-8px);
+            box-shadow:0 18px 40px rgba(0,0,0,0.14);
+        }
+        .badge-icon {
+            font-size:3rem;color:#001f4d;margin-top:1rem;
+        }
 
         .cta-section { background:#001f4d; }
-        .btn-cta { background:#b30000; color:#fff; border-radius:6px; padding:0.7rem 1.8rem; font-weight:600; transition: all 0.3s ease; }
-        .btn-cta:hover { background:#e53935; transform:translateY(-2px) scale(1.03); box-shadow:0 10px 20px rgba(0,0,0,0.15); }
-
-        @media (max-width:768px) {
-            .hero-section h1 { font-size:2.5rem; }
-            .hero-section p { font-size:1.1rem; }
+        .btn-cta {
+            background:#b30000;color:#fff;padding:0.8rem 1.8rem;border-radius:6px;font-weight:600;
         }
+        .btn-cta:hover { background:#e53935; }
     </style>
-
-    <script>
-        document.addEventListener('scroll', function(){
-            const scrolled = window.scrollY;
-            const bg = document.querySelector('.hero-bg');
-            if(bg) bg.style.transform = 'translateY(' + scrolled * 0.2 + 'px) scale(1.05)';
-        });
-    </script>
 
 {% endblock %}
