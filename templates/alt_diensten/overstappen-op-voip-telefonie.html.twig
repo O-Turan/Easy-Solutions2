@@ -1,156 +1,166 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}
-    Overstappen op VoIP-telefonie | Easy Solutions – Zakelijk & Flexibel
-{% endblock %}
-
-{% block meta_description %}
-    Easy Solutions maakt overstappen naar VoIP-telefonie eenvoudig voor jouw bedrijf. Flexibel bellen via internet met nummerbehoud en snelle implementatie.
-{% endblock %}
+{% block title %}Overstappen op VoIP Telefonie – Easy Solutions{% endblock %}
 
 {% block body %}
 
-    <!-- HERO -->
-    <section class="hero-voip-switch text-white text-center">
-        <div class="container py-5">
-            <h1 class="display-4 fw-bold">Overstappen op VoIP-telefonie met Easy Solutions</h1>
-            <p class="lead opacity-75">
-                Maak de overstap naar moderne zakelijke telefonie via internet — eenvoudig, snel en zonder gedoe.
+    <!-- HERO SECTION -->
+    <section class="hero-section d-flex align-items-center justify-content-center text-center text-white">
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
+        <div class="container position-relative hero-content">
+            <h1 class="display-3 fw-bold animate__animated animate__fadeInDown">
+                Overstappen op VoIP Telefonie
+            </h1>
+            <p class="lead mb-4 animate__animated animate__fadeInUp animate__delay-1s">
+                Stap moeiteloos over naar moderne zakelijke VoIP-telefonie met Easy Solutions — zonder bereikbaarheid te verliezen.
             </p>
-            <a href="{{ path('offerte') }}" class="btn btn-cta btn-lg mt-3">Offerte aanvragen</a>
+            <a href="#stappen" class="scroll-down">↓</a>
         </div>
     </section>
 
-    <!-- INTRODUCTIE -->
-    <section class="py-5">
+    <!-- INTRO -->
+    <section id="intro" class="py-5 bg-white">
         <div class="container">
-            <h2 class="fw-bold text-center mb-4">Waarom overstappen naar VoIP-telefonie?</h2>
-            <p class="mx-auto text-center" style="max-width:850px;">
-                Steeds meer bedrijven kiezen ervoor om hun traditionele telefoonlijnen te vervangen door VoIP-telefonie.
-                Bij <strong>Easy Solutions</strong> begeleiden we je stap voor stap bij de overstap, inclusief nummerbehoud,
-                apparatuurconfiguratie en inzet van geavanceerde functies. :contentReference[oaicite:1]{index=1}
+            <h2 class="fw-bold mb-4 text-center">Waarom overstappen naar VoIP?</h2>
+            <p class="text-center mx-auto" style="max-width:850px;">
+                Overstappen op VoIP-telefonie betekent dat je traditionele vaste lijnen vervangt door bellen via internet.
+                Met de VoIP-oplossingen van <strong>Easy Solutions</strong> profiteer je van betere flexibiliteit,
+                eenvoudiger beheer en innovatieve functies die klassieke systemen niet bieden. :contentReference[oaicite:1]{index=1}
+            </p>
+            <p class="text-center mx-auto" style="max-width:850px;">
+                Of je nu gebruikmaakt van vaste toestellen, mobiele telefoons of softphones — met VoIP blijf je altijd
+                bereikbaar op je zakelijke nummer, waar je ook bent. Easy Solutions begeleidt je gedurende het hele
+                overstapproces. :contentReference[oaicite:2]{index=2}
             </p>
         </div>
     </section>
 
-    <!-- STAPPENPLAN -->
-    <section class="bg-light py-5">
+    <!-- STAPPEN -->
+    <section id="stappen" class="py-5 bg-light">
         <div class="container">
-            <h2 class="fw-bold text-center mb-4">Hoe werkt overstappen op VoIP bij Easy Solutions?</h2>
+            <h2 class="fw-bold text-center mb-4">Hoe werkt overstappen naar VoIP bij Easy Solutions?</h2>
 
-            <div class="row g-5">
-                <div class="col-md-6">
-                    <h3 class="h5 fw-bold">1. Inventarisatie & Telecomcheck</h3>
-                    <p>
-                        Onze experts brengen jouw huidige situatie in kaart: welke nummers gebruik je, wat zijn je
-                        wensen en welke hardware heb je al? Zo weten we precies hoe we jouw overstap het beste kunnen plannen. :contentReference[oaicite:2]{index=2}
-                    </p>
-
-                    <h3 class="h5 fw-bold mt-4">2. Persoonlijk advies & Offerte</h3>
-                    <p>
-                        Op basis van de inventarisatie stemmen we een VoIP-plan af dat past bij jouw bedrijfscommunicatie.
-                        Van belplannen tot gewenste functionaliteit — je krijgt een overzichtelijke offerte.
-                    </p>
+            <!-- Stap 1 -->
+            <div class="row align-items-start g-4 mb-4">
+                <div class="col-md-2 text-center">
+                    <div class="step-circle">1</div>
                 </div>
-
-                <div class="col-md-6">
-                    <h3 class="h5 fw-bold">3. Nummerbehoud & Configuratie</h3>
+                <div class="col-md-10">
+                    <h5 class="fw-bold">Inventarisatie van je huidige situatie</h5>
                     <p>
-                        Easy Solutions regelt het nummerbehoud en configureert je VoIP-omgeving. Zo ben je al binnen
-                        één werkdag overgezet zonder onderbreking van bereikbaarheid. :contentReference[oaicite:3]{index=3}
-                    </p>
-
-                    <h3 class="h5 fw-bold mt-4">4. Oplevering & Gebruiksklaar</h3>
-                    <p>
-                        We leveren de apparatuur, zorgen dat alles werkt op vaste toestellen, apps of desktopsoftware
-                        én bieden begeleiding bij het in gebruik nemen van jouw nieuwe telefonieoplossing.
+                        Samen met jou brengen we jouw huidige telefonie in kaart. We kijken naar je bestaande abonnement,
+                        welke nummers je gebruikt, welke apparatuur je hebt en hoe je nu bereikbaar bent. Deze eerste stap
+                        helpt ons een passend overstapplan op te stellen. :contentReference[oaicite:3]{index=3}
                     </p>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- REDENEN OM TE STAPPEN -->
-    <section class="py-5">
-        <div class="container">
-            <h2 class="fw-bold text-center mb-4">Voordelen van overstappen op VoIP-telefonie</h2>
-
-            <div class="row g-4">
-                <div class="col-md-4">
-                    <h3 class="h5 fw-bold">Lagere communicatieskosten</h3>
-                    <p>
-                        Omdat VoIP via internet loopt, bespaar je aanzienlijk op belkosten en infrastructuur,
-                        vooral in vergelijking met traditionele telefoonlijnen. :contentReference[oaicite:4]{index=4}
-                    </p>
+            <!-- Stap 2 -->
+            <div class="row align-items-start g-4 mb-4">
+                <div class="col-md-2 text-center">
+                    <div class="step-circle">2</div>
                 </div>
-                <div class="col-md-4">
-                    <h3 class="h5 fw-bold">Schaalbare oplossing</h3>
+                <div class="col-md-10">
+                    <h5 class="fw-bold">Advies & belplan op maat</h5>
                     <p>
-                        Je VoIP-telefoniesysteem groeit mee met je bedrijf. Gebruikers kunnen eenvoudig worden
-                        toegevoegd of verwijderd — zonder dure hardware. :contentReference[oaicite:5]{index=5}
-                    </p>
-                </div>
-                <div class="col-md-4">
-                    <h3 class="h5 fw-bold">Altijd en overal bereikbaar</h3>
-                    <p>
-                        Met VoIP kun je bellen via vaste toestellen, mobiele app of desktop — thuis, op kantoor
-                        of onderweg. :contentReference[oaicite:6]{index=6}
+                        Op basis van jouw telefoniebehoeften stellen we een advies op maat op: welke functies wil je,
+                        hoe moeten inkomende gesprekken worden afgehandeld en welke apparaten wil je gebruiken? Easy
+                        Solutions helpt je bij het kiezen van het juiste belplan en de beste configuratie. :contentReference[oaicite:4]{index=4}
                     </p>
                 </div>
             </div>
+
+            <!-- Stap 3 -->
+            <div class="row align-items-start g-4 mb-4">
+                <div class="col-md-2 text-center">
+                    <div class="step-circle">3</div>
+                </div>
+                <div class="col-md-10">
+                    <h5 class="fw-bold">Portering & installatie</h5>
+                    <p>
+                        Zodra je akkoord bent met het plan, regelen we alle technische stappen om over te stappen:
+                        vanaf het aanvragen van nummerbehoud tot het configureren van je VoIP-omgeving. Easy Solutions zorgt
+                        dat je nummers worden meegenomen en dat je portering soepel verloopt, zodat je geen oproepen mist. :contentReference[oaicite:5]{index=5}
+                    </p>
+                </div>
+            </div>
+
+            <!-- Stap 4 -->
+            <div class="row align-items-start g-4 mb-4">
+                <div class="col-md-2 text-center">
+                    <div class="step-circle">4</div>
+                </div>
+                <div class="col-md-10">
+                    <h5 class="fw-bold">Oplevering & nazorg</h5>
+                    <p>
+                        Voordat je live gaat, zorgen we dat alles volledig is ingericht en getest. Easy Solutions
+                        verzorgt de uiteindelijke configuratie van telefoontoestellen, apps of desktop-clients. Met
+                        onze begeleiding ben je direct klaar om zakelijk te bellen via VoIP. :contentReference[oaicite:6]{index=6}
+                    </p>
+                </div>
+            </div>
+
         </div>
     </section>
 
     <!-- CTA -->
-    <section class="bg-dark text-white text-center py-5">
+    <section class="py-5 text-center cta-section">
         <div class="container">
-            <h2 class="fw-bold mb-3">Klaar om over te stappen?</h2>
-            <p class="mb-4">Neem vandaag nog contact op of vraag een vrijblijvende offerte aan bij Easy Solutions.</p>
-            <a href="{{ path('offerte') }}" class="btn btn-light btn-lg me-3">Offerte aanvragen</a>
-            <a href="{{ path('app_contact') }}" class="btn btn-outline-light btn-lg">Contact opnemen</a>
+            <h2 class="fw-bold mb-3 text-white">Direct helpen bij jouw overstap?</h2>
+            <p class="lead mb-4 text-white">
+                Onze specialisten van <strong>Easy Solutions</strong> begeleiden je persoonlijk bij elke stap van de overstap.
+            </p>
+            <a href="/contact" class="btn btn-cta btn-lg text-white">Neem contact op</a>
         </div>
     </section>
 
-    <!-- SCHEMA.ORG -->
-    <script type="application/ld+json">
-        {
-          "@context": "https://schema.org",
-          "@type": "HowTo",
-          "name": "Overstappen op VoIP-telefonie met Easy Solutions",
-          "step": [
-            {
-              "@type": "HowToStep",
-              "name": "Telecomcheck en inventarisatie",
-              "url": "{{ app.request.schemeAndHttpHost }}{{ path('app_dienst_overstappen-op-voip-telefonie') }}"
-    },
-    {
-      "@type": "HowToStep",
-      "name": "Advies & offerte",
-      "url": "{{ app.request.schemeAndHttpHost }}{{ path('app_dienst_overstappen-op-voip-telefonie') }}"
-    },
-    {
-      "@type": "HowToStep",
-      "name": "Configuratie en nummerbehoud"
-    },
-    {
-      "@type": "HowToStep",
-      "name": "Oplevering"
-    }
-  ]
-}
-    </script>
-
     <!-- STYLES -->
     <style>
-        .hero-voip-switch {
-            background: radial-gradient(circle at top left, #002b6f, #00152f);
-            color: white;
+        .hero-section {
+            height: 60vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
         }
-        .btn-cta {
-            background: #d11010;
-            color: white;
-            font-weight: 600;
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background: url('{{ asset("assets/diensten/overstappen-op-voip-telefonie-hero.webp") }}') center/cover no-repeat;
+            background-size: cover;
+            filter: brightness(0.6);
+            z-index: 1;
         }
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(0,31,77,0.7), rgba(179,0,0,0.6));
+            z-index: 2;
+        }
+        .hero-content { z-index: 3; }
+        .scroll-down { display: inline-block; margin-top: 1rem; font-size: 2rem; color: #fff; animation: bounce 2s infinite; }
+        @keyframes bounce {0%,20%,50%,80%,100% {transform: translateY(0);} 40% {transform: translateY(-10px);} 60% {transform: translateY(-5px);} }
+
+        .step-circle {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: #b30000;
+            color: #fff;
+            font-weight: bold;
+            font-size: 1.25rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: auto;
+        }
+
+        .cta-section { background: #001f4d; }
+        .btn-cta { background: #b30000; color: #fff; border-radius: 6px; padding: 0.8rem 1.8rem; font-weight:600; }
+        .btn-cta:hover { background: #e53935; }
     </style>
 
 {% endblock %}
