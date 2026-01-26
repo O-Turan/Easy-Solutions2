@@ -46,17 +46,17 @@
                 {
                     'title':'Startpakket VoIP',
                     'text':'Een ideaal instappakket voor kleine teams of zelfstandigen: professioneel bellen via internet zonder complexiteit.',
-                    'icon':'📞'
+                    'icon_svg':'<svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone-outgoing-icon lucide-phone-outgoing"><path d="m16 8 6-6"/><path d="M22 8V2h-6"/><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></svg>'
                 },
                 {
                     'title':'Business VoIP',
                     'text':'Ons meest gekozen pakket met extra functies zoals wachtrijen, keuzemenu’s en uitgebreide voicemail-opties.',
-                    'icon':'📊'
+                    'icon_svg':'<svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chart-no-axes-combined-icon lucide-chart-no-axes-combined"><path d="M12 16v5"/><path d="M16 14v7"/><path d="M20 10v11"/><path d="m22 3-8.646 8.646a.5.5 0 0 1-.708 0L9.354 8.354a.5.5 0 0 0-.707 0L2 15"/><path d="M4 18v3"/><path d="M8 14v7"/></svg>'
                 },
                 {
                     'title':'Enterprise VoIP',
                     'text':'Voor grote organisaties: uitgebreide functionaliteit, CRM-integratie en persoonlijke ondersteuning door Easy Solutions.',
-                    'icon':'🚀'
+                    'icon_svg':'<svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-building2-icon lucide-building-2"><path d="M10 12h4"/><path d="M10 8h4"/><path d="M14 21v-3a2 2 0 0 0-4 0v3"/><path d="M6 10H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-2"/><path d="M6 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16"/></svg>'
                 }
             ] %}
 
@@ -65,7 +65,7 @@
                     <div class="col-md-4 d-flex">
                         <div class="badge-card d-flex flex-column w-100 h-100">
                             <div class="badge-icon d-flex align-items-center justify-content-center">
-                                {{ p.icon }}
+                                {{ p.icon_svg|raw }}
                             </div>
                             <div class="card-body text-center p-4 d-flex flex-column flex-grow-1">
                                 <h5 class="fw-bold mb-3">{{ p.title }}</h5>
@@ -83,7 +83,7 @@
         <div class="container">
             <div class="row align-items-center g-5 mb-5">
                 <div class="col-md-6">
-                    <img src="{{ asset('assets/diensten/business-voip-team.webp') }}"
+                    <img src="{{ asset('assets/diensten/businessman-talking-phone.webp') }}"
                          alt="Zakelijke VoIP Telefonie Easy Solutions"
                          class="img-fluid rounded shadow-sm">
                 </div>
@@ -104,7 +104,7 @@
 
             <div class="row align-items-center g-5">
                 <div class="col-md-6 order-md-2">
-                    <img src="{{ asset('assets/diensten/voip-features-overview.webp') }}"
+                    <img src="{{ asset('assets/diensten/close-up-person-working-call-center.webp') }}"
                          alt="VoIP Telefonie Functionaliteit"
                          class="img-fluid rounded shadow-sm">
                 </div>
