@@ -4,112 +4,90 @@
 
 {% block body %}
 
-    <!-- HERO SECTION -->
+    <!-- HERO -->
     <section class="hero-section d-flex align-items-center justify-content-center text-center text-white">
         <div class="hero-bg"></div>
         <div class="hero-overlay"></div>
         <div class="container position-relative hero-content">
-            <h1 class="display-3 fw-bold animate__animated animate__fadeInDown">
-                Overstappen op VoIP Telefonie
-            </h1>
-            <p class="lead mb-4 animate__animated animate__fadeInUp animate__delay-1s">
-                Stap moeiteloos over naar moderne zakelijke VoIP-telefonie met Easy Solutions — zonder bereikbaarheid te verliezen.
+            <h1 class="display-3 fw-bold">Overstappen op VoIP Telefonie</h1>
+            <p class="lead mb-4">
+                Stap zorgeloos over naar moderne VoIP-telefonie met <strong>Easy Solutions</strong>.
             </p>
             <a href="#stappen" class="scroll-down">↓</a>
         </div>
     </section>
 
     <!-- INTRO -->
-    <section id="intro" class="py-5 bg-white">
+    <section class="py-5 bg-white">
         <div class="container">
             <h2 class="fw-bold mb-4 text-center">Waarom overstappen naar VoIP?</h2>
+
             <p class="text-center mx-auto" style="max-width:850px;">
-                Overstappen op VoIP-telefonie betekent dat je traditionele vaste lijnen vervangt door bellen via internet.
-                Met de VoIP-oplossingen van <strong>Easy Solutions</strong> profiteer je van betere flexibiliteit,
-                eenvoudiger beheer en innovatieve functies die klassieke systemen niet bieden.
+                Overstappen op VoIP betekent bellen via internet in plaats van traditionele vaste lijnen.
+                Met <strong>Easy Solutions</strong> krijg je meer flexibiliteit, lagere kosten en moderne functies.
             </p>
+
             <p class="text-center mx-auto" style="max-width:850px;">
-                Of je nu gebruikmaakt van vaste toestellen, mobiele telefoons of softphones — met VoIP blijf je altijd
-                bereikbaar op je zakelijke nummer, waar je ook bent. Easy Solutions begeleidt je gedurende het hele
-                overstapproces.
+                Of je nu werkt op kantoor, thuis of onderweg: je blijft altijd bereikbaar op je zakelijke nummer.
+                Easy Solutions begeleidt je volledig tijdens de overstap.
             </p>
         </div>
     </section>
 
-    <!-- STAPPEN -->
+    <!-- STAPPEN (BADGE CARDS) -->
     <section id="stappen" class="py-5 bg-light">
         <div class="container">
-            <h2 class="fw-bold text-center mb-4">Hoe werkt overstappen naar VoIP bij Easy Solutions?</h2>
+            <h2 class="fw-bold text-center mb-5">
+                Overstappen naar VoIP met Easy Solutions in 4 stappen
+            </h2>
 
-            <!-- Stap 1 -->
-            <div class="row align-items-start g-4 mb-4">
-                <div class="col-md-2 text-center">
-                    <div class="step-circle">1</div>
-                </div>
-                <div class="col-md-10">
-                    <h5 class="fw-bold">Inventarisatie van je huidige situatie</h5>
-                    <p>
-                        Samen met jou brengen we jouw huidige telefonie in kaart. We kijken naar je bestaande abonnement,
-                        welke nummers je gebruikt, welke apparatuur je hebt en hoe je nu bereikbaar bent. Deze eerste stap
-                        helpt ons een passend overstapplan op te stellen.
-                    </p>
-                </div>
+            {% set stappen = [
+                {
+                    'title':'Inventarisatie',
+                    'text':'We brengen je huidige telefonie in kaart: nummers, abonnementen en bereikbaarheid. Zo maken we een helder overstapplan.',
+                    'icon_svg':'<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M3 3h18v18H3z"/><path d="M7 7h10"/><path d="M7 12h10"/><path d="M7 17h6"/></svg>'
+                },
+                {
+                    'title':'Advies op maat',
+                    'text':'Easy Solutions adviseert over belplannen, functies en toestellen die passen bij jouw bedrijf.',
+                    'icon_svg':'<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M21 15a4 4 0 0 1-4 4H7l-4 4V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/></svg>'
+                },
+                {
+                    'title':'Nummerbehoud & installatie',
+                    'text':'Wij regelen de portering van je nummers en richten de VoIP-omgeving volledig voor je in.',
+                    'icon_svg':'<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M16 16l4-4-4-4"/><path d="M8 12h12"/><path d="M8 8l-4 4 4 4"/></svg>'
+                },
+                {
+                    'title':'Oplevering & nazorg',
+                    'text':'Na oplevering testen we alles en blijven we beschikbaar voor support en optimalisatie.',
+                    'icon_svg':'<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M12 20l9-5-9-5-9 5 9 5z"/><path d="M12 12l9-5-9-5-9 5 9 5z"/></svg>'
+                }
+            ] %}
+
+            <div class="row g-4">
+                {% for s in stappen %}
+                    <div class="col-md-3 col-sm-6 d-flex">
+                        <div class="badge-card h-100 text-center w-100">
+                            <div class="badge-icon">
+                                {{ s.icon_svg|raw }}
+                            </div>
+                            <div class="card-body p-4">
+                                <h5 class="fw-bold">{{ s.title }}</h5>
+                                <p>{{ s.text }}</p>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
             </div>
-
-            <!-- Stap 2 -->
-            <div class="row align-items-start g-4 mb-4">
-                <div class="col-md-2 text-center">
-                    <div class="step-circle">2</div>
-                </div>
-                <div class="col-md-10">
-                    <h5 class="fw-bold">Advies & belplan op maat</h5>
-                    <p>
-                        Op basis van jouw telefoniebehoeften stellen we een advies op maat op: welke functies wil je,
-                        hoe moeten inkomende gesprekken worden afgehandeld en welke apparaten wil je gebruiken? Easy
-                        Solutions helpt je bij het kiezen van het juiste belplan en de beste configuratie.
-                    </p>
-                </div>
-            </div>
-
-            <!-- Stap 3 -->
-            <div class="row align-items-start g-4 mb-4">
-                <div class="col-md-2 text-center">
-                    <div class="step-circle">3</div>
-                </div>
-                <div class="col-md-10">
-                    <h5 class="fw-bold">Portering & installatie</h5>
-                    <p>
-                        Zodra je akkoord bent met het plan, regelen we alle technische stappen om over te stappen:
-                        vanaf het aanvragen van nummerbehoud tot het configureren van je VoIP-omgeving. Easy Solutions zorgt
-                        dat je nummers worden meegenomen en dat je portering soepel verloopt, zodat je geen oproepen mist.
-                    </p>
-                </div>
-            </div>
-
-            <!-- Stap 4 -->
-            <div class="row align-items-start g-4 mb-4">
-                <div class="col-md-2 text-center">
-                    <div class="step-circle">4</div>
-                </div>
-                <div class="col-md-10">
-                    <h5 class="fw-bold">Oplevering & nazorg</h5>
-                    <p>
-                        Voordat je live gaat, zorgen we dat alles volledig is ingericht en getest. Easy Solutions
-                        verzorgt de uiteindelijke configuratie van telefoontoestellen, apps of desktop-clients. Met
-                        onze begeleiding ben je direct klaar om zakelijk te bellen via VoIP.
-                    </p>
-                </div>
-            </div>
-
         </div>
     </section>
 
     <!-- CTA -->
     <section class="py-5 text-center cta-section">
         <div class="container">
-            <h2 class="fw-bold mb-3 text-white">Direct helpen bij jouw overstap?</h2>
+            <h2 class="fw-bold mb-3 text-white">Klaar om over te stappen?</h2>
             <p class="lead mb-4 text-white">
-                Onze specialisten van <strong>Easy Solutions</strong> begeleiden je persoonlijk bij elke stap van de overstap.
+                De specialisten van <strong>Easy Solutions</strong> helpen je persoonlijk bij elke stap.
             </p>
             <a href="/contact" class="btn btn-cta btn-lg text-white">Neem contact op</a>
         </div>
@@ -118,49 +96,53 @@
     <!-- STYLES -->
     <style>
         .hero-section {
-            height: 60vh;
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            overflow: hidden;
+            height:60vh;
+            position:relative;
+            overflow:hidden;
         }
         .hero-bg {
-            position: absolute;
-            inset: 0;
-            background: url('{{ asset("assets/diensten/overstappen-op-voip-telefonie-hero.webp") }}') center/cover no-repeat;
-            background-size: cover;
-            filter: brightness(0.6);
-            z-index: 1;
+            position:absolute;
+            inset:0;
+            background:url('{{ asset("assets/diensten/overstappen-op-voip-telefonie-hero.webp") }}') center/cover no-repeat;
+            filter:brightness(0.6);
         }
         .hero-overlay {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(135deg, rgba(0,31,77,0.7), rgba(179,0,0,0.6));
-            z-index: 2;
+            position:absolute;
+            inset:0;
+            background:linear-gradient(135deg, rgba(0,31,77,.7), rgba(179,0,0,.6));
         }
-        .hero-content { z-index: 3; }
-        .scroll-down { display: inline-block; margin-top: 1rem; font-size: 2rem; color: #fff; animation: bounce 2s infinite; }
-        @keyframes bounce {0%,20%,50%,80%,100% {transform: translateY(0);} 40% {transform: translateY(-10px);} 60% {transform: translateY(-5px);} }
+        .hero-content { z-index:2; }
 
-        .step-circle {
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            background: #b30000;
-            color: #fff;
-            font-weight: bold;
-            font-size: 1.25rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: auto;
+        .scroll-down { font-size:2rem; color:#fff; }
+
+        /* BADGE CARDS (IDENTIEK) */
+        .badge-card {
+            background:#fff;
+            border-radius:20px;
+            overflow:hidden;
+            box-shadow:0 6px 18px rgba(0,0,0,.08);
+            transition:transform .4s, box-shadow .4s;
         }
+        .badge-card:hover {
+            transform:translateY(-10px);
+            box-shadow:0 18px 40px rgba(0,0,0,.15);
+        }
+        .badge-icon {
+            height:120px;
+            background:linear-gradient(135deg,#001f4d,#b30000);
+            display:flex;
+            align-items:center;
+            justify-content:center;
+        }
+        .badge-card h5 { color:#001f4d; }
 
-        .cta-section { background: #001f4d; }
-        .btn-cta { background: #b30000; color: #fff; border-radius: 6px; padding: 0.8rem 1.8rem; font-weight:600; }
-        .btn-cta:hover { background: #e53935; }
+        .cta-section { background:#001f4d; }
+        .btn-cta {
+            background:#b30000;
+            padding:.8rem 1.8rem;
+            font-weight:600;
+        }
+        .btn-cta:hover { background:#e53935; }
     </style>
 
 {% endblock %}
