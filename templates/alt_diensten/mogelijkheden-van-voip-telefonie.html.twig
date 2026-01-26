@@ -4,189 +4,140 @@
 
 {% block body %}
 
-    <!-- HERO SECTION -->
+    <!-- HERO -->
     <section class="hero-section d-flex align-items-center justify-content-center text-center text-white">
         <div class="hero-bg"></div>
         <div class="hero-overlay"></div>
         <div class="container position-relative hero-content">
-            <h1 class="display-3 fw-bold animate__animated animate__fadeInDown">Mogelijkheden van VoIP Telefonie</h1>
-            <p class="lead mb-4 animate__animated animate__fadeInUp animate__delay-1s">
+            <h1 class="display-3 fw-bold">Mogelijkheden van VoIP Telefonie</h1>
+            <p class="lead mb-4">
                 Ontdek alle functies en voordelen van zakelijke VoIP-telefonie bij Easy Solutions.
             </p>
             <a href="#features" class="scroll-down">↓</a>
         </div>
     </section>
 
-    <!-- INTRODUCTIE -->
-    <section id="intro" class="py-5 bg-white">
+    <!-- INTRO -->
+    <section class="py-5 bg-white">
         <div class="container">
             <h2 class="fw-bold mb-4 text-center">Wat zijn de mogelijkheden van VoIP?</h2>
+
             <p class="text-center mx-auto" style="max-width:850px;">
                 Met VoIP-telefonie van <strong>Easy Solutions</strong> bel je via het internet in plaats van via traditionele lijnen.
-                Dit maakt je bereikbaarheid flexibeler, schaalbaarder en rijk aan functies die bij klassieke telefonie niet standaard zijn.
+                Dit maakt je bereikbaarheid flexibeler, schaalbaarder en rijk aan functies.
             </p>
+
             <p class="text-center mx-auto" style="max-width:850px;">
-                Dankzij de moderne technologie kun je meerdere gesprekken tegelijk voeren, je vaste nummer koppelen aan verschillende
-                apparaten en uitgebreide gesprekslogica instellen – allemaal beheerd in een overzichtelijk dashboard van Easy Solutions.
+                Je koppelt één zakelijk nummer aan meerdere apparaten en bepaalt zelf hoe gesprekken worden afgehandeld —
+                allemaal beheerd vanuit één overzichtelijke omgeving.
             </p>
         </div>
     </section>
 
-    <!-- VOIP FUNCTIES -->
+    <!-- FEATURES -->
     <section id="features" class="py-5 bg-light">
         <div class="container">
-            <h2 class="fw-bold text-center mb-4">Belangrijkste functies van VoIP-telefonie</h2>
+            <h2 class="fw-bold text-center mb-5">Belangrijkste VoIP-functies</h2>
+
+            {% set features = [
+                {
+                    'title':'Professionele belplannen',
+                    'text':'Geavanceerde belplannen met keuzemenu’s, wachtrijen en slimme logica voor inkomende gesprekken.',
+                    'icon_svg':'<svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M22 16.92V21a2 2 0 0 1-2.18 2A19.8 19.8 0 0 1 3 5.18 2 2 0 0 1 5 3h4.09a2 2 0 0 1 2 1.72l.5 3"/></svg>'
+                },
+                {
+                    'title':'Doorschakelen & bereikbaarheid',
+                    'text':'Automatisch doorschakelen naar mobiel, collega’s of softphones zodat je nooit een oproep mist.',
+                    'icon_svg':'<svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M16 3h5v5"/><path d="M21 3l-6 6"/><path d="M8 21H3v-5"/><path d="M3 21l6-6"/></svg>'
+                },
+                {
+                    'title':'Voicemail & e-mail',
+                    'text':'Ontvang voicemailberichten direct in je e-mail of via de app voor maximale flexibiliteit.',
+                    'icon_svg':'<svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><circle cx="6" cy="12" r="4"/><circle cx="18" cy="12" r="4"/><line x1="10" y1="12" x2="14" y2="12"/></svg>'
+                },
+                {
+                    'title':'Altijd en overal werken',
+                    'text':'Bellen via kantoor, thuis of onderweg zolang je internet hebt — locatie speelt geen rol meer.',
+                    'icon_svg':'<svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15 15 0 0 1 0 20"/></svg>'
+                },
+                {
+                    'title':'Fax-to-email',
+                    'text':'Ontvang en verstuur faxen digitaal via e-mail zonder fysieke faxapparaten.',
+                    'icon_svg':'<svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><rect x="6" y="2" width="12" height="20"/><path d="M6 8h12"/><path d="M6 12h12"/></svg>'
+                },
+                {
+                    'title':'Apps & integraties',
+                    'text':'Koppel VoIP met CRM-software, mobiele apps en desktop clients voor efficiënter werken.',
+                    'icon_svg':'<svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M12 2v20"/><path d="M2 12h20"/></svg>'
+                }
+            ] %}
 
             <div class="row g-4">
-                {% set features = [
-                    {
-                        'title':'Professionele belplannen',
-                        'text':'Stel geavanceerde belplannen in met keuzemenu’s, wachtrijen en logica voor inkomende gesprekken zodat bellers altijd efficiënt worden geholpen.',
-                        'icon':'📞'
-                    },
-                    {
-                        'title':'Doorschakelen & bereikbaarheid',
-                        'text':'Met VoIP van Easy Solutions kun je inkomende gesprekken automatisch doorschakelen naar mobiele telefoons, softphones of andere lijnen.',
-                        'icon':'📲'
-                    },
-                    {
-                        'title':'Voicemail & notificaties',
-                        'text':'Activeer voicemail, ontvang berichten via e-mail of bekijk ze direct in je dashboard – handig voor gemiste oproepen.',
-                        'icon':'📬'
-                    },
-                    {
-                        'title':'Flexibel in gebruik',
-                        'text':'Werk locatie-onafhankelijk: je bedrijfstelefonie werkt thuis, op kantoor of onderweg zolang je verbinding hebt met internet.',
-                        'icon':'🌍'
-                    },
-                    {
-                        'title':'Fax-to-email en meer',
-                        'text':'Ontvang faxen direct in je e-mail en verzend ze via internet, een moderne vervanging voor traditionele faxdiensten.',
-                        'icon':'📠'
-                    },
-                    {
-                        'title':'Integraties en apps',
-                        'text':'Verbind je VoIP-systeem met CRM-software, mobiele apps of desktop clients voor efficiëntere communicatie en klantenbeheer.',
-                        'icon':'🔌'
-                    }
-                ] %}
-
-                {% for feat in features %}
-                    <div class="col-md-4 col-sm-6 d-flex align-items-stretch">
-                        <div class="info-card w-100 p-4 text-center">
-                            <div class="info-icon mb-3">{{ feat.icon }}</div>
-                            <h5 class="fw-bold">{{ feat.title }}</h5>
-                            <p>{{ feat.text }}</p>
+                {% for f in features %}
+                    <div class="col-md-4 col-sm-6 d-flex">
+                        <div class="badge-card d-flex flex-column w-100">
+                            <div class="badge-icon">
+                                {{ f.icon_svg|raw }}
+                            </div>
+                            <div class="card-body text-center p-4 d-flex flex-column">
+                                <h5 class="fw-bold mb-3">{{ f.title }}</h5>
+                                <p class="mb-0">{{ f.text }}</p>
+                            </div>
                         </div>
                     </div>
                 {% endfor %}
             </div>
-
-            <p class="text-center mt-4 mx-auto" style="max-width:850px;">
-                Deze functies laten zien hoe je met een VoIP-systeem van <strong>Easy Solutions</strong> direct profiteert van innovatieve
-                telefonie-mogelijkheden die samenwerken om je bereikbaarheid, professionaliteit en flexibiliteit te verbeteren.
-            </p>
         </div>
     </section>
 
-    <!-- DIEPER OP FUNCTIES IN -->
-    <section class="py-5 bg-white">
-        <div class="container">
-            <h2 class="fw-bold text-center mb-4">Hoe VoIP werkt bij Easy Solutions</h2>
-            <p class="mx-auto text-center" style="max-width:850px;">
-                Zodra je VoIP-dienst bij <strong>Easy Solutions</strong> is ingericht, kun je zelf bepalen hoe inkomende en
-                uitgaande gesprekken verlopen. Met je zakelijke nummer kun je kiezen of gesprekken naar vaste toestellen,
-                mobiele apps of zelfs softphones op je laptop of PC gaan.
-            </p>
-
-            <div class="row g-5 mt-4">
-                <div class="col-md-6">
-                    <h5 class="fw-semibold">Altijd bereikbaar, altijd verbonden</h5>
-                    <p>
-                        Met VoIP-telefonie van Easy Solutions speelt de locatie geen rol meer. Of je nu op kantoor bent, thuis werkt of
-                        onderweg bent — zolang je internet hebt, ben je altijd bereikbaar via je zakelijke nummer.
-                    </p>
-                </div>
-                <div class="col-md-6">
-                    <h5 class="fw-semibold">Schaalbaar naar je organisatie</h5>
-                    <p>
-                        Kleine teams of grote bedrijven: je VoIP-oplossing kan meegroeien met je organisatie. Extra gebruikers, lijnen
-                        of functies toevoegen is bij Easy Solutions eenvoudig, zonder complexe hardware of langdurig installatieproces.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA SECTION -->
+    <!-- CTA -->
     <section class="py-5 text-center cta-section">
         <div class="container">
-            <h2 class="fw-bold mb-3 text-white">Wil je alle mogelijkheden benutten?</h2>
+            <h2 class="fw-bold mb-3 text-white">Alles uit VoIP halen?</h2>
             <p class="lead mb-4 text-white">
-                Vraag advies aan bij de specialisten van Easy Solutions en ontdek welke VoIP-functies passen bij jouw bedrijf.
+                De specialisten van <strong>Easy Solutions</strong> adviseren je graag over de juiste functies.
             </p>
             <a href="/contact" class="btn btn-cta btn-lg text-white">Contact opnemen</a>
         </div>
     </section>
 
-    <!-- STYLES -->
     <style>
-        .hero-section {
-            height: 60vh;
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            overflow: hidden;
-        }
-        .hero-bg {
-            position: absolute;
-            inset: 0;
-            background: url('{{ asset("assets/diensten/voip-mogelijkheden-hero.webp") }}') center/cover no-repeat;
-            background-size: cover;
-            filter: brightness(0.6);
-            z-index: 1;
-        }
-        .hero-overlay {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(135deg, rgba(0,31,77,0.7), rgba(179,0,0,0.6));
-            z-index: 2;
-        }
-        .hero-content { position: relative; z-index: 3; }
-        .scroll-down {
-            display: inline-block;
-            margin-top:1rem;
-            font-size:2rem;
-            animation:bounce 2s infinite;
-            color:#fff;
-        }
-        @keyframes bounce {0%,20%,50%,80%,100%{transform:translateY(0)}40%{transform:translateY(-10px)}60%{transform:translateY(-5px)}}
+        .hero-section{height:60vh;position:relative;overflow:hidden}
+        .hero-bg{position:absolute;inset:0;background:url('{{ asset("assets/diensten/voip-mogelijkheden-hero.webp") }}') center/cover no-repeat;filter:brightness(.6)}
+        .hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,31,77,.7),rgba(179,0,0,.6))}
+        .hero-content{z-index:2}
 
-        .info-card {
+        .scroll-down{font-size:2rem;color:#fff;animation:bounce 2s infinite}
+
+        @keyframes bounce{
+            0%,20%,50%,80%,100%{transform:translateY(0)}
+            40%{transform:translateY(-10px)}
+            60%{transform:translateY(-5px)}
+        }
+
+        .badge-card{
             background:#fff;
             border-radius:20px;
-            box-shadow:0 6px 18px rgba(0,0,0,0.08);
-            transition: transform 0.35s ease, box-shadow 0.35s ease;
+            box-shadow:0 6px 18px rgba(0,0,0,.08);
+            transition:.3s;
+            overflow:hidden
         }
-        .info-card:hover {
-            transform: translateY(-8px);
-            box-shadow:0 18px 40px rgba(0,0,0,0.14);
+        .badge-card:hover{
+            transform:translateY(-8px);
+            box-shadow:0 18px 40px rgba(0,0,0,.15)
         }
-        .info-icon {
-            font-size:3rem;
-            color: #001f4d;
+        .badge-icon{
+            height:120px;
+            background:linear-gradient(135deg,#001f4d,#b30000);
+            display:flex;
+            align-items:center;
+            justify-content:center
         }
-        .cta-section { background:#001f4d; }
-        .btn-cta {
-            background:#b30000;
-            color:#fff;
-            border-radius:6px;
-            padding:0.8rem 1.8rem;
-            font-weight:600;
-        }
-        .btn-cta:hover { background:#e53935; }
+        .badge-card h5{color:#001f4d}
+
+        .cta-section{background:#001f4d}
+        .btn-cta{background:#b30000;padding:.8rem 1.8rem;font-weight:600}
+        .btn-cta:hover{background:#e53935}
     </style>
 
 {% endblock %}
