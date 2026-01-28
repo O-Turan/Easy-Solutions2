@@ -1,161 +1,214 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}
-    Zakelijke VoIP Telefonie | Flexibel & Betrouwbaar – Easy Solutions
-{% endblock %}
-
-{% block meta_description %}
-    Zakelijke VoIP telefonie voor bedrijven. Professioneel bellen via internet met vaste nummers, belgroepen en keuzemenu’s. Vraag vrijblijvend een offerte aan.
-{% endblock %}
+{% block title %}Zakelijke VoIP-telefonie – Easy Solutions{% endblock %}
 
 {% block body %}
 
-    <!-- HERO -->
-    <header class="hero-voip position-relative text-white">
-        <div class="container py-5 text-center">
-            <h1 class="display-4 fw-bold mb-3">
-                Zakelijke VoIP Telefonie
+    <!-- HERO SECTION -->
+    <section class="hero-section d-flex align-items-center justify-content-center text-center text-white">
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
+        <div class="container position-relative hero-content">
+            <h1 class="display-3 fw-bold animate__animated animate__fadeInDown">
+                Zakelijke VoIP-telefonie
             </h1>
-            <p class="lead opacity-75">
-                Professioneel bellen via internet – flexibel, schaalbaar en klaar voor groei.
+            <p class="lead mb-4 animate__animated animate__fadeInUp animate__delay-1s">
+                Flexibel en professioneel bellen via internet — altijd bereikbaar met
+                <strong>Easy Solutions</strong>.
             </p>
-            <a href="{{ path('offerte') }}" class="btn btn-hero px-5 py-3 rounded-pill mt-3">
-                Offerte aanvragen →
-            </a>
+            <a href="#intro" class="scroll-down">↓</a>
         </div>
+    </section>
 
-        <svg viewBox="0 0 1440 120" class="hero-wave" preserveAspectRatio="none">
-            <path fill="#fff"
-                  d="M0,64L48,74.7C96,85,192,107,288,112C384,117,480,107,576,96C672,85,768,75,864,80C960,85,1056,107,1152,112C1248,117,1344,107,1392,101.3L1440,96L1440,120L0,120Z"/>
-        </svg>
-    </header>
-
-    <!-- WAT IS VOIP -->
-    <section class="py-5">
+    <!-- INTRO -->
+    <section id="intro" class="py-5 bg-white">
         <div class="container">
-            <h2 class="fw-bold mb-3 text-center">
-                Wat is zakelijke VoIP telefonie?
+            <h2 class="fw-bold text-center mb-4">
+                Wat is zakelijke VoIP-telefonie?
             </h2>
-            <p class="mx-auto text-center" style="max-width: 900px;">
-                Zakelijke VoIP telefonie (Voice over IP) betekent dat je telefoneert via internet
-                in plaats van via traditionele telefoonlijnen. Dit maakt bellen niet alleen
-                goedkoper, maar ook veel flexibeler. Met VoIP ben je overal bereikbaar:
-                op kantoor, thuis of onderweg — allemaal via één vast zakelijk nummer.
+
+            <p class="text-center mx-auto" style="max-width:850px;">
+                Zakelijke VoIP-telefonie betekent bellen via internet in plaats van via traditionele vaste lijnen.
+                Met de VoIP-oplossingen van <strong>Easy Solutions</strong> ben je niet meer afhankelijk van
+                fysieke telefooncentrales en kun je flexibel werken vanaf elke locatie.
+            </p>
+
+            <p class="text-center mx-auto" style="max-width:850px;">
+                Of je nu belt vanaf kantoor, thuis of onderweg: al je gesprekken lopen via één centraal
+                zakelijk nummer. Zo houd je overzicht, professionaliteit en bereikbaarheid.
             </p>
         </div>
     </section>
 
     <!-- VOORDELEN -->
-    <section class="bg-light py-5">
+    <section class="py-5 bg-light">
         <div class="container">
-            <h2 class="fw-bold text-center mb-4">
-                Voordelen van zakelijke VoIP bij Easy Solutions
+            <h2 class="fw-bold text-center mb-5">
+                Waarom kiezen voor VoIP bij Easy Solutions?
             </h2>
 
+            {% set voordelen = [
+                {
+                    'title': 'Altijd en overal bereikbaar',
+                    'text': 'Met zakelijke VoIP-telefonie van Easy Solutions ben je bereikbaar op kantoor, thuis of onderweg. Bellen kan via vaste toestellen, mobiel of apps, allemaal onder één zakelijk nummer.',
+                    'icon_svg': '<svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2"><path d="M2 7.82a15 15 0 0 1 20 0"/><path d="M5 11.86a10 10 0 0 1 14 0"/><path d="M8.5 15.43a5 5 0 0 1 7 0"/><circle cx="12" cy="19" r="1"/></svg>'
+                },
+                {
+                    'title': 'Professionele uitstraling',
+                    'text': 'Easy Solutions zorgt voor een professionele telefonie-ervaring met keuzemenu’s, wachtrijen en slimme doorschakelingen. Zo krijgt elke beller snel de juiste persoon te spreken.',
+                    'icon_svg': '<svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M7 20h10"/><path d="M9 16v4"/><path d="M15 16v4"/></svg>'
+                },
+                {
+                    'title': 'Lagere kosten en schaalbaar',
+                    'text': 'Met VoIP van Easy Solutions bespaar je op belkosten en hardware. Je schaalt eenvoudig op of af wanneer je bedrijf groeit of verandert.',
+                    'icon_svg': '<svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2"><path d="M12 1v22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7H14a3.5 3.5 0 0 1 0 7H6"/></svg>'
+                }
+            ] %}
+
             <div class="row g-4">
-                <div class="col-md-4">
-                    <h3 class="h5 fw-bold">Kostenbesparend</h3>
-                    <p>
-                        Geen dure telefooncentrale of onderhoud. Je betaalt alleen voor wat je gebruikt.
-                    </p>
-                </div>
-                <div class="col-md-4">
-                    <h3 class="h5 fw-bold">Schaalbaar</h3>
-                    <p>
-                        Gebruikers toevoegen of verwijderen kan direct. Ideaal voor groeiende bedrijven.
-                    </p>
-                </div>
-                <div class="col-md-4">
-                    <h3 class="h5 fw-bold">Altijd bereikbaar</h3>
-                    <p>
-                        Bel via vaste toestellen, mobiele apps of softphones – allemaal met hetzelfde nummer.
-                    </p>
-                </div>
+                {% for v in voordelen %}
+                    <div class="col-md-4 d-flex">
+                        <div class="badge-card h-100 text-center w-100">
+                            <div class="badge-icon">
+                                {{ v.icon_svg|raw }}
+                            </div>
+                            <div class="card-body p-4">
+                                <h5 class="fw-bold">{{ v.title }}</h5>
+                                <p>{{ v.text }}</p>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
             </div>
         </div>
     </section>
 
     <!-- FUNCTIES -->
-    <section class="py-5">
+    <section class="py-5 bg-white">
         <div class="container">
             <h2 class="fw-bold text-center mb-4">
-                Functionaliteiten van onze VoIP-oplossing
+                Wat kun je allemaal met zakelijke VoIP?
             </h2>
 
-            <ul class="list-unstyled mx-auto" style="max-width: 700px;">
-                <li>✔ Online telefooncentrale (Hosted PBX)</li>
-                <li>✔ Belgroepen en wachtrijen</li>
-                <li>✔ Keuzemenu’s (IVR)</li>
-                <li>✔ Openingstijden & doorschakelingen</li>
-                <li>✔ Gesprekken opnemen</li>
-                <li>✔ Vast & mobiel combineren</li>
-            </ul>
+            <div class="row g-5">
+                <div class="col-md-6">
+                    <p>
+                        De zakelijke VoIP-oplossingen van <strong>Easy Solutions</strong> zijn geschikt voor
+                        zzp’ers, mkb en grotere organisaties. Je beschikt over slimme functies die zorgen
+                        voor betere bereikbaarheid en een professionele uitstraling.
+                    </p>
+                    <p>
+                        Gesprekken kunnen eenvoudig worden doorgeschakeld, wachtrijen worden automatisch
+                        beheerd en voicemail komt direct binnen via e-mail. Zo mis je nooit meer een belangrijk gesprek.
+                    </p>
+                </div>
+
+                <div class="col-md-6">
+                    <ul class="list-unstyled mb-0">
+                        <li>• Keuzemenu’s (IVR) en belgroepen</li>
+                        <li>• Wachtrijen met achtergrondmuziek</li>
+                        <li>• Doorschakelen naar mobiel of collega’s</li>
+                        <li>• Voicemail naar e-mail</li>
+                        <li>• Bellen via app of desktop (softphone)</li>
+                        <li>• Integratie met CRM en bedrijfssoftware</li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- WAAROM EASY SOLUTIONS -->
-    <section class="bg-dark text-white py-5">
-        <div class="container text-center">
-            <h2 class="fw-bold mb-3">
-                Waarom kiezen voor Easy Solutions?
+    <!-- CTA -->
+    <section class="py-5 text-center cta-section">
+        <div class="container">
+            <h2 class="fw-bold mb-3 text-white">
+                Zakelijke VoIP-telefonie op maat?
             </h2>
-            <p class="mb-4">
-                Geen standaardpakketten, maar een VoIP-oplossing die past bij jouw organisatie.
-                Persoonlijk advies, duidelijke prijzen en snelle ondersteuning.
+            <p class="lead mb-4 text-white">
+                De specialisten van <strong>Easy Solutions</strong> denken graag met je mee
+                over een VoIP-oplossing die perfect aansluit op jouw bedrijf.
             </p>
-            <a href="{{ path('app_contact') }}" class="btn btn-light px-5 py-3 rounded-pill">
+            <a href="/contact" class="btn btn-cta btn-lg text-white">
                 Neem contact op
             </a>
         </div>
     </section>
 
-    <!-- FAQ (SEO!) -->
-    <section class="py-5">
-        <div class="container">
-            <h2 class="fw-bold text-center mb-4">
-                Veelgestelde vragen over zakelijke VoIP
-            </h2>
-
-            <div class="mx-auto" style="max-width: 800px;">
-                <h3 class="h6 fw-bold">Is VoIP betrouwbaar?</h3>
-                <p>Ja. Met een stabiele internetverbinding is VoIP net zo betrouwbaar als traditionele telefonie.</p>
-
-                <h3 class="h6 fw-bold">Kan ik mijn huidige nummer behouden?</h3>
-                <p>Ja, nummerbehoud is standaard mogelijk.</p>
-
-                <h3 class="h6 fw-bold">Heb ik speciale telefoons nodig?</h3>
-                <p>Nee. Je kunt bellen via VoIP-toestellen, mobiele apps of je computer.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- SCHEMA.ORG -->
-    <script type="application/ld+json">
-        {
-            "@context": "https://schema.org",
-            "@type": "Service",
-            "name": "Zakelijke VoIP Telefonie",
-            "provider": {
-                "@type": "Organization",
-                "name": "Easy Solutions",
-                "url": "https://easysolutions.nl"
-            },
-            "areaServed": "NL",
-            "description": "Zakelijke VoIP telefonie voor bedrijven. Flexibel, schaalbaar en professioneel bereikbaar via internet."
-        }
-    </script>
-
     <!-- STYLES -->
     <style>
-        .hero-voip{
-            background:radial-gradient(circle at top left,#002b6f,#00152f);
+        .hero-section {
+            height: 60vh;
+            position: relative;
+            overflow: hidden;
         }
-        .hero-wave{position:absolute;bottom:-1px;width:100%;height:60px}
-        .btn-hero{
-            background:linear-gradient(135deg,#002b6f,#00152f);
-            color:#fff;
-            font-weight:700;
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background: url('{{ asset("assets/pbx-hero-background.webp") }}') center/cover no-repeat;
+            filter: brightness(0.55);
+            transform: scale(1.1);
+            z-index: 1;
+            transition: transform 1.5s ease;
         }
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(0,31,77,0.7), rgba(179,0,0,0.6));
+            z-index: 2;
+        }
+        .hero-content { z-index: 3; }
+
+        .scroll-down {
+            display: inline-block;
+            margin-top: 1rem;
+            font-size: 2rem;
+            color: #fff;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%,20%,50%,80%,100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+
+        /* BADGE CARDS */
+        .badge-card {
+            background: #fff;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+        .badge-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 18px 40px rgba(0,0,0,0.15);
+        }
+        .badge-icon {
+            width: 100%;
+            height: 120px;
+            background: linear-gradient(135deg,#001f4d,#b30000);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .badge-card h5 {
+            color: #001f4d;
+            margin-bottom: 0.5rem;
+        }
+        .badge-card p {
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        /* CTA */
+        .cta-section { background:#001f4d; }
+        .btn-cta {
+            background:#b30000;
+            padding:0.8rem 1.8rem;
+            border-radius:6px;
+            font-weight:600;
+        }
+        .btn-cta:hover { background:#e53935; }
     </style>
 
 {% endblock %}

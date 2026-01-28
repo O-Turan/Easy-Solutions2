@@ -1,170 +1,197 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}
-    VoIP Telefooncentrale voor Bedrijven | Easy Solutions
-{% endblock %}
-
-{% block meta_description %}
-    Easy Solutions levert professionele VoIP telefooncentrales voor bedrijven. Flexibel, schaalbaar en volledig in de cloud. Vraag vrijblijvend een offerte aan.
-{% endblock %}
+{% block title %}VoIP Telefooncentrale – Easy Solutions{% endblock %}
 
 {% block body %}
 
-    <!-- HERO -->
-    <section class="hero-voipcentrale text-white text-center">
-        <div class="container py-5">
-            <h1 class="display-4 fw-bold">
-                VoIP Telefooncentrale van Easy Solutions
+    <!-- HERO SECTION -->
+    <section class="hero-section d-flex align-items-center justify-content-center text-center text-white">
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
+        <div class="container position-relative hero-content">
+            <h1 class="display-3 fw-bold animate__animated animate__fadeInDown">
+                VoIP Telefooncentrale
             </h1>
-            <p class="lead opacity-75">
-                Professionele zakelijke telefonie, volledig beheerd door Easy Solutions.
+            <p class="lead mb-4 animate__animated animate__fadeInUp animate__delay-1s">
+                Moderne zakelijke telefonie via internet, slim geregeld door
+                <strong>Easy Solutions</strong>.
             </p>
-            <a href="{{ path('offerte') }}" class="btn btn-cta btn-lg mt-3">
-                Offerte aanvragen
-            </a>
+            <a href="#uitleg" class="scroll-down">↓</a>
         </div>
     </section>
 
-    <!-- INTRO -->
-    <section class="py-5">
+    <!-- UITLEG -->
+    <section id="uitleg" class="py-5 bg-white">
         <div class="container">
             <h2 class="fw-bold text-center mb-4">
-                Wat is een VoIP telefooncentrale van Easy Solutions?
+                Wat is een VoIP telefooncentrale?
             </h2>
 
-            <p class="mx-auto text-center" style="max-width:850px;">
-                De VoIP telefooncentrale van <strong>Easy Solutions</strong> is een moderne,
-                cloud-gebaseerde telefooncentrale waarmee bedrijven professioneel kunnen bellen via internet.
-                In tegenstelling tot traditionele telefooncentrales heb je geen fysieke hardware nodig op locatie.
-                Easy Solutions beheert alles centraal, veilig en betrouwbaar in de cloud.
+            <p class="text-center mx-auto" style="max-width:850px;">
+                Een <strong>VoIP telefooncentrale</strong> is een cloudoplossing waarmee je zakelijk belt via internet
+                in plaats van via traditionele telefoonlijnen. Met de VoIP telefooncentrale van
+                <strong>Easy Solutions</strong> heb je geen fysieke centrale meer nodig op kantoor.
+            </p>
+
+            <p class="text-center mx-auto" style="max-width:850px;">
+                Alle gesprekken, instellingen en functies worden centraal beheerd in de cloud.
+                Hierdoor profiteer je van lagere kosten, meer flexibiliteit en een professionele
+                bereikbaarheid voor jouw organisatie.
             </p>
         </div>
     </section>
 
     <!-- VOORDELEN -->
-    <section class="bg-light py-5">
+    <section class="py-5 bg-light">
         <div class="container">
             <h2 class="fw-bold text-center mb-5">
-                Waarom kiezen bedrijven voor Easy Solutions?
+                Voordelen van een VoIP telefooncentrale van Easy Solutions
             </h2>
 
+            {% set voordelen = [
+                {
+                    'title': 'Volledig cloud-based',
+                    'text': 'De VoIP telefooncentrale van Easy Solutions draait volledig in de cloud. Je hebt geen dure hardware nodig en alles is online te beheren.',
+                    'icon_svg': '<svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2"><path d="M18 10a4 4 0 0 0-8 0"/><path d="M3 16a4 4 0 0 1 4-4h10a4 4 0 1 1 0 8H7a4 4 0 0 1-4-4z"/></svg>'
+                },
+                {
+                    'title': 'Flexibel en schaalbaar',
+                    'text': 'Gebruikers, nummers en functies voeg je eenvoudig toe of verwijder je wanneer nodig. Easy Solutions groeit probleemloos mee met je bedrijf.',
+                    'icon_svg': '<svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2"><path d="M3 3v18h18"/><path d="M7 14l4-4 4 4 4-4"/></svg>'
+                },
+                {
+                    'title': 'Lagere kosten',
+                    'text': 'Met een VoIP telefooncentrale van Easy Solutions bespaar je op abonnementen, onderhoud en gesprekskosten, zonder in te leveren op kwaliteit.',
+                    'icon_svg': '<svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2"><path d="M12 1v22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7H14a3.5 3.5 0 0 1 0 7H6"/></svg>'
+                }
+            ] %}
+
             <div class="row g-4">
-                <div class="col-md-4">
-                    <h3 class="h5 fw-bold">Lagere kosten</h3>
-                    <p>
-                        Met de VoIP telefooncentrale van <strong>Easy Solutions</strong> bespaar je aanzienlijk
-                        op belkosten en infrastructuur. Je betaalt alleen voor wat je gebruikt.
-                    </p>
-                </div>
-
-                <div class="col-md-4">
-                    <h3 class="h5 fw-bold">Volledig schaalbaar</h3>
-                    <p>
-                        Easy Solutions maakt het eenvoudig om gebruikers toe te voegen of te verwijderen.
-                        Ideaal voor groeiende bedrijven of seizoensgebonden teams.
-                    </p>
-                </div>
-
-                <div class="col-md-4">
-                    <h3 class="h5 fw-bold">Optimale bereikbaarheid</h3>
-                    <p>
-                        Dankzij belgroepen, wachtrijen en doorschakelingen zorgt
-                        Easy Solutions ervoor dat je klanten altijd professioneel te woord worden gestaan.
-                    </p>
-                </div>
+                {% for v in voordelen %}
+                    <div class="col-md-4 d-flex">
+                        <div class="badge-card w-100 text-center">
+                            <div class="badge-icon">
+                                {{ v.icon_svg|raw }}
+                            </div>
+                            <div class="p-4">
+                                <h5 class="fw-bold">{{ v.title }}</h5>
+                                <p>{{ v.text }}</p>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
             </div>
         </div>
     </section>
 
-    <!-- FUNCTIONALITEITEN -->
-    <section class="py-5">
+    <!-- FUNCTIES -->
+    <section class="py-5 bg-white">
         <div class="container">
             <h2 class="fw-bold text-center mb-4">
-                Functionaliteiten van de Easy Solutions VoIP telefooncentrale
+                Wat kun je met een VoIP telefooncentrale?
             </h2>
 
-            <ul class="list-unstyled mx-auto" style="max-width:720px;">
-                <li>✔ Belgroepen en wachtrijen</li>
-                <li>✔ Keuzemenu’s (IVR)</li>
-                <li>✔ Openingstijden en automatische doorschakeling</li>
-                <li>✔ Gesprekken opnemen</li>
-                <li>✔ Vast en mobiel bellen combineren</li>
-                <li>✔ Beheer via het Easy Solutions portal</li>
-            </ul>
+            <div class="row g-5">
+                <div class="col-md-6">
+                    <p>
+                        Met een VoIP telefooncentrale van <strong>Easy Solutions</strong> beschik je over
+                        professionele functies die zorgen voor betere bereikbaarheid en een sterke
+                        zakelijke uitstraling. Je bepaalt zelf hoe gesprekken worden afgehandeld.
+                    </p>
+                    <p>
+                        Denk aan slimme doorschakelingen, wachtrijen bij drukte, keuzemenu’s en
+                        voicemail die automatisch wordt doorgestuurd naar e-mail of app.
+                    </p>
+                </div>
+
+                <div class="col-md-6">
+                    <ul class="list-unstyled mb-0">
+                        <li>• Keuzemenu’s (IVR) en belgroepen</li>
+                        <li>• Doorschakelen naar mobiel of collega’s</li>
+                        <li>• Voicemail naar e-mail</li>
+                        <li>• Meerdere gesprekken tegelijk</li>
+                        <li>• CRM- en software-integraties</li>
+                        <li>• Softphone via app of desktop</li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- CTA -->
-    <section class="bg-dark text-white text-center py-5">
+    <section class="py-5 text-center cta-section">
         <div class="container">
-            <h2 class="fw-bold mb-3">
-                Klaar voor zakelijke telefonie met Easy Solutions?
+            <h2 class="fw-bold mb-3 text-white">
+                Klaar voor een VoIP telefooncentrale?
             </h2>
-            <p class="mb-4">
-                Ontvang persoonlijk advies of vraag direct een vrijblijvende offerte aan.
+            <p class="lead mb-4 text-white">
+                Ontdek hoe <strong>Easy Solutions</strong> jouw zakelijke telefonie eenvoudiger,
+                flexibeler en professioneler maakt.
             </p>
-
-            <a href="{{ path('offerte') }}" class="btn btn-light btn-lg me-3">
-                Offerte aanvragen
-            </a>
-            <a href="{{ path('app_contact') }}" class="btn btn-outline-light btn-lg">
-                Contact met Easy Solutions
+            <a href="/contact" class="btn btn-cta btn-lg text-white">
+                Neem contact op
             </a>
         </div>
     </section>
 
-    <!-- FAQ -->
-    <section class="py-5">
-        <div class="container">
-            <h2 class="fw-bold text-center mb-4">
-                Veelgestelde vragen over Easy Solutions VoIP
-            </h2>
-
-            <div class="mx-auto" style="max-width:820px;">
-                <h3 class="h6 fw-bold">Is VoIP van Easy Solutions betrouwbaar?</h3>
-                <p>
-                    Ja. Easy Solutions maakt gebruik van stabiele infrastructuur en hoogwaardige verbindingen,
-                    waardoor de gesprekskwaliteit uitstekend is.
-                </p>
-
-                <h3 class="h6 fw-bold">Kan ik mijn bestaande telefoonnummer behouden?</h3>
-                <p>
-                    Ja, Easy Solutions regelt nummerbehoud volledig voor je.
-                </p>
-
-                <h3 class="h6 fw-bold">Voor welke bedrijven is Easy Solutions geschikt?</h3>
-                <p>
-                    De VoIP oplossingen van Easy Solutions zijn geschikt voor zzp’ers,
-                    mkb-bedrijven en grotere organisaties.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- STRUCTURED DATA -->
-    <script type="application/ld+json">
-        {
-            "@context": "https://schema.org",
-            "@type": "Service",
-            "name": "VoIP Telefooncentrale Easy Solutions",
-            "provider": {
-                "@type": "Organization",
-                "name": "Easy Solutions"
-            },
-            "description": "Easy Solutions levert professionele VoIP telefooncentrales voor bedrijven. Volledig cloud-based, schaalbaar en betrouwbaar.",
-            "areaServed": "NL"
-        }
-    </script>
-
+    <!-- STYLES (ONVERANDERD) -->
     <style>
-        .hero-voipcentrale{
-            background:radial-gradient(circle at top left,#002b6f,#00152f);
+        .hero-section {
+            height: 60vh;
+            position: relative;
+            overflow: hidden;
         }
-        .btn-cta{
-            background:#d11010;
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background: url('{{ asset("assets/pbx-hero-background.webp") }}') center/cover no-repeat;
+            filter: brightness(0.6);
+        }
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(0,31,77,0.7), rgba(179,0,0,0.6));
+        }
+        .hero-content { z-index: 2; }
+
+        .scroll-down {
+            font-size:2rem;
             color:#fff;
+        }
+
+        /* BADGE CARDS – EXACT ZELFDE ALS BEGIN */
+        .badge-card {
+            background:#fff;
+            border-radius:20px;
+            overflow:hidden;
+            box-shadow:0 6px 18px rgba(0,0,0,0.08);
+            transition:transform .4s, box-shadow .4s;
+        }
+        .badge-card:hover {
+            transform:translateY(-10px);
+            box-shadow:0 18px 40px rgba(0,0,0,0.15);
+        }
+        .badge-icon {
+            height:120px;
+            background:linear-gradient(135deg,#001f4d,#b30000);
+            display:flex;
+            align-items:center;
+            justify-content:center;
+        }
+        .badge-card h5 {
+            color:#001f4d;
+        }
+
+
+        /* CTA */
+        .cta-section { background:#001f4d; }
+        .btn-cta {
+            background:#b30000;
+            padding:0.8rem 1.8rem;
+            border-radius:6px;
             font-weight:600;
         }
+        .btn-cta:hover { background:#e53935; }
     </style>
 
 {% endblock %}

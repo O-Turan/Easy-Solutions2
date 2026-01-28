@@ -9,8 +9,8 @@
         <div class="hero-bg"></div>
         <div class="hero-overlay"></div>
         <div class="container position-relative hero-content">
-            <h1 class="display-3 fw-bold animate__animated animate__fadeInDown">Mobiel bellen met VoIP</h1>
-            <p class="lead mb-4 animate__animated animate__fadeInUp animate__delay-1s">
+            <h1 class="display-3 fw-bold">Mobiel bellen met VoIP</h1>
+            <p class="lead mb-4">
                 Neem je zakelijke nummer mee op je smartphone via de VoIP-oplossingen van Easy Solutions.
             </p>
             <a href="#uitleg" class="scroll-down">↓</a>
@@ -47,27 +47,29 @@
                     {
                         'title':'Altijd bereikbaar',
                         'text':'Bellen en gebeld worden via je zakelijke nummer, ongeacht waar je bent.',
-                        'icon_svg':'<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-smartphone-icon lucide-smartphone"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg>'
+                        'icon_svg':'<svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-smartphone-icon lucide-smartphone"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></svg>'
                     },
                     {
                         'title':'Eenvoudig in gebruik',
                         'text':'Je hoeft geen extra hardware te installeren. Met de Easy Solutions app werkt alles direct via je smartphone.',
-                        'icon_svg':'<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone-forwarded-icon lucide-phone-forwarded"><path d="M15 7v3a5 5 0 0 1-9.9 1"/><path d="M15 5h6"/><path d="M9 5H3v6"/></svg>'
+                        'icon_svg':'<svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-thumbs-up-icon lucide-thumbs-up"><path d="M15 5.88 14 10h5.83a2 2 0 0 1 1.92 2.56l-2.33 8A2 2 0 0 1 17.5 22H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h2.76a2 2 0 0 0 1.79-1.11L12 2a3.13 3.13 0 0 1 3 3.88Z"/><path d="M7 10v12"/></svg>'
                     },
                     {
                         'title':'Professioneel imago',
                         'text':'Je zakelijke nummer blijft zichtbaar voor klanten, ook als je belt vanaf je mobiele telefoon.',
-                        'icon_svg':'<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-users-icon lucide-users"><path d="M17 21v-2a4 4 0 0 0-8 0v2"/><circle cx="9" cy="7" r="4"/><circle cx="17" cy="7" r="4"/></svg>'
+                        'icon_svg':'<svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-image-icon lucide-image"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg>'
                     }
                 ] %}
 
                 {% for b in benefits %}
                     <div class="col-md-4 col-sm-6 d-flex">
-                        <div class="badge-card h-100 text-center p-0 w-100">
-                            <div class="badge-icon">{{ b.icon_svg|raw }}</div>
-                            <div class="card-body p-4">
-                                <h5 class="fw-bold">{{ b.title }}</h5>
-                                <p>{{ b.text }}</p>
+                        <div class="badge-card d-flex flex-column w-100 h-100">
+                            <div class="badge-icon d-flex align-items-center justify-content-center">
+                                {{ b.icon_svg|raw }}
+                            </div>
+                            <div class="card-body text-center p-4 d-flex flex-column flex-grow-1">
+                                <h5 class="fw-bold mb-3">{{ b.title }}</h5>
+                                <p class="mb-0">{{ b.text }}</p>
                             </div>
                         </div>
                     </div>
@@ -79,10 +81,9 @@
     <!-- TEKST + FOTO -->
     <section class="py-5 bg-white">
         <div class="container">
-            <!-- Eerste rij -->
             <div class="row align-items-center g-5 mb-5">
                 <div class="col-md-6">
-                    <img src="{{ asset('assets/diensten/mobile-voip-easy-solutions.webp') }}" alt="Mobiel bellen met Easy Solutions" class="img-fluid rounded shadow-sm">
+                    <img src="{{ asset('assets/diensten/nummerporteringtelefoon.webp') }}" alt="Mobiel bellen met Easy Solutions" class="img-fluid rounded shadow-sm">
                 </div>
                 <div class="col-md-6">
                     <h3 class="fw-bold mb-3">Hoe werkt mobiel bellen bij Easy Solutions?</h3>
@@ -97,10 +98,9 @@
                 </div>
             </div>
 
-            <!-- Tweede rij -->
             <div class="row align-items-center g-5">
                 <div class="col-md-6 order-md-2">
-                    <img src="{{ asset('assets/diensten/mobile-flexibility-easy-solutions.webp') }}" alt="Flexibel mobiel bellen" class="img-fluid rounded shadow-sm">
+                    <img src="{{ asset('assets/diensten/hands-hold-a-cellphone-showing-the-shopify-home-page.webp') }}" alt="Flexibel mobiel bellen" class="img-fluid rounded shadow-sm">
                 </div>
                 <div class="col-md-6 order-md-1">
                     <h3 class="fw-bold mb-3">Voor wie is dit geschikt?</h3>
@@ -130,22 +130,22 @@
 
     <!-- STYLES -->
     <style>
-        .hero-section {height:60vh;position:relative;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;}
-        .hero-bg {position:absolute;inset:0;background:url('{{ asset("assets/diensten/mobiel-hero.webp") }}') center/cover no-repeat;background-size:cover;filter:brightness(0.6);transform:scale(1.1);z-index:1;}
-        .hero-overlay {position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,31,77,0.7),rgba(179,0,0,0.6));z-index:2;}
-        .hero-content {position:relative;z-index:3;}
-        .scroll-down {display:inline-block;margin-top:1rem;font-size:2rem;animation:bounce 2s infinite;color:#fff;}
-        @keyframes bounce {0%,20%,50%,80%,100%{transform:translateY(0)}40%{transform:translateY(-10px)}60%{transform:translateY(-5px)}}
+        .hero-section{height:60vh;position:relative;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;}
+        .hero-bg{position:absolute;inset:0;background:url('{{ asset("assets/pbx-hero-background.webp") }}') center/cover no-repeat;background-size:cover;filter:brightness(0.6);transform:scale(1.1);z-index:1;}
+        .hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,31,77,.7),rgba(179,0,0,.6));z-index:2;}
+        .hero-content{position:relative;z-index:3;}
+        .scroll-down{display:inline-block;margin-top:1rem;font-size:2rem;animation:bounce 2s infinite;color:#fff;}
+        @keyframes bounce{0%,20%,50%,80%,100%{transform:translateY(0)}40%{transform:translateY(-10px)}60%{transform:translateY(-5px)}}
 
-        .badge-card {background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 6px 18px rgba(0,0,0,0.08);transition:transform 0.4s ease,box-shadow 0.4s ease;}
-        .badge-card:hover {transform:translateY(-10px) rotateX(2deg);box-shadow:0 18px 40px rgba(0,0,0,0.15);}
-        .badge-icon {width:100%;height:120px;background:linear-gradient(135deg,#001f4d,#b30000);color:#fff;font-size:3rem;display:flex;align-items:center;justify-content:center;}
-        .badge-card h5 {font-weight:600;color:#001f4d;margin-bottom:0.5rem;font-size:1rem;}
-        .badge-card p {color:#333;font-size:0.9rem;line-height:1.5;}
+        .badge-card{background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 6px 18px rgba(0,0,0,0.08);transition:transform 0.4s ease,box-shadow 0.4s ease;display:flex;flex-direction:column;height:100%}
+        .badge-card:hover{transform:translateY(-10px) rotateX(2deg);box-shadow:0 18px 40px rgba(0,0,0,0.15)}
+        .badge-icon{width:100%;height:120px;background:linear-gradient(135deg,#001f4d,#b30000);color:#fff;font-size:3rem;display:flex;align-items:center;justify-content:center}
+        .badge-card h5{font-weight:600;color:#001f4d;margin-bottom:0.5rem;font-size:1rem}
+        .badge-card p{color:#333;font-size:0.9rem;line-height:1.5}
 
-        .cta-section {background:#001f4d;}
-        .btn-cta {background:#b30000;color:#fff;font-weight:600;padding:0.8rem 1.8rem;border-radius:6px;}
-        .btn-cta:hover {background:#e53935;}
+        .cta-section{background:#001f4d}
+        .btn-cta{background:#b30000;color:#fff;font-weight:600;padding:0.8rem 1.8rem;border-radius:6px}
+        .btn-cta:hover{background:#e53935}
     </style>
 
 {% endblock %}
