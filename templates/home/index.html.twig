@@ -6,13 +6,152 @@
     Easy Solutions levert professionele VoIP-oplossingen, cloud telefonie, SIP-trunks, PBX, hosting, white-label.
 {% endblock %}
 
-{% block stylesheets %}
-    {# LCP preload hero image #}
-    <link rel="preload"
-          as="image"
-          href="{{ asset('assets/hero-background.webp') }}"
-          fetchpriority="high">
+{% block body %}
 
+    <!-- HERO -->
+    <main class="hero text-white text-center d-flex align-items-center">
+        <!-- LCP-geoptimaliseerde hero image -->
+        <img src="{{ asset('assets/hero-background.webp') }}"
+             class="hero-bg-img"
+             alt="Innovatieve & Betrouwbare Telecomoplossingen"
+             fetchpriority="high"
+             width="1920" height="1080">
+
+        <div class="hero-overlay"></div>
+
+        <div class="container position-relative">
+            <h1 class="display-3 fw-bold">Innovatieve & Betrouwbare Telecomoplossingen</h1>
+            <p class="lead mb-4">VoIP, Cloud Telefonie en White labels voor bedrijven</p>
+
+            <div class="d-flex justify-content-center gap-3 flex-wrap">
+                <a href="{{ path('app_diensten') }}" class="btn btn-outline-light btn-lg">Bekijk Diensten</a>
+                <a href="{{ path('app_contact') }}" class="btn btn-light btn-lg text-dark">Contact</a>
+            </div>
+        </div>
+
+        <a href="#section1" class="scroll-down">↓</a>
+    </main>
+
+    <!-- VOIP & CLOUD -->
+    <section id="section1" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="fw-bold text-center mb-5">VoIP & Cloud Telefonie</h2>
+
+            {% set voip_items = [
+                {
+                    'icon_svg':'<svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-handshake-icon lucide-handshake"><path d="m11 17 2 2a1 1 0 1 0 3-3"/><path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4"/><path d="m21 3 1 11h-2"/><path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3"/><path d="M3 4h8"/></svg>',
+                    'title':'White Label',
+                    'text':'Aanpasbare telecomoplossingen voor uw merk.',
+                    'url': path('app_dienst_white_label')
+                },
+                {
+                    'icon_svg':'<svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone-incoming-icon lucide-phone-incoming"><path d="M16 2v6h6"/><path d="m22 2-6 6"/><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></svg>',
+                    'title':'Hosted Telefonie',
+                    'text':'Betrouwbare cloud PBX voor elk bedrijf.',
+                    'url': path('app_dienst_voip')
+                },
+                {
+                    'icon_svg':'<svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-smartphone-icon lucide-smartphone"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></svg>',
+                    'title':'Mobiele App',
+                    'text':'Toegang tot uw telefonie overal via mobiel.',
+                    'url': path('app_dienst_mobiel')
+                }
+            ] %}
+
+
+            <div class="row g-4 text-center">
+                {% for item in voip_items %}
+                    <div class="col-md-4 d-flex">
+                        <a href="{{ item.url }}" class="card info-card p-4 h-100 w-100 text-decoration-none text-dark">
+                            <div class="icon-circle">{{ item.icon_svg|raw }}</div>
+                            <h3 class="h5 mt-3">{{ item.title }}</h3>
+                            <p>{{ item.text }}</p>
+                        </a>
+                    </div>
+
+
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <!-- TRUSTED BY -->
+    <section class="trusted-section py-5">
+        <div class="container">
+            <h2 class="fw-bold text-center mb-3">Vertrouwd door bedrijven</h2>
+            <p class="text-center text-muted mb-5">Dagelijks actief voor organisaties in heel Nederland</p>
+        </div>
+
+        <div class="logo-marquee">
+            <div class="logo-track">
+                {% for i in 1..10 %}
+                    <div class="logo-item">
+                        <img src="{{ asset('assets/clients/client' ~ i ~ '.webp') }}" alt="Client {{ i }}">
+                    </div>
+                {% endfor %}
+                {% for i in 1..10 %}
+                    <div class="logo-item">
+                        <img src="{{ asset('assets/clients/client' ~ i ~ '.webp') }}" alt="Client {{ i }}">
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-banner text-center text-white py-5">
+        <div class="container">
+            <h2 class="fw-bold mb-3">Direct contact met onze experts?</h2>
+            <p class="mb-4">Wij helpen je vandaag nog verder.</p>
+            <a href="{{ path('app_contact') }}" class="btn btn-cta btn-lg text-white">Contact Opnemen</a>
+        </div>
+    </section>
+
+    <!-- SUPPORT CARDS -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="fw-bold text-center mb-5">Eigenschappen & Kenmerken</h2>
+
+            <div class="row g-4">
+                {% set support = [
+                    {
+                        'title':'Volledige Transparantie',
+                        'text':'Geen verborgen kosten.',
+                        'icon_svg':'<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-eye-off-icon lucide-eye-off"><path d="M10.733 5.076a10.744 10.744 0 0 1 11.205 6.575 1 1 0 0 1 0 .696 10.747 10.747 0 0 1-1.444 2.49"/><path d="M14.084 14.158a3 3 0 0 1-4.242-4.242"/><path d="M17.479 17.499a10.75 10.75 0 0 1-15.417-5.151 1 1 0 0 1 0-.696 10.75 10.75 0 0 1 4.446-5.143"/><path d="m2 2 20 20"/></svg>'
+                    },
+                    {
+                        'title':'3CX Centrale',
+                        'text':'Een krachtige en betrouwbare VoIP-centrale met uitgebreide functies.',
+                        'icon_svg':'<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-database-zap-icon lucide-database-zap"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5V19A9 3 0 0 0 15 21.84"/><path d="M21 5V8"/><path d="M21 12L18 17H22L19 22"/><path d="M3 12A9 3 0 0 0 14.59 14.87"/></svg>'
+                    },
+                    {
+                        'title':'Netwerk',
+                        'text':'Communicatie via het betrouwbare KPN-netwerk.',
+                        'icon_svg':'<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-down-icon lucide-arrow-up-down"><path d="m21 16-4 4-4-4"/><path d="M17 20V4"/><path d="m3 8 4-4 4 4"/><path d="M7 4v16"/></svg>'
+                    },
+                    {
+                        'title':'Specialisten',
+                        'text':'Ervaren telecomspecialisten sinds 2008.',
+                        'icon_svg':'<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user-round-icon lucide-user-round"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/></svg>'
+                    }
+                ] %}
+
+                {% for s in support %}
+                    <div class="col-md-3 col-sm-6 d-flex">
+                        <div class="badge-card h-100 text-center p-0 w-100">
+                            <div class="badge-icon">{{ s.icon_svg|raw }}</div>
+                            <div class="card-body p-4">
+                                <h5 class="fw-bold">{{ s.title }}</h5>
+                                <p>{{ s.text }}</p>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <!-- STIJLEN -->
     <style>
         /* HERO */
         .hero{
@@ -65,7 +204,7 @@
         .info-card{
             border:0;
             transition:transform .45s cubic-bezier(.22,1,.36,1), box-shadow .45s;
-            display:flex;flex-direction:column;align-items:center;
+            display:flex;flex-direction:column;align-items:center;justify-content:flex-start;
         }
         .info-card:hover{
             transform:translateY(-14px) scale(1.04);
@@ -79,49 +218,74 @@
         /* TRUSTED BY */
         .trusted-section{background:#fff;overflow:hidden}
         .logo-marquee{position:relative;overflow:hidden;width:100%}
+        .logo-marquee::before,.logo-marquee::after{content:'';position:absolute;top:0;width:120px;height:100%;z-index:2;pointer-events:none}
+        .logo-marquee::before{left:0;background:linear-gradient(to right,#fff,transparent)}
+        .logo-marquee::after{right:0;background:linear-gradient(to left,#fff,transparent)}
         .logo-track{display:flex;width:max-content;animation:scroll-logos 26s linear infinite}
+        .logo-marquee:hover .logo-track{animation-play-state:paused}
+        .logo-item{flex:0 0 220px;height:100px;display:flex;align-items:center;justify-content:center}
+        .logo-item img{max-width:160px;max-height:60px;object-fit:contain;filter:grayscale(100%) opacity(.55);transition:.4s cubic-bezier(.22,1,.36,1)}
+        .logo-item:hover img{filter:none;transform:scale(1.15)}
         @keyframes scroll-logos{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
         /* CTA */
-        .cta-banner{background:#001f4d;}
-        .btn-cta{background:#b30000;color:#fff;border-radius:6px;padding:.7rem 1.8rem;font-weight:600}
+        .cta-banner{background: #001f4d;}
+        .btn-cta{background: #b30000;color: #fff;border-radius: 6px;padding: 0.7rem 1.8rem;font-weight: 600;transition: all 0.3s ease;}
+        .btn-cta:hover{background: #e53935;transform: translateY(-2px) scale(1.03);box-shadow: 0 10px 20px rgba(0,0,0,0.15);}
 
         /* BADGE CARDS */
-        .badge-card{
-            background:#fff;
-            border-radius:20px;
-            box-shadow:0 6px 18px rgba(0,0,0,.08);
+        .badge-card {
+            background: #fff;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            cursor: default;
+            display: flex;
+            flex-direction: column;
+        }
+        .badge-card:hover {
+            transform: translateY(-10px) rotateX(2deg);
+            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.15);
+        }
+        .badge-icon {
+            width: 100%;
+            height: 120px;
+            background: linear-gradient(135deg, #001f4d, #b30000);
+            color: #fff;
+            font-size: 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-bottom-left-radius: 50% 20px;
+            border-bottom-right-radius: 50% 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .badge-card:hover .badge-icon { transform: scale(1.2); box-shadow: 0 8px 20px rgba(0,0,0,0.25); }
+        .badge-card h5 { font-weight: 600; color: #001f4d; margin-bottom: 0.5rem; font-size: 1rem; }
+        .badge-card p { color: #333; font-size: 0.9rem; line-height: 1.5; }
+
+        /* RESPONSIVE FIXES */
+        @media (max-width:768px){
+            .hero h1{font-size:2.5rem}
+            .hero p{font-size:1.1rem}
+            .icon-circle{width:50px;height:50px;font-size:1.5rem}
+            .badge-icon { height: 100px; font-size: 2.5rem; }
+            .badge-card h5 { font-size: 0.95rem; }
+            .badge-card p { font-size: 0.85rem; }
+
+            .row.g-4 > [class*='col-'] { flex: 0 0 100%; max-width: 100%; margin-bottom:1rem; }
+            @media (min-width:576px){ .row.g-4 > [class*='col-'] { flex: 0 0 50%; max-width:50%; } }
         }
     </style>
-{% endblock %}
-
-{% block body %}
-
-    <main class="hero text-white text-center d-flex align-items-center">
-        <img src="{{ asset('assets/hero-background.webp') }}"
-             class="hero-bg-img"
-             alt="Innovatieve & Betrouwbare Telecomoplossingen"
-             width="1920" height="1080"
-             fetchpriority="high">
-
-        <div class="hero-overlay"></div>
-
-        <div class="container position-relative">
-            <h1 class="display-3 fw-bold">Innovatieve & Betrouwbare Telecomoplossingen</h1>
-            <p class="lead mb-4">VoIP, Cloud Telefonie en White labels voor bedrijven</p>
-            <div class="d-flex justify-content-center gap-3 flex-wrap">
-                <a href="{{ path('app_diensten') }}" class="btn btn-outline-light btn-lg">Bekijk Diensten</a>
-                <a href="{{ path('app_contact') }}" class="btn btn-light btn-lg text-dark">Contact</a>
-            </div>
-        </div>
-    </main>
 
     <script>
         document.addEventListener('scroll', function(){
             const bg = document.querySelector('.hero-bg-img');
-            if(bg) bg.style.transform =
-                'translateY(' + window.scrollY * 0.3 + 'px) scale(1.1)';
+            if(bg) bg.style.transform = 'translateY(' + window.scrollY * 0.3 + 'px) scale(1.1)';
         });
     </script>
 
 {% endblock %}
+

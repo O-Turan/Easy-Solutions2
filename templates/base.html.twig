@@ -168,7 +168,124 @@
 
 <!-- FOOTER -->
 <footer class="footer bg-gradient-dark text-white pt-5 pb-4">
-    ...
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-3 mb-4">
+                <h5 class="fw-bold mb-3">Easy Solutions</h5>
+                <p class="text-white-50 small">
+                    Wij leveren innovatieve en betrouwbare VoIP-oplossingen om uw bedrijf te laten groeien.
+                </p>
+            </div>
+
+            <div class="col-md-2 mb-4">
+                <h5 class="fw-bold mb-3">Navigatie</h5>
+                <ul class="list-unstyled">
+                    <li><a href="{{ path('app_home') }}" class="footer-link">Home</a></li>
+                    <li><a href="{{ path('app_diensten') }}" class="footer-link">Diensten</a></li>
+                    <li><a href="{{ path('app_over_ons') }}" class="footer-link">Over ons</a></li>
+                    <li><a href="{{ path('app_contact') }}" class="footer-link">Contact</a></li>
+                    <li><a href="{{ path('offerte') }}" class="footer-link">Offerte</a></li>
+                </ul>
+            </div>
+
+            <div class="col-md-2 mb-4">
+                <h5 class="fw-bold mb-3">Telefonie</h5>
+                <ul class="list-unstyled">
+                    <li><a href="{{ path('app_dienst_zakelijke-voip_telefonie') }}" class="footer-link">Zakelijk telefonie</a></li>
+                    <li><a href="{{ path('app_dienst_voip-telefooncentrale') }}" class="footer-link">Cloud VoIP telefonie</a></li>
+                    <li><a href="{{ path('app_dienst_overstappen-op-voip-telefonie') }}" class="footer-link">Overstappen naar VoIP</a></li>
+                    <li><a href="{{ path('app_dienst_mogelijkheden-van-voip-telefonie') }}" class="footer-link">Voordelen van VoIP</a></li>
+                    <li><a href="{{ path('app_dienst_zakelijke-telefonie-pakketten') }}" class="footer-link">VoIP pakketten</a></li>
+                    <li><a href="{{ path('app_dienst_vast-op-de-mobiel') }}" class="footer-link">Vast op mobiel</a></li>
+                    <li><a href="{{ path('app_dienst_mobiel') }}" class="footer-link">Mobiele telefonie</a></li>
+                    <li><a href="{{ path('app_dienst_voip') }}" class="footer-link">VoIP telefonie</a></li>
+                </ul>
+            </div>
+
+            <div class="col-md-2 mb-4">
+                <h5 class="fw-bold mb-3">Telefoonnummers</h5>
+                <ul class="list-unstyled">
+                    <li>
+                        <a href="{{ path('app_dienst_zakelijktelefoonnummers') }}" class="footer-link">Zakelijke telefoonnummers</a>
+
+
+                    </li>
+
+                    <li>
+                        <a href="{{ path('app_dienst_regionale_nummers') }}" class="footer-link">
+                            Regionale telefoonnummers
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{{ path('app_dienst_nummer_kiezen') }}" class="footer-link">
+                            Nummer uitkiezen
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{{ path('app_dienst_085_nummers') }}" class="footer-link">
+                            085 nummers
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{{ path('app_dienst_088_nummers') }}" class="footer-link">
+                            088 nummers
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{{ path('app_contact') }}" class="footer-link">
+                            085 nummers aanvragen
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{{ path('app_contact') }}" class="footer-link">
+                            088 nummers aanvragen
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+
+            <div class="col-md-3 mb-4">
+                <h5 class="fw-bold mb-3">Aanvullende diensten</h5>
+                <ul class="list-unstyled">
+                    <li><a href="{{ path('app_dienst_hosted_telefonie') }}" class="footer-link">Hosted telefonie</a></li>
+                    <li><a href="{{ path('app_dienst_hosted_pbx') }}" class="footer-link">Hosted PBX</a></li>
+                    <li><a href="{{ path('app_dienst_pbx') }}" class="footer-link">PBX</a></li>
+                    <li><a href="{{ path('app_dienst_white_label') }}" class="footer-link">White-label Telecom</a></li>
+                    <li><a href="{{ path('app_dienst_sip_trunk') }}" class="footer-link">SIP Trunk</a></li>
+                    <li><a href="{{ path('app_dienst_kpn') }}" class="footer-link">KPN Business Partner</a></li>
+                    <li><a href="{{ path('app_dienst_nummerportering') }}" class="footer-link">Nummerportering</a></li>
+                    <li><a href="{{ path('app_dienst_mobiele_app') }}" class="footer-link">Mobiele app</a></li>
+                </ul>
+            </div>
+
+            <div class="col-md-2 mb-4">
+                <h5 class="fw-bold mb-3">Contact</h5>
+                <ul class="list-unstyled text-white-50 small">
+                    <li>info@easysolutions.nl</li>
+                    <li>+31 880666100</li>
+                    <li>Regulusweg 5, Den Haag</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <hr class="border-secondary">
+
+        <div class="d-flex flex-column flex-md-row justify-content-between align-items-center small text-white-50">
+            <span>© {{ "now"|date("Y") }} Easy Solutions</span>
+            <div class="d-flex gap-3">
+                <a href="{{ path('app_privacy_beleid') }}" class="footer-link">Privacybeleid</a>
+                <a href="{{ path('app_algemene_voorwaarden') }}" class="footer-link">Algemene Voorwaarden</a>
+            </div>
+        </div>
+    </div>
 </footer>
 
 <style>
