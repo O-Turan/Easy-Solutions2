@@ -4,54 +4,77 @@
 
 {% block stylesheets %}
 
-    {# LCP hero image preload #}
+    {# PRELOAD HERO IMAGE #}
     <link rel="preload"
           as="image"
           href="{{ asset('assets/diensten_background.webp') }}"
           fetchpriority="high">
 
+    {# PRELOAD FONT #}
+    <link rel="preload" href="{{ asset('fonts/Inter.woff2') }}" as="font" type="font/woff2" crossorigin>
+
     <style>
+        /* FONT */
+        @font-face {
+            font-family: 'Inter';
+            src: url('{{ asset('fonts/Inter.woff2') }}') format('woff2');
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+        }
+        body, h1, h2, h3, p, a {
+            font-family: 'Inter', system-ui, sans-serif;
+        }
+
         /* HERO */
         .hero-section {
-            height: 70vh;
-            background: linear-gradient(135deg, rgba(0,31,77,0.6), rgba(179,0,0,0.6)),
-            url('{{ asset('assets/diensten_background.webp') }}') no-repeat center center;
-            background-size: cover;
-            color: #fff;
             position: relative;
+            height: 70vh;
+            color: #fff;
+        }
+
+        .hero-section img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
         }
 
         .hero-section .overlay {
             position: absolute;
             inset: 0;
-            background: rgba(0, 0, 0, 0.3);
+            background: rgba(0,0,0,0.3);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            min-height: 300px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            gap: 1rem;
         }
 
         /* BUTTONS */
-        .btn-primary {
-            background: #b30000;
-            border: none;
-        }
-
-        .btn-primary:hover {
-            background: #990000;
-        }
-
+        .btn-primary { background: #b30000; border: none; }
+        .btn-primary:hover { background: #990000; }
         .btn-glow {
             box-shadow: 0 0 18px rgba(179, 0, 0, .55);
             transition: .3s ease;
         }
-
         .btn-glow:hover {
             transform: translateY(-2px);
             box-shadow: 0 0 30px rgba(179, 0, 0, .8);
         }
 
         /* CTA */
-        .cta-section {
-            background: #001f4d;
-        }
-
+        .cta-section { background: #001f4d; }
         .btn-cta {
             background: #b30000;
             color: #fff;
@@ -60,7 +83,6 @@
             font-weight: 600;
             transition: all 0.3s ease;
         }
-
         .btn-cta:hover {
             background: #e53935;
             transform: translateY(-2px) scale(1.03);
@@ -72,52 +94,33 @@
             background: #fff;
             border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, .08);
+            box-shadow: 0 15px 35px rgba(0,0,0,.08);
             transition: transform .45s ease, box-shadow .45s ease;
             position: relative;
+            min-height: 320px;
         }
-
         .dienst-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 30px 60px rgba(0, 0, 0, .15);
+            box-shadow: 0 30px 60px rgba(0,0,0,.15);
         }
-
         .dienst-image {
-            aspect-ratio: 16 / 9;
+            aspect-ratio: 16/9;
             background-size: cover;
             background-position: center;
             position: relative;
             overflow: hidden;
             transition: transform .6s ease;
         }
-
-        .dienst-card:hover .dienst-image {
-            transform: scale(1.08);
-        }
-
+        .dienst-card:hover .dienst-image { transform: scale(1.08); }
         .image-overlay {
             position: absolute;
             inset: 0;
-            background: linear-gradient(
-                    to bottom,
-                    rgba(0, 0, 0, .05),
-                    rgba(0, 0, 0, .35)
-            );
+            background: linear-gradient(to bottom, rgba(0,0,0,.05), rgba(0,0,0,.35));
         }
+        .dienst-body { padding: 1.6rem 1.4rem; }
+        .dienst-body h3 { color: #0f172a; }
 
-        .dienst-body {
-            padding: 1.6rem 1.4rem;
-        }
-
-        .dienst-body h3 {
-            color: #0f172a;
-        }
-
-        @media (max-width: 768px) {
-            .dienst-image {
-                aspect-ratio: 4 / 3;
-            }
-        }
+        @media (max-width: 768px) { .dienst-image { aspect-ratio: 4/3; } }
 
         /* ANIMATIONS */
         .animate-fade {
@@ -125,7 +128,6 @@
             transform: translateY(20px);
             animation: fadeInUp .9s forwards;
         }
-
         .animate-fade.delay-1 { animation-delay: .1s }
         .animate-fade.delay-2 { animation-delay: .2s }
         .animate-fade.delay-3 { animation-delay: .3s }
@@ -135,31 +137,24 @@
         .animate-fade.delay-7 { animation-delay: .7s }
         .animate-fade.delay-8 { animation-delay: .8s }
 
-        @keyframes fadeInUp {
-            to {
-                opacity: 1;
-                transform: none;
-            }
-        }
+        @keyframes fadeInUp { to { opacity: 1; transform: none; } }
     </style>
 {% endblock %}
 
 {% block body %}
-
-    <section class="hero-section d-flex align-items-center justify-content-center text-center">
+    <section class="hero-section">
+        <img src="{{ asset('assets/diensten_background.webp') }}" alt="VoIP Hero" width="1920" height="1080" fetchpriority="high" decoding="async">
         <div class="overlay"></div>
-        <div class="container position-relative">
-            <h1 class="display-3 fw-bold mb-3 animate-fade">
+        <div class="container hero-content">
+            <h1 class="display-3 fw-bold animate-fade">
                 VoIP, Telefonie & Telecom Diensten Voor Bedrijven
             </h1>
-            <p class="lead mb-4 animate-fade delay-1">
+            <p class="lead animate-fade delay-1">
                 Complete oplossingen voor hosted telefonie, SIP-trunks en PBX-systemen.
             </p>
             <div class="d-flex justify-content-center gap-3 animate-fade delay-2">
                 <a href="{{ path('offerte') }}" class="btn btn-primary btn-lg btn-glow">Nieuwe klant?</a>
-                <a href="{{ path('app_dienst_white_label') }}" class="btn btn-outline-light btn-lg btn-glow">
-                    Reseller worden?
-                </a>
+                <a href="{{ path('app_dienst_white_label') }}" class="btn btn-outline-light btn-lg btn-glow">Reseller worden?</a>
             </div>
         </div>
     </section>
@@ -211,5 +206,4 @@
             </a>
         </div>
     </section>
-
 {% endblock %}
