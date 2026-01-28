@@ -2,80 +2,14 @@
 
 {% block title %}Professionele Telecom & VoIP Diensten | Easy Solutions{% endblock %}
 
-{% block body %}
+{% block stylesheets %}
 
-    <!-- HERO -->
-    <section class="hero-section d-flex align-items-center justify-content-center text-center">
-        <div class="overlay"></div>
-        <div class="container position-relative">
-            <h1 class="display-3 fw-bold mb-3 animate-fade">
-                VoIP, Telefonie & Telecom Diensten Voor Bedrijven
-            </h1>
-            <p class="lead mb-4 animate-fade delay-1">
-                Complete oplossingen voor hosted telefonie, SIP-trunks en PBX-systemen.
-            </p>
-            <div class="d-flex justify-content-center gap-3 animate-fade delay-2">
-                <a href="{{ path('offerte') }}" class="btn btn-primary btn-lg btn-glow">Nieuwe klant?</a>
-                <a href="{{ path('app_dienst_white_label') }}" class="btn btn-outline-light btn-lg btn-glow">Reseller
-                    worden?</a>
-            </div>
-        </div>
-    </section>
+    {# LCP hero image preload #}
+    <link rel="preload"
+          as="image"
+          href="{{ asset('assets/diensten_background.webp') }}"
+          fetchpriority="high">
 
-    <!-- DIENSTEN -->
-    <section class="py-5 bg-light">
-        <div class="container">
-            <h2 class="fw-bold text-center mb-5 animate-fade">Onze Telecom Diensten</h2>
-
-            {% set diensten = [
-                {'title':'Hosted Telefonie','desc':'Betrouwbare cloudtelefonie voor bedrijven.','route':'app_dienst_hosted_telefonie','img':'/assets/hosted-telefonie.webp'},
-                {'title':'White-Label Telecom','desc':'Telecom aanbieden onder uw eigen merk.','route':'app_dienst_white_label','img':'/assets/white_label_telecom.webp'},
-                {'title':'SIP Trunk','desc':'Stabiele SIP-trunks met hoge kwaliteit.','route':'app_dienst_sip_trunk','img':'/assets/sip_trunk.webp'},
-                {'title':'Nummerportering','desc':'Uw nummers veilig en snel overgezet.','route':'app_dienst_nummerportering','img':'/assets/nummerportering.webp'},
-                {'title':'PBX Systemen','desc':'Professionele telefooncentrales.','route':'app_dienst_pbx','img':'/assets/pbx_systemen.webp'},
-                {'title':'Hosted PBX','desc':'Volledig cloudgebaseerde PBX.','route':'app_dienst_hosted_pbx','img':'/assets/hosted-pbx.webp'},
-                {'title':'KPN Partner','desc':'Telecom via het betrouwbare KPN-netwerk.','route':'app_dienst_kpn','img':'/assets/kpn_business_partner.webp'},
-                {'title':'Mobiele App','desc':'Telefonie beheren via één app.','route':'app_dienst_mobiele_app','img':'/assets/mobiel-app.webp'}
-            ] %}
-
-            <div class="row g-4">
-                {% for dienst in diensten %}
-                    <div class="col-lg-3 col-md-4 col-sm-6 animate-fade delay-{{ loop.index }}">
-                        <div class="dienst-card h-100">
-                            <a href="{{ path(dienst.route) }}" class="stretched-link"></a>
-
-                            <div class="dienst-image" style="background-image:url('{{ dienst.img }}')">
-                                <div class="image-overlay"></div>
-                            </div>
-
-                            <div class="dienst-body text-center">
-                                <h3 class="h5 fw-bold mb-2">{{ dienst.title }}</h3>
-                                <p class="text-muted mb-0">{{ dienst.desc }}</p>
-                            </div>
-                        </div>
-                    </div>
-                {% endfor %}
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA SECTION -->
-    <section class="py-5 text-center cta-section">
-        <div class="container">
-            <h2 class="fw-bold mb-3 text-white">Wilt u uw telecom naar een hoger niveau tillen?</h2>
-            <p class="lead mb-4 text-white">
-                Neem contact met ons op en ontdek hoe Easy Solutions uw bedrijf kan helpen met VoIP- en
-                telecomoplossingen.
-            </p>
-            <a href="{{ path('app_contact') }}" class="btn btn-cta btn-lg px-5 py-3 text-white">
-                Contact opnemen
-            </a>
-        </div>
-    </section>
-
-{% endblock %}
-
-{% block javascripts %}
     <style>
         /* HERO */
         .hero-section {
@@ -90,7 +24,7 @@
         .hero-section .overlay {
             position: absolute;
             inset: 0;
-            background: rgba(0, 0, 0, 0.3); /* extra overlay voor contrast */
+            background: rgba(0, 0, 0, 0.3);
         }
 
         /* BUTTONS */
@@ -133,7 +67,7 @@
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
         }
 
-        /* DIENST CARDS – PREMIUM */
+        /* DIENST CARDS */
         .dienst-card {
             background: #fff;
             border-radius: 20px;
@@ -148,7 +82,6 @@
             box-shadow: 0 30px 60px rgba(0, 0, 0, .15);
         }
 
-        /* IMAGE */
         .dienst-image {
             aspect-ratio: 16 / 9;
             background-size: cover;
@@ -162,7 +95,6 @@
             transform: scale(1.08);
         }
 
-        /* OVERLAY */
         .image-overlay {
             position: absolute;
             inset: 0;
@@ -173,7 +105,6 @@
             );
         }
 
-        /* BODY */
         .dienst-body {
             padding: 1.6rem 1.4rem;
         }
@@ -182,7 +113,6 @@
             color: #0f172a;
         }
 
-        /* MOBILE */
         @media (max-width: 768px) {
             .dienst-image {
                 aspect-ratio: 4 / 3;
@@ -196,37 +126,14 @@
             animation: fadeInUp .9s forwards;
         }
 
-        .animate-fade.delay-1 {
-            animation-delay: .1s
-        }
-
-        .animate-fade.delay-2 {
-            animation-delay: .2s
-        }
-
-        .animate-fade.delay-3 {
-            animation-delay: .3s
-        }
-
-        .animate-fade.delay-4 {
-            animation-delay: .4s
-        }
-
-        .animate-fade.delay-5 {
-            animation-delay: .5s
-        }
-
-        .animate-fade.delay-6 {
-            animation-delay: .6s
-        }
-
-        .animate-fade.delay-7 {
-            animation-delay: .7s
-        }
-
-        .animate-fade.delay-8 {
-            animation-delay: .8s
-        }
+        .animate-fade.delay-1 { animation-delay: .1s }
+        .animate-fade.delay-2 { animation-delay: .2s }
+        .animate-fade.delay-3 { animation-delay: .3s }
+        .animate-fade.delay-4 { animation-delay: .4s }
+        .animate-fade.delay-5 { animation-delay: .5s }
+        .animate-fade.delay-6 { animation-delay: .6s }
+        .animate-fade.delay-7 { animation-delay: .7s }
+        .animate-fade.delay-8 { animation-delay: .8s }
 
         @keyframes fadeInUp {
             to {
@@ -235,4 +142,74 @@
             }
         }
     </style>
+{% endblock %}
+
+{% block body %}
+
+    <section class="hero-section d-flex align-items-center justify-content-center text-center">
+        <div class="overlay"></div>
+        <div class="container position-relative">
+            <h1 class="display-3 fw-bold mb-3 animate-fade">
+                VoIP, Telefonie & Telecom Diensten Voor Bedrijven
+            </h1>
+            <p class="lead mb-4 animate-fade delay-1">
+                Complete oplossingen voor hosted telefonie, SIP-trunks en PBX-systemen.
+            </p>
+            <div class="d-flex justify-content-center gap-3 animate-fade delay-2">
+                <a href="{{ path('offerte') }}" class="btn btn-primary btn-lg btn-glow">Nieuwe klant?</a>
+                <a href="{{ path('app_dienst_white_label') }}" class="btn btn-outline-light btn-lg btn-glow">
+                    Reseller worden?
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="fw-bold text-center mb-5 animate-fade">Onze Telecom Diensten</h2>
+
+            {% set diensten = [
+                {'title':'Hosted Telefonie','desc':'Betrouwbare cloudtelefonie voor bedrijven.','route':'app_dienst_hosted_telefonie','img':'/assets/hosted-telefonie.webp'},
+                {'title':'White-Label Telecom','desc':'Telecom aanbieden onder uw eigen merk.','route':'app_dienst_white_label','img':'/assets/white_label_telecom.webp'},
+                {'title':'SIP Trunk','desc':'Stabiele SIP-trunks met hoge kwaliteit.','route':'app_dienst_sip_trunk','img':'/assets/sip_trunk.webp'},
+                {'title':'Nummerportering','desc':'Uw nummers veilig en snel overgezet.','route':'app_dienst_nummerportering','img':'/assets/nummerportering.webp'},
+                {'title':'PBX Systemen','desc':'Professionele telefooncentrales.','route':'app_dienst_pbx','img':'/assets/pbx_systemen.webp'},
+                {'title':'Hosted PBX','desc':'Volledig cloudgebaseerde PBX.','route':'app_dienst_hosted_pbx','img':'/assets/hosted-pbx.webp'},
+                {'title':'KPN Partner','desc':'Telecom via het betrouwbare KPN-netwerk.','route':'app_dienst_kpn','img':'/assets/kpn_business_partner.webp'},
+                {'title':'Mobiele App','desc':'Telefonie beheren via één app.','route':'app_dienst_mobiele_app','img':'/assets/mobiel-app.webp'}
+            ] %}
+
+            <div class="row g-4">
+                {% for dienst in diensten %}
+                    <div class="col-lg-3 col-md-4 col-sm-6 animate-fade delay-{{ loop.index }}">
+                        <div class="dienst-card h-100">
+                            <a href="{{ path(dienst.route) }}" class="stretched-link"></a>
+                            <div class="dienst-image" style="background-image:url('{{ dienst.img }}')">
+                                <div class="image-overlay"></div>
+                            </div>
+                            <div class="dienst-body text-center">
+                                <h3 class="h5 fw-bold mb-2">{{ dienst.title }}</h3>
+                                <p class="text-muted mb-0">{{ dienst.desc }}</p>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 text-center cta-section">
+        <div class="container">
+            <h2 class="fw-bold mb-3 text-white">
+                Wilt u uw telecom naar een hoger niveau tillen?
+            </h2>
+            <p class="lead mb-4 text-white">
+                Neem contact met ons op en ontdek hoe Easy Solutions uw bedrijf kan helpen.
+            </p>
+            <a href="{{ path('app_contact') }}" class="btn btn-cta btn-lg px-5 py-3 text-white">
+                Contact opnemen
+            </a>
+        </div>
+    </section>
+
 {% endblock %}
